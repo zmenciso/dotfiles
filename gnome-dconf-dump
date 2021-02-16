@@ -1,0 +1,229 @@
+[boxes]
+first-run=false
+view='list-view'
+window-maximized=true
+
+[cheese]
+burst-delay=1000
+camera='HP TrueVision FHD RGB-IR  HP Tr'
+photo-x-resolution=1920
+photo-y-resolution=1080
+video-x-resolution=1920
+video-y-resolution=1080
+
+[clocks]
+timers=@aa{sv} []
+
+[clocks/state/window]
+panel-id='timer'
+size=(742, 513)
+state=87168
+
+[control-center]
+last-panel='keyboard'
+
+[desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/solus/waves-of-blue.jpg'
+primary-color='#000000'
+secondary-color='#000000'
+
+[desktop/input-sources]
+current=uint32 0
+per-window=false
+sources=[('xkb', 'us'), ('ibus', 'mozc-jp')]
+xkb-options=['lv3:ralt_switch']
+
+[desktop/interface]
+cursor-theme='Breeze'
+document-font-name='Cantarell 10'
+enable-animations=true
+font-antialiasing='rgba'
+font-name='Cantarell 10'
+gtk-im-module='ibus'
+gtk-theme='Plata-Noir-Compact'
+icon-theme='Papirus'
+monospace-font-name='Hack Nerd Font 11'
+show-battery-percentage=true
+
+[desktop/peripherals/mouse]
+speed=-0.54285714285714293
+
+[desktop/peripherals/touchpad]
+natural-scroll=true
+two-finger-scrolling-enabled=true
+
+[desktop/screensaver]
+color-shading-type='solid'
+lock-delay=uint32 0
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/solus/waves-of-blue.jpg'
+primary-color='#000000'
+secondary-color='#000000'
+
+[desktop/search-providers]
+sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
+
+[desktop/session]
+idle-delay=uint32 300
+
+[desktop/sound]
+allow-volume-above-100-percent=true
+
+[desktop/wm/keybindings]
+activate-window-menu=['<Alt>space']
+begin-move=@as []
+begin-resize=['<Super>r']
+maximize=@as []
+maximize-horizontally=@as []
+minimize=@as []
+move-to-monitor-down=['<Shift><Super>j']
+move-to-monitor-left=['<Shift><Super>h']
+move-to-monitor-right=['<Shift><Super>l']
+move-to-monitor-up=['<Shift><Super>k']
+move-to-workspace-1=['<Primary>F1']
+move-to-workspace-2=['<Primary>F2']
+move-to-workspace-3=['<Primary>F3']
+move-to-workspace-4=['<Primary>F4']
+move-to-workspace-last=['<Primary><Super>End']
+move-to-workspace-left=@as []
+move-to-workspace-right=@as []
+panel-run-dialog=['<Super>d']
+switch-input-source=['<Super>space']
+switch-input-source-backward=['<Shift><Super>space']
+switch-to-workspace-1=['<Super>1']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
+switch-to-workspace-left=['<Primary><Super>h']
+switch-to-workspace-right=['<Primary><Super>l']
+switch-windows=@as []
+switch-windows-backward=@as []
+toggle-fullscreen=@as []
+toggle-maximized=['<Super>k']
+toggle-on-all-workspaces=['<Super>o']
+
+[desktop/wm/preferences]
+button-layout='appmenu:minimize,maximize,close'
+num-workspaces=4
+titlebar-font='Cantarell 12'
+
+[eog/view]
+background-color='rgb(0,0,0)'
+use-background-color=true
+
+[evince/default]
+window-ratio=(0.90625, 1.1814814814814816)
+
+[evolution-data-server]
+migrated=true
+network-monitor-gio-name=''
+
+[gedit/plugins]
+active-plugins=['sort', 'modelines', 'openlinks', 'spell', 'docinfo', 'filebrowser']
+
+[gedit/preferences/ui]
+show-tabs-mode='auto'
+
+[gedit/state/window]
+bottom-panel-size=140
+side-panel-active-page='GeditWindowDocumentsPanel'
+side-panel-size=200
+size=(900, 700)
+state=87168
+
+[gnome-screenshot]
+border-effect='none'
+delay=2
+include-border=true
+include-pointer=true
+last-save-directory='file:///home/zmenciso/Downloads'
+
+[libgnomekbd/preview]
+height=614
+width=1464
+x=240
+y=135
+
+[mutter]
+dynamic-workspaces=false
+workspaces-only-on-primary=false
+
+[mutter/keybindings]
+toggle-tiled-left=['<Super>h']
+toggle-tiled-right=['<Super>l']
+
+[mutter/wayland/keybindings]
+restore-shortcuts=@as []
+
+[nautilus/list-view]
+use-tree-view=true
+
+[nautilus/preferences]
+click-policy='single'
+default-folder-viewer='icon-view'
+search-filter-time-type='last_modified'
+
+[nautilus/window-state]
+initial-size=(890, 550)
+maximized=false
+
+[nm-applet/eap/04319e96-12ea-49d5-bc64-95b790e94a68]
+ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/a943274f-95b3-41e8-8076-41fffa924e60]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/d5b9280b-1670-4011-9066-b131822a573b]
+ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/dca24007-3ef1-49e8-ad45-8ffe526b3979]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[settings-daemon/plugins/color]
+night-light-enabled=true
+night-light-temperature=uint32 3700
+
+[settings-daemon/plugins/media-keys]
+area-screenshot=['<Primary><Shift>Print']
+area-screenshot-clip=['<Shift>Print']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+home=['<Super>e']
+screensaver=['<Super>Escape']
+screenshot=['<Primary>Print']
+screenshot-clip=['Print']
+window-screenshot=['<Primary><Alt>Print']
+window-screenshot-clip=['<Alt>Print']
+
+[settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>Return'
+command='gnome-terminal'
+name='Terminal'
+
+[settings-daemon/plugins/power]
+idle-dim=true
+sleep-inactive-ac-timeout=1200
+sleep-inactive-battery-timeout=1200
+
+[settings-daemon/plugins/xsettings]
+overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
+
+[shell/app-switcher]
+current-workspace-only=true
+
+[terminal/legacy]
+menu-accelerator-enabled=false
+
+[terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-transparency-percent=13
+default-size-columns=100
+default-size-rows=36
+login-shell=true
+palette=['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+use-custom-command=false
+use-transparent-background=true

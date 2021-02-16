@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Spotify-tui
+
+Exec=spt
+Icon=spt
+Terminal=true
+Categories=Media
+
+GenericName=spt
+Comment=A Spotify client for the terminal written in Rust.

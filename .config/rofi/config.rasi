@@ -1,0 +1,21 @@
+configuration {
+    terminal: "/usr/bin/alacritty";
+
+    modi: "window,drun,run,ssh,combi";
+    combi-modi: "window,drun,ssh";
+
+    display-ssh:    " ";
+    display-run:    " ";
+    display-drun:   " ";
+    display-window: " ";
+    display-combi:  "";
+    show-icons:     false;
+    icon-theme:	    "Papirus";
+
+    timeout {
+	delay: 10;
+	action: "kb-cancel";
+    }
+}
+
+@theme "theme"

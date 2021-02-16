@@ -1,0 +1,23 @@
+[general]
+embed-preedit-text=true
+engines-order=['xkb:us::eng', 'mozc-jp']
+preload-engines=['xkb:us::eng', 'mozc-jp']
+switcher-delay-time=-1
+use-global-engine=true
+use-system-keyboard-layout=true
+version='1.5.26'
+
+[general/hotkey]
+triggers=['<Control>space']
+
+[panel]
+custom-font='Cantarell 10'
+show=0
+show-icon-on-systray=false
+use-custom-font=false
+
+[panel/emoji]
+favorites=['蛎']
+has-partial-match=true
+hotkey=['<Control><Shift>e']
+partial-match-condition=2

@@ -1,0 +1,17 @@
+Xft.antialias:	1
+Xft.hinting:	1
+Xft.autohint:	0
+Xft.hintstyle:	hintslight
+Xft.rgba:	rgb
+Xft.lcdfilter:	lcddefault
+Xft.dpi: 96
+
+Xcursor.theme:	Breeze
+
+! window padding
+st.borderpx: 10
+
+!-- values between 0.1  - 1.0 --! 
+
+*.alpha: 0.85
+*.font:           Hack Nerd Font Mono:size=11
