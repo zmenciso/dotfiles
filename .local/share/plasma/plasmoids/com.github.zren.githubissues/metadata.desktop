@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=GitHub Issues
+Comment=Lists the most recent issues for a GitHub repository.
+
+Type=Service
+Icon=octicon-mark-github.svg
+X-KDE-ServiceTypes=Plasma/Applet
+
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/Main.qml
+
+X-KDE-PluginInfo-Author=Chris Holland
+X-KDE-PluginInfo-Email=zrenfire@gmail.com
+X-KDE-PluginInfo-Name=com.github.zren.githubissues
+X-KDE-PluginInfo-Version=4
+X-KDE-PluginInfo-Website=https://github.com/Zren/plasma-applet-githubissues
+X-KDE-PluginInfo-Category=Online Services

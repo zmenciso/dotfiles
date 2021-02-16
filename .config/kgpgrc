@@ -1,0 +1,19 @@
+[Editor]
+State=AAAA/wAAAAD9AAAAAAAAAoAAAAGcAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+
+[GPG Settings]
+gpg_config_path[$e]=$HOME/.gnupg/gpg.conf
+
+[General Options]
+First run=false
+
+[MainWindow]
+State=AAAA/wAAAAD9AAAAAAAAAoAAAAGFAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+
+[TipOfDay]
+RunOnStart=false
+
+[User Interface]
+AutoStart=true

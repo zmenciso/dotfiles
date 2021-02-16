@@ -1,0 +1,164 @@
+[$Version]
+update_info=filepicker.upd:filepicker-remove-old-previews-entry,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar,kwin.upd:animation-speed,icons_remove_effects.upd:IconsRemoveEffects,style_widgetstyle_default_breeze.upd:StyleWidgetStyleDefaultBreeze
+
+[ColorEffects:Disabled]
+ChangeSelectionColor=
+Color=56,56,56
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65
+ContrastEffect=1
+Enable=
+IntensityAmount=0.1
+IntensityEffect=2
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=true
+Color=112,111,110
+ColorAmount=0.025000000000000001
+ColorEffect=2
+ContrastAmount=0.10000000000000001
+ContrastEffect=2
+Enable=false
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate=43,57,72
+BackgroundNormal=43,57,72
+DecorationFocus=76,99,125
+DecorationHover=76,99,125
+ForegroundActive=97,127,159
+ForegroundInactive=102,106,115
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=211,218,227
+ForegroundPositive=39,174,96
+ForegroundVisited=76,99,125
+
+[Colors:Complementary]
+DecorationFocus=76,99,125
+DecorationHover=76,99,125
+
+[Colors:Selection]
+BackgroundAlternate=76,99,125
+BackgroundNormal=43,82,120
+DecorationFocus=76,99,125
+DecorationHover=76,99,125
+ForegroundActive=252,252,252
+ForegroundInactive=211,218,227
+ForegroundLink=253,188,75
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=211,218,227
+ForegroundPositive=39,174,96
+ForegroundVisited=189,195,199
+
+[Colors:Tooltip]
+BackgroundAlternate=47,52,63
+BackgroundNormal=53,57,69
+DecorationFocus=76,99,125
+DecorationHover=76,99,125
+ForegroundActive=61,174,233
+ForegroundInactive=102,106,115
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=211,218,227
+ForegroundPositive=39,174,96
+ForegroundVisited=82,148,226
+
+[Colors:View]
+BackgroundAlternate=20,26,33
+BackgroundNormal=16,21,26
+DecorationFocus=76,99,125
+DecorationHover=76,99,125
+ForegroundActive=61,174,233
+ForegroundInactive=102,106,115
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=211,218,227
+ForegroundPositive=39,174,96
+ForegroundVisited=82,148,226
+
+[Colors:Window]
+BackgroundAlternate=47,52,63
+BackgroundNormal=20,26,33
+DecorationFocus=76,99,125
+DecorationHover=76,99,125
+ForegroundActive=97,127,159
+ForegroundInactive=102,106,115
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=211,218,227
+ForegroundPositive=39,174,96
+ForegroundVisited=76,99,125
+
+[General]
+ColorScheme=AritimDark
+Name=Aritim-Dark
+XftAntialias=true
+XftHintStyle=hintslight
+XftSubPixel=rgb
+dbfile=/home/zmenciso/.mozilla/firefox/qtraca50.default/places.sqlite
+fixed=Hack,11,-1,5,50,0,0,0,0,0
+font=Noto Sans,11,-1,5,50,0,0,0,0,0
+menuFont=Noto Sans,11,-1,5,50,0,0,0,0,0
+shadeSortColumn=true
+smallestReadableFont=Noto Sans,10,-1,5,50,0,0,0,0,0
+toolBarFont=Noto Sans,11,-1,5,50,0,0,0,0,0
+widgetStyle=Breeze
+
+[Icons]
+Theme=breeze-dark
+
+[KDE]
+AnimationDurationFactor=0.250000
+ColorScheme=Breeze
+LookAndFeelPackage=Aritim-Dark
+ShowIconsInMenuItems=true
+ShowIconsOnPushButtons=true
+contrast=4
+widgetStyle=Breeze
+
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=true
+Breadcrumb Navigation=false
+Decoration position=2
+LocationCombo Completionmode=5
+PathCombo Completionmode=5
+Show Bookmarks=false
+Show Full Path=false
+Show Inline Previews=true
+Show Preview=false
+Show Speedbar=true
+Show hidden files=false
+Sort by=Name
+Sort directories first=true
+Sort reversed=false
+Speedbar Width=152
+View Style=DetailTree
+
+[KScreen]
+ScaleFactor=1
+ScreenScaleFactors=eDP1=1;DP1=1;DP2=1;HDMI1=1;HDMI2=1;VIRTUAL1=1;
+
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
+[Toolbar style]
+ToolButtonStyle=TextBesideIcon
+ToolButtonStyleOtherToolbars=TextBesideIcon
+
+[WM]
+activeBackground=47,52,63
+activeBlend=47,52,63
+activeFont=Noto Sans,11,-1,5,50,0,0,0,0,0
+activeForeground=211,218,227
+inactiveBackground=47,52,63
+inactiveBlend=47,52,63
+inactiveForeground=102,106,115

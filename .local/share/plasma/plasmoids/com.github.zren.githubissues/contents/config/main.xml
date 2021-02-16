@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+	<kcfgfile name=""/>
+
+	<group name="General">
+		<entry name="repoList" type="StringList">
+			<default></default>
+		</entry>
+		<entry name="updateIntervalInMinutes" type="int">
+			<default>60</default>
+		</entry>
+		<entry name="issueState" type="string">
+			<!-- enum: open, closed, all -->
+			<default>open</default>
+		</entry>
+		<entry name="issueSort" type="string">
+			<!-- enum: created, updated, comments -->
+			<default>created</default>
+		</entry>
+		<entry name="issueSortDirection" type="string">
+			<!-- enum: asc, desc -->
+			<default>desc</default>
+		</entry>
+		<entry name="showHeading" type="bool">
+			<default>true</default>
+		</entry>
+		<entry name="showBackground" type="bool">
+			<default>true</default>
+		</entry>
+		<entry name="headingText" type="string">
+			<default></default>
+		</entry>
+		<entry name="icon" type="string">
+			<default>octicon-mark-github</default>
+		</entry>
+
+		<!-- Deprecated in v3 -->
+		<!-- Only kept for migration -->
+		<entry name="user" type="string">
+			<default></default>
+		</entry>
+		<entry name="repo" type="string">
+			<default></default>
+		</entry>
+	</group>
+
+</kcfg>
+

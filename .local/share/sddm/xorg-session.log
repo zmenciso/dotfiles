@@ -1,0 +1,218 @@
+kdeinit5: preparing to launch '/usr/lib/kf5/klauncher'
+kdeinit5: Launched KLauncher, pid = 675, result = 0
+kdeinit5: opened connection to :0
+kdeinit5: Got SETENV 'XCURSOR_THEME=breeze_cursors' from launcher.
+kdeinit5: Got SETENV 'XCURSOR_SIZE=24' from launcher.
+kdeinit5: Got SETENV 'GTK_RC_FILES=/etc/gtk/gtkrc:/home/zmenciso/.gtkrc:/home/zmenciso/.config/gtkrc' from launcher.
+kdeinit5: Got SETENV 'GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/zmenciso/.gtkrc-2.0:/home/zmenciso/.config/gtkrc-2.0' from launcher.
+kdeinit5: Got SETENV 'SESSION_MANAGER=local/anilius:@/tmp/.ICE-unix/732,unix/anilius:/tmp/.ICE-unix/732' from launcher.
+kdeinit5: Got SETENV 'SESSION_MANAGER=local/anilius:@/tmp/.ICE-unix/732,unix/anilius:/tmp/.ICE-unix/732' from launcher.
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/desktop.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/desktop.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-xkbdbus.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-ipc.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-pinyin.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-freedesktop-notify.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-mozc.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-quickphrase.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-keyboard.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-autoeng.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-clipboard.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-unicode.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-xim.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-imselector.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-kimpanel-ui.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-notificationitem.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-vk.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-fullwidth-char.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-ipcportal.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-pinyin-enhance.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-spell.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-dbus.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-remote-module.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-x11.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-punc.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-classic-ui.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-table.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-chttrans.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-xkb.conf
+(INFO-873 addon.c:151) Load Addon Config File:fcitx-qw.conf
+
+** (process:873): WARNING **: 19:10:17.623: Error loading plugin: libnuspell.so.5: cannot open shared object file: No such file or directory
+
+
+** (process:873): WARNING **: 19:10:17.625: Error loading plugin: libhspell.so.0: cannot open shared object file: No such file or directory
+
+
+** (process:873): WARNING **: 19:10:17.626: Error loading plugin: libvoikko.so.1: cannot open shared object file: No such file or directory
+
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+(ERROR-873 ime.c:432) fcitx-keyboard-tr-otk already exists
+kdeinit5: Got EXEC_NEW 'konsole' from launcher.
+kdeinit5: preparing to launch 'libkdeinit5_konsole'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/tags.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/tags.so'
+Gtk-Message: 19:10:54.936: Failed to load module "appmenu-gtk-module"
+[1082:1082:0721/191055.429770:ERROR:CONSOLE(1)] "Active tab not found", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/191055.688050:ERROR:sharing_service.cc(218)] Device registration failed with fatal error
+[1082:1082:0721/191058.055658:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/191058.055976:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+[1082:1082:0721/191132.973072:ERROR:CONSOLE(0)] "Unchecked runtime.lastError: No tab with id: 36.", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/_generated_background_page.html (0)
+[1082:1082:0721/191132.973139:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/191132.973170:ERROR:CONSOLE(0)] "Unchecked runtime.lastError: No tab with id: 36.", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/_generated_background_page.html (0)
+[1082:1082:0721/191132.973185:ERROR:CONSOLE(0)] "Unchecked runtime.lastError: No tab with id: 36.", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/_generated_background_page.html (0)
+[1082:1082:0721/191132.973199:ERROR:CONSOLE(0)] "Unchecked runtime.lastError: No tab with id: 36.", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/_generated_background_page.html (0)
+[1082:1082:0721/191132.973842:ERROR:CONSOLE(0)] "Unchecked runtime.lastError: No tab with id: 36.", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/_generated_background_page.html (0)
+[1082:1082:0721/191132.980456:ERROR:CONSOLE(0)] "Unchecked runtime.lastError: No tab with id: 36.", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/_generated_background_page.html (0)
+[1082:1082:0721/191157.901975:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/191157.902508:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/191157.903099:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+kdeinit5: PID 883 terminated.
+kdeinit5: PID 869 terminated.
+[1082:1082:0721/191328.743401:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/191328.743540:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/191328.743765:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+kdeinit5: PID 842 terminated.
+kdeinit5: PID 861 terminated.
+(node:14015) DeprecationWarning: file property is deprecated and will be removed in v5.
+Gtk-Message: 19:17:22.140: Failed to load module "appmenu-gtk-module"
+(node:14015) electron: The default of contextIsolation is deprecated and will be changing from false to true in a future release of Electron.  See https://github.com/electron/electron/issues/23506 for more information
+(node:14015) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'setContextMenu' of undefined
+    at tray_main_TrayMain.updateContextMenu (/opt/Bitwarden/resources/app.asar/main.js:2060:23)
+    at messaging_main_MessagingMain.updateTrayMenu (/opt/Bitwarden/resources/app.asar/main.js:1509:28)
+    at messaging_main_MessagingMain.onMessage (/opt/Bitwarden/resources/app.asar/main.js:1450:22)
+    at messaging_main_MessagingMain.<anonymous> (/opt/Bitwarden/resources/app.asar/main.js:1441:154)
+    at Generator.next (<anonymous>)
+    at /opt/Bitwarden/resources/app.asar/main.js:1419:71
+    at new Promise (<anonymous>)
+    at messaging_main_awaiter (/opt/Bitwarden/resources/app.asar/main.js:1415:12)
+    at IpcMainImpl.<anonymous> (/opt/Bitwarden/resources/app.asar/main.js:1441:82)
+    at IpcMainImpl.emit (events.js:315:20)
+(node:14015) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:14015) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:14015) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'setContextMenu' of undefined
+    at tray_main_TrayMain.updateContextMenu (/opt/Bitwarden/resources/app.asar/main.js:2060:23)
+    at messaging_main_MessagingMain.updateTrayMenu (/opt/Bitwarden/resources/app.asar/main.js:1509:28)
+    at messaging_main_MessagingMain.onMessage (/opt/Bitwarden/resources/app.asar/main.js:1450:22)
+    at messaging_main_MessagingMain.<anonymous> (/opt/Bitwarden/resources/app.asar/main.js:1441:154)
+    at Generator.next (<anonymous>)
+    at /opt/Bitwarden/resources/app.asar/main.js:1419:71
+    at new Promise (<anonymous>)
+    at messaging_main_awaiter (/opt/Bitwarden/resources/app.asar/main.js:1415:12)
+    at IpcMainImpl.<anonymous> (/opt/Bitwarden/resources/app.asar/main.js:1441:82)
+    at IpcMainImpl.emit (events.js:315:20)
+(node:14015) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+kdeinit5: PID 1078 terminated.
+(WARN-873 x11selection.c:309) Selection is too long.
+[1082:1082:0721/192134.339307:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/192134.339412:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+[1082:1082:0721/192234.846640:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/192234.847045:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/192234.847432:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+(WARN-873 x11selection.c:309) Selection is too long.
+kdeinit5: PID 903 terminated.
+kdeinit5: Got EXEC_NEW 'konsole' from launcher.
+kdeinit5: preparing to launch 'libkdeinit5_konsole'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/http.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/http.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/http.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/http.so'
+kdeinit5: PID 15349 terminated.
+kdeinit5: PID 15351 terminated.
+[1082:1082:0721/223716.899051:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/223716.899444:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/223716.899788:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1108:1108:0721/223721.500026:ERROR:shared_image_manager.cc(214)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/tags.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/tags.so'
+[1082:1082:0721/223840.913143:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[1082:1082:0721/223840.913236:ERROR:CONSOLE(1)] "[Shields]: Can't request shields panel data. Error: No tab url specified", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+kdeinit5: PID 15812 terminated.
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: PID 16736 terminated.
+kdeinit5: PID 16737 terminated.
+kdeinit5: PID 16735 terminated.
+kdeinit5: PID 16738 terminated.
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/file.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/file.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/http.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/http.so'
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/http.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/http.so'
+kdeinit5: PID 16903 terminated.
+kdeinit5: PID 16894 terminated.
+kdeinit5: Got EXEC_NEW '/usr/lib/qt/plugins/kf5/kio/http.so' from launcher.
+kdeinit5: preparing to launch '/usr/lib/qt/plugins/kf5/kio/http.so'
+kdeinit5: PID 16926 terminated.
+kdeinit5: PID 16867 terminated.
+kdeinit5: PID 16734 terminated.
+kdeinit5: PID 16868 terminated.
+kdeinit5: PID 16866 terminated.
+kdeinit5: PID 16879 terminated.

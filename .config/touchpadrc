@@ -1,0 +1,16 @@
+[autodisable]
+KeyboardActivityTimeoutMs=800
+
+[parameters]
+CircScrollDelta=5.73
+HorizScrollDelta=2.5
+HorizTwoFingerScroll=true
+InvertHorizScroll=true
+InvertVertScroll=true
+LTCornerButton=RightButton
+MaxTapMove=4
+OneFingerTapButton=LeftButton
+Tapping=false
+ThreeFingerTapButton=MiddleButton
+TwoFingerTapButton=RightButton
+VertScrollDelta=2.5

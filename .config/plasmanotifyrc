@@ -1,0 +1,11 @@
+[Applications][brave-browser]
+Seen=true
+
+[Applications][chromium]
+Seen=true
+
+[Applications][discord]
+Seen=true
+
+[Notifications]
+PopupTimeout=4000

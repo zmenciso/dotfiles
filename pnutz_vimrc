@@ -1,0 +1,197 @@
+" General vim configuration
+set nocompatible
+set backspace=indent,eol,start
+set nobackup
+set autoindent
+set copyindent
+set history=100
+set ruler
+set showcmd
+set smarttab
+set tabstop=8
+set shiftwidth=4
+set softtabstop=4
+set shiftround
+set showmatch
+set hlsearch
+set ignorecase
+set smartcase
+set title
+set printoptions=paper:letter,header:0,left:0.95in,right:0.95in,top:1in,bottom:1in,syntax:off,duplex:long
+set wildmode=longest,list
+set wildmenu
+set ofu=syntaxcomplete#Complete
+"set foldmethod=syntax
+
+let mapleader = ","
+
+" Enable syntax highlighting
+syntax on
+
+" Toggle paste mode
+set pastetoggle=<F2>
+
+" Toggle spell check
+:map <F5> :setlocal spell! spelllang=en_us<cr>
+imap <F5> <C-o>:setlocal spell! spelllang=en_us<cr>
+
+" Buffers
+:map <leader>t :edit!<space>
+:map <leader>b :buffer!<space>
+:map <leader>B :buffers!<cr>
+:map <leader>n :bnext!<cr>
+:map <leader>p :bprev!<cr>
+:map <leader>h :wincmd h<cr>
+:map <leader>j :wincmd j<cr>
+:map <leader>k :wincmd k<cr>
+:map <leader>l :wincmd l<cr>
+:map <leader>d :close<cr>
+:map <leader>o <C-^><cr>
+:map gt :bnext<cr>
+:map gT :bprevious<cr>
+
+" Turn on identing
+filetype plugin indent on
+
+" Set text width
+augroup Text
+    autocmd!
+    autocmd FileType text setlocal textwidth=80
+augroup END
+
+highlight Pmenu    ctermbg=black ctermfg=white  cterm=NONE
+highlight PmenuSel ctermbg=blue  ctermfg=yellow
+
+" Skip loading plugins and certain settings when we are using vimpager
+if exists("vimpager")
+    finish
+endif
+
+" Custom commands
+augroup WhiteSpace
+    autocmd!
+    command! TrimTrailingWhitespace :%s/\s\+$//
+augroup END
+
+" Commenting blocks of code
+" http://stackoverflow.com/questions/1676632/whats-a-quick-way-to-comment-uncomment-lines-in-vim
+augroup Comment
+    autocmd!
+    autocmd FileType c,cpp,java,scala,go let b:comment_leader = '// '
+    autocmd FileType sh,ruby,python      let b:comment_leader = '# '
+    autocmd FileType conf,fstab,tmux     let b:comment_leader = '# '
+    autocmd FileType tex                 let b:comment_leader = '% '
+    autocmd FileType mail                let b:comment_leader = '> '
+    autocmd FileType vim                 let b:comment_leader = '" '
+    noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+    noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+augroup END
+
+" Pathogen
+call pathogen#infect()
+call pathogen#helptags()
+
+" Airline
+let g:airline_powerline_fonts = 1
+set laststatus=2
+set noshowmode
+set number
+
+" Nord Theme
+colorscheme nord
+
+" Highlight current line
+set cursorline
+highlight CursorLine cterm=bold
+
+" Syntastic
+let g:syntastic_auto_loc_list=0
+let g:syntastic_check_on_open=0
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_messages = { "type": "style" }
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
+let g:syntastic_python_checkers = ['python3']
+
+" Vimwiki
+let g:vimwiki_list = [{'path':'~/doc/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_ext2syntax = {'.md': 'markdown'}
+
+" TagBar
+nmap <F8> :TagbarToggle<CR>
+
+" Golang
+augroup Go
+    autocmd!
+    autocmd FileType go setlocal tabstop=8 shiftwidth=8 softtabstop=8
+    "autocmd FileType go autocmd BufWritePre <buffer> :keepjumps Fmt
+
+    let g:go_fmt_command = "goimports"
+augroup END
+
+" GLSL syntax highlighting
+augroup GLSL
+    autocmd!
+    autocmd BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setlocal filetype=glsl
+augroup END
+
+" Python code should always expand tab
+augroup Python
+    autocmd!
+    autocmd FileType python setlocal expandtab
+augroup END
+
+" Mail
+"augroup Mail
+"    autocmd!
+"    autocmd FileType mail setlocal formatoptions+=w list
+"augroup END
+
+" Markdown
+augroup Markdown
+    autocmd!
+    autocmd BufRead,BufNewFile *.md setlocal filetype=markdown
+    autocmd FileType markdown setlocal expandtab
+augroup END
+
+" Bash command-line syntax highlighting
+augroup Bash
+    autocmd!
+    autocmd BufRead,BufNewFile bash-fc-* setlocal filetype=sh
+augroup END
+
+" Jump to last read line
+augroup Vim
+    autocmd!
+    autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
+augroup END
+
+" Foldtext
+" http://dhruvasagar.com/2013/03/28/vim-better-foldtext
+function! NeatFoldText()
+  let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+  let lines_count = v:foldend - v:foldstart + 1
+  let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
+  let foldchar = matchstr(&fillchars, 'fold:\zs.')
+  let foldtextstart = strpart('+' . line, 0, (winwidth(0)*2)/3)
+  let foldtextend = lines_count_text . repeat(foldchar, 8)
+  let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+  return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
+endfunction
+set foldtext=NeatFoldText()
+
+" Save and restore views
+set viewoptions-=options
+augroup View
+    autocmd!
+    autocmd BufWinLeave ?* mkview
+    autocmd BufWinEnter ?* silent loadview
+augroup END
+
+" map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+" \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+" \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" vim: expandtab

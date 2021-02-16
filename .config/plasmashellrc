@@ -1,0 +1,84 @@
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/Pictures/Background/Phoenix-0170.jpg,file:///run/media/zmenciso/Storage/Pictures/DSLR-M_D610/Landscapes/DSC_1821.jpg,file:$HOME/Pictures/20200718_133204.jpg,file:$HOME/Pictures/Background/Phoenix-0129.jpg
+Recent URLs[$e]=file:///run/media/zmenciso/Storage/,baloosearch:/documents/
+detailViewIconSize=16
+
+[KPropertiesDialog]
+HDMI-0 Height 1920x1080=500
+HDMI-0 Width 1920x1080=1047
+
+[Notification Messages]
+klipperClearHistoryAskAgain=false
+
+[PlasmaRunnerManager]
+LaunchCounts=1 services_applications:vim.desktop,4 services_firefox.desktop,2 services_applications:arduino.desktop,41 services_applications:org.kde.konsole.desktop,1 services_mouse.desktop,1 services_applications:org.kde.spectacle.desktop,2 services_kcm_sddm.desktop,1 services_applications:systemsettings.desktop,1 shell_zoom,1 services_org.kde.dolphin.desktop,13 services_applications:spotify.desktop,1 services_org.kde.latte-dock.desktop,1 services_kwinadvanced.desktop,19 services_applications:kcm_kscreen.desktop,6 services_keys.desktop,2 services_applications:org.kde.kdenlive.desktop,11 services_applications:org.kde.kcalc.desktop,7 services_org.kde.spectacle.desktop,1 services_applications:org.kde.dolphin.desktop,9 services_applications:code-oss.desktop,10 services_applications:discord.desktop,1 services_screenlocker.desktop,1 services_applications:screenlocker.desktop,1 services_applications:kcm_kwin_virtualdesktops.desktop,1 services_applications:kcm_kwin_effects.desktop,2 desktopsessions_3,1 services_applications:nvidia-settings.desktop,1 services_applications:wayland.desktop,1 services_kcm_kscreen.desktop,8 services_applications:com.obsproject.Studio.desktop,2 services_applications:kwinoptions.desktop,1 services_kcm_lookandfeel.desktop,1 services_standard_actions.desktop,42 services_applications:steam-native.desktop,1 services_applications:mouse.desktop,2 services_NoMachine-player-base.desktop,1 baloosearch_/home/zmenciso/Documents/Microelectronics/Sedra and Smith.pdf,2 services_kwintouchscreen.desktop,22 services_applications:Zoom.desktop,6 services_applications:AfterShot3X64.desktop,1 services_applications:cisco-anyconnect.desktop,1 services_applications:kwincompositing.desktop,1 services_org.kde.ksysguard.desktop,1 services_org.kde.calligrawords.desktop,4 services_kcm_kwin_effects.desktop,1 services_kwinactions.desktop,2 services_kcm_kwin_virtualdesktops.desktop,10 services_applications:org.kde.calligrawords.desktop,5 PowerDevil_Sleep,2 recentdocuments_file:///run/media/zmenciso/Storage/Steam Games/steamapps,1 baloosearch_/home/zmenciso/Downloads/yay/src/gopath/pkg/mod/github.com/!morganamilo/go-srcinfo@v1.0.0/testdata/srcinfos/good/arc-kde-git,1 baloosearch_/home/zmenciso/Documents/Hu/Progress Reports/7-1-20.pptx,3 services_khotkeys.desktop,53 services_applications:chromium.desktop,1 services_applications:org.inkscape.Inkscape.desktop,3 services_autostart.desktop,3 services_applications:org.kde.discover.desktop,8 services_code-oss.desktop,2 services_applications:kcm_fonts.desktop,5 services_applications:org.kde.ksysguard.desktop,3 services_kcm_touchpad.desktop,1 services_applications:org.kde.calligrasheets.desktop,2 services_org.kde.konsole.desktop,1 services_kcm_colors.desktop,9 services_systemsettings.desktop,4 services_org.kde.kcalc.desktop,1 services_kcm_pulseaudio.desktop
+pluginWhiteList=desktopsessions,services,places,PowerDevil,calculator,unitconverter,shell,bookmarks,recentdocuments,locations,baloosearch
+
+[PlasmaViews][Panel 2]
+alignment=132
+panelVisibility=0
+
+[PlasmaViews][Panel 2][Defaults]
+thickness=32
+
+[PlasmaViews][Panel 2][Horizontal1920]
+thickness=32
+
+[PlasmaViews][Panel 2][Horizontal2560]
+thickness=30
+
+[PlasmaViews][Panel 2][Horizontal3840]
+thickness=32
+
+[PlasmaViews][Panel 20]
+alignment=2
+panelVisibility=2
+
+[PlasmaViews][Panel 20][Defaults]
+maxLength=2538
+minLength=56
+offset=0
+thickness=32
+
+[PlasmaViews][Panel 20][Horizontal1920]
+minLength=56
+thickness=32
+
+[PlasmaViews][Panel 20][Horizontal2560]
+maxLength=2538
+minLength=52
+offset=0
+thickness=32
+
+[PlasmaViews][Panel 24]
+alignment=132
+
+[PlasmaViews][Panel 24][Defaults]
+maxLength=116
+minLength=116
+thickness=27
+
+[PlasmaViews][Panel 24][Horizontal1920]
+maxLength=116
+minLength=116
+thickness=27
+
+[PlasmaViews][Panel 27][Defaults]
+maxLength=92
+minLength=92
+thickness=36
+
+[PlasmaViews][Panel 27][Horizontal1920]
+maxLength=92
+minLength=92
+thickness=36
+
+[ScreenConnectors]
+0=eDP-1
+1=DP1
+2=DP2
+3=:0.0
+4=DP-1
+
+[Updates]
+performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/maintain_existing_desktop_icon_sizes.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/containmentactions_middlebutton.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/systemloadviewer_systemmonitor.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_rename_timezonedisplay_key.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/klipper_clear_config.js

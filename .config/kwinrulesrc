@@ -1,0 +1,5 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum
+
+[General]
+count=0
