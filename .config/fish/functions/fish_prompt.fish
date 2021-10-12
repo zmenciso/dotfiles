@@ -18,14 +18,14 @@ function fish_prompt --description 'Write out the prompt'
 
     # Host
     set_color --bold $fish_host_color
-    echo -n (prompt_hostname)
+    echo -n $HOSTNAME
     set_color normal
 
     echo -n ':'
 
     # PWD
     set_color --dim $fish_color_cwd
-    echo -n (prompt_pwd)
+    echo -n $PWD
 
     # Git
     set_color $fish_color_comment
