@@ -44,17 +44,11 @@ Below you'll find infos on how you can do it:
 
 2. Donate via LiberaPay [![alt text](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/Mrcuve0/donate)
 
-3. Here's my **bitcoin address**:
+3. I also accept feeless and miner-free cryptocurrencies, here's my **IOTA address**:
 ```
-bc1qfr86cgxt74qv0pzeayezx0j03myn69grqw5upg
+OSYUR9NE9SV9LYGFWOAWAPXSQCXEITZXRKHSVSXIKYXUUSGIMIJZMSKCXZBVZRYUVMVS9KYNENVZVVULADJWOUUYBX
 ```
-![BTC Wallet](https://raw.githubusercontent.com/Mrcuve0/donations/master/BTCwallet.png)
-
-4. I also accept feeless and miner-free cryptocurrencies, here's my **IOTA address**:
-```
-RAUPWGBKLUJLBLSTAFBLGABDQX9HDZOZRTEODEASFKRPNLNJTYRZLOLAEPENWIYINTLNQHULSBOIWAQZZROWQEERYD
-```
-![IOTA Wallet](https://raw.githubusercontent.com/Mrcuve0/donations/master/IOTAwallet.jpg)
+![alt text](https://raw.githubusercontent.com/Mrcuve0/Aritim-Light/master/QRCode.jpg)
 
 
 ### **FIREFOX THEME**

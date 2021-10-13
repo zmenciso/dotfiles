@@ -47,7 +47,7 @@ This script only works when placed in the `scripts` directory in the dotfiles re
 ```
 ### Appearance
   - Plasma colors and themes are [Aritim Dark](https://github.com/Mrcuve0/Aritim-Dark)
-  - Window decorations are [Sierra Breeze](https://github.com/ishovkun/SierraBreeze)
+  - Window decorations are [Lightly](https://github.com/Luwx/Lightly)
 
 ### Layout, Widgets, etc.
 ... should all be imported from the relevant dotfiles

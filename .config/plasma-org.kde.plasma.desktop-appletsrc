@@ -98,7 +98,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][8][Configuration]
-PreloadWeight=81
+PreloadWeight=100
 
 [Containments][2][Applets][8][Configuration][Appearance]
 use24hFormat=2
@@ -155,7 +155,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][7][Applets][10][Configuration]
-PreloadWeight=27
+PreloadWeight=37
 
 [Containments][7][Applets][10][Configuration][General]
 raiseMaximumVolume=true
@@ -165,14 +165,14 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][7][Applets][11][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][7][Applets][12]
 immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][7][Applets][12][Configuration]
-PreloadWeight=0
+PreloadWeight=10
 
 [Containments][7][Applets][13]
 immutability=1
@@ -189,7 +189,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][7][Applets][15][Configuration]
-PreloadWeight=62
+PreloadWeight=67
 
 [Containments][7][Applets][15][Configuration][ConfigDialog]
 DialogHeight=540

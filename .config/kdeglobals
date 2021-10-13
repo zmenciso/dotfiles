@@ -98,7 +98,6 @@ ForegroundPositive=39,174,96
 ForegroundVisited=76,99,125
 
 [General]
-ColorScheme=AritimDark
 Name=Aritim-Dark
 XftAntialias=true
 XftHintStyle=hintslight
@@ -122,7 +121,6 @@ LookAndFeelPackage=Aritim-Dark
 ShowIconsInMenuItems=true
 ShowIconsOnPushButtons=true
 contrast=4
-widgetStyle=Breeze
 
 [KFileDialog Settings]
 Allow Expansion=false
