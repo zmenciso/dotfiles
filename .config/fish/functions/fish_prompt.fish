@@ -25,7 +25,7 @@ function fish_prompt --description 'Write out the prompt'
 
     # PWD
     set_color --dim $fish_color_cwd
-    echo -n $PWD
+    echo -n (prompt_pwd)
 
     # Git
     set_color $fish_color_comment
