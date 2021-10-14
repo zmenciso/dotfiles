@@ -18,7 +18,7 @@ function fish_prompt --description 'Write out the prompt'
 
     # Host
     set_color --bold $fish_host_color
-    echo -n $HOSTNAME
+    echo -n $hostname
     set_color normal
 
     echo -n ':'
