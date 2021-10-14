@@ -23,13 +23,13 @@ plugin=org.communia.apptitle
 PreloadWeight=0
 
 [Containments][2][Applets][15][Configuration][ConfigDialog]
-DialogHeight=480
-DialogWidth=640
+DialogHeight=682
+DialogWidth=880
 
 [Containments][2][Applets][15][Configuration][General]
 bold=true
 noWindowText=Anilius
-noWindowType=text
+noWindowType=desktopName
 textType=1
 
 [Containments][2][Applets][3][Configuration]
@@ -104,8 +104,8 @@ PreloadWeight=100
 use24hFormat=2
 
 [Containments][2][Applets][8][Configuration][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
+DialogHeight=682
+DialogWidth=880
 
 [Containments][2][ConfigDialog]
 DialogHeight=90
@@ -138,7 +138,7 @@ ToolBoxButtonX=528
 ToolBoxButtonY=32
 
 [Containments][53][Wallpaper][org.kde.image][General]
-Image=file:///home/zmenciso/.local/share/wallpapers/Starry Nebula 219.png
+Image=/home/zmenciso/dotfiles/bg.png
 SlidePaths=/home/zmenciso/.local/share/wallpapers,/usr/share/wallpapers
 
 [Containments][7]
@@ -172,7 +172,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][7][Applets][12][Configuration]
-PreloadWeight=10
+PreloadWeight=15
 
 [Containments][7][Applets][13]
 immutability=1

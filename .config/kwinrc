@@ -139,7 +139,7 @@ TitlebarDoubleClickCommand=Maximize
 WindowSnapZone=10
 
 [org.kde.kdecoration2]
-BorderSize=Tiny
+BorderSize=None
 BorderSizeAuto=false
 ButtonsOnRight=FIAX
 CloseOnDoubleClickOnMenu=false
