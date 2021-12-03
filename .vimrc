@@ -122,6 +122,9 @@ lua << EOF
     capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
     local lspconfig = require('lspconfig')
 
+    -- Enable some language servers with the additional completion capabiltiies
+    -- [MISSING]
+
     -- Set completeopt to have a better completion experience
     vim.o.completeopt = 'menuone,noselect'
 
