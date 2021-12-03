@@ -120,17 +120,7 @@ lua << EOF
     -- Add additional capabilities supported by nvim-cmp
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
     local lspconfig = require('lspconfig')
-
-    -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-    local servers = { 'clangd', 'pyright' }
-    for _, lsp in ipairs(servers) do
-      lspconfig[lsp].setup {
-	-- on_attach = my_custom_on_attach,
-	capabilities = capabilities,
-      }
-    end
 
     -- Set completeopt to have a better completion experience
     vim.o.completeopt = 'menuone,noselect'
@@ -182,48 +172,6 @@ lua << EOF
       },
     }
 
-    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-      opts = opts or {}
-      opts.border = opts.border or border
-      return orig_util_open_floating_preview(contents, syntax, opts, ...)
-    end
-
-    local M = {}
-
-    M.icons = {
-      Class = " ",
-      Color = " ",
-      Constant = " ",
-      Constructor = " ",
-      Enum = "了 ",
-      EnumMember = " ",
-      Field = " ",
-      File = " ",
-      Folder = " ",
-      Function = " ",
-      Interface = "ﰮ ",
-      Keyword = " ",
-      Method = "ƒ ",
-      Module = " ",
-      Property = " ",
-      Snippet = "﬌ ",
-      Struct = " ",
-      Text = " ",
-      Unit = " ",
-      Value = " ",
-      Variable = " ",
-    }
-
-    function M.setup()
-      local kinds = vim.lsp.protocol.CompletionItemKind
-      for i, kind in ipairs(kinds) do
-	kinds[i] = M.icons[kind] or kind
-      end
-
-      return M
-    end
-
     vim.diagnostic.config({
       virtual_text = true,
       signs = true,
@@ -271,4 +219,9 @@ lua << EOF
     end
 
     vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+      virtual_text = {
+	prefix = '●'
+      }
+    })
 EOF
