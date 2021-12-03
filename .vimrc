@@ -37,7 +37,7 @@ augroup Text
     autocmd FileType text setlocal textwidth=80
 augroup END
 
-" Toggle spell check
+" Toggle pell check
 :map <F5> :setlocal spell! spelllang=en_us<cr>
 imap <F5> <C-o>:setlocal spell! spelllang=en_us<cr>
 
@@ -82,7 +82,6 @@ set noshowmode
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.config/nvim/plugged')
 
-
 Plug 'neovim/nvim-lspconfig'
 
 Plug 'vim-airline/vim-airline'
@@ -92,9 +91,17 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-commentary'
 
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'folke/trouble.nvim'
+Plug 'folke/lsp-colors.nvim'
+" Plug 'folke/trouble.nvim'
 
-Plug 'https://github.com/ervandew/supertab.git'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'L3MON4D3/LuaSnip'
 
 call plug#end()
 
@@ -102,6 +109,192 @@ call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='onehalfdark'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-
-" Powerline fonts
 let g:airline_powerline_fonts = 1
+
+lua << EOF
+    require('lspconfig').pyright.setup{}
+    require('lspconfig').clangd.setup{}
+    require('lspconfig').cmake.setup{}
+
+    -- Don't forget to add language servers to the autocompletion config!
+
+    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+      opts = opts or {}
+      opts.border = opts.border or border
+      return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    end
+
+    local M = {}
+
+    M.icons = {
+      Class = " ",
+      Color = " ",
+      Constant = " ",
+      Constructor = " ",
+      Enum = "了 ",
+      EnumMember = " ",
+      Field = " ",
+      File = " ",
+      Folder = " ",
+      Function = " ",
+      Interface = "ﰮ ",
+      Keyword = " ",
+      Method = "ƒ ",
+      Module = " ",
+      Property = " ",
+      Snippet = "﬌ ",
+      Struct = " ",
+      Text = " ",
+      Unit = " ",
+      Value = " ",
+      Variable = " ",
+    }
+
+    function M.setup()
+      local kinds = vim.lsp.protocol.CompletionItemKind
+      for i, kind in ipairs(kinds) do
+	kinds[i] = M.icons[kind] or kind
+      end
+    end
+
+    vim.diagnostic.config({
+      virtual_text = true,
+      signs = true,
+      underline = true,
+      update_in_insert = false,
+      severity_sort = false,
+    })
+
+    local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    end
+
+    function PrintDiagnostics(opts, bufnr, line_nr, client_id)
+      opts = opts or {}
+
+      bufnr = bufnr or 0
+      line_nr = line_nr or (vim.api.nvim_win_get_cursor(0)[1] - 1)
+
+      local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics(bufnr, line_nr, opts, client_id)
+      if vim.tbl_isempty(line_diagnostics) then return end
+
+      local diagnostic_message = ""
+      for i, diagnostic in ipairs(line_diagnostics) do
+	diagnostic_message = diagnostic_message .. string.format("%d: %s", i, diagnostic.message or "")
+	print(diagnostic_message)
+	if i ~= #line_diagnostics then
+	  diagnostic_message = diagnostic_message .. "\n"
+	end
+      end
+      vim.api.nvim_echo({{diagnostic_message, "Normal"}}, false, {})
+    end
+
+    local function goto_definition(split_cmd)
+      local util = vim.lsp.util
+      local log = require("vim.lsp.log")
+      local api = vim.api
+
+      -- note, this handler style is for neovim 0.5.1/0.6, if on 0.5, call with function(_, method, result)
+      local handler = function(_, result, ctx)
+	if result == nil or vim.tbl_isempty(result) then
+	  local _ = log.info() and log.info(ctx.method, "No location found")
+	  return nil
+	end
+
+	if split_cmd then
+	  vim.cmd(split_cmd)
+	end
+
+	if vim.tbl_islist(result) then
+	  util.jump_to_location(result[1])
+
+	  if #result > 1 then
+	    util.set_qflist(util.locations_to_items(result))
+	    api.nvim_command("copen")
+	    api.nvim_command("wincmd p")
+	  end
+	else
+	  util.jump_to_location(result)
+	end
+      end
+
+      return handler
+    end
+
+    vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+      virtual_text = {
+	source = "always",  -- Or "if_many"
+      }
+    })
+
+    vim.cmd [[ autocmd CursorHold * lua PrintDiagnostics() ]]
+
+    -- Add additional capabilities supported by nvim-cmp
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+    local lspconfig = require('lspconfig')
+
+    -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
+    local servers = { 'clangd', 'pyright', 'cmake'}
+    for _, lsp in ipairs(servers) do
+      lspconfig[lsp].setup {
+	-- on_attach = my_custom_on_attach,
+	capabilities = capabilities,
+      }
+    end
+
+    -- Set completeopt to have a better completion experience
+    vim.o.completeopt = 'menuone,noselect'
+
+    -- luasnip setup
+    local luasnip = require 'luasnip'
+
+    -- nvim-cmp setup
+    local cmp = require 'cmp'
+    cmp.setup {
+      snippet = {
+	expand = function(args)
+	  require('luasnip').lsp_expand(args.body)
+	end,
+      },
+      mapping = {
+	['<C-p>'] = cmp.mapping.select_prev_item(),
+	['<C-n>'] = cmp.mapping.select_next_item(),
+	['<C-d>'] = cmp.mapping.scroll_docs(-4),
+	['<C-f>'] = cmp.mapping.scroll_docs(4),
+	['<C-Space>'] = cmp.mapping.complete(),
+	['<C-e>'] = cmp.mapping.close(),
+	['<CR>'] = cmp.mapping.confirm {
+	  behavior = cmp.ConfirmBehavior.Replace,
+	  select = true,
+	},
+	['<Tab>'] = function(fallback)
+	  if cmp.visible() then
+	    cmp.select_next_item()
+	  elseif luasnip.expand_or_jumpable() then
+	    luasnip.expand_or_jump()
+	  else
+	    fallback()
+	  end
+	end,
+	['<S-Tab>'] = function(fallback)
+	  if cmp.visible() then
+	    cmp.select_prev_item()
+	  elseif luasnip.jumpable(-1) then
+	    luasnip.jump(-1)
+	  else
+	    fallback()
+	  end
+	end,
+      },
+      sources = {
+	{ name = 'nvim_lsp' },
+	{ name = 'luasnip' },
+      },
+    }
+EOF
