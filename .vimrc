@@ -71,10 +71,6 @@ augroup Markdown
     autocmd FileType markdown setlocal expandtab
 augroup END
 
-" Colorscheme
-colorscheme onehalfdark
-hi Normal guibg=NONE ctermbg=NONE
-
 set noshowmode
 
 " Specify a directory for plugins
@@ -111,127 +107,15 @@ let g:airline_theme='onehalfdark'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_powerline_fonts = 1
 
+" Colorscheme
+colorscheme onehalfdark
+hi Normal guibg=NONE ctermbg=NONE
+
 lua << EOF
+    -- Don't forget to add language servers to the autocompletion config!
     require('lspconfig').pyright.setup{}
     require('lspconfig').clangd.setup{}
     require('lspconfig').cmake.setup{}
-
-    -- Don't forget to add language servers to the autocompletion config!
-
-    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-      opts = opts or {}
-      opts.border = opts.border or border
-      return orig_util_open_floating_preview(contents, syntax, opts, ...)
-    end
-
-    local M = {}
-
-    M.icons = {
-      Class = " ",
-      Color = " ",
-      Constant = " ",
-      Constructor = " ",
-      Enum = "了 ",
-      EnumMember = " ",
-      Field = " ",
-      File = " ",
-      Folder = " ",
-      Function = " ",
-      Interface = "ﰮ ",
-      Keyword = " ",
-      Method = "ƒ ",
-      Module = " ",
-      Property = " ",
-      Snippet = "﬌ ",
-      Struct = " ",
-      Text = " ",
-      Unit = " ",
-      Value = " ",
-      Variable = " ",
-    }
-
-    function M.setup()
-      local kinds = vim.lsp.protocol.CompletionItemKind
-      for i, kind in ipairs(kinds) do
-	kinds[i] = M.icons[kind] or kind
-      end
-    end
-
-    vim.diagnostic.config({
-      virtual_text = true,
-      signs = true,
-      underline = true,
-      update_in_insert = false,
-      severity_sort = false,
-    })
-
-    local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    end
-
-    function PrintDiagnostics(opts, bufnr, line_nr, client_id)
-      opts = opts or {}
-
-      bufnr = bufnr or 0
-      line_nr = line_nr or (vim.api.nvim_win_get_cursor(0)[1] - 1)
-
-      local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics(bufnr, line_nr, opts, client_id)
-      if vim.tbl_isempty(line_diagnostics) then return end
-
-      local diagnostic_message = ""
-      for i, diagnostic in ipairs(line_diagnostics) do
-	diagnostic_message = diagnostic_message .. string.format("%d: %s", i, diagnostic.message or "")
-	print(diagnostic_message)
-	if i ~= #line_diagnostics then
-	  diagnostic_message = diagnostic_message .. "\n"
-	end
-      end
-      vim.api.nvim_echo({{diagnostic_message, "Normal"}}, false, {})
-    end
-
-    local function goto_definition(split_cmd)
-      local util = vim.lsp.util
-      local log = require("vim.lsp.log")
-      local api = vim.api
-
-      -- note, this handler style is for neovim 0.5.1/0.6, if on 0.5, call with function(_, method, result)
-      local handler = function(_, result, ctx)
-	if result == nil or vim.tbl_isempty(result) then
-	  local _ = log.info() and log.info(ctx.method, "No location found")
-	  return nil
-	end
-
-	if split_cmd then
-	  vim.cmd(split_cmd)
-	end
-
-	if vim.tbl_islist(result) then
-	  util.jump_to_location(result[1])
-
-	  if #result > 1 then
-	    util.set_qflist(util.locations_to_items(result))
-	    api.nvim_command("copen")
-	    api.nvim_command("wincmd p")
-	  end
-	else
-	  util.jump_to_location(result)
-	end
-      end
-
-      return handler
-    end
-
-    vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-      virtual_text = {
-	source = "always",  -- Or "if_many"
-      }
-    })
-
-    vim.cmd [[ autocmd CursorHold * lua PrintDiagnostics() ]]
 
     -- Add additional capabilities supported by nvim-cmp
     local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -240,7 +124,7 @@ lua << EOF
     local lspconfig = require('lspconfig')
 
     -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-    local servers = { 'clangd', 'pyright', 'cmake'}
+    local servers = { 'clangd', 'pyright' }
     for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup {
 	-- on_attach = my_custom_on_attach,
@@ -297,4 +181,94 @@ lua << EOF
 	{ name = 'luasnip' },
       },
     }
+
+    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+      opts = opts or {}
+      opts.border = opts.border or border
+      return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    end
+
+    local M = {}
+
+    M.icons = {
+      Class = " ",
+      Color = " ",
+      Constant = " ",
+      Constructor = " ",
+      Enum = "了 ",
+      EnumMember = " ",
+      Field = " ",
+      File = " ",
+      Folder = " ",
+      Function = " ",
+      Interface = "ﰮ ",
+      Keyword = " ",
+      Method = "ƒ ",
+      Module = " ",
+      Property = " ",
+      Snippet = "﬌ ",
+      Struct = " ",
+      Text = " ",
+      Unit = " ",
+      Value = " ",
+      Variable = " ",
+    }
+
+    function M.setup()
+      local kinds = vim.lsp.protocol.CompletionItemKind
+      for i, kind in ipairs(kinds) do
+	kinds[i] = M.icons[kind] or kind
+      end
+
+      return M
+    end
+
+    vim.diagnostic.config({
+      virtual_text = true,
+      signs = true,
+      underline = true,
+      update_in_insert = false,
+      severity_sort = true,
+    })
+
+    local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    end
+
+    local function goto_definition(split_cmd)
+      local util = vim.lsp.util
+      local log = require("vim.lsp.log")
+      local api = vim.api
+
+      -- note, this handler style is for neovim 0.5.1/0.6, if on 0.5, call with function(_, method, result)
+      local handler = function(_, result, ctx)
+	if result == nil or vim.tbl_isempty(result) then
+	  local _ = log.info() and log.info(ctx.method, "No location found")
+	  return nil
+	end
+
+	if split_cmd then
+	  vim.cmd(split_cmd)
+	end
+
+	if vim.tbl_islist(result) then
+	  util.jump_to_location(result[1])
+
+	  if #result > 1 then
+	    util.set_qflist(util.locations_to_items(result))
+	    api.nvim_command("copen")
+	    api.nvim_command("wincmd p")
+	  end
+	else
+	  util.jump_to_location(result)
+	end
+      end
+
+      return handler
+    end
+
+    vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
 EOF
