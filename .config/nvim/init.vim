@@ -435,3 +435,6 @@ lua << EOF
     command! -nargs=0 LspDebug  :tab drop $HOME/.cache/nvim/lsp.log
     ]]
 EOF
+
+" Additional color customization
+

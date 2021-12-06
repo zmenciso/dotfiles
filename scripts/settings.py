@@ -1,10 +1,15 @@
 #!/usr/bin/env python
 
+# Zephan M. Enciso
+# Yes, this is a super dumb script with terrible coding practices.  It works,
+# and time isn't really a factor here
+
 import os
 import shutil
 import sys
 
 from query import query
+import target_list as tl
 
 # Globals
 VERBOSE = True
@@ -15,62 +20,7 @@ HOME = None
 SCRIPTS = None
 
 DIRECTIONS = {'import', 'export'}
-CATEGORIES = {'panel', 'appearance', 'workspace', 'personalization', 'hardware'}
-
-PANEL = {
-    '.config/plasma-org.kde.plasma.desktop-appletsrc'
-}
-APPEARANCE = {
-    '.config/kdeglobals',
-    '.config/kscreenlockerrc',
-    '.config/kwinrc',
-    '.config/gtkrc',
-    '.config/gtkrc-2.0',
-
-    '.config/gtk-4.0/settings.ini',
-    '.config/gtk-3.0/settings.ini',
-    '.config/gtk-3.0/gtk.css',
-    '.config/gtk-3.0/window_decorations.css',
-    '.config/gtk-3.0/colors.css',
-    '.config/ksplashrc',
-    '.config/plasmarc',
-    '.config/Trolltech.conf',
-    '.config/breezerc',
-    '.config/kcmfonts',
-    '.config/kcminputrc',
-    '.config/kfontinstuirc',
-    '.config/ksplashrc'
-}
-WORKSPACE = {
-    '.config/plasmarc',
-    '.config/kwinrc',
-    '.config/kglobalshortcutsrc',
-    '.config/kwinrulesrc',
-    '.config/khotkeys',
-    '.config/kded5rc',
-    '.config/ksmserverrc',
-    '.config/krunnerrc',
-    '.config/baloofilerc'
-}
-PERSONALIZATION = {
-    '.config/plasmanotifyrc',
-    '.config/plasma-localerc',
-    '.config/ktimeonedrc',
-    '.config/kaccessrc',
-    '.config/kdeglobals'
-    '.config/PlasmaUserFeedback'
-}
-HARDWARE = {
-    '.config/kcminputrc',
-    '.config/kxkbrc',
-    '.config/kgammarc',
-    '.config/powermanagementprofilesrc',
-    '.config/bluedevilglobalrc',
-    '.config/kdeconnect',
-    '.config/device_automounter_kcmrc',
-    '.config/kded5rc',
-    '.config/kded_device_automounterrc'
-}
+CATEGORIES = {'panel', 'appearance', 'workspace', 'personalization', 'hardware', 'nvim', 'vim', 'bash', 'fish', 'ssh', 'fcitx', 'misc'}
 
 # Functions
 def usage(exitcode):
@@ -80,13 +30,19 @@ def usage(exitcode):
     -i --interact   Interactive (Manually approve each copy)
     -h --help       Print this message
 
-    Categories:
-        all
+    Categories (or 'all'):
         panel
         appearance
         workspace
         personalization
         hardware
+        nvim
+        vim
+        bash
+        fish
+        ssh
+        fcitx
+        misc
 
     Import: Copy files from the system to the dotfiles repo
     Export: Copy files from the dotfiles repo to the system
@@ -95,24 +51,11 @@ def usage(exitcode):
 
     sys.exit(exitcode)
 
-def decode_category(text):
-    if text == 'panel':
-        return PANEL
-    elif text == 'appearance':
-        return APPEARANCE
-    elif text == 'workspace':
-        return WORKSPACE
-    elif text == 'personalization':
-        return PERSONALIZATION
-    elif text == 'hardware':
-        return HARDWARE
-    else:
-        print(f'ERROR: Category "{text}" not found.', file=sys.stderr)
-        sys.exit(5)
-
 def copy_settings(category, homedir, scriptdir, direction):
+    source = None
+    destination = None
     count = 0
-    for file in decode_category(category):
+    for file in tl.decode_category(category):
         allow = True
         if direction == 'import':
             source = os.path.realpath(homedir + '/' + file)
@@ -188,6 +131,6 @@ if __name__ == '__main__':
         print(f'ERROR: Could not {DIRECTION} from {CATEGORY}', file=sys.stderr)
         sys.exit(6)
 
-    print(f'Successfully {DIRECTION}ed {count} files.')
+    print(f'Successfully {DIRECTION}ed {count} file(s).')
 
     sys.exit(0)
