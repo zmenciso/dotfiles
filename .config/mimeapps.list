@@ -1,54 +1,14 @@
-[Added Associations]
-application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop;org.kde.okular.desktop;
-text/x-log=org.kde.kate.desktop;
-text/x-readme=org.kde.kate.desktop;nvim.desktop;
-application/pdf=libreoffice-writer.desktop;gimp.desktop;evince.desktop;org.pwmt.zathura.desktop;
-application/rdf+xml=brave-browser.desktop;
-application/rss+xml=brave-browser.desktop;
-application/xhtml+xml=brave-browser.desktop;
-application/xhtml_xml=brave-browser.desktop;
-application/xml=brave-browser.desktop;
-image/gif=brave-browser.desktop;
-image/jpeg=gimp.desktop;brave-browser.desktop;eog.desktop;
-image/png=gimp.desktop;eog.desktop;brave-browser.desktop;
-image/webp=brave-browser.desktop;
-text/xml=brave-browser.desktop;
-x-scheme-handler/https=brave-browser.desktop;
-x-scheme-handler/ipfs=brave-browser.desktop;
-x-scheme-handler/ipns=brave-browser.desktop;
-text/plain=libreoffice-calc.desktop;nvim.desktop;
-application/octet-stream=org.gnome.gedit.desktop;nvim.desktop;
-application/x-executable=nvim.desktop;
-text/x-csrc=org.gnome.gedit.desktop;
-application/json=org.gnome.gedit.desktop;
-video/mp4=org.gnome.Totem.desktop;
-text/markdown=okularApplication_md.desktop;evince.desktop;
-image/svg+xml=org.gnome.gedit.desktop;brave-browser.desktop;gimp.desktop;
-application/vnd.oasis.opendocument.graphics=libreoffice-writer.desktop;
-
 [Default Applications]
-application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop;
-text/html=brave-browser.desktop
-text/x-log=org.kde.kate.desktop;
-text/x-readme=org.kde.kate.desktop;
-x-scheme-handler/mailto=brave-browser.desktop
-x-scheme-handler/webcal=brave-browser.desktop
-x-scheme-handler/bitwarden=bitwarden.desktop
-x-scheme-handler/http=brave-browser.desktop
-application/pdf=org.pwmt.zathura.desktop
-application/rdf+xml=brave-browser.desktop
-application/rss+xml=brave-browser.desktop
-application/xhtml+xml=brave-browser.desktop
-application/xhtml_xml=brave-browser.desktop
-application/xml=brave-browser.desktop
-image/gif=brave-browser.desktop
-image/jpeg=eog.desktop
-image/png=eog.desktop
-image/webp=brave-browser.desktop
-text/xml=brave-browser.desktop
-x-scheme-handler/https=brave-browser.desktop
-x-scheme-handler/ipfs=brave-browser.desktop
-x-scheme-handler/ipns=brave-browser.desktop
+image/jpeg=org.gnome.eog.desktop
+application/pdf=org.gnome.Evince.desktop
+video/mp4=vlc.desktop
+image/png=org.gnome.eog.desktop
+image/svg+xml=org.gnome.eog.desktop
 
-[Removed Associations]
-application/pdf=brave-browser.desktop;
+[Added Associations]
+image/jpeg=gimp.desktop;org.gnome.eog.desktop;
+application/pdf=org.gnome.Evince.desktop;
+video/mp4=vlc.desktop;
+image/png=gimp.desktop;org.gnome.eog.desktop;
+image/svg+xml=org.gnome.eog.desktop;
+image/x-adobe-dng=org.gnome.eog.desktop;
