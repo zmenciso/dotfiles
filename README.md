@@ -47,6 +47,9 @@ Theme: [**Orchis Dark Compact (Black
 Tweak)**](https://github.com/cyko-themes/gtk-orchis) (contained in dotfiles
 repo)
 
+`lxappearance` is an amazingly convenient tool for setting GTK themes and
+cursors without too much hassle.
+
 ##  i3-gaps
 
 It is recommended to install i3-gaps after installing another DE like GNOME,
