@@ -28,12 +28,11 @@
 
 window {
   transparency: "real";
-  fullscreen: true;
   background-color: #080808dd;
 }
 
 mainbox {
-  padding: 25% 25%;
+  padding: 15px 15px;
 }
 
 inputbar {
