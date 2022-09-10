@@ -18,7 +18,7 @@ Gtk/KeynavUseCaret 0
 Gtk/ShellShowsAppMenu 0
 Gtk/CanChangeAccels 0
 Gtk/FontName "Cantarell 10"
-Net/ThemeName "Orchis-Dark-Compact"
+Net/ThemeName "Orchis-Compact"
 Net/DoubleClickTime 400
 Gtk/DialogsUseHeader 1
 Gdk/WindowScalingFactor 1
@@ -26,22 +26,23 @@ Gtk/ToolbarStyle "both-horiz"
 Gtk/KeyThemeName "Default"
 Net/CursorBlink 1
 Gtk/IMPreeditStyle "callback"
+Gtk/EnableAnimations 1
 Xft/DPI 98304
 Gtk/CursorThemeName "Breeze"
 Gtk/ToolbarIconSize "large"
 Gtk/IMStatusStyle "callback"
 Gtk/RecentFilesMaxAge -1
 Gtk/Modules "canberra-gtk-module"
-Gtk/ColorScheme ""
 Gtk/AutoMnemonics 1
+Gtk/ColorScheme ""
 Gtk/MenuBarAccel "F10"
 Net/FallbackIconTheme "gnome"
 Gtk/ColorPalette "black:white:gray50:red:purple:blue:light blue:green:yellow:orange:lavender:brown:goldenrod4:dodger blue:pink:light green:gray10:gray30:gray75:gray90"
 Gtk/OverlayScrolling 1
 Net/EnableEventSounds 1
 Net/IconThemeName "Papirus"
+Gtk/SessionBusId "bdc4d16bd86a8183a70eed34631cd0cb"
 Gtk/ShowUnicodeMenu 0
-Gtk/SessionBusId "26768af9e728121b52ad39156254e550"
 Gtk/CursorBlinkTimeout 10
 Gtk/ButtonImages 0
 Gtk/TitlebarRightClick "menu"
