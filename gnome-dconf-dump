@@ -3,6 +3,11 @@ first-run=false
 view='list-view'
 window-maximized=true
 
+[calendar]
+active-view='month'
+window-maximized=true
+window-size=(768, 600)
+
 [cheese]
 burst-delay=1000
 camera='HP TrueVision FHD RGB-IR  HP Tr'
@@ -20,7 +25,7 @@ size=(742, 513)
 state=87168
 
 [control-center]
-last-panel='power'
+last-panel='keyboard'
 window-state=(980, 640, false)
 
 [desktop/app-folders]
@@ -47,6 +52,7 @@ secondary-color='#000000000000'
 
 [desktop/input-sources]
 current=uint32 0
+mru-sources=[('xkb', 'us'), ('ibus', 'mozc-jp')]
 per-window=false
 sources=[('xkb', 'us'), ('ibus', 'mozc-jp')]
 xkb-options=['lv3:ralt_switch']
@@ -98,45 +104,49 @@ allow-volume-above-100-percent=true
 [desktop/wm/keybindings]
 activate-window-menu=['<Alt>space']
 begin-move=@as []
-begin-resize=['<Super>r']
-close=['<Super>q', '<Alt>F4']
+close=['<Super>q']
 maximize=@as []
 maximize-horizontally=@as []
-minimize=['<Super>comma']
+minimize=@as []
 move-to-monitor-down=@as []
-move-to-monitor-left=@as []
-move-to-monitor-right=@as []
+move-to-monitor-left=['<Alt><Super>Left', '<Alt><Super>h']
+move-to-monitor-right=['<Alt><Super>Right', '<Alt><Super>l']
 move-to-monitor-up=@as []
-move-to-workspace-1=['<Primary>F1']
-move-to-workspace-2=['<Primary>F2']
-move-to-workspace-3=['<Primary>F3']
-move-to-workspace-4=['<Primary>F4']
+move-to-workspace-1=['<Shift><Super>exclam']
+move-to-workspace-2=['<Shift><Super>at']
+move-to-workspace-3=['<Shift><Super>numbersign']
+move-to-workspace-4=['<Shift><Super>dollar']
 move-to-workspace-down=@as []
 move-to-workspace-last=['<Primary><Super>End']
-move-to-workspace-left=@as []
-move-to-workspace-right=@as []
+move-to-workspace-left=['<Shift><Super>bracketleft']
+move-to-workspace-right=['<Shift><Super>bracketright']
 move-to-workspace-up=@as []
-panel-run-dialog=['<Super>d']
-switch-input-source=['<Super>space']
-switch-input-source-backward=['<Shift><Super>space']
+switch-input-source=['<Control>space']
+switch-input-source-backward=['<Shift><Control>space']
 switch-to-workspace-1=['<Super>1']
+switch-to-workspace-10=['<Super>0']
 switch-to-workspace-2=['<Super>2']
 switch-to-workspace-3=['<Super>3']
 switch-to-workspace-4=['<Super>4']
+switch-to-workspace-5=['<Super>5']
+switch-to-workspace-6=['<Super>6']
+switch-to-workspace-7=['<Super>7']
+switch-to-workspace-8=['<Super>8']
+switch-to-workspace-9=['<Super>9']
 switch-to-workspace-down=['<Primary><Super>Down', '<Primary><Super>j']
-switch-to-workspace-left=@as []
-switch-to-workspace-right=@as []
+switch-to-workspace-left=['<Super>bracketleft']
+switch-to-workspace-right=['<Super>bracketright']
 switch-to-workspace-up=['<Primary><Super>Up', '<Primary><Super>k']
 switch-windows=@as []
 switch-windows-backward=@as []
 toggle-fullscreen=@as []
-toggle-maximized=['<Super>m']
+toggle-maximized=['<Super>f']
 toggle-on-all-workspaces=['<Super>o']
 unmaximize=@as []
 
 [desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
-num-workspaces=4
+num-workspaces=8
 titlebar-font='Cantarell 12'
 
 [eog/ui]
@@ -198,6 +208,7 @@ y=135
 
 [mutter]
 dynamic-workspaces=true
+edge-tiling=false
 workspaces-only-on-primary=false
 
 [mutter/keybindings]
@@ -260,16 +271,15 @@ night-light-temperature=uint32 3700
 area-screenshot=['<Primary><Shift>Print']
 area-screenshot-clip=['<Shift>Print']
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
-email=['<Super>e']
-home=['<Super>f']
+home=['<Shift><Super>e']
 rotate-video-lock-static=@as []
 screensaver=['<Super>Escape']
 screenshot=['<Primary>Print']
 screenshot-clip=['Print']
-terminal=['<Super>t']
+terminal=['<Super>Return']
 window-screenshot=['<Primary><Alt>Print']
 window-screenshot-clip=['<Alt>Print']
-www=['<Super>b']
+www=['<Shift><Super>w']
 
 [settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>Return'
@@ -286,23 +296,67 @@ sleep-inactive-battery-timeout=1200
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 
 [shell]
-command-history=['lxappearance', 'chromium']
+command-history=['chromium', 'lxappearance']
 disable-user-extensions=false
-disabled-extensions=['windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com']
+disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
+favorite-apps=['org.gnome.Terminal.desktop', 'chromium.desktop', 'discord.desktop', 'org.gnome.Nautilus.desktop', 'bitwarden.desktop']
 welcome-dialog-last-shown-version='42.4'
 
 [shell/app-switcher]
 current-workspace-only=true
 
 [shell/extensions/pop-shell]
+activate-launcher=['<Super>slash', '<Super>d']
+active-hint=true
+active-hint-border-radius=uint32 5
+hint-color-rgba='rgb(128,160,255)'
+search=['<Super>d']
+show-title=false
 smart-gaps=true
+tile-accept=['Return']
+tile-by-default=true
+tile-enter=['<Super>r']
+tile-move-down=['<Shift>Down', '<Shift>j']
+tile-move-left=['<Shift>Left', '<Shift>h']
+tile-move-right=['<Shift>Right', '<Shift>l']
+tile-move-up=['<Shift>Up', '<Shift>k']
+tile-reject=['Escape']
+tile-resize-down=['Down', 'j']
+tile-resize-left=['Left', 'h']
+tile-resize-right=['Right', 'l']
+tile-resize-up=['Up', 'k']
+tile-swap-down=['<Primary>Down', '<Primary>j']
+tile-swap-left=['<Primary>Left', '<Primary>h']
+tile-swap-right=['<Primary>Right', '<Primary>l']
+tile-swap-up=['<Primary>Up', '<Primary>k']
+toggle-floating=['<Shift><Super>space']
 
 [shell/extensions/user-theme]
 name='Orchis-Dark-Compact'
 
 [shell/keybindings]
 open-application-menu=@as []
+switch-to-application-1=@as []
+switch-to-application-10=@as []
+switch-to-application-2=@as []
+switch-to-application-3=@as []
+switch-to-application-4=@as []
+switch-to-application-5=@as []
+switch-to-application-6=@as []
+switch-to-application-7=@as []
+switch-to-application-8=@as []
+switch-to-application-9=@as []
+switch-to-workspace-1=['<Super>1']
+switch-to-workspace-10=['<Super>0']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
+switch-to-workspace-5=['<Super>5']
+switch-to-workspace-6=['<Super>6']
+switch-to-workspace-7=['<Super>7']
+switch-to-workspace-8=['<Super>8']
+switch-to-workspace-9=['<Super>9']
 toggle-message-tray=['<Super>v']
 toggle-overview=@as []
 
@@ -322,7 +376,7 @@ background-color='rgb(8,8,8)'
 background-transparency-percent=12
 bold-color='rgb(238,238,238)'
 bold-color-same-as-fg=false
-cursor-background-color='rgb(8,8,8)'
+cursor-background-color='rgb(158,158,158)'
 cursor-blink-mode='off'
 cursor-colors-set=true
 cursor-foreground-color='rgb(158,158,158)'
@@ -331,9 +385,9 @@ default-size-columns=100
 default-size-rows=36
 font='BlexMono Nerd Font Mono Medium 11'
 foreground-color='rgb(178,178,178)'
-highlight-background-color='rgb(8,8,8)'
+highlight-background-color='rgb(178,206,238)'
 highlight-colors-set=true
-highlight-foreground-color='rgb(178,206,238)'
+highlight-foreground-color='rgb(8,8,8)'
 login-shell=true
 palette=['rgb(50,52,55)', 'rgb(255,84,84)', 'rgb(140,200,95)', 'rgb(227,199,138)', 'rgb(128,160,255)', 'rgb(209,131,232)', 'rgb(121,218,200)', 'rgb(198,198,198)', 'rgb(148,148,148)', 'rgb(255,81,137)', 'rgb(54,198,146)', 'rgb(194,194,146)', 'rgb(116,178,255)', 'rgb(174,129,255)', 'rgb(133,220,133)', 'rgb(228,228,228)']
 use-custom-command=false
