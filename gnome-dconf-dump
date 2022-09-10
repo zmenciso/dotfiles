@@ -20,14 +20,30 @@ size=(742, 513)
 state=87168
 
 [control-center]
-last-panel='keyboard'
+last-panel='power'
+window-state=(980, 640, false)
+
+[desktop/app-folders]
+folder-children=['Utilities', 'YaST']
+
+[desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
 
 [desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/solus/waves-of-blue.jpg'
-primary-color='#000000'
-secondary-color='#000000'
+picture-uri='file:///home/zmenciso/.local/share/backgrounds/2022-09-09-19-52-38-bg.jpg'
+picture-uri-dark='file:///home/zmenciso/.local/share/backgrounds/2022-09-09-19-52-38-bg.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [desktop/input-sources]
 current=uint32 0
@@ -36,16 +52,24 @@ sources=[('xkb', 'us'), ('ibus', 'mozc-jp')]
 xkb-options=['lv3:ralt_switch']
 
 [desktop/interface]
+color-scheme='prefer-dark'
 cursor-theme='Breeze'
 document-font-name='Cantarell 10'
 enable-animations=true
+enable-hot-corners=false
 font-antialiasing='rgba'
+font-hinting='slight'
 font-name='Cantarell 10'
-gtk-im-module='ibus'
-gtk-theme='Plata-Noir-Compact'
+gtk-theme='Orchis-Dark-Compact'
 icon-theme='Papirus'
 monospace-font-name='Hack Nerd Font 11'
 show-battery-percentage=true
+
+[desktop/notifications]
+application-children=['balena-etcher-electron']
+
+[desktop/notifications/application/balena-etcher-electron]
+application-id='balena-etcher-electron.desktop'
 
 [desktop/peripherals/mouse]
 speed=-0.54285714285714293
@@ -58,9 +82,9 @@ two-finger-scrolling-enabled=true
 color-shading-type='solid'
 lock-delay=uint32 0
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/solus/waves-of-blue.jpg'
-primary-color='#000000'
-secondary-color='#000000'
+picture-uri='file:///home/zmenciso/.local/share/backgrounds/2022-09-09-19-52-38-bg.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [desktop/search-providers]
 sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
@@ -75,20 +99,23 @@ allow-volume-above-100-percent=true
 activate-window-menu=['<Alt>space']
 begin-move=@as []
 begin-resize=['<Super>r']
+close=['<Super>q', '<Alt>F4']
 maximize=@as []
 maximize-horizontally=@as []
-minimize=@as []
-move-to-monitor-down=['<Shift><Super>j']
-move-to-monitor-left=['<Shift><Super>h']
-move-to-monitor-right=['<Shift><Super>l']
-move-to-monitor-up=['<Shift><Super>k']
+minimize=['<Super>comma']
+move-to-monitor-down=@as []
+move-to-monitor-left=@as []
+move-to-monitor-right=@as []
+move-to-monitor-up=@as []
 move-to-workspace-1=['<Primary>F1']
 move-to-workspace-2=['<Primary>F2']
 move-to-workspace-3=['<Primary>F3']
 move-to-workspace-4=['<Primary>F4']
+move-to-workspace-down=@as []
 move-to-workspace-last=['<Primary><Super>End']
 move-to-workspace-left=@as []
 move-to-workspace-right=@as []
+move-to-workspace-up=@as []
 panel-run-dialog=['<Super>d']
 switch-input-source=['<Super>space']
 switch-input-source-backward=['<Shift><Super>space']
@@ -96,29 +123,52 @@ switch-to-workspace-1=['<Super>1']
 switch-to-workspace-2=['<Super>2']
 switch-to-workspace-3=['<Super>3']
 switch-to-workspace-4=['<Super>4']
-switch-to-workspace-left=['<Primary><Super>h']
-switch-to-workspace-right=['<Primary><Super>l']
+switch-to-workspace-down=['<Primary><Super>Down', '<Primary><Super>j']
+switch-to-workspace-left=@as []
+switch-to-workspace-right=@as []
+switch-to-workspace-up=['<Primary><Super>Up', '<Primary><Super>k']
 switch-windows=@as []
 switch-windows-backward=@as []
 toggle-fullscreen=@as []
-toggle-maximized=['<Super>k']
+toggle-maximized=['<Super>m']
 toggle-on-all-workspaces=['<Super>o']
+unmaximize=@as []
 
 [desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
 num-workspaces=4
 titlebar-font='Cantarell 12'
 
+[eog/ui]
+sidebar=false
+
 [eog/view]
 background-color='rgb(0,0,0)'
 use-background-color=true
 
+[epiphany/state]
+is-maximized=false
+window-position=(-1, -1)
+window-size=(617, 1025)
+
 [evince/default]
-window-ratio=(0.90625, 1.1814814814814816)
+window-ratio=(0.9760416666666667, 1.8981481481481481)
 
 [evolution-data-server]
 migrated=true
 network-monitor-gio-name=''
+
+[file-roller/listing]
+list-mode='as-folder'
+name-column-width=250
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[file-roller/ui]
+sidebar-width=200
+window-height=468
+window-width=941
 
 [gedit/plugins]
 active-plugins=['sort', 'modelines', 'openlinks', 'spell', 'docinfo', 'filebrowser']
@@ -135,10 +185,10 @@ state=87168
 
 [gnome-screenshot]
 border-effect='none'
-delay=2
+delay=0
 include-border=true
-include-pointer=true
-last-save-directory='file:///home/zmenciso/Downloads'
+include-pointer=false
+last-save-directory='file:///tmp'
 
 [libgnomekbd/preview]
 height=614
@@ -147,12 +197,12 @@ x=240
 y=135
 
 [mutter]
-dynamic-workspaces=false
+dynamic-workspaces=true
 workspaces-only-on-primary=false
 
 [mutter/keybindings]
-toggle-tiled-left=['<Super>h']
-toggle-tiled-right=['<Super>l']
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
 
 [mutter/wayland/keybindings]
 restore-shortcuts=@as []
@@ -164,13 +214,30 @@ use-tree-view=true
 click-policy='single'
 default-folder-viewer='icon-view'
 search-filter-time-type='last_modified'
+search-view='list-view'
 
 [nautilus/window-state]
-initial-size=(890, 550)
-maximized=false
+initial-size=(617, 1025)
+maximized=true
+
+[nm-applet/eap/01389d95-6b6d-4d9d-be7b-cf32928e04c8]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
 
 [nm-applet/eap/04319e96-12ea-49d5-bc64-95b790e94a68]
 ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/54689173-2a42-4c9e-87aa-26bcab06fde1]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/693d8226-a018-4d74-b35a-adef692684f4]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/83dcfca9-3b25-45d0-b135-083c2087eed2]
+ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
 [nm-applet/eap/a943274f-95b3-41e8-8076-41fffa924e60]
@@ -193,12 +260,16 @@ night-light-temperature=uint32 3700
 area-screenshot=['<Primary><Shift>Print']
 area-screenshot-clip=['<Shift>Print']
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
-home=['<Super>e']
+email=['<Super>e']
+home=['<Super>f']
+rotate-video-lock-static=@as []
 screensaver=['<Super>Escape']
 screenshot=['<Primary>Print']
 screenshot-clip=['Print']
+terminal=['<Super>t']
 window-screenshot=['<Primary><Alt>Print']
 window-screenshot-clip=['<Alt>Print']
+www=['<Super>b']
 
 [settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>Return'
@@ -207,23 +278,69 @@ name='Terminal'
 
 [settings-daemon/plugins/power]
 idle-dim=true
+power-button-action='suspend'
 sleep-inactive-ac-timeout=1200
 sleep-inactive-battery-timeout=1200
 
 [settings-daemon/plugins/xsettings]
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 
+[shell]
+command-history=['lxappearance', 'chromium']
+disable-user-extensions=false
+disabled-extensions=['windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com']
+welcome-dialog-last-shown-version='42.4'
+
 [shell/app-switcher]
 current-workspace-only=true
+
+[shell/extensions/pop-shell]
+smart-gaps=true
+
+[shell/extensions/user-theme]
+name='Orchis-Dark-Compact'
+
+[shell/keybindings]
+open-application-menu=@as []
+toggle-message-tray=['<Super>v']
+toggle-overview=@as []
+
+[shell/world-clocks]
+locations=@av []
+
+[software]
+check-timestamp=int64 1662765084
+first-run=false
 
 [terminal/legacy]
 menu-accelerator-enabled=false
 
 [terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
-background-transparency-percent=13
+audible-bell=false
+background-color='rgb(8,8,8)'
+background-transparency-percent=12
+bold-color='rgb(238,238,238)'
+bold-color-same-as-fg=false
+cursor-background-color='rgb(8,8,8)'
+cursor-blink-mode='off'
+cursor-colors-set=true
+cursor-foreground-color='rgb(158,158,158)'
+cursor-shape='ibeam'
 default-size-columns=100
 default-size-rows=36
+font='BlexMono Nerd Font Mono Medium 11'
+foreground-color='rgb(178,178,178)'
+highlight-background-color='rgb(8,8,8)'
+highlight-colors-set=true
+highlight-foreground-color='rgb(178,206,238)'
 login-shell=true
-palette=['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+palette=['rgb(50,52,55)', 'rgb(255,84,84)', 'rgb(140,200,95)', 'rgb(227,199,138)', 'rgb(128,160,255)', 'rgb(209,131,232)', 'rgb(121,218,200)', 'rgb(198,198,198)', 'rgb(148,148,148)', 'rgb(255,81,137)', 'rgb(54,198,146)', 'rgb(194,194,146)', 'rgb(116,178,255)', 'rgb(174,129,255)', 'rgb(133,220,133)', 'rgb(228,228,228)']
 use-custom-command=false
+use-system-font=false
+use-theme-colors=false
 use-transparent-background=true
+visible-name='Default'
+
+[tweaks]
+show-extensions-notice=false
