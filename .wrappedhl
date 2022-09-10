@@ -4,6 +4,6 @@ cd ~
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 export XCURSOR_SIZE=24
-export GTK_THEME=Orchis-Dark-Compact
+export GTK_THEME=Orchis-Compact
 
 exec Hyprland
