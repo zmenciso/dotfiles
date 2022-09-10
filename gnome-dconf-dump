@@ -58,6 +58,7 @@ sources=[('xkb', 'us'), ('ibus', 'mozc-jp')]
 xkb-options=['lv3:ralt_switch']
 
 [desktop/interface]
+clock-show-weekday=false
 color-scheme='prefer-dark'
 cursor-theme='Breeze'
 document-font-name='Cantarell 10'
@@ -72,10 +73,16 @@ monospace-font-name='Hack Nerd Font 11'
 show-battery-percentage=true
 
 [desktop/notifications]
-application-children=['balena-etcher-electron', 'org-gnome-nautilus']
+application-children=['balena-etcher-electron', 'org-gnome-nautilus', 'gnome-power-panel', 'chromium']
 
 [desktop/notifications/application/balena-etcher-electron]
 application-id='balena-etcher-electron.desktop'
+
+[desktop/notifications/application/chromium]
+application-id='chromium.desktop'
+
+[desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
 
 [desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
@@ -150,6 +157,7 @@ unmaximize=@as []
 [desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
 num-workspaces=8
+resize-with-right-button=true
 titlebar-font='Cantarell 12'
 
 [eog/ui]
@@ -210,6 +218,7 @@ x=240
 y=135
 
 [mutter]
+center-new-windows=false
 dynamic-workspaces=true
 edge-tiling=false
 workspaces-only-on-primary=false
@@ -367,7 +376,7 @@ toggle-overview=@as []
 locations=@av []
 
 [software]
-check-timestamp=int64 1662765084
+check-timestamp=int64 1662829798
 first-run=false
 
 [terminal/legacy]
