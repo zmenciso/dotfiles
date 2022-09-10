@@ -72,10 +72,13 @@ monospace-font-name='Hack Nerd Font 11'
 show-battery-percentage=true
 
 [desktop/notifications]
-application-children=['balena-etcher-electron']
+application-children=['balena-etcher-electron', 'org-gnome-nautilus']
 
 [desktop/notifications/application/balena-etcher-electron]
 application-id='balena-etcher-electron.desktop'
+
+[desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
 
 [desktop/peripherals/mouse]
 speed=-0.54285714285714293
@@ -228,8 +231,8 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [nautilus/window-state]
-initial-size=(617, 1025)
-maximized=true
+initial-size=(1920, 1042)
+maximized=false
 
 [nm-applet/eap/01389d95-6b6d-4d9d-be7b-cf32928e04c8]
 ignore-ca-cert=false
