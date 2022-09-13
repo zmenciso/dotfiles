@@ -3,9 +3,6 @@
 These are my personal configuration files, all contained in a single repository
 for ease of copying and backup.
 
-**Note: As of 2022-04-21, Plasma-related settings have been deprecated and
-removed from the target list.**
-
 Use the `settings.py` script to import or export settings to/from the dotfiles
 repo:
 
@@ -37,6 +34,9 @@ Requires:
   - `swayidle`
   - `swaync`
   - `hyprpaper`
+  - `alacritty`
+  - `xsettingsd`
+  - `papirus-icon-theme`
 
 Edit `/usr/share/wayland-sessions/hyprland.desktop` to exec `.wrappedhl` instead
 of `Hyprland` so environment variables are set properly.
@@ -168,6 +168,10 @@ dconf load /net/launchpad/plank/docs/ < ~/dotfiles/plank-dconf-dump
 dconf load /org/gnome/ < ~/dotfiles/gnome-dconf-dump
 ```
 
+##  GNOME
+
+Install `pop-shell`, then use `dconf` to load `/org/gnome/`.
+
 ##  Power Management
 
 If running on a laptop, consider installing `powertop` or `TLP`.  Details are
@@ -191,6 +195,9 @@ wine /path/to/OfficeSetup.exe
 ```
 
 ##  Plasma
+
+**Note: As of 2022-04-21, Plasma-related settings have been deprecated and
+removed from the target list.**
 
 Export `panel`, `appearance`, `workspace`, `personalization`, and `hardware`.
 
