@@ -11,7 +11,7 @@ set fish_cursor_insert line
 set fish_cursor_replace_one underscore
 set fish_cursor_visual block
 
-set -x PATH $PATH ~/.local/bin
+set -x PATH $PATH ~/.local/bin ~/.cargo/bin
 
 # Colored GCC warnings and errors
 set -x GCC_COLORS 'error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'

@@ -1,3 +1,3 @@
 function xplr
-    command xplr pwd
+    command xplr (pwd)
 end
