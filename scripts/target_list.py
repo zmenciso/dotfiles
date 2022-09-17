@@ -16,6 +16,8 @@ CATEGORIES = {
         '.config/hypr/hyprland.conf',
         '.config/hypr/hyprpaper.conf',
         '.config/hypr/lock.bash',
+        '.xsettingsd',
+        '.config/mimeapps.list',
         '.wrappedhl'
     },
     'WAYBAR': {
