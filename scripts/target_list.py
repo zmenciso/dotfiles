@@ -22,8 +22,7 @@ CATEGORIES = {
     },
     'WAYBAR': {
         '.config/waybar/config.jsonc',
-        '.config/waybar/style.css',
-        '.config/swaync/config.json'
+        '.config/waybar/style.css'
     },
     'FISH': {
         '.config/fish/config.fish',
