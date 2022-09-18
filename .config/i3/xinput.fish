@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env fish
 
 # Adjust this file to your needs
 #   - `xinput list` 

@@ -79,6 +79,7 @@ CATEGORIES = {
         '.config/i3/lock.bash',
         '.config/picom/picom.conf',
         '.config/mimeapps.list',
+        '.config/i3/xinput.fish',
         '.Xresources',
         '.xsettingsd'
     },

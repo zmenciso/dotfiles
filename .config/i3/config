@@ -12,8 +12,8 @@
 # Displays and programs
 set $primary "primary"
 set $secondary "secondary"
-set $browser "/usr/bin/chromium"
-set $terminal "/usr/bin/alacritty"
+set $browser "/usr/bin/firefox"
+set $terminal "alacritty"
 set $editor "alacritty -t Neovim -e /usr/bin/nvim"
 set $files "alacritty -t xplr -e /usr/bin/xplr"
 set $media "alacritty -t Spotify-tui -e /usr/bin/spt"
@@ -342,7 +342,7 @@ bar {
     colors {
 	# <colorclass> <border> <background> <text>
 	background $bg
-	statusline $fg
+	statusline $fgbr
 	separator $black
 	focused_workspace $bg $bg $blue
 	active_workspace $bg $bg $yellow
@@ -376,7 +376,7 @@ bar {
     colors {
 	# <colorclass> <border> <background> <text>
 	background $bg
-	statusline $fg
+	statusline $fgbr
 	separator $black
 	focused_workspace $bg $bg $blue
 	active_workspace $bg $bg $yellow
@@ -398,11 +398,7 @@ default_floating_border none
 smart_borders no_gaps
 smart_gaps on
 
-##############################################################################
-#                                   Corners                                  #
-##############################################################################
-
-border_radius 14
+# border_radius 14
 
 ##############################################################################
 #                                  Autostart                                 #
@@ -412,7 +408,7 @@ exec --no-startup-id autorandr --change && feh --bg-fill ~/bg.jpg
 exec --no-startup-id xsettingsd
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id ibus-daemon -drxR
-exec --no-startup-id sh ~/.config/i3/xinput.sh
+exec --no-startup-id fish ~/.config/i3/xinput.fish
 exec --no-startup-id dunst
 exec --no-startup-id spotifyd
 # exec --no-startup-id polybar main
