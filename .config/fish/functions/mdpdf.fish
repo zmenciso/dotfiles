@@ -1,13 +1,41 @@
 function mdpdf -d "Convert markdown to PDF via pandoc and xelatex"
-	set pandoc_cmd "pandoc --pdf-engine=xelatex --highlight-style=kate"
+	set texhead '%Change background color for inline code and quote style
+\definecolor{bgcolor}{HTML}{F8F8F8}
+\let\oldtexttt\texttt
 
-	if contains "-n" $argv
-		set pandoc_cmd $pandoc_cmd --number-sections
+\renewcommand{\texttt}[1]{
+  \colorbox{bgcolor}{\oldtexttt{#1}}
+  }'
+
+	set pandoc_args "--pdf-engine=xelatex 
+	--highlight-style=tango 
+	-V geometry:\"top=2cm, bottom=2cm, left=2cm, right=2cm\" 
+	-V colorlinks -V urlcolor=NavyBlue
+	-H /tmp/head.tex"
+
+	argparse --min-args=2 'h/help' 'n/number-sections' 'f/font=?' -- $argv
+
+	if test -n "$_flag_h"
+		echo 'mdpdf [OPTIONS] INPUT OUTPUT'
+		echo '  -h  --help		Show this message'
+		echo '  -n  --number	Number sections and produce a ToC'
+		echo '  -f  --font		Change main font'
+
+		exit 0
 	end
 
-	if test -n "$argv[3]"
-		set pandoc_cmd $pandoc_cmd --mainfont=$argv[3]
+	if not test -f /tmp/head.tex
+		echo -n $texhead > /tmp/head.tex
 	end
 
-	command $pandoc_cmd $argv[1] -o $argv[2]
+	set mainfont $_flag_f
+	if test -n "$mainfont"
+		set pandoc_args --mainfont=$mainfont $pandoc_args
+	end
+
+	if test -n "$_flag_n"
+		set pandoc_args --toc -N $pandoc_args
+	end
+
+	eval pandoc $pandoc_args $argv[1] -o $argv[2]
 end
