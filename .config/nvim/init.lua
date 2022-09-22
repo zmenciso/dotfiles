@@ -161,9 +161,11 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 -- Don't forget to add language servers to the autocompletion config!
+-- :help lspconfig-all
 require('lspconfig').pylsp.setup{}		-- pip install "python-lsp-server[all]"
 require('lspconfig').clangd.setup{}
 require('lspconfig').cmake.setup{}
+require('lspconfig').svls.setup{}		-- cargo install svls
 -- require('lspconfig').rust_analyzer.setup{}
 
 -- lsp_signature
