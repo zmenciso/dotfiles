@@ -6,6 +6,7 @@ CATEGORIES = {
     'VIM': {'.vimrc'},
     'NVIM': {'.config/nvim/init.lua'},
     'XPLR': {'.config/xplr/init.lua'},
+    'BTOP': {'.config/btop/btop.conf'},
     'TMUX': {
         '.tmux.conf',
         '.config/tmux-powerline/themes/default.sh'
