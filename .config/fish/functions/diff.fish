@@ -1,3 +1,3 @@
 function diff
-    command diff --color $argv;
+    command diff --color --side-by-side $argv;
 end
