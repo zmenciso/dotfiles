@@ -7,11 +7,11 @@ function mdpdf -d "Convert markdown to PDF via pandoc and xelatex"
   \colorbox{bgcolor}{\oldtexttt{#1}}
   }'
 
-	set pandoc_args "--pdf-engine=xelatex 
-	--highlight-style=tango 
-	-V geometry:\"top=2cm, bottom=2cm, left=2cm, right=2cm\" 
-	-V colorlinks -V urlcolor=NavyBlue
-	-H /tmp/head.tex"
+	set pandoc_args "--pdf-engine=xelatex" \
+	"--highlight-style=tango" \
+	"-V geometry:\"top=2cm, bottom=2cm, left=2cm, right=2cm\"" \
+	"-V colorlinks -V urlcolor=NavyBlue" \
+	"-H /tmp/head.tex"
 
 	argparse --min-args=2 'h/help' 'n/number-sections' 'f/font=?' -- $argv
 
@@ -37,5 +37,6 @@ function mdpdf -d "Convert markdown to PDF via pandoc and xelatex"
 		set pandoc_args --toc -N $pandoc_args
 	end
 
+	echo $pandoc_args $argv[1] -o $argv[2]
 	eval pandoc $pandoc_args $argv[1] -o $argv[2]
 end
