@@ -11,6 +11,9 @@ window {
 }
 window#waybar {
     background: rgba(8, 8, 8, .85);
+    /* background: @theme_base_color; */
+    /* border-bottom: 1px solid @unfocused_borders; */
+    /* color: @theme_text_color; */
     /* background: transparent; */
 }
 /*-----module groups----*/
@@ -64,15 +67,10 @@ tooltip {
 	color: #080808;
 }
 
-#custom-sep {
-	color: #424447;
-}
-
 #clock {
 	font-weight: bold;
 }
 
-#clock,
 #battery,
 #cpu,
 #memory,
@@ -84,13 +82,19 @@ tooltip {
 #mode,
 #custom-power,
 #custom-menu,
+#backlight,
 #idle_inhibitor {
     padding: 0 5px;
+    font-weight: normal;
 }
 
 #mode {
     color: #cc3436;
     font-weight: bold;
+}
+
+#custom-sep {
+	color: #080808;
 }
 
 /*-----Indicators----*/

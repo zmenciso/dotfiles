@@ -6,16 +6,16 @@
     "modules-center": ["clock"],
     "modules-right": ["temperature", "custom/sep", "cpu", "custom/sep", "memory", "custom/sep", "backlight", "custom/sep", "pulseaudio", "custom/sep", "network", "custom/sep", "custom/notification", "custom/sep", "battery"],
     "custom/sep": {
-		"format": "  "
+		"format": ""
     },
 	"custom/notification": {
 		"tooltip": false,
 		"format": "{icon}",
 		"format-icons": {
 			"notification": "<span foreground='red'><sup></sup></span>",
-			"none": " ",
+			"none": "",
 			"dnd-notification": "<span foreground='red'><sup></sup></span>",
-			"dnd-none": " "
+			"dnd-none": ""
 		},
 		"return-type": "json",
 		"exec-if": "which swaync-client",
@@ -115,11 +115,11 @@
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
     "cpu": {
-        "format": " {usage}%",
+        "format": "龍 {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "龍 {}%"
+        "format": " {}%"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -131,16 +131,16 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": " {icon}{percent}% ",
+        "format": "{icon}{percent}%",
         "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     },
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 90,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}{capacity}%  ",
+        "format": "{icon}{capacity}%   ",
         "format-charging": " {capacity}%  ",
         "format-plugged": " {capacity}%  ",
         "format-alt": "{icon}{time}  ",
