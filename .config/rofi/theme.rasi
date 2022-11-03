@@ -29,6 +29,7 @@
 window {
   transparency: "real";
   background-color: #080808dd;
+  border-radius: 20px;
 }
 
 mainbox {
@@ -61,9 +62,8 @@ listview {
 
 element {
   padding: 5px;
-  text-color: @fgbr;
-  highlight: bold #80a0ff;
-  border-radius: 3px;
+  highlight: @blue;
+  border-radius: 15px;
 }
 
 element selected {
