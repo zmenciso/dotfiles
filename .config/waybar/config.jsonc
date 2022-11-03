@@ -1,10 +1,12 @@
 {
     "spacing": 0, 
+    "height": 28,
     "layer": "top",
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces", "tray"],
     "modules-center": ["clock"],
     "modules-right": ["temperature", "custom/sep", "cpu", "custom/sep", "memory", "custom/sep", "backlight", "custom/sep", "pulseaudio", "custom/sep", "network", "custom/sep", "custom/notification", "custom/sep", "battery"],
+
     "custom/sep": {
 		"format": ""
     },

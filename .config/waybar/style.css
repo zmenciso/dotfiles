@@ -2,7 +2,6 @@
     border: none;
     font-family: BlexMono Nerd Font;
     font-size: 13px;
-    color: #eeeeee;
     /* border-radius: 20px; */
 }
 
@@ -18,24 +17,27 @@ window#waybar {
 }
 /*-----module groups----*/
 .modules-right {
-	background: rgba(8,8,8,0.4);
+	background: rgba(128,160,255,0.2);
+	/* background: @theme_base_color; */
     /* background: transparent; */
-    margin: 0 -15px 0 0;
-    border-radius: 15px;
+    margin: 0 -12px 0 0;
+    border-radius: 12px;
     padding: 0px 10px;
 }
 .modules-center {
-	background: rgba(8,8,8,0.4);
+	background: rgba(128,160,255,0.2);
+	/* background: @theme_base_color; */
     /* background: transparent; */
     margin: 0 0 0 0;
-    border-radius: 15px;
+    border-radius: 12px;
 }
 .modules-left {
-	background: rgba(8,8,8,0.4);
+	background: rgba(128,160,255,0.2);
+	/* background: @theme_base_color; */
     /* background: transparent; */
-    margin: 0 0 0 -15px;
-    border-radius: 15px;
-    padding: 0px 5px;
+    margin: 0 0 0 -12px;
+    border-radius: 12px;
+    padding: 0px 0px;
 }
 
 tooltip {
@@ -45,14 +47,16 @@ tooltip {
 }
 
 #workspaces {
-	padding: 0 14px;
+	padding: 0 12px;
 }
 
 /*-----modules indv----*/
 #workspaces button {
     padding: 0px 5px;
     background: transparent;
+    border-radius: 12px;
     font-weight: bold;
+    color: #b2b2b2;
 }
 #workspaces button:hover {
     box-shadow: inherit;
@@ -62,6 +66,7 @@ tooltip {
 
 #workspaces button.focused {
 	background: #80a0ff;
+	color: #080808;
 }
 
 #workspaces button.active {
@@ -71,6 +76,12 @@ tooltip {
 
 #clock {
 	font-weight: bold;
+	color: #eeeeee;
+}
+
+#tray {
+	margin: 0 0 0 -15px;
+	padding: 0 15px;
 }
 
 #battery,
@@ -80,14 +91,15 @@ tooltip {
 #network,
 #pulseaudio,
 #custom-media,
-#tray,
 #mode,
 #custom-power,
 #custom-menu,
+#custom-notification,
 #backlight,
 #idle_inhibitor {
     padding: 0 5px;
     font-weight: normal;
+    color: #eeeeee;
 }
 
 #mode {
@@ -96,7 +108,7 @@ tooltip {
 }
 
 #custom-sep {
-	color: #323437;
+	color: #a0a0a0;
 }
 
 /*-----Indicators----*/
