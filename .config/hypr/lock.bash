@@ -10,7 +10,7 @@ EMPTY='#e3c78aff'
 CAPS='e3c78acc'
 
 # Options to pass to swaylock
-swaylock_options="--indicator-radius 80 \
+swaylock_options="--indicator-radius 100 \
 --inside-ver-color $CLEAR \
 --ring-ver-color $VERIFYING \
 --ring-caps-lock-color $CAPS \
@@ -43,7 +43,7 @@ swaylock_options="--indicator-radius 80 \
 --daemonize \
 \
 -l \
--F \
+-e \
 -i /home/zmenciso/lck.jpg \
 --scaling fill \
 --font-size 26 \
