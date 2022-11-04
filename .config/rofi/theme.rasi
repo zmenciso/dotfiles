@@ -28,7 +28,7 @@
 
 window {
   transparency: "real";
-  background-color: #080808dd;
+  background-color: #080808cc;
   border-radius: 20px;
 }
 
@@ -63,12 +63,15 @@ listview {
 element {
   padding: 5px;
   highlight: @blue;
-  border-radius: 15px;
+  border-radius: 12px;
 }
 
 element selected {
-  background-color: @emphasis;
-  text-color: @bg;
+  background-color: @blue;
+}
+
+element-text selected {
+	text-color: @bg;
 }
 
 element urgent, element selected urgent {
