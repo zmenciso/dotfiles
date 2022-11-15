@@ -99,6 +99,7 @@ tooltip {
     /* padding: 0 5px; */
     font-weight: normal;
     color: #eeeeee;
+    margin: -5px 0 -5px 0;
 }
 
 #mode {
