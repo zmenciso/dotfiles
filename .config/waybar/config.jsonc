@@ -1,16 +1,18 @@
 {
     "spacing": 0, 
-    "height": 28,
+    "position": "left",
     "layer": "top",
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces", "tray"],
-    "modules-center": ["clock"],
-    "modules-right": ["temperature", "custom/sep", "cpu", "custom/sep", "memory", "custom/sep", "backlight", "custom/sep", "pulseaudio", "custom/sep", "network", "custom/sep", "custom/notification", "custom/sep", "battery"],
+    "modules-right": ["temperature", "custom/sep", "cpu", "custom/sep", "memory", "custom/sep", "backlight", "custom/sep", "pulseaudio", "custom/sep", "network", "custom/sep", "custom/notification", "custom/sep", "battery", "clock"],
+    "margin-left": 10,
 
     "custom/sep": {
+		"rotate": 270,
 		"format": ""
     },
 	"custom/notification": {
+		"rotate": 90,
 		"tooltip": false,
 		"format": "{icon}",
 		"format-icons": {
@@ -27,11 +29,13 @@
 		"escape": true
 	},
 	"custom/date": {
+		"rotate": 90,
 		"format": "  {}",
 		"interval": 3600,
 		"exec": "$HOME/.config/waybar/waybar-date.sh"
 	},
 	"wlr/workspaces": {
+		"rotate": 90,
 		"disable-scroll": true,
 		"all-outputs": true,
 		"on-click": "activate",
@@ -63,6 +67,7 @@
 		}
 	},
     "keyboard-state": {
+		"rotate": 90,
         "numlock": true,
         "capslock": true,
         "format": "{name} {icon}",
@@ -72,9 +77,11 @@
         }
     },
     "sway/mode": {
+		"rotate": 90,
         "format": "<span style=\"italic\">{}</span>"
     },
     "mpd": {
+		"rotate": 90,
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
         "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
@@ -101,6 +108,7 @@
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "idle_inhibitor": {
+		"rotate": 90,
         "format": "{icon}",
         "format-icons": {
             "activated": "",
@@ -108,41 +116,48 @@
         }
     },
     "tray": {
+		"rotate": 90,
         // "icon-size": 21,
         "spacing": 10
     },
 	"clock": {
+		"rotate": 90,
 		"format": "  {:%H:%M} ",
 		"interval": 60,
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
     "cpu": {
+		"rotate": 90,
         "format": "龍 {usage}%",
         "tooltip": false
     },
     "memory": {
+		"rotate": 90,
         "format": " {}%"
     },
     "temperature": {
+		"rotate": 90,
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 85,
         // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{icon} {temperatureC}°C",
+        "format": "{icon} {temperatureC}°C  ",
         "format-icons": [" ", "", " "]
     },
     "backlight": {
+		"rotate": 90,
         // "device": "acpi_video1",
         "format": "{icon}{percent}%",
         "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     },
     "battery": {
+		"rotate": 90,
         "states": {
             "good": 90,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}{capacity}% ",
+        "format": "  {icon}{capacity}%",
         "format-charging": " {capacity}%  ",
         "format-plugged": " {capacity}%  ",
         "format-alt": "{icon}{time}  ",
@@ -151,9 +166,11 @@
         "format-icons": ["  ", "  ", "  ", "  ", "  "]
     },
     "battery#bat2": {
+		"rotate": 90,
         "bat": "BAT2"
     },
     "network": {
+		"rotate": 90,
         // "interface": "wlp2*", // (Optional) To force the use of this interface
 		"format-wifi": "  {essid}",
 		"format-ethernet": "  {ipaddr}",
@@ -163,6 +180,7 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
+		"rotate": 90,
         // "scroll-step": 1, // %, can be a float
         "format": "{icon}{volume}%  {format_source}",
         "format-bluetooth": "{icon}{volume}%  {format_source}",
@@ -182,6 +200,7 @@
         "on-click": "pavucontrol"
     },
     "custom/media": {
+		"rotate": 90,
         "format": "{icon} {}",
         "return-type": "json",
         "max-length": 40,

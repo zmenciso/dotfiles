@@ -9,57 +9,55 @@ window {
 	/*font-weight: bold;*/
 }
 window#waybar {
-    background: rgba(8, 8, 8, .7);
+    /* background: rgba(8, 8, 8, .7); */
     /* background: @theme_base_color; */
     /* border-bottom: 1px solid @unfocused_borders; */
     /* color: @theme_text_color; */
-    /* background: transparent; */
+    background: transparent;
 }
 /*-----module groups----*/
 .modules-right {
-	background: rgba(128,160,255,0.2);
+	background: rgba(8, 8, 8, .7);
 	/* background: @theme_base_color; */
     /* background: transparent; */
-    margin: 0 -12px 0 0;
-    border-radius: 12px;
-    padding: 0px 10px;
+    margin: 0 0 10px 0;
+    border-radius: 15px;
 }
 .modules-center {
-	background: rgba(128,160,255,0.2);
+	/* background: rgba(8, 8, 8, .7); */
 	/* background: @theme_base_color; */
-    /* background: transparent; */
+    background: transparent;
     margin: 0 0 0 0;
-    border-radius: 12px;
+    border-radius: 15px;
 }
 .modules-left {
-	background: rgba(128,160,255,0.2);
+	background: rgba(8, 8, 8, .7);
 	/* background: @theme_base_color; */
     /* background: transparent; */
-    margin: 0 0 0 -12px;
-    border-radius: 12px;
-    padding: 0px 0px;
+    margin: 10px 0 0 0;
+    border-radius: 15px;
 }
 
 tooltip {
   background: #080808;
   color: #eeeeee;
-  border-radius: 10;
+  border-radius: 12px;
 }
 
 #workspaces {
-	padding: 0 12px;
+	/* padding: 0 12px; */
 }
 
 /*-----modules indv----*/
 #workspaces button {
-    padding: 0px 5px;
+    /* padding: 0px 5px; */
     background: transparent;
-    border-radius: 12px;
+    border-radius: 15px;
     font-weight: bold;
     color: #b2b2b2;
 }
 #workspaces button:hover {
-    box-shadow: inherit;
+    /* box-shadow: inherit; */
 	background: #79dac8;
 	color: #080808;
 }
@@ -75,13 +73,14 @@ tooltip {
 }
 
 #clock {
+	background: #80a0ff;
+	color: #080808;
 	font-weight: bold;
-	color: #eeeeee;
+	border-radius: 15px;
 }
 
 #tray {
-	margin: 0 0 0 -15px;
-	padding: 0 15px;
+	padding: 10px 0px;
 }
 
 #battery,
@@ -97,7 +96,7 @@ tooltip {
 #custom-notification,
 #backlight,
 #idle_inhibitor {
-    padding: 0 5px;
+    /* padding: 0 5px; */
     font-weight: normal;
     color: #eeeeee;
 }
@@ -109,6 +108,10 @@ tooltip {
 
 #custom-sep {
 	color: #a0a0a0;
+}
+
+#custom-pad {
+	font-size: 4px;
 }
 
 /*-----Indicators----*/
