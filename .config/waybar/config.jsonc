@@ -1,18 +1,18 @@
 {
     "spacing": 0, 
-    "position": "left",
+    "position": "right",
     "layer": "top",
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces", "tray"],
     "modules-right": ["temperature", "custom/sep", "cpu", "custom/sep", "memory", "custom/sep", "backlight", "custom/sep", "pulseaudio", "custom/sep", "network", "custom/sep", "custom/notification", "custom/sep", "battery", "clock"],
-    "margin-left": 10,
+    "margin-right": 10,
 
     "custom/sep": {
 		"rotate": 270,
 		"format": ""
     },
 	"custom/notification": {
-		"rotate": 90,
+		"rotate": 270,
 		"tooltip": false,
 		"format": "{icon}",
 		"format-icons": {
@@ -116,48 +116,48 @@
         }
     },
     "tray": {
-		"rotate": 90,
+		// "rotate": 90,
         // "icon-size": 21,
         "spacing": 10
     },
 	"clock": {
-		"rotate": 90,
+		"rotate": 270,
 		"format": "  {:%H:%M} ",
 		"interval": 60,
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
     "cpu": {
-		"rotate": 90,
+		"rotate": 270,
         "format": "龍 {usage}%",
         "tooltip": false
     },
     "memory": {
-		"rotate": 90,
+		"rotate": 270,
         "format": " {}%"
     },
     "temperature": {
-		"rotate": 90,
+		"rotate": 270,
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 85,
         // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{icon} {temperatureC}°C  ",
+        "format": "  {icon} {temperatureC}°C",
         "format-icons": [" ", "", " "]
     },
     "backlight": {
-		"rotate": 90,
+		"rotate": 270,
         // "device": "acpi_video1",
         "format": "{icon}{percent}%",
         "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     },
     "battery": {
-		"rotate": 90,
+		"rotate": 270,
         "states": {
-            "good": 90,
+            "good": 270,
             "warning": 30,
             "critical": 15
         },
-        "format": "  {icon}{capacity}%",
+        "format": "{icon}{capacity}%  ",
         "format-charging": " {capacity}%  ",
         "format-plugged": " {capacity}%  ",
         "format-alt": "{icon}{time}  ",
@@ -166,11 +166,11 @@
         "format-icons": ["  ", "  ", "  ", "  ", "  "]
     },
     "battery#bat2": {
-		"rotate": 90,
+		"rotate": 270,
         "bat": "BAT2"
     },
     "network": {
-		"rotate": 90,
+		"rotate": 270,
         // "interface": "wlp2*", // (Optional) To force the use of this interface
 		"format-wifi": "  {essid}",
 		"format-ethernet": "  {ipaddr}",
@@ -180,7 +180,7 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-		"rotate": 90,
+		"rotate": 270,
         // "scroll-step": 1, // %, can be a float
         "format": "{icon}{volume}%  {format_source}",
         "format-bluetooth": "{icon}{volume}%  {format_source}",
@@ -200,7 +200,7 @@
         "on-click": "pavucontrol"
     },
     "custom/media": {
-		"rotate": 90,
+		"rotate": 270,
         "format": "{icon} {}",
         "return-type": "json",
         "max-length": 40,

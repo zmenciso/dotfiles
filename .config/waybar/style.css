@@ -110,8 +110,8 @@ tooltip {
 	color: #a0a0a0;
 }
 
-#custom-pad {
-	font-size: 4px;
+#custom-notification {
+	margin: -8px 0 -8px 0;
 }
 
 /*-----Indicators----*/
