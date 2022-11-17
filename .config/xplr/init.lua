@@ -887,9 +887,8 @@ xplr.config.layouts.builtin.default = {
         Vertical = {
           config = {
             constraints = {
-              { Percentage = 30 },
-              { Percentage = 20 },
-              { Percentage = 50 },
+              { Percentage = 40 },
+              { Percentage = 60 },
             },
           },
           splits = {
@@ -900,7 +899,6 @@ xplr.config.layouts.builtin.default = {
 			    body = { DynamicParagraph = { render = "custom.preview_pane.render" } },
 			  },
 			},
-			"HelpMenu",
           },
         },
       },
