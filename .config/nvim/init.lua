@@ -19,12 +19,14 @@ vim.o.number = true
 vim.o.smarttab = true
 vim.o.hlsearch = false
 vim.o.autoindent = true
+vim.o.smartindent = true
 vim.o.relativenumber = true
 vim.o.autoread = true
 vim.o.cursorline = true
 vim.o.t_Co = 256
 vim.o.syntax = 'on'
 vim.o.updatetime = 250
+vim.o.mouse = ''
 
 -- Use ctrl-[hjkl] to select the active split!
 map('n', '<c-k>', ':wincmd k<CR>', { silent = true })
