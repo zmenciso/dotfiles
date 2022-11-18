@@ -1,5 +1,5 @@
 {
-    "spacing": 0, 
+    "spacing": 10,
     "position": "right",
     "layer": "top",
     // Choose the order of the modules
@@ -157,10 +157,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}{capacity}%  ",
-        "format-charging": " {capacity}%  ",
-        "format-plugged": " {capacity}%  ",
-        "format-alt": "{icon}{time}  ",
+        "format": "{icon}{capacity}% ",
+        "format-charging": " {capacity}% ",
+        "format-plugged": " {capacity}% ",
+        "format-alt": "{icon}{time} ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["  ", "  ", "  ", "  ", "  "]
