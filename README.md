@@ -110,21 +110,9 @@ set fingerprint (openssl x509 -fingerprint -sha256 -noout -in \
 echo "v2:sha256:$fingerprint" > ~/.local/share/barrier/SSL/Fingerprints/Local.txt ;
 ```
 
-##  Chromium
-
-Install `chromium`, then install the following extensions:
-
-  - DuckDuckGo Privacy Essentials
-  - uBlock Origin
-  - Bitwarden
-
-In addition, set the Theme in "Appearance" to GTK+ and set the option "Ask where
-to save each file before downloading" in "Advanced > Downloads".  Bookmarks can
-be imported from `goose` (`doc/Miscellaneous/bookmarks*`).
-
 ##  Language Support
 
-### i3-gaps
+### i3-gaps/Hyprland
 
 Install `ibus-mozc`, export `mozc` files, and load `ibus` settings from `dconf`
 with the following command:
