@@ -1,5 +1,10 @@
 #   Dotfiles
 
+![](./img/01.png)
+![](./img/02.png)
+![](./img/03.png)
+![](./img/04.png)
+
 These are my personal configuration files, all contained in a single repository
 for ease of copying and backup.
 
