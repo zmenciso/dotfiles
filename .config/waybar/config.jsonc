@@ -1,12 +1,16 @@
 {
+	// Basic settings
     "spacing": 10,
+    // "output": "DP-1",
     "position": "right",
     "layer": "top",
-    // Choose the order of the modules
+
+	// Module order
     "modules-left": ["wlr/workspaces", "tray"],
     "modules-right": ["temperature", "custom/sep", "cpu", "custom/sep", "memory", "custom/sep", "backlight", "custom/sep", "pulseaudio", "custom/sep", "network", "custom/sep", "custom/notification", "custom/sep", "battery", "clock"],
-    "margin-right": 10,
+    "margin-right": 12,
 
+	// Module definitions
     "custom/sep": {
 		"rotate": 270,
 		"format": ""
