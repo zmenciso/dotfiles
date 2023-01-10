@@ -1,4 +1,4 @@
-#!/usr/local/bin/fish
+#!/usr/bin/fish
 
 git clone https://github.com/sayanarijit/dual-pane.xplr ~/.config/xplr/plugins/dual-pane
 git clone https://github.com/sayanarijit/map.xplr ~/.config/xplr/plugins/map

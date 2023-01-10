@@ -1,4 +1,4 @@
-version = "0.19.0"
+version = "0.20.1"
 
 ---@diagnostic disable
 local xplr = xplr -- The globally exposed configuration to be overridden.
