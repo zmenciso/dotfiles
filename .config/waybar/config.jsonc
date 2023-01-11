@@ -1,7 +1,7 @@
 {
 	// Basic settings
     "spacing": 10,
-    // "output": "DP-1",
+    "output": "DP-1",
     "position": "right",
     "layer": "top",
 
