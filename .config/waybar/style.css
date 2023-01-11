@@ -62,13 +62,18 @@ tooltip {
 	color: #080808;
 }
 
-#workspaces button.focused {
-	background: #80a0ff;
+#workspaces button.urgent {
+	background: #ff5454;
 	color: #080808;
 }
 
 #workspaces button.active {
 	background: #80a0ff;
+	color: #080808;
+}
+
+#workspaces button.visible {
+	background: #e3c78a;
 	color: #080808;
 }
 
@@ -81,7 +86,8 @@ tooltip {
 }
 
 #tray {
-	padding: 10px 0px;
+	padding: 2px 0px;
+	margin: 0 0 8px 0;
 }
 
 #battery,

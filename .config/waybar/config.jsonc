@@ -122,7 +122,7 @@
     "tray": {
 		// "rotate": 90,
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 12
     },
 	"clock": {
 		"rotate": 270,
