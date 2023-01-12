@@ -26,7 +26,6 @@ tooltip {
 }
 
 #workspaces {
-	padding: 0 8px;
 	color: #080808;
 }
 
@@ -54,25 +53,14 @@ tooltip {
 	font-weight: bold;
 }
 
-#tray {
-	padding: 0 2px;
+#custom-sep_r_inter {
+	padding: 0 6px;
 }
 
 
 #mode {
     color: #cc3436;
     font-weight: bold;
-}
-
-#custom-sep_l_color,
-#custom-sep_r_color {
-	color: #80a0ff;
-	background: #303030;
-}
-
-#custom-sep_l_cap,
-#custom-sep_r_cap {
-	color: #303030;
 }
 
 #custom-sep_l_inter {
