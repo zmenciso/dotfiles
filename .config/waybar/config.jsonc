@@ -29,7 +29,7 @@
 
 	"custom/notification": {
 		// "rotate": 270,
-		"format": "{icon}",
+		"format": "{icon} ",
 		"format-icons": {
 			"notification": "<span foreground='red'><sup></sup></span>",
 			"none": " ",
@@ -175,10 +175,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}{capacity}% ",
-        "format-charging": " {capacity}% ",
-        "format-plugged": " {capacity}% ",
-        "format-alt": "{icon}{time} ",
+        "format": "{icon}{capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon}{time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["  ", "  ", "  ", "  ", "  "]
@@ -188,7 +188,7 @@
     },
 
     "network": {
-		"format-wifi": " {essid}",
+		"format-wifi": "  {essid}",
 		"format-ethernet": " {ipaddr}",
 		"format-disconnected": " Disconnected",
 		"tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
@@ -199,7 +199,7 @@
     "pulseaudio": {
 		// "rotate": 270,
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon}{volume}% {format_source}",
+        "format": "{icon}{volume}%  {format_source}",
         "format-bluetooth": "{icon}{volume}%  {format_source}",
         "format-bluetooth-muted": "{icon}  {format_source}",
         "format-muted": "  {format_source}",
