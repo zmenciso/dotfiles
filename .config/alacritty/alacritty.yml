@@ -8,14 +8,14 @@ window:
     x: 8
     y: 8
 
-  opacity: 0.75
+  opacity: 0.7
 
 font:
   normal: 
     style: Regular
     family: BlexMono Nerd Font
 
-  size: 11
+  size: 12
 
 colors:
   primary:
