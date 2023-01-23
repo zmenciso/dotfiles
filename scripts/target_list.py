@@ -11,7 +11,10 @@ CATEGORIES = {
         '.tmux.conf',
         '.config/tmux-powerline/themes/default.sh'
     },
-    # 'FCITX': {'.config/fcitx/config', '.pam_environment'},
+    'FCITX': {
+        '.config/fcitx/config',
+        '.config/fcitx/profile'
+    },
     'MOZC': {'.config/mozc/ibus_config.textproto'},
     'HYPRLAND': {
         '.config/hypr/hyprland.conf',

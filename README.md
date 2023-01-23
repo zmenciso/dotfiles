@@ -117,7 +117,18 @@ echo "v2:sha256:$fingerprint" > ~/.local/share/barrier/SSL/Fingerprints/Local.tx
 
 ##  Language Support
 
-### i3-gaps/Hyprland
+### Hyprland w/ `fcitx`
+
+Install `fcitx` and `fcitx-mozc`, and export `fcitx` files and `mozc` files.  In
+addition, edit `/etc/environment` to include the following:
+
+```
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+```
+
+### i3-gaps/Hyprland w/ `ibus`
 
 Install `ibus-mozc`, export `mozc` files, and load `ibus` settings from `dconf`
 with the following command:
