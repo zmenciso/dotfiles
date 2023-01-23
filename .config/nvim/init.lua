@@ -17,7 +17,6 @@ vim.o.ruler = true
 vim.o.showcmd = true
 vim.o.number = true
 vim.o.smarttab = true
-vim.o.hlsearch = false
 vim.o.autoindent = true
 vim.o.smartindent = true
 vim.o.relativenumber = true
