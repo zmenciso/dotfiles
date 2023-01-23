@@ -119,8 +119,18 @@ echo "v2:sha256:$fingerprint" > ~/.local/share/barrier/SSL/Fingerprints/Local.tx
 
 ### Hyprland w/ `fcitx`
 
-Install `fcitx` and `fcitx-mozc`, and export `fcitx` files and `mozc` files.  In
-addition, edit `/etc/environment` to include the following:
+Install the following packages, and export `fcitx` files.
+
+```
+fcitx5
+fcitx5-mozc
+fcitx5-configtool
+fcitx5-qt
+fcitx5-gtk
+fcitx5-breeze
+```
+
+In addition, edit `/etc/environment` to include the following:
 
 ```
 GTK_IM_MODULE=fcitx

@@ -12,8 +12,8 @@ CATEGORIES = {
         '.config/tmux-powerline/themes/default.sh'
     },
     'FCITX': {
-        '.config/fcitx/config',
-        '.config/fcitx/profile'
+        '.config/fcitx5/config',
+        '.config/fcitx5/profile'
     },
     'MOZC': {'.config/mozc/ibus_config.textproto'},
     'HYPRLAND': {
