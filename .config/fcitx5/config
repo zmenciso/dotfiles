@@ -57,7 +57,7 @@ ShowInputMethodInformation=True
 # Show Input Method Information when changing focus
 showInputMethodInformationWhenFocusIn=False
 # Show compact input method information
-CompactInputMethodInformation=True
+CompactInputMethodInformation=False
 # Show first input method information
 ShowFirstInputMethodInformation=True
 # Default page size
