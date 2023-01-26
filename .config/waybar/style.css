@@ -10,7 +10,6 @@ window {
 }
 window#waybar {
     background: transparent;
-    /* color: #080808; */
 }
 /*-----module groups----*/
 .modules-right {
@@ -26,7 +25,6 @@ tooltip {
 }
 
 #workspaces {
-	color: #080808;
 }
 
 /*-----modules indv----*/
@@ -51,6 +49,7 @@ tooltip {
 
 #clock {
 	font-weight: bold;
+	font-size: 11pt;
 }
 
 #custom-sep_r_inter {
