@@ -1,3 +1,3 @@
-function ls
-    command ls --color $argv;
+function ls --wraps=lsd
+    lsd $argv
 end

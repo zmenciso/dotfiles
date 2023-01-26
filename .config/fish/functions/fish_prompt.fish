@@ -8,7 +8,7 @@ end
 function print_cap -d '[CHAR] [foreground] [background]'
 	set_color normal
 
-	if [ -n $argv[3] ]
+	if [ -n "$argv[3]" ]
 		set_color -b $argv[3]
 	end
 
@@ -20,7 +20,7 @@ function fish_prompt -d 'Write out the prompt'
     set -l git_branch (git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/')
 
     set bg 080808
-    set blk 2c2d30
+    set blk 303030
 
     # Host
     set_color -b $fish_color_user
@@ -45,14 +45,16 @@ end
 
 function fish_right_prompt
 	set bg 080808
+    set blk 303030
+
     set -l last_status $status
     set prev ''
 
     # Status
     if [ $last_status -ne 0 ]
-		print_cap  red
-		power_print ' '$last_status' ' $bg red --bold
-		set prev red
+		print_cap  $blk
+		power_print ' '$last_status' ' red $blk --bold
+		set prev $blk
     end
 
     # VIM Mode
