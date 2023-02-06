@@ -54,7 +54,7 @@ mode "$mode_system" {
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym h exec --no-startup-id systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym d exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym d exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -213,7 +213,7 @@ bindsym $mod+button3 floating toggle
 
 # focus the child container
 #bindsym $mod+d focus child
-bindsym $mod+z focus child 
+bindsym $mod+z focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -321,7 +321,7 @@ for_window [window_role="task_dialog"] floating enable
 bar {
     i3bar_command i3bar --transparency
 
-    padding 8px 8px 0 12px
+    padding 12px 0 0 0
 
     # status_command /home/zmenciso/.local/bin/bumblebee-status -m \
     #     load memory amixer battery dunstctl date time \
@@ -331,7 +331,7 @@ bar {
     status_command i3status
 
     # height 26
-    tray_padding 3
+    tray_padding 8
     output $primary
     position top
     tray_output $primary
@@ -339,7 +339,7 @@ bar {
     strip_workspace_name no
 
     separator_symbol "  "
-    font pango:BlexMono Nerd Font 11
+    font pango:BlexMono Nerd Font 10
 
     colors {
 	# <colorclass> <border> <background> <text>
@@ -358,7 +358,7 @@ bar {
 bar {
     i3bar_command i3bar --transparency
 
-    padding 8px 8px 0 8px
+    padding 12px 0 0 0
 
     # status_command /home/zmenciso/.local/bin/bumblebee-status -m \
     #     date time \
