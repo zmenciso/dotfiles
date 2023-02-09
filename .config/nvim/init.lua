@@ -167,6 +167,7 @@ require('lspconfig').pylsp.setup{}		-- pip install "python-lsp-server[all]"
 require('lspconfig').clangd.setup{}
 require('lspconfig').cmake.setup{}
 require('lspconfig').svls.setup{}		-- cargo install svls
+require('lspconfig').texlab.setup{}		-- pacman -S texlab
 -- require('lspconfig').rust_analyzer.setup{}
 
 -- lsp_signature
