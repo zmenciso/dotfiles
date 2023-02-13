@@ -47,7 +47,7 @@ vim.o.expandtab = false
 vim.cmd [[
 	augroup Text
 		autocmd!
-		autocmd FileType text setlocal textwidth=80
+		autocmd FileType text setlocal textwidth=80 spell spelllang=en_us
 	augroup END
 ]]
 
@@ -83,7 +83,7 @@ vim.cmd [[
 	augroup Markdown
 		autocmd!
 		autocmd BufRead,BufNewFile *.md setlocal filetype=markdown
-		autocmd FileType markdown setlocal expandtab textwidth=80
+		autocmd FileType markdown setlocal expandtab textwidth=80 spell spelllang=en_us
 	augroup END
 ]]
 
@@ -168,6 +168,7 @@ require('lspconfig').clangd.setup{}
 require('lspconfig').cmake.setup{}
 require('lspconfig').svls.setup{}		-- cargo install svls
 require('lspconfig').texlab.setup{}		-- pacman -S texlab
+require('lspconfig').marksman.setup{}
 -- require('lspconfig').rust_analyzer.setup{}
 
 -- lsp_signature
