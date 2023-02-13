@@ -14,4 +14,4 @@ st.borderpx: 10
 !-- values between 0.1  - 1.0 --! 
 
 *.alpha: 0.85
-*.font:           Hack Nerd Font Mono:size=11
+*.font:           Blex Mono Nerd Font:size=11
