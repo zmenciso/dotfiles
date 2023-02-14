@@ -4,7 +4,14 @@ CATEGORIES = {
     'MISC': {'bg.jpg', 'lck.jpg', 'face.png', '.config/user-dirs.dirs'},
     'BASH': {'.bashrc'},
     'VIM': {'.vimrc'},
-    'NVIM': {'.config/nvim/init.lua'},
+    'NVIM': {
+        '.config/nvim/init.lua',
+        '.config/nvim/lua/autocmds.lua',
+        '.config/nvim/lua/mapping.lua',
+        '.config/nvim/lua/options.lua',
+        '.config/nvim/lua/plugged.lua',
+        '.config/nvim/lua/setup.lua'
+    },
     'XPLR': {'.config/xplr/init.lua'},
     'BTOP': {'.config/btop/btop.conf'},
     'TMUX': {
