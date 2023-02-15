@@ -54,7 +54,7 @@ vim.g.moonflyNormalFloat = true
 vim.g.moonflyUnderlineMatchParen = true
 vim.g.moonflyTransparent = true
 vim.g.moonflyVirtualTextColor = true
-vim.g.moonflyWinSeparator = 2
+vim.g.moonflyWinSeparator = 1
 
 vim.cmd [[
 	colorscheme moonfly
@@ -63,4 +63,7 @@ vim.cmd [[
 vim.cmd [[
 	hi CursorLineNr guibg=None
 	hi ColorColumn ctermbg=None guibg=#303030
+	hi TelescopeBorder guifg=#b2b2b2
+	hi TelescopeTitle guifg=#b2b2b2
+	hi FloatBorder guifg=#b2b2b2
 ]]
