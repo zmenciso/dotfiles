@@ -45,6 +45,7 @@ tooltip {
 #workspaces button.active {
     font-weight: bold;
 	background: #80a0ff;
+	color: #080808;
 }
 
 #clock {
