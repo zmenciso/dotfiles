@@ -1,8 +1,8 @@
 configuration {
     terminal: "/usr/bin/alacritty";
 
-    modi: "drun,run,ssh,combi";
-    combi-modi: "drun,ssh";
+    modi: "window,drun,run,ssh,combi";
+    combi-modi: "window,drun,ssh";
 
     display-ssh:    " ";
     display-run:    " ";
