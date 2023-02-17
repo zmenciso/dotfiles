@@ -51,7 +51,7 @@ vim.o.showmode = false
 -- Colorscheme settings
 vim.g.moonflyCursorColor = true
 vim.g.moonflyNormalFloat = true
-vim.g.moonflyUnderlineMatchParen = true
+vim.g.moonflyUnderlineMatchParen = false
 vim.g.moonflyTransparent = true
 vim.g.moonflyVirtualTextColor = true
 vim.g.moonflyWinSeparator = 1
