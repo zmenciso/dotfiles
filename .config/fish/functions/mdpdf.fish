@@ -9,7 +9,7 @@ function mdpdf -d "Convert markdown to PDF via pandoc and xelatex"
 
 	set pandoc_args "--pdf-engine=xelatex" \
 	"--highlight-style=tango" \
-	"-V geometry:\"top=2cm, bottom=2cm, left=2cm, right=2cm\"" \
+	"-V geometry:\"top=2.54cm, bottom=2.54cm, left=2.54cm, right=2.54cm\"" \
 	"-V colorlinks -V urlcolor=NavyBlue" \
 	"-H /tmp/head.tex"
 
