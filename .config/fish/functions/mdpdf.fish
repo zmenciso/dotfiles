@@ -37,6 +37,5 @@ function mdpdf -d "Convert markdown to PDF via pandoc and xelatex"
 		set pandoc_args --toc -N $pandoc_args
 	end
 
-	echo $pandoc_args $argv[1] -o $argv[2]
 	eval pandoc $pandoc_args $argv[1] -o $argv[2]
 end
