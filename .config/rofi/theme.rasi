@@ -28,7 +28,7 @@
 
 window {
   transparency: "real";
-  background-color: #080808b3;
+  background-color: #0808089a;
   border-radius: 20px;
 }
 
