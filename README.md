@@ -41,6 +41,7 @@ Requires:
   - `alacritty`
   - `xsettingsd`
   - `papirus-icon-theme`
+  - `polkit-gnome`
 
 Edit `/usr/share/wayland-sessions/hyprland.desktop` to exec `.wrappedhl` instead
 of `Hyprland` so environment variables are set properly.
@@ -71,6 +72,7 @@ Requires:
   - `rofi`
   - `picom`
   - `papirus-icon-theme`
+  - `polkit-gnome`
   - `feh`
   - `material-design-icons`
 
@@ -290,7 +292,7 @@ be necessary for use with SDDM.
   - Connections: `/etc/NetworkManager/system-connections`
 
 ### Hardware
-  - Keybooard
+  - Keyboard
     - `.config/kcminputrc`
     - `.config/kxkbrc`
   - Gamma: `.config/kgammarc`
