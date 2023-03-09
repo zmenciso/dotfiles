@@ -4,13 +4,18 @@ cd ~
 
 # NVIDIA 
 # export LIBVA_DRIVER_NAME=nvidia
-# export XDG_SESSION_TYPE=wayland
 # export GBM_BACKEND=nvidia-drm
 # export __GLX_VENDOR_LIBRARY_NAME=nvidia
-# export WLR_NO_HARDWARE_CURSORS=1
+# export __GL_GSYNC_ALLOWED
+# export __GL_VRR_ALLOWED
 
+export XDG_SESSION_TYPE=wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
 export XCURSOR_SIZE=24
 export GTK_THEME=Orchis-Dark-Compact
+export XCURSOR_SIZE=24
+export SDL_VIDEODRIVER=wayland
+export QT_QPA_PLATFORM="wayland;xcb"
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
 exec Hyprland
