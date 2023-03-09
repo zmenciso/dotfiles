@@ -43,17 +43,14 @@ Requires:
   - `papirus-icon-theme`
   - `polkit-gnome`
 
-Edit `/usr/share/wayland-sessions/hyprland.desktop` to exec `.wrappedhl` instead
-of `Hyprland` so environment variables are set properly.
-
 Font: **BlexMono Nerd Font** (contained in dotfiles repo)
 
 Theme: [**Orchis Dark Compact (Black
 Tweak)**](https://github.com/cyko-themes/gtk-orchis) (contained in dotfiles
 repo)
 
-`lxappearance` is an amazingly convenient tool for setting GTK themes and
-cursors without too much hassle.
+The colors are based on
+[`vim-moonfly-colors`](https://github.com/bluz71/vim-moonfly-colors).
 
 ##  i3-gaps
 
@@ -90,6 +87,9 @@ desktop-file-install --dir=/usr/share/applications [FILE]
 
 The colors are based on
 [`vim-moonfly-colors`](https://github.com/bluz71/vim-moonfly-colors).
+
+`lxappearance` is an amazingly convenient tool for setting GTK themes and
+cursors without too much hassle.
 
 ##  NeoVim
 
