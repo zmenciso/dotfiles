@@ -343,14 +343,14 @@ bar {
 
     colors {
 	# <colorclass> <border> <background> <text>
-	background #00000000
+	background #0808087f
 	statusline $fgbr
 	separator $fgbr
-	focused_workspace $blue #00000000 $fgbr
-	active_workspace $yellow #00000000 $fgbr
-	inactive_workspace #00000000 #00000000 $fgbr
-	urgent_workspace $red #00000000 $red
-	binding_mode #00000000 #00000000 $fgbr
+	focused_workspace $blue #0808087f $fgbr
+	active_workspace $yellow #0808087f $fgbr
+	inactive_workspace #0808087f #0808087f $fgbr
+	urgent_workspace $red #0808087f $red
+	binding_mode #0808087f #0808087f $fgbr
     }
 }
 
@@ -379,14 +379,14 @@ bar {
 
     colors {
 	# <colorclass> <border> <background> <text>
-	background #00000000
+	background #0808087f
 	statusline $fgbr
 	separator $fgbr
-	focused_workspace $blue #00000000 $fgbr
-	active_workspace $yellow #00000000 $fgbr
-	inactive_workspace #00000000 #00000000 $fgbr
-	urgent_workspace $red #00000000 $red
-	binding_mode #00000000 #00000000 $fgbr
+	focused_workspace $blue #0808087f $fgbr
+	active_workspace $yellow #0808087f $fgbr
+	inactive_workspace #0808087f #0808087f $fgbr
+	urgent_workspace $red #0808087f $red
+	binding_mode #0808087f #0808087f $fgbr
     }
 }
 
