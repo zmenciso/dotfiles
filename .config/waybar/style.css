@@ -13,14 +13,26 @@ window#waybar {
 }
 /*-----module groups----*/
 .modules-right {
+	/* background: rgba(8,8,8,0.5); */
+	/* border-radius: 12px; */
+	/* padding: 0 4px; */
+	padding: 3px 12px;
 }
 .modules-center {
+	/* background: rgba(8,8,8,0.5); */
+	/* border-radius: 12px; */
+	/* padding: 0 6px; */
+	padding: 3px 12px;
 }
 .modules-left {
+	/* background: rgba(8,8,8,0.5); */
+	/* border-radius: 12px; */
+	/* padding: 0 4px; */
+	padding: 3px 12px;
 }
 
 tooltip {
-  background: #303030;
+  background: #080808;
   border-radius: 12px;
 }
 
@@ -67,8 +79,11 @@ tooltip {
 	padding: 0 10pt;
 }
 
-#custom-spc {
-	background: #303030;
+#custom-spc_l {
+	padding: 0 1px;
+}
+#custom-spc_r {
+	padding: 0 2px;
 }
 
 #custom-hostname {
@@ -98,12 +113,12 @@ tooltip {
     color: #8cc85f;
 	font-weight: bold;
 }
-#battery.warning:not(.charging) {
-	color: #e3c78a;
-	font-weight: bold;
-}
 #battery.critical:not(.charging) {
     color: #ff5454;
+	font-weight: bold;
+}
+#battery.warning:not(.charging) {
+	color: #e3c78a;
 	font-weight: bold;
 }
 #temperature.critical {

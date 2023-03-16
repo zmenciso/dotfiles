@@ -1,16 +1,16 @@
 {
-    // "output": "DP-2",
     "position": "top",
     "layer": "top",
-    "margin-top": 6,
-    "margin-left": 12,
-    "margin-right": 12,
-    "margin-bottom": -6,
+    // "margin-top": 6,
+    // "margin-left": 12,
+    // "margin-right": 12,
+    // "margin-bottom": -6,
+
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces", "custom/sep_r_inter", "tray"],
+    "modules-left": ["wlr/workspaces", "custom/sep_r_inter", "tray", "custom/spc_l"],
     "modules-center": ["clock"],
     // "modules-right": ["temperature", "custom/sep_l_inter", "cpu", "custom/sep_l_inter", "memory", "custom/sep_l_inter", "pulseaudio", "custom/sep_l_inter", "network", "custom/sep_l_inter", "custom/notification"],
-    "modules-right": ["temperature", "custom/sep_l_inter", "cpu", "custom/sep_l_inter", "memory", "custom/sep_l_inter", "backlight", "custom/sep_l_inter", "pulseaudio", "custom/sep_l_inter", "network", "custom/sep_l_inter", "battery", "custom/sep_l_inter", "custom/notification"],
+    "modules-right": ["custom/spc_r", "temperature", "custom/sep_l_inter", "cpu", "custom/sep_l_inter", "memory", "custom/sep_l_inter", "backlight", "custom/sep_l_inter", "pulseaudio", "custom/sep_l_inter", "network", "custom/sep_l_inter", "battery", "custom/sep_l_inter", "custom/notification"],
 
     "custom/sep_l_inter": {
 		// "rotate": 270,
@@ -21,6 +21,13 @@
 		"tooltip": false,
 		"format": " "
 	},
+	"custom/spc_r": {
+		"format": " "
+	},
+	"custom/spc_l": {
+		"format": " "
+	},
+
 	"custom/hostname": {
 		"tooltip": false,
 		"exec": "hostname",
