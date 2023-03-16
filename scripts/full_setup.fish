@@ -30,7 +30,7 @@ sudo pacman -U yay*.pkg.tar.zst
 
 sudo pacman -S gnome gnome-extra
 
-yay -S ly waybar-hyprland-git rofi-wayland swaylock swayidle swaync \
+yay -S ly waybar-hyprland-git rofi-lbonn-wayland-git swaylock swayidle swaync \
 hyprpaper-git alacritty xsettingsd papirus-icon-theme polkit-gnome xplr \
 zathura spotify-tui spotifyd lxappearance fcitx5 fcitx5-mozc fcitx5-configtool \
 fcitx5-qt fcitx5-gtk fcitx5-breeze mandoc neovim firefox xcursor-breeze \
