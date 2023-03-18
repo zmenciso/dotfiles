@@ -13,22 +13,19 @@ window#waybar {
 }
 /*-----module groups----*/
 .modules-right {
-	/* background: rgba(8,8,8,0.5); */
-	/* border-radius: 12px; */
-	/* padding: 0 4px; */
-	padding: 3px 12px;
+	background: rgba(8,8,8,0.5);
+	border-radius: 12px;
+	padding: 0 4px;
 }
 .modules-center {
-	/* background: rgba(8,8,8,0.5); */
-	/* border-radius: 12px; */
-	/* padding: 0 6px; */
-	padding: 3px 12px;
+	background: rgba(8,8,8,0.5);
+	border-radius: 12px;
+	padding: 0 6px;
 }
 .modules-left {
-	/* background: rgba(8,8,8,0.5); */
-	/* border-radius: 12px; */
-	/* padding: 0 4px; */
-	padding: 3px 12px;
+	background: rgba(8,8,8,0.5);
+	border-radius: 12px;
+	padding: 0 4px;
 }
 
 tooltip {
