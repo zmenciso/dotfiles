@@ -27,9 +27,6 @@ scripts/settings.py [options] [import/export] CATEGORY
 
 ##  Hyprland
 
-It is recommended to install Hyprland after installing another DE like GNOME,
-since these configs use some GTK system utilities, applications, and themes.
-
 Requires:
   - `hyprland`
   - `waybar-hyprland-git`
@@ -42,6 +39,10 @@ Requires:
   - `xsettingsd`
   - `papirus-icon-theme`
   - `polkit-gnome`
+  - `xplr`
+  - `spotify-tui` and `spotifyd`
+
+Export `hyprland`, `waybar`, and `rofi` files, and load GNOME dconf settings.
 
 Font: **BlexMono Nerd Font** (contained in dotfiles repo)
 
