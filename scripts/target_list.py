@@ -113,6 +113,13 @@ CATEGORIES = {
     'SPOTIFY': {
         '.config/spotifyd/spotifyd.conf'
     },
+    'SWAYNC': {
+        '.config/swaync/config.json',
+        '.config/swaync/style.css'
+    },
+    'MAKO': {
+        '.config/mako/config'
+    },
     'I3STATUS': {
         '.config/i3status/config',
         '.config/i3status/config-small'
