@@ -1,0 +1,21 @@
+font=BlexMono Nerd Font 11
+background-color=#0808087F
+text-color=#EEEEEE
+outer-margin=2
+width=500
+height=300
+border-size=2
+border-color=#80A0FF
+border-radius=12
+progress-color=source #8CC85F
+icon-path=/usr/share/icons/Papirus-Dark
+default-timeout=10000
+
+[urgency=low]
+border-color=#8CC85F
+
+[urgency=critical]
+border-color=#FF5454
+
+[mode=dnd]
+invisible=1
