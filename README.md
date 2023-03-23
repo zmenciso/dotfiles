@@ -39,6 +39,7 @@ Requires:
   - `xsettingsd`
   - `papirus-icon-theme`
   - `polkit-gnome`
+  - `wl-clipboard`
   - `xplr`
   - `spotify-tui` and `spotifyd`
 
