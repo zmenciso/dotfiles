@@ -13,24 +13,24 @@ window#waybar {
 }
 /*-----module groups----*/
 .modules-right {
-	background: rgba(8,8,8,0.5);
+	background: rgba(8,8,8,0.25);
 	border-radius: 12px;
 	padding: 0 4px;
 }
 .modules-center {
-	background: rgba(8,8,8,0.5);
+	background: rgba(8,8,8,0.25);
 	border-radius: 12px;
 	padding: 0 6px;
 }
 .modules-left {
-	background: rgba(8,8,8,0.5);
+	background: rgba(8,8,8,0.25);
 	border-radius: 12px;
 	padding: 0 4px;
 }
 
 tooltip {
-  background: #080808;
-  border-radius: 12px;
+	background: #080808;
+	border-radius: 12px;
 }
 
 #workspaces {

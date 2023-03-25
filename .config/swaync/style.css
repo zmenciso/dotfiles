@@ -3,12 +3,12 @@
 @define-color blk rgb(50, 52, 55);
 @define-color blkbr rgb(100, 100, 100);
 @define-color background rgb(8, 8, 8);
-@define-color background-alpha rgba(8, 8, 8, 0.5);
+@define-color background-alpha rgba(8, 8, 8, 0.75);
 @define-color accent rgb(128, 160, 255);
 @define-color red rgb(255, 84, 84);
 @define-color yellow rgb(227, 199, 138);
 @define-color green rgb(140, 200, 95);
-@define-color current-line rgba(8, 8, 8, 0.5);
+@define-color current-line rgba(8, 8, 8, 0.75);
 @define-color comment rgb(98, 114, 164);
 
 .notification-row {
