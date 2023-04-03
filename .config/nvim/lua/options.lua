@@ -14,8 +14,8 @@ vim.opt.smartindent = true
 vim.opt.relativenumber = true
 vim.opt.autoread = true
 vim.opt.cursorline = true
-vim.opt.colorcolumn = {81}
-vim.opt.cursorlineopt = "number"
+-- vim.opt.colorcolumn = {81}
+-- vim.opt.cursorlineopt = "number"
 vim.opt.termguicolors = true
 vim.opt.syntax = 'on'
 vim.opt.wrap = true
@@ -61,8 +61,8 @@ vim.cmd [[
 ]]
 
 vim.cmd [[
-	hi CursorLineNr guibg=None
-	hi ColorColumn ctermbg=None guibg=#303030
+	" hi CursorLineNr guibg=None
+	" hi ColorColumn ctermbg=None guibg=#303030
 	hi TelescopeBorder guifg=#b2b2b2
 	hi TelescopeTitle guifg=#b2b2b2
 	hi FloatBorder guifg=#b2b2b2
