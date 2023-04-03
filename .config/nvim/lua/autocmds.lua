@@ -3,6 +3,7 @@ vim.cmd [[
 	augroup Text
 		autocmd!
 		autocmd FileType text setlocal textwidth=80 spell spelllang=en_us
+		autocmd FileType tex setlocal textwidth=80 spell spelllang=en_us
 	augroup END
 ]]
 
