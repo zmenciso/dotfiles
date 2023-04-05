@@ -14,13 +14,13 @@ end
 
 -- Don't forget to add language servers to the autocompletion config!
 -- :help lspconfig-all
-require('lspconfig').pylsp.setup{}		-- pip install "python-lsp-server[all]"
+require('lspconfig').pylsp.setup{}			-- pip install "python-lsp-server[all]"
 require('lspconfig').clangd.setup{}
 require('lspconfig').cmake.setup{}
-require('lspconfig').svls.setup{}		-- cargo install svls
+require('lspconfig').svlangserver.setup{}	-- npm install -g @imc-trading/svlangserver
 require('lspconfig').marksman.setup{}
 -- require('lspconfig').rust_analyzer.setup{}
-require('lspconfig').texlab.setup{}		-- pacman -S texlab
+require('lspconfig').texlab.setup{}
 
 -- lsp_signature
 -- https://github.com/ray-x/lsp_signature.nvim#full-configuration-with-default-values
