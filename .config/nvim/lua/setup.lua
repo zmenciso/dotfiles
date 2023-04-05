@@ -18,9 +18,9 @@ require('lspconfig').pylsp.setup{}		-- pip install "python-lsp-server[all]"
 require('lspconfig').clangd.setup{}
 require('lspconfig').cmake.setup{}
 require('lspconfig').svls.setup{}		-- cargo install svls
-require('lspconfig').texlab.setup{}		-- pacman -S texlab
 require('lspconfig').marksman.setup{}
 -- require('lspconfig').rust_analyzer.setup{}
+require('lspconfig').texlab.setup{}		-- pacman -S texlab
 
 -- lsp_signature
 -- https://github.com/ray-x/lsp_signature.nvim#full-configuration-with-default-values
@@ -349,13 +349,18 @@ require('lualine').setup{
 		section_separators = { left = '', right = ''},
 		disabled_filetypes = {},
 		always_divide_middle = true,
+		globalstatus = true
 	},
 
 	sections = {
 		lualine_a = {'mode'},
-		lualine_b = {'branch', 'diff',
-		{'diagnostics', sources={'nvim_lsp', 'coc'}}},
-		lualine_c = {'filename'},
+		lualine_b = {'branch', 'diff'},
+		lualine_c = {
+			{
+				'diagnostics',
+				sources={'nvim_lsp', 'coc'}
+			}
+		},
 		lualine_x = {'encoding', 'fileformat', 'filetype'},
 		lualine_y = {'progress'},
 		lualine_z = {'location'}
@@ -370,7 +375,20 @@ require('lualine').setup{
 		lualine_z = {}
 	},
 
-	tabline = {},
+	tabline = {
+		lualine_a = {
+			{
+				'buffers',
+				modified_status = true,
+			}
+		},
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {'tabs'}
+	},
+
 	extensions = {}
 }
 
