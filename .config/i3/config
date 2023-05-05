@@ -409,7 +409,7 @@ smart_borders no_gaps
 #                                  Autostart                                 #
 ##############################################################################
 
-exec --no-startup-id autorandr --change && feh --bg-fill ~/bg.jpg
+exec --no-startup-id autorandr --change && feh --bg-fill ~/bg.png
 exec --no-startup-id xsettingsd
 exec --no-startup-id picom
 exec --no-startup-id ibus-daemon -rxR

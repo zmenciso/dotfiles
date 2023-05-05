@@ -33,7 +33,7 @@ i3lock_options="--insidever-color=$CLEAR \
 --time-str=%H:%M:%S \
 --date-str=%Y-%m-%d \
 --keylayout 0 \
--i /home/zmenciso/lck.jpg \
+-i /home/zmenciso/lck.png \
 -C \
 -f Cantarell \
 \
