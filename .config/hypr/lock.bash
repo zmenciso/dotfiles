@@ -44,7 +44,7 @@ swaylock_options="--indicator-radius 100 \
 \
 -l \
 -e \
--i /home/zmenciso/lck.jpg \
+-i /home/zmenciso/lck.png \
 --scaling fill \
 --font-size 26 \
 --font Cantarell"

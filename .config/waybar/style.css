@@ -13,19 +13,22 @@ window#waybar {
 }
 /*-----module groups----*/
 .modules-right {
-	background: rgba(8,8,8,0.25);
+	/* background: rgba(8,8,8,0.25); */
 	border-radius: 12px;
 	padding: 0 4px;
+	background: transparent;
 }
 .modules-center {
-	background: rgba(8,8,8,0.25);
+	/* background: rgba(8,8,8,0.25); */
 	border-radius: 12px;
 	padding: 0 6px;
+	background: transparent;
 }
 .modules-left {
-	background: rgba(8,8,8,0.25);
+	/* background: rgba(8,8,8,0.25); */
 	border-radius: 12px;
 	padding: 0 4px;
+	background: transparent;
 }
 
 tooltip {
