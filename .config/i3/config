@@ -19,6 +19,7 @@ set $files "alacritty -t xplr -e /usr/bin/xplr"
 set $media "alacritty -t Spotify-tui -e /usr/bin/spt"
 
 # Colors (copied from vim-moonfly-colors)
+set $transparent #00000000
 set $bg #080808
 set $fg #b2b2b2
 set $fgbr #eeeeee
@@ -343,14 +344,14 @@ bar {
 
     colors {
 	# <colorclass> <border> <background> <text>
-	background #0808087f
+	background $transparent
 	statusline $fgbr
 	separator $fgbr
-	focused_workspace $blue #0808087f $fgbr
-	active_workspace $yellow #0808087f $fgbr
-	inactive_workspace #0808087f #0808087f $fgbr
-	urgent_workspace $red #0808087f $red
-	binding_mode #0808087f #0808087f $fgbr
+	focused_workspace $blue $transparent $fgbr
+	active_workspace $yellow $transparent $fgbr
+	inactive_workspace $transparent $transparent $fgbr
+	urgent_workspace $red $transparent $red
+	binding_mode $transparent $transparent $fgbr
     }
 }
 
@@ -379,14 +380,14 @@ bar {
 
     colors {
 	# <colorclass> <border> <background> <text>
-	background #0808087f
+	background $transparent
 	statusline $fgbr
 	separator $fgbr
-	focused_workspace $blue #0808087f $fgbr
-	active_workspace $yellow #0808087f $fgbr
-	inactive_workspace #0808087f #0808087f $fgbr
-	urgent_workspace $red #0808087f $red
-	binding_mode #0808087f #0808087f $fgbr
+	focused_workspace $blue $transparent $fgbr
+	active_workspace $yellow $transparent $fgbr
+	inactive_workspace $transparent $transparent $fgbr
+	urgent_workspace $red $transparent $red
+	binding_mode $transparent $transparent $fgbr
     }
 }
 
