@@ -38,7 +38,7 @@ noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-caladea \
 ttf-carlito ttf-dejavu ttf-liberation ttf-opensans \
 adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
 otf-ipafont ttf-hanazono pavucontrol pulseaudio-alsa pulseaudio \
-libreoffice-fresh inkscape
+libreoffice-fresh inkscape btop grim slurp wl-clipboard \
 
 sudo systemctl enable ly
 
