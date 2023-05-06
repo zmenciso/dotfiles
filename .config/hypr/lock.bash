@@ -1,52 +1,61 @@
 #!/bin/bash
 
 BLANK='#00000000'
-CLEAR='#8cc85f22'
-DEFAULT='#323437cc'
-TEXT='#eeeeeeff'
-WRONG='#ff5454bb'
-VERIFYING='#80a0ffbb'
-EMPTY='#e3c78aff'
-CAPS='e3c78acc'
+DARK='08080880'
+GREEN='#8cc85fff'
+BLACK='#323437ff'
+FGBR='#eeeeeeff'
+FG='#b2b2b2ff'
+RED='#ff5454ff'
+BLUE='#80a0ffff'
+YELLOW='#e3c78aff'
+PURPLE='#d183d8ff'
 
 # Options to pass to swaylock
 swaylock_options="--indicator-radius 100 \
---inside-ver-color $CLEAR \
---ring-ver-color $VERIFYING \
---ring-caps-lock-color $CAPS \
---ring-color $DEFAULT \
---ring-wrong-color $WRONG \
---ring-clear-color $EMPTY \
+--indicator-thickness 12 \
+--clock \
+--timestr %H:%M \
+--datestr %Y-%m-%d \
 \
---line-color $BLANK \
---line-clear-color $BLANK \
---line-ver-color $BLANK \
---line-wrong-color $BLANK \
---line-caps-lock-color $BLANK \
+--ring-color $BLACK \
+--ring-ver-color $PURPLE \
+--ring-clear-color $YELLOW \
+--ring-wrong-color $RED \
+\
+--line-color $BLACK \
+--line-ver-color $PURPLE \
+--line-clear-color $YELLOW \
+--line-wrong-color $RED \
 \
 --layout-bg-color $BLANK \
 --layout-border-color $BLANK \
---layout-text-color $TEXT \
+--layout-text-color $FGBR \
 \
---inside-color $BLANK \
---inside-clear-color $BLANK \
---inside-wrong-color $BLANK \
+--inside-color $DARK \
+--inside-ver-color $DARK \
+--inside-clear-color $DARK \
+--inside-wrong-color $DARK \
 \
---separator-color $DEFAULT \
---text-ver-color $TEXT \
---text-wrong-color $TEXT \
---text-clear-color $TEXT \
---key-hl-color $WRONG \
---caps-lock-key-hl-color $WRONG \
---bs-hl-color $WRONG \
+--text-color $FGBR \
+--text-ver-color $FGBR \
+--text-wrong-color $FGBR \
+--text-clear-color $FGBR \
+\ 
+--separator-color $BLACK \
+--key-hl-color $BLUE \
+--caps-lock-key-hl-color $BLUE \
+--bs-hl-color $RED \
 \
 --daemonize \
-\
 -l \
 -e \
--i /home/zmenciso/lck.png \
---scaling fill \
---font-size 26 \
+\
+--screenshot \
+--effect-blur 12x2 \
+--effect-vignette 0.5:0.8 \
+--fade-in 0.2 \
+--font-size 28 \
 --font Cantarell"
 
 swaylock $swaylock_options
