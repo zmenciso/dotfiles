@@ -3,39 +3,41 @@
 ## CONFIGURATION ##############################################################
 
 BLANK='#00000000'
-CLEAR='#8cc85f22'
-DEFAULT='#323437cc'
-TEXT='#eeeeeeff'
-WRONG='#ff5454bb'
-VERIFYING='#80a0ffbb'
+DARK='08080880'
+GREEN='#8cc85fff'
+BLACK='#323437ff'
+FGBR='#eeeeeeff'
+FG='#b2b2b2ff'
+RED='#ff5454ff'
+BLUE='#80a0ffff'
+YELLOW='#e3c78aff'
+PURPLE='#d183d8ff'
 
 # Options to pass to i3lock
-i3lock_options="--insidever-color=$CLEAR \
---ringver-color=$VERIFYING \
+i3lock_options="--insidever-color=$DARK \
+--ringver-color=$PURPLE \
 \
---insidewrong-color=$CLEAR \
---ringwrong-color=$WRONG \
+--insidewrong-color=$DARK \
+--ringwrong-color=$RED \
 \
---inside-color=$BLANK \
---ring-color=$DEFAULT \
---line-color=$BLANK \
---separator-color=$DEFAULT \
+--inside-color=$DARK \
+--ring-color=$BLACK \
+--line-color=$BLACK \
+--separator-color=$DARK \
 \
---verif-color=$TEXT \
---wrong-color=$TEXT \
---time-color=$TEXT \
---date-color=$TEXT \
---layout-color=$TEXT \
---keyhl-color=$WRONG \
---bshl-color=$WRONG \
+--verif-color=$FGBR \
+--wrong-color=$FGBR \
+--time-color=$FGBR \
+--date-color=$FGBR \
+--layout-color=$FGBR \
+--keyhl-color=$BLUE \
+--bshl-color=$RED \
 \
---clock \
---time-str=%H:%M:%S \
---date-str=%Y-%m-%d \
 --keylayout 0 \
--i /home/zmenciso/lck.png \
+-i /home/zenciso/lck.png \
 -C \
 -f Cantarell \
+--radius 100 \
 \
 --wrong-text=Incorrect \
 --noinput-text=None \

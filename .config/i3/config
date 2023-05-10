@@ -71,8 +71,8 @@ font pango:BlexMono Nerd Font 10
 # <colorclass> <border> <background> <text> <indicator> <child_border>
 client.focused $bg $bg $blue $purplebr $blue
 client.focused_inactive $bg $bg $yellow $bg $bg
-client.unfocused $bg $bg $black $black $bg
-client.urgent $red $bg $red $bg $bg
+client.unfocused $black $bg $black $black $black
+client.urgent $red $bg $red $bg $red
 client.background $bg
 # client.placeholder
 
