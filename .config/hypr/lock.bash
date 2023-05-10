@@ -2,21 +2,18 @@
 
 BLANK='#00000000'
 DARK='08080880'
-GREEN='#8cc85fff'
-BLACK='#323437ff'
-FGBR='#eeeeeeff'
-FG='#b2b2b2ff'
-RED='#ff5454ff'
-BLUE='#80a0ffff'
-YELLOW='#e3c78aff'
-PURPLE='#d183d8ff'
+GREEN='#8cc85f'
+BLACK='#323437'
+FGBR='#eeeeee'
+FG='#b2b2b2'
+RED='#ff5454'
+BLUE='#80a0ff'
+YELLOW='#e3c78a'
+PURPLE='#d183d8'
 
 # Options to pass to swaylock
-swaylock_options="--indicator-radius 100 \
---indicator-thickness 12 \
---clock \
---timestr %H:%M \
---datestr %Y-%m-%d \
+swaylock_options="--indicator-radius 80 \
+--indicator-thickness 10 \
 \
 --ring-color $BLACK \
 --ring-ver-color $PURPLE \
@@ -41,21 +38,20 @@ swaylock_options="--indicator-radius 100 \
 --text-ver-color $FGBR \
 --text-wrong-color $FGBR \
 --text-clear-color $FGBR \
-\ 
+\
 --separator-color $BLACK \
 --key-hl-color $BLUE \
 --caps-lock-key-hl-color $BLUE \
 --bs-hl-color $RED \
 \
 --daemonize \
--l \
--e \
+--indicator-caps-lock \
+--ignore-empty-password \
+--hide-keyboard-layout \
 \
---screenshot \
---effect-blur 12x2 \
---effect-vignette 0.5:0.8 \
---fade-in 0.2 \
---font-size 28 \
+--image /home/zmenciso/lck.png \
+--scaling fill \
+--font-size 24 \
 --font Cantarell"
 
 swaylock $swaylock_options
