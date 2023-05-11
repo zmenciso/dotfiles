@@ -28,8 +28,7 @@ CATEGORIES = {
         '.config/hypr/hyprpaper.conf',
         '.config/hypr/lock.bash',
         '.xsettingsd',
-        '.config/mimeapps.list',
-        '.wrappedhl'
+        '.config/mimeapps.list'
     },
     'WAYBAR': {
         '.config/waybar/config.jsonc',
