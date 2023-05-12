@@ -1,4 +1,5 @@
 import sys
+from tools import error
 
 CATEGORIES = {
     'MISC': {'bg.jpg', 'lck.jpg', 'face.png', '.config/user-dirs.dirs'},
@@ -131,5 +132,4 @@ def decode_category(text):
     if text.upper() in CATEGORIES:
         return CATEGORIES[text.upper()]
     else:
-        print(f'ERROR: Category "{text}" not found.', file=sys.stderr)
-        sys.exit(5)
+        error(f'Category "{text}" not found.', 5)

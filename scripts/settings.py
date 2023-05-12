@@ -8,7 +8,9 @@ import os
 import shutil
 import sys
 
-from query import query
+from tools import query
+from tools import error
+from tools import cprint
 import target_list as tl
 
 # Globals
@@ -48,8 +50,7 @@ def usage(exitcode):
 
 def copy_settings(category, homedir, scriptdir, direction):
     if category not in CATEGORIES:
-        print(f"ERROR: Invalid category '{category}'", file=sys.stderr)
-        return 0
+        error(f"Invalid category '{category}'", 0)
 
     source = None
     destination = None
@@ -63,8 +64,7 @@ def copy_settings(category, homedir, scriptdir, direction):
             destination = os.path.realpath(homedir + '/' + file)
             source = os.path.realpath(scriptdir + '/../' + file)
         else:
-            print(f"ERROR: Invalid direction '{direction}'", file=sys.stderr)
-            return 0
+            error(f"Invalid direction '{direction}'", 0)
 
         if INTERACT:
             allow = query(f'{source} --> {destination}?', 'no')
@@ -83,9 +83,7 @@ def copy_settings(category, homedir, scriptdir, direction):
 
             except Exception as e:
                 if VERBOSE:
-                    print(
-                        f'ERROR: Could not copy {source} to {destination} ({e})',
-                        file=sys.stderr)
+                    error(f'Could not copy {source} to {destination} ({e})')
 
     return count
 
@@ -116,15 +114,12 @@ if __name__ == '__main__':
     try:
         HOME = os.path.realpath(os.getenv('HOME'))
     except Exception as e:
-        print(f'ERROR: Could not get home directory ({e})', file=sys.stderr)
-        sys.exit(4)
+        error(f'Could not get home directory ({e})', 4)
 
     try:
         SCRIPTS = os.path.dirname(os.path.realpath(sys.argv[0]))
     except Exception as e:
-        print(f'ERROR: Could not translate scripts directory ({e})',
-              file=sys.stderr)
-        sys.exit(7)
+        error(f'Could not translate scripts directory ({e})', 7)
 
     count = 0
     if 'all' in CATEGORY:
@@ -135,6 +130,6 @@ if __name__ == '__main__':
             count += copy_settings(item.strip().upper(), HOME, SCRIPTS,
                                    DIRECTION)
 
-    print(f'Successfully {DIRECTION}ed {count} file(s).')
+    cprint('OKGREEN', f'Successfully {DIRECTION}ed {count} file(s).')
 
     sys.exit(0)
