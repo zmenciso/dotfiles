@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 
 import sys
+import os
 
 
-def bar(header=None, length=60):
+def bar(header=None, char='#', length=os.get_terminal_size()[0]):
     output = ''
 
     if header:
-        output += (length*'#' + '\n')
-        output += ('#' + header.center(length-2) + '#\n')
+        output += (length*char + '\n')
+        output += (char + header.center(length-2) + char + '\n')
 
-    output += (length*'#' + '\n\n')
+    output += (length*char + '\n\n')
     return output
 
 
