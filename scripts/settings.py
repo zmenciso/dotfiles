@@ -39,8 +39,8 @@ def usage(exitcode):
         print(' ' * 8 + cat.lower())
 
     print('''
-    Import: Copy files from the system to the dotfiles repo
-    Export: Copy files from the dotfiles repo to the system
+    Import/i: Copy files from the system to the dotfiles repo
+    Export/e: Copy files from the dotfiles repo to the system
 
     This script only works when placed in the `scripts` directory in the dotfiles repo!'''
           )
@@ -57,10 +57,10 @@ def copy_settings(category, homedir, scriptdir, direction):
     count = 0
     for file in tl.decode_category(category):
         allow = True
-        if direction == 'import':
+        if 'i' in direction.lower():
             source = os.path.realpath(homedir + '/' + file)
             destination = os.path.realpath(scriptdir + '/../' + file)
-        elif direction == 'export':
+        elif 'e' in direction.lower():
             destination = os.path.realpath(homedir + '/' + file)
             source = os.path.realpath(scriptdir + '/../' + file)
         else:
@@ -75,12 +75,15 @@ def copy_settings(category, homedir, scriptdir, direction):
             try:
                 if not os.path.isdir(dirname):
                     os.mkdir(dirname)
+            except Exception as e:
+                if VERBOSE:
+                    error(f'Could not create {dirname} ({e})')
 
+            try:
                 shutil.copy2(source, destination)
                 count += 1
                 if VERBOSE and not INTERACT:
                     print(f'{source} --> {destination}')
-
             except Exception as e:
                 if VERBOSE:
                     error(f'Could not copy {source} to {destination} ({e})')
