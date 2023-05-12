@@ -30,7 +30,7 @@ def query(prompt=None, default=None):
         raise ValueError(f'Invalid default answer: {default}')
 
     while True:
-        response = input(prompt + sel)
+        response = input('\033[93m' + prompt + sel + '\x1b[0m')
         if (default is not None) and len(response) == 0:
             return valid[default]
         elif response.lower() in valid:
