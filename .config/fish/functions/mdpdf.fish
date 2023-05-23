@@ -1,6 +1,6 @@
 function mdpdf -d "Convert markdown to PDF via pandoc and xelatex"
 	set texhead '%Change background color for inline code and quote style
-\definecolor{bgcolor}{HTML}{F8F8F8}
+\definecolor{bgcolor}{HTML}{FCE8E8}
 \let\oldtexttt\texttt
 
 \renewcommand{\texttt}[1]{
