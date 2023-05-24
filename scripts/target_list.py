@@ -1,4 +1,5 @@
 import sys
+from tools import error
 
 CATEGORIES = {
     'MISC': {'bg.jpg', 'lck.jpg', 'face.png', '.config/user-dirs.dirs'},
@@ -28,16 +29,11 @@ CATEGORIES = {
         '.config/hypr/hyprpaper.conf',
         '.config/hypr/lock.bash',
         '.xsettingsd',
-        '.config/mimeapps.list',
-        '.wrappedhl'
+        '.config/mimeapps.list'
     },
     'WAYBAR': {
         '.config/waybar/config.jsonc',
-        '.config/waybar/style.css',
-        '.config/waybar/config_top.jsonc',
-        '.config/waybar/style_top.css',
-        '.config/waybar/config_right.jsonc',
-        '.config/waybar/style_right.css'
+        '.config/waybar/style.css'
     },
     'FISH': {
         '.config/fish/config.fish',
@@ -136,5 +132,4 @@ def decode_category(text):
     if text.upper() in CATEGORIES:
         return CATEGORIES[text.upper()]
     else:
-        print(f'ERROR: Category "{text}" not found.', file=sys.stderr)
-        sys.exit(5)
+        error(f'Category "{text}" not found.', 5)

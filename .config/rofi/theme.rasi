@@ -18,6 +18,7 @@
   fgbr:			#e4e4e4;
   fg:			#b2b2b2;
   bg:			#080808;
+  bga:			#080808bf;
 
   spacing: 0;
   background-color: transparent;
@@ -28,7 +29,7 @@
 
 window {
   transparency: "real";
-  background-color: #080808bf;
+  background-color: @bga;
   border-radius: 20px;
 }
 

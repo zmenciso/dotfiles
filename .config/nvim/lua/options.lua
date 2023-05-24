@@ -18,6 +18,7 @@ vim.opt.cursorline = true
 -- vim.opt.cursorlineopt = "number"
 vim.opt.termguicolors = true
 vim.opt.syntax = 'on'
+vim.opt.hlsearch = false
 vim.opt.wrap = true
 vim.opt.breakindent = true
 vim.opt.wrapscan = false

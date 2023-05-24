@@ -5,7 +5,7 @@ import os
 import subprocess
 from multiprocessing import Process
 
-from query import query
+from tools import query
 
 # Globals
 CMD = 'tar -xvf'

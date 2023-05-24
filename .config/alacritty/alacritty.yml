@@ -8,7 +8,7 @@ window:
     x: 8
     y: 8
 
-  opacity: 0.75
+  opacity: 1
 
 font:
   normal: 

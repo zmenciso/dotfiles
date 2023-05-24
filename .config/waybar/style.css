@@ -13,17 +13,20 @@ window#waybar {
 }
 /*-----module groups----*/
 .modules-right {
-	background: rgba(8,8,8,0.25);
+	/* background: rgba(8,8,8,0.25); */
+	background: transparent;
 	border-radius: 12px;
 	padding: 0 4px;
 }
 .modules-center {
-	background: rgba(8,8,8,0.25);
+	/* background: rgba(8,8,8,0.25); */
+	background: transparent;
 	border-radius: 12px;
 	padding: 0 6px;
 }
 .modules-left {
-	background: rgba(8,8,8,0.25);
+	/* background: rgba(8,8,8,0.25); */
+	background: transparent;
 	border-radius: 12px;
 	padding: 0 4px;
 }
@@ -47,7 +50,8 @@ tooltip {
 }
 
 #workspaces button.urgent {
-	background: #ff5454;
+	color: #ff5454;
+	border: #ff5454;
     font-weight: bold;
 }
 

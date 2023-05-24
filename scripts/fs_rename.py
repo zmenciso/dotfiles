@@ -3,9 +3,9 @@
 import os
 import sys
 import re
-from pprint import pprint
 
-from query import query
+from tools import query
+from tools import error
 
 # Yes, I know this is literally the worst programming practice imaginable.
 # This script was not worth the time to figure out how to do a reverse depth-
@@ -120,8 +120,7 @@ if __name__ == '__main__':
                 os.rename(target, f'{head}/{tail}')
                 count += 1
             except Exception as e:
-                print(f'ERROR: Could not rename {target} ({e})',
-                      file=sys.stderr)
+                error(f'Could not rename {target} ({e})')
                 EXIT_CODE += 1
 
     if VERBOSE:
