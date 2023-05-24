@@ -559,7 +559,7 @@ xplr.config.modes.builtin.go_to = {
                 fi
               fi
               (while IFS= read -r -d '' PTH; do
-                $OPENER "${PTH:?}" > /dev/null 2>&1
+                $OPENER "${PTH:?}" & > /dev/null 2>&1
               done < "${XPLR_PIPE_RESULT_OUT:?}")
             ]===],
           },
