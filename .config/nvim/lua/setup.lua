@@ -123,7 +123,7 @@ vim.diagnostic.config({
 		focusable = false,   -- See neovim#16425
 	},
 	severity_sort = true,
-	update_in_insert = false
+	update_in_insert = true
 })
 
 _G.LspDiagnosticsShowPopup = function()
@@ -149,14 +149,6 @@ augroup LSPDiagnosticsOnHover
 	autocmd CursorHold *   lua _G.LspDiagnosticsPopupHandler()
 augroup END
 ]]
-
--- Redfine diagnostic colors
--- vim.cmd [[
--- hi DiagnosticError		guifg=#e6645f ctermfg=167
--- hi DiagnosticWarn		guifg=#e5c07b ctermfg=180
--- hi DiagnosticHint		guifg=#98c379 ctermfg=114
--- hi DiagnosticInfo		guifg=#61afef ctermfg=75
--- ]]
 
 -- Redefine signs (:help diagnostic-signs)
 -- neovim >= 0.6.0
