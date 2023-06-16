@@ -1,4 +1,3 @@
-import sys
 from tools import error
 
 CATEGORIES = {
@@ -58,6 +57,7 @@ CATEGORIES = {
         '.config/fish/functions/yldme.fish',
         '.config/fish/functions/yldme-link.fish',
         '.config/fish/functions/marp-all.fish',
+        '.config/fish/functions/temp.fish',
         '.config/fish/fish_variables',
     },
     # 'SSH': {'.ssh/config'},
