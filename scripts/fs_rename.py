@@ -47,11 +47,13 @@ def gen_targets(path, regex):
     ''' Given path, append to global target list if file contains match to regex'''
     for item in os.scandir(path):
         match = re.search(regex, item.name)
+
         if item.is_dir():
             if match and DIRS:
                 targets.append(item.path)
             if RECURSIVE:
                 gen_targets(item.path, regex)
+
         elif item.is_file() and match and FILES:
             targets.append(item.path)
 
@@ -60,13 +62,13 @@ def gen_targets(path, regex):
 if __name__ == '__main__':
     count = 0
     path = []
-    args = sys.argv[1:]
     FROM = ' '
     TO = '_'
     EXIT_CODE = 0
 
     # Parse command line arguments
 
+    args = sys.argv[1:]
     while len(args) and args[0].startswith('-'):
         if args[0] == '-r' or args[0] == '--recursive':
             RECURSIVE = True

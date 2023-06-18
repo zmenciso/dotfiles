@@ -8,10 +8,10 @@ def bar(header=None, char='#', length=os.get_terminal_size()[0]):
     output = ''
 
     if header:
-        output += (length*char + '\n')
-        output += (char + header.center(length-2) + char + '\n')
+        output += (length*char + os.linesep)
+        output += (char + header.center(length-2) + char + os.linesep)
 
-    output += (length*char + '\n\n')
+    output += (length*char + 2 * os.linesep)
     return output
 
 
@@ -37,7 +37,7 @@ def query(prompt=None, default=None):
             return valid[response.lower()]
 
 
-def cprint(color, string, end='\n', file=sys.stdout):
+def cprint(color, string, end=os.linesep, file=sys.stdout):
     bcolors = {
         'HEADER': '\033[95m',
         'OKBLUE': '\033[94m',
@@ -81,4 +81,4 @@ def print_format_table():
 
             print(s1)
 
-        print('\n')
+        print(os.linesep)

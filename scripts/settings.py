@@ -8,9 +8,7 @@ import os
 import shutil
 import sys
 
-from tools import query
-from tools import error
-from tools import cprint
+from tools import query, error, cprint
 import target_list as tl
 
 # Globals
@@ -58,11 +56,11 @@ def copy_settings(category, homedir, scriptdir, direction):
     for file in tl.decode_category(category):
         allow = True
         if 'i' in direction.lower():
-            source = os.path.realpath(homedir + '/' + file)
-            destination = os.path.realpath(scriptdir + '/../' + file)
+            source = os.path.join(homedir, file)
+            destination = os.path.join(scriptdir, '..', file)
         elif 'e' in direction.lower():
-            destination = os.path.realpath(homedir + '/' + file)
-            source = os.path.realpath(scriptdir + '/../' + file)
+            destination = os.path.join(homedir, file)
+            source = os.path.join(scriptdir, '..', file)
         else:
             error(f"Invalid direction '{direction}'", 0)
 
