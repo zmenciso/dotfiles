@@ -1,5 +1,5 @@
 function marp-all
-    if test (count $argv) = '0'
+    if test (count $argv) = 0
         set argv '*.md'
     end
 

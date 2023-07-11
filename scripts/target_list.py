@@ -61,6 +61,7 @@ CATEGORIES = {
         '.config/fish/functions/yldme.fish',
         '.config/fish/functions/yldme-link.fish',
         '.config/fish/functions/marp-all.fish',
+        '.config/fish/functions/marp-setup.fish',
         '.config/fish/functions/temp.fish',
         '.config/fish/fish_variables',
     },
