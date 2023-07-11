@@ -16,15 +16,19 @@ window#waybar {
 	background: rgba(8,8,8,0.01);
 	/* background: transparent; */
 	border-radius: 12px;
+	padding: 0 4px;
 }
 .modules-center {
-	/* background: rgba(8,8,8,0.01); */
-	background: transparent;
+	background: rgba(8,8,8,0.01);
+	/* background: transparent; */
+	border-radius: 12px;
+	padding: 0 6px;
 }
 .modules-left {
 	background: rgba(8,8,8,0.01);
 	/* background: transparent; */
 	border-radius: 12px;
+	padding: 0 4px;
 }
 
 tooltip {
@@ -58,17 +62,14 @@ tooltip {
 }
 
 #clock {
-	border-radius: 12px;
 	font-weight: bold;
 	font-size: 11pt;
-	background: #80a0ff;
-	color: #080808;
-	padding: 6 0px;
 }
 
 #custom-sep_r_inter {
-	padding: 6 0px;
+	padding: 0 6px;
 }
+
 
 #mode {
     color: #cc3436;
@@ -76,18 +77,18 @@ tooltip {
 }
 
 #custom-sep_l_inter {
-	padding: 10 0pt;
+	padding: 0 10pt;
 }
 
 #custom-spc_l {
-	padding: 1 0px;
+	padding: 0 1px;
 }
 #custom-spc_r {
-	padding: 0 0px;
+	padding: 0 2px;
 }
 
 #custom-hostname {
-	padding: 10px 0px;
+	padding: 0px 10px;
 	background: #80a0ff;
 	color: #080808;
 	font-weight: bold;

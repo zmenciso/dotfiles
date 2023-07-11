@@ -32,7 +32,11 @@ CATEGORIES = {
     },
     'WAYBAR': {
         '.config/waybar/config.jsonc',
-        '.config/waybar/style.css'
+        '.config/waybar/config_right.jsonc',
+        '.config/waybar/config_top.jsonc',
+        '.config/waybar/style.css',
+        '.config/waybar/style_right.css',
+        '.config/waybar/style_top.css'
     },
     'FISH': {
         '.config/fish/config.fish',
