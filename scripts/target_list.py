@@ -36,7 +36,9 @@ CATEGORIES = {
         '.config/waybar/config_top.jsonc',
         '.config/waybar/style.css',
         '.config/waybar/style_right.css',
-        '.config/waybar/style_top.css'
+        '.config/waybar/style_top.css',
+        '.config/waybar/config_top_color.jsonc',
+        '.config/waybar/style_top_color.css'
     },
     'FISH': {
         '.config/fish/config.fish',
