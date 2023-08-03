@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Displays and programs
-set $primary "DP-2"
+set $primary "DP-4"
 set $secondary "DP-1"
 set $browser "/usr/bin/firefox"
 set $terminal "alacritty"
@@ -395,9 +395,9 @@ bar {
 #                                    Gaps                                   #
 ##############################################################################
 
-for_window [class="^.*"] border pixel 2
-gaps outer 6
-gaps inner 14
+for_window [class="^.*"] border pixel 0
+gaps outer 0
+gaps inner 16
 gaps top 1
 default_floating_border none
 # default_border none
@@ -417,4 +417,5 @@ exec --no-startup-id ibus-daemon -rxR
 exec --no-startup-id fish ~/.config/i3/xinput.fish
 exec --no-startup-id dunst
 exec --no-startup-id spotifyd
+exec --no-startup-id python ~/.config/i3/xborders -c ~/.config/i3/xborders_config.json
 # exec --no-startup-id polybar main

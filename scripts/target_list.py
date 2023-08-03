@@ -100,6 +100,8 @@ CATEGORIES = {
         '.config/picom/picom.conf',
         '.config/mimeapps.list',
         '.config/i3/xinput.fish',
+        '.config/i3/xborders',
+        '.config/i3/xborders_config.json',
         '.Xresources',
         '.xsettingsd'
     },
