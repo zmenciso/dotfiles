@@ -65,7 +65,8 @@ CATEGORIES = {
         '.config/fish/functions/marp-all.fish',
         '.config/fish/functions/marp-setup.fish',
         '.config/fish/functions/temp.fish',
-        '.config/fish/fish_variables',
+        '.config/fish/functions/hypr-install.fish',
+        '.config/fish/fish_variables'
     },
     # 'SSH': {'.ssh/config'},
     # 'PANEL': {'.config/plasma-org.kde.plasma.desktop-appletsrc'},
