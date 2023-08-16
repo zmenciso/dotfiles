@@ -134,6 +134,10 @@ CATEGORIES = {
         '.config/bumblebee-status/themes/moonfly-powerline.json',
         '.config/bumblebee-status/themes/moonfly-powerline-small.json',
         '.config/bumblebee-status/themes/icons/powerline.json'
+    },
+    'ANYRUN': {
+        '.config/anyrun/config.ron',
+        '.config/anyrun/style.css'
     }
 }
 
