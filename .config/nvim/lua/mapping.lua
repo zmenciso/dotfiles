@@ -21,6 +21,8 @@ map('i', '<F5>', '<C-o>:setlocal spell! spelllang=en_us<cr>', {})
 -- Leader mappings
 -------------------------------------------------------------------------------
 
+map('n', '<leader>c', '<cmd>cd ..<cr>', { noremap = true })
+
 -- Open xplr
 map('n', '<leader>x', '<cmd>Xplr<cr>', { noremap = true })
 

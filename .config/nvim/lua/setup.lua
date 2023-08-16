@@ -123,7 +123,7 @@ vim.diagnostic.config({
 		focusable = false,   -- See neovim#16425
 	},
 	severity_sort = true,
-	update_in_insert = true
+	update_in_insert = false
 })
 
 _G.LspDiagnosticsShowPopup = function()
