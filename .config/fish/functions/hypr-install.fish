@@ -1,12 +1,12 @@
 function hypr-install
     cd (mktemp -d)
 
-    echo $argv
-
     git clone --recursive git@github.com:hyprwm/Hyprland.git
     cd Hyprland
 
-    git checkout $argv
+    if test (count $argv) -eq 0
+        git checkout $argv
+    end
 
     sudo make install
 end
