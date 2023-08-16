@@ -29,7 +29,20 @@ window#waybar {
 
 tooltip {
 	background: #080808;
+	padding: 6px 6px;
 	border-radius: 12px;
+}
+
+#workspaces,
+#clock,
+#custom-notification,
+#pulseaudio,
+#network,
+#backlight,
+#cpu,
+#memory {
+	color: #eeeeee;
+	/* position = center; */
 }
 
 #workspaces {
@@ -66,17 +79,14 @@ tooltip {
 	padding: 6 0px;
 }
 
-#custom-sep_r_inter {
+#custom-sep_r {
 	padding: 6 0px;
+	color: #b2b2b2;
 }
 
-#mode {
-    color: #cc3436;
-    font-weight: bold;
-}
-
-#custom-sep_l_inter {
+#custom-sep_l {
 	padding: 10 0pt;
+	color: #b2b2b2;
 }
 
 #custom-spc_l {
@@ -84,6 +94,11 @@ tooltip {
 }
 #custom-spc_r {
 	padding: 0 0px;
+}
+
+#mode {
+    color: #cc3436;
+    font-weight: bold;
 }
 
 #custom-hostname {
