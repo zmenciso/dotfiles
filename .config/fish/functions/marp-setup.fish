@@ -1,16 +1,23 @@
 function marp-setup
     if not set -q MARP_TEMPLATE
-        set MARP_TEMPLATE ~/vault/doc/COAIHWL/Marp/COAIHWL_Marp_1
+        set MARP_TEMPLATE ~/doc/COAIHWL/Marp/COAIHWL_Marp_1
     end
 
     if test (count $argv) = 0
         set argv (pwd)
     else if test (count $argv) -gt 1
         echo 'ERROR: Too many arguments'
-        exit 1
+        return 1
     end
 
     echo 'Copying Markdown template...'
+    if not test -e $argv
+        mkdir -p $argv
+    else if not test -d $argv
+        echo "ERROR: `$argv` is not a valid destination"
+        return 2
+    end
+
     cp $MARP_TEMPLATE/*.md $argv
     mv $argv/*.md $argv/(basename $argv).md
 
