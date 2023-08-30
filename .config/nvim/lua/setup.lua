@@ -372,6 +372,8 @@ require('lualine').setup{
 			{
 				'buffers',
 				modified_status = true,
+				mode = 2,
+				use_mode_colors = true,
 				symbols = {
 					modified = ' ',      -- Text to show when the buffer is modified
 					alternate_file = '  ', -- Text to show to identify the alternate file

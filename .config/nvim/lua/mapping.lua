@@ -17,6 +17,10 @@ map('!', '<C-h>', '<C-w>', {noremap = true})
 map('', '<F5>', ':setlocal spell! spelllang=en_us<cr>', {})
 map('i', '<F5>', '<C-o>:setlocal spell! spelllang=en_us<cr>', {})
 
+-- Buffer next/previous
+map('n', 'bn', '<cmd>bn<cr>', { noremap = true })
+map('n', 'bp', '<cmd>bp<cr>', { noremap = true })
+
 -------------------------------------------------------------------------------
 -- Leader mappings
 -------------------------------------------------------------------------------
