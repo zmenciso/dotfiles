@@ -24,5 +24,6 @@ Config(
 		"libapplications.so",
 		"libshell.so",
 		"libtranslate.so",
+		"libwebsearch.so"
 	],
 )

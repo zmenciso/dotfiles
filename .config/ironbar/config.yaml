@@ -1,0 +1,53 @@
+position: "top"
+height: 32
+popup_gap: 5
+margin.top: 0
+margin.bottom: 0
+margin.left: 0
+margin.right: 0
+icon_theme: Papirus
+
+start: 
+  - type: "workspaces"
+    icon_size: 26
+    name_map:
+      "1": "一"
+      "2": "二"
+      "3": "三"
+      "4": "四"
+      "5": "五"
+      "6": "六"
+      "7": "七"
+      "8": "八"
+      "9": "九"
+      "10": "十"
+
+  - type: "tray"
+
+center:
+  - type: "focused"
+    show_icon: true
+    icon_size: 26
+    truncate: "end"
+    max_length: 30
+
+end: 
+  - type: "sys_info"
+    format: 
+      - '龍 {cpu_percent}%'
+      - ' {temp_c:coretemp-Package-id-0}°C'
+      - ' {memory_used} GB ({memory_percent}%)'
+      - ' {disk_used:/} GB ({disk_percent:/}%)'
+      - ' {net_down:wlp1s0} / {net_up:wlp1s0} Mbps  '
+    interval: 
+      cpu: 5
+      disks: 900
+      memory: 60
+      networks: 5
+      temps: 15
+
+  - type: "upower"
+    format: "{percentage}%"
+
+  - type: "clock"
+    format: "%Y-%m-%d %H:%M"

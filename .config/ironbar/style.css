@@ -1,0 +1,64 @@
+@define-color bg         #080808;
+@define-color fg         #b2b2b2;
+@define-color fgbr       #eeeeee;
+@define-color black      #323437;
+@define-color red        #ff5454;
+@define-color green      #8cc85f;
+@define-color yellow     #e3c78a;
+@define-color blue       #80a0ff;
+@define-color purple     #d183e8;
+@define-color cyan       #79dac8;
+@define-color white      #c6c6c6;
+@define-color blackbr    #949494;
+@define-color redbr      #ff5189;
+@define-color greenbr    #36c692;
+@define-color yellowbr   #c2c292;
+@define-color bluebr     #74b2ff;
+@define-color purplebr   #ae81ff;
+@define-color cyanbr     #85dc85;
+@define-color whitebr    #e4e4e4;
+
+box, menubar, button {
+	border-radius: 12px;
+}
+
+.popup {
+	padding: 8px 8px;
+	border-radius: 4px;
+}
+
+.background {
+	background: rgba(8, 8, 8, .75);
+}
+
+#bar {
+	padding: 4px 0px;
+}
+
+#bar #start {
+	margin-left: 12px;
+}
+
+#bar #end {
+	margin-right: 12px;
+}
+
+/* .workspaces { */
+/* 	padding: 2px 0px; */
+/* } */
+
+.workspaces .item {
+	border-radius: 12px;
+	padding: 0px 2px;
+}
+
+.workspaces .item.focused {
+    font-weight: bold;
+	background-color: @blue;
+	color: @bg;
+}
+
+.tray {
+	box-shadow: none;
+}
+

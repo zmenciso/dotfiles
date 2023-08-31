@@ -40,6 +40,10 @@ CATEGORIES = {
         '.config/waybar/config_top_color.jsonc',
         '.config/waybar/style_top_color.css'
     },
+    'IRONBAR': {
+        '.config/ironbar/config.yaml',
+        '.config/ironbar/style.css'
+    },
     'FISH': {
         '.config/fish/config.fish',
         '.config/fish/functions/mdpdf.fish',
@@ -137,7 +141,10 @@ CATEGORIES = {
     },
     'ANYRUN': {
         '.config/anyrun/config.ron',
-        '.config/anyrun/style.css'
+        '.config/anyrun/style.css',
+        '.config/anyrun/translate.ron',
+        '.config/anyrun/shell.ron',
+        '.config/anyrun/websearch.ron'
     }
 }
 
