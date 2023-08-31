@@ -29,8 +29,8 @@ scripts/settings.py [options] [import/export] CATEGORY
 
 Requires:
   - `hyprland`
-  - `waybar-hyprland-git`
-  - `rofi-wayland`
+  - `ironbar`
+  - `anyrun`
   - `swaylock`
   - `swayidle`
   - `swaync`
@@ -43,9 +43,9 @@ Requires:
   - `xplr`
   - `spotify-tui` and `spotifyd`
 
-Export `hyprland`, `waybar`, and `rofi` files, and load GNOME dconf settings.
+Export the relevant groups.  No need to load dconf settings.
 
-Font: **BlexMono Nerd Font** (contained in dotfiles repo)
+Font: **BlexMono Nerd Font** (contained in dotfiles repo) and **Cantarell**
 
 Theme: [**Orchis Dark Compact (Black
 Tweak)**](https://github.com/cyko-themes/gtk-orchis) (contained in dotfiles
@@ -56,8 +56,8 @@ The colors are based on
 
 ##  i3-gaps
 
-It is recommended to install i3-gaps after installing another DE like GNOME,
-since these configs use some GTK system utilities, applications, and themes.
+I recommended installing i3-gaps after installing another DE like GNOME, since
+these configs use some GTK system utilities, applications, and themes.
 
 Requires:
   - `i3-gaps` or `i3-gaps-rounded`
