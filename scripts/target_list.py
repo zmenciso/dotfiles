@@ -28,6 +28,7 @@ CATEGORIES = {
         '.config/hypr/hyprpaper.conf',
         '.config/hypr/lock.bash',
         '.xsettingsd',
+        '.config/hypr/gsettings.fish',
         '.config/mimeapps.list'
     },
     'WAYBAR': {
