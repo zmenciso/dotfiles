@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 -- General vim settings
 -------------------------------------------------------------------------------
-vim.opt.autochdir = true
+-- vim.opt.autochdir = true
 vim.opt.backspace = 'indent,eol,start'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true

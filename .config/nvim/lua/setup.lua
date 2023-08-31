@@ -12,7 +12,6 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
--- Don't forget to add language servers to the autocompletion config!
 -- :help lspconfig-all
 require('lspconfig').pylsp.setup{}			-- pip install "python-lsp-server[all]"
 require('lspconfig').clangd.setup{}
@@ -26,7 +25,7 @@ require('lspconfig').texlab.setup{}
 -- https://github.com/ray-x/lsp_signature.nvim#full-configuration-with-default-values
 local on_attach_lsp_signature = function(client, bufnr)
 require('lsp_signature').on_attach({
-	bind = true, -- This is mandatory, otherwise border config won't get registered.
+	bind = true,
 	floating_window = true,
 	zindex = 99,     -- <100 so that it does not hide completion popup.
 	fix_pos = false, -- Let signature window change its position when needed, see GH-53
@@ -385,7 +384,12 @@ require('lualine').setup{
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
-		lualine_z = {'tabs'}
+		lualine_z = {
+			{
+				'tabs',
+				use_mode_colors = true
+			}
+		}
 	},
 
 	extensions = {}
