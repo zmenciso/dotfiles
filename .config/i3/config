@@ -15,12 +15,13 @@ set $secondary "DP-1"
 set $browser "/usr/bin/firefox"
 set $terminal "alacritty"
 set $editor "alacritty -t Neovim -e /usr/bin/nvim"
-set $files "alacritty -t xplr -e /usr/bin/xplr"
+set $files "alacritty -t xplr -e /usr/local/bin/xplr"
 set $media "alacritty -t Spotify-tui -e /usr/bin/spt"
 
 # Colors (copied from vim-moonfly-colors)
 set $transparent #00000000
 set $bg #080808
+set $bg_ts #080808bf
 set $fg #b2b2b2
 set $fgbr #eeeeee
 set $black #323437
@@ -321,8 +322,9 @@ for_window [window_role="task_dialog"] floating enable
 # Primary displays
 bar {
     i3bar_command i3bar --transparency
+    id 0
 
-    padding 12px 0 0 0
+    padding 4px 0 0 0
 
     # status_command /home/zmenciso/.local/bin/bumblebee-status -m \
     #     load memory amixer battery dunstctl date time \
@@ -344,22 +346,23 @@ bar {
 
     colors {
 	# <colorclass> <border> <background> <text>
-	background $transparent
+	background $bg_tr
 	statusline $fgbr
-	separator $fgbr
-	focused_workspace $blue $transparent $fgbr
-	active_workspace $yellow $transparent $fgbr
-	inactive_workspace $transparent $transparent $fgbr
-	urgent_workspace $red $transparent $red
-	binding_mode $transparent $transparent $fgbr
+	separator $black
+	focused_workspace $bg_tr $blue $bg_tr
+	active_workspace $bg_tr $yellow $bg_tr
+	inactive_workspace $bg_tr $bg_tr $fgbr
+	urgent_workspace $bg_tr $red $bg_tr
+	binding_mode $bg_tr $bg_tr $fgbr
     }
 }
 
 # Secondary displays
 bar {
     i3bar_command i3bar --transparency
+    id 1
 
-    padding 12px 0 0 0
+    padding 4px 0 0 0
 
     # status_command /home/zmenciso/.local/bin/bumblebee-status -m \
     #     date time \
@@ -380,14 +383,14 @@ bar {
 
     colors {
 	# <colorclass> <border> <background> <text>
-	background $transparent
+	background $bg_tr
 	statusline $fgbr
-	separator $fgbr
-	focused_workspace $blue $transparent $fgbr
-	active_workspace $yellow $transparent $fgbr
-	inactive_workspace $transparent $transparent $fgbr
-	urgent_workspace $red $transparent $red
-	binding_mode $transparent $transparent $fgbr
+	separator $black
+	focused_workspace $bg_tr $blue $bg_tr
+	active_workspace $bg_tr $yellow $bg_tr
+	inactive_workspace $bg_tr $bg_tr $fgbr
+	urgent_workspace $bg_tr $red $bg_tr
+	binding_mode $bg_tr $bg_tr $fgbr
     }
 }
 
@@ -402,7 +405,7 @@ gaps top 1
 default_floating_border none
 # default_border none
 smart_borders no_gaps
-# smart_gaps on
+smart_gaps on
 
 # border_radius 14
 
@@ -417,5 +420,5 @@ exec --no-startup-id ibus-daemon -rxR
 exec --no-startup-id fish ~/.config/i3/xinput.fish
 exec --no-startup-id dunst
 exec --no-startup-id spotifyd
-exec --no-startup-id python ~/.config/i3/xborders -c ~/.config/i3/xborders_config.json
+exec --no-startup-id python3 ~/.config/i3/xborders -c ~/.config/i3/xborders_config.json &
 # exec --no-startup-id polybar main
