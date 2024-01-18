@@ -17,7 +17,7 @@ require('lspconfig').pylsp.setup{}			-- pip install "python-lsp-server[all]"
 require('lspconfig').clangd.setup{}
 require('lspconfig').cmake.setup{}
 require('lspconfig').svlangserver.setup{}	-- npm install -g @imc-trading/svlangserver
-require('lspconfig').marksman.setup{}
+-- require('lspconfig').marksman.setup{}
 -- require('lspconfig').rust_analyzer.setup{}
 require('lspconfig').texlab.setup{}
 
