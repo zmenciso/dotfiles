@@ -3,6 +3,8 @@ function map(mode, shortcut, command, opts)
 	vim.api.nvim_set_keymap(mode, shortcut, command, opts)
 end
 
+vim.api.nvim_create_user_command('ChDir', 'cd %:p:h', {})
+
 -- Use ctrl-[hjkl] to select the active split!
 map('n', '<c-k>', ':wincmd k<CR>', { silent = true })
 map('n', '<c-j>', ':wincmd j<CR>', { silent = true })
