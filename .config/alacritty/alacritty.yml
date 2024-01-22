@@ -8,7 +8,7 @@ window:
     x: 8
     y: 8
 
-  opacity: 1
+  opacity: 0.8
 
 font:
   normal: 
@@ -16,10 +16,6 @@ font:
     family: BlexMono Nerd Font
 
   size: 11
-
-colors:
-  primary:
-    background: '#080808'
 
 shell:
   program: /usr/bin/fish
