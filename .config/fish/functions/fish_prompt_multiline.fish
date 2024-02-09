@@ -8,13 +8,11 @@ end
 function print_cap -d '[CHAR] [foreground] [background]'
 	set_color normal
 
-	if [ -n $argv[3] ]
+	if [ -n "$argv[3]" ]
 		set_color -b $argv[3]
 	end
 
-	if [ $argv[1] != '' ]
-		set_color $argv[2]
-	end
+	set_color $argv[2]
 	echo -n $argv[1]
 end
 
@@ -23,71 +21,68 @@ function fish_prompt -d 'Write out the prompt'
     set -l git_branch (git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/')
 
     set bg 080808
+    set blk 303030
 
     # Host
-    set_color -b $fish_color_user
-    set_color --bold $bg
-    echo -n ' '$hostname' '
-
-	print_cap  $fish_color_user black
+    switch $fish_bind_mode
+	    case default
+		  power_print " $hostname " $bg blue --bold
+		  print_cap  blue $blk
+	    case insert
+		  power_print " $hostname " $bg white --bold
+		  print_cap  white $blk
+	    case replace_one
+		  power_print " $hostname " $bg brred --bold
+		  print_cap  brred $blk
+	    case visual
+		  power_print " $hostname " $bg brmagenta --bold
+		  print_cap  brmagenta $blk
+	    case '*'
+		  power_print " $hostname " $bg red --bold
+		  print_cap  red $blk
+    end
 
     # PWD
-    power_print ' '(prompt_pwd)' ' $fish_color_cwd black --italics
-    set prev black
+    power_print ' '(prompt_pwd)' ' $fish_color_cwd $blk --italics
+    set prev $blk
 
     # Git 
     if [ -n "$git_branch" ]
-		print_cap  $fish_color_git $prev
-		power_print ' '$git_branch' ' $fish_color_git black --bold
+		print_cap  brblack $prev
+		power_print " $git_branch " $fish_color_git $blk
     end
 
     # Status
     if [ $last_status -ne 0 ]
-		print_cap  red $prev
-		power_print '  '$last_status' ' red black
+		print_cap  $prev red
+		power_print "  $last_status " $bg red --bold
+		set prev red
     end
 
 	print_cap  $prev
-	echo -n ' '
-end
 
-function fish_right_prompt
-	set bg 080808
-	set_color normal 
+    # Second line
+	echo
 
     # VIM Mode
     switch $fish_bind_mode
 	    case default
-	      set_color blue
-		  echo -n ''
-		  set_color --bold $bg
-	      set_color -b blue
-	      echo -n ' N '
+		  power_print " N " $bg blue
+		  print_cap  blue
 	    case insert
-		  set_color white
-		  echo -n ''
-		  set_color --bold $bg
-	      set_color -b white
-	      echo -n ' I '
+		  power_print " I " $bg white
+		  print_cap  white
 	    case replace_one
-	      set_color brred
-		  echo -n ''
-		  set_color --bold $bg
-	      set_color -b brred
-	      echo -n ' R '
+		  power_print " R " $bg brred
+		  print_cap  brred
 	    case visual
-	      set_color brmagenta
-		  echo -n ''
-		  set_color --bold $bg
-	      set_color -b brmagenta
-	      echo -n ' V '
+		  power_print " V " $bg brmagenta
+		  print_cap  brmagenta
 	    case '*'
-	      set_color red
-		  echo -n ''
-		  set_color normal
-	      set_color -b red
-	      echo -n '?'
+		  power_print " ? " $bg red
+		  print_cap  red
     end
 
-    set_color normal
+	echo -n ' '
+
 end

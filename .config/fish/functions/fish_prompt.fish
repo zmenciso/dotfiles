@@ -17,17 +17,30 @@ function print_cap -d '[CHAR] [foreground] [background]'
 end
 
 function fish_prompt -d 'Write out the prompt'
+    set -l last_status $status
     set -l git_branch (git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/')
 
     set bg 080808
     set blk 303030
 
     # Host
-    set_color -b $fish_color_user
-    set_color --bold $bg
-    echo -n ' '$hostname' '
-
-	print_cap  $fish_color_user $blk
+    switch $fish_bind_mode
+	    case default
+		  power_print " $hostname " $bg blue --bold
+		  print_cap  blue $blk
+	    case insert
+		  power_print " $hostname " $bg white --bold
+		  print_cap  white $blk
+	    case replace_one
+		  power_print " $hostname " $bg brred --bold
+		  print_cap  brred $blk
+	    case visual
+		  power_print " $hostname " $bg brmagenta --bold
+		  print_cap  brmagenta $blk
+	    case '*'
+		  power_print " $hostname " $bg red --bold
+		  print_cap  red $blk
+    end
 
     # PWD
     power_print ' '(prompt_pwd)' ' $fish_color_cwd $blk --italics
@@ -36,45 +49,40 @@ function fish_prompt -d 'Write out the prompt'
     # Git 
     if [ -n "$git_branch" ]
 		print_cap  brblack $prev
-		power_print ' '$git_branch' ' $fish_color_git $blk --bold
+		power_print " $git_branch " $fish_color_git $blk
     end
-
-	print_cap  $prev
-	echo -n ' '
-end
-
-function fish_right_prompt
-	set bg 080808
-    set blk 303030
-
-    set -l last_status $status
-    set prev ''
 
     # Status
     if [ $last_status -ne 0 ]
-		print_cap  $blk
-		power_print ' '$last_status' ' red $blk --bold
-		set prev $blk
+		print_cap  $prev red
+		power_print "  $last_status " $bg red --bold
+		set prev red
     end
+
+	print_cap  $prev
+
+    # Second line
+	echo
 
     # VIM Mode
     switch $fish_bind_mode
 	    case default
-		  print_cap  blue $prev
-		  power_print ' N ' $bg blue --bold
+		  power_print " N " $bg blue
+		  print_cap  blue
 	    case insert
-		  print_cap  white $prev
-		  power_print ' I ' $bg white --bold
+		  power_print " I " $bg white
+		  print_cap  white
 	    case replace_one
-		  print_cap  brred $prev
-		  power_print ' R ' $bg brred --bold
+		  power_print " R " $bg brred
+		  print_cap  brred
 	    case visual
-		  print_cap  brmagenta $prev
-		  power_print ' V ' $bg brmagenta --bold
+		  power_print " V " $bg brmagenta
+		  print_cap  brmagenta
 	    case '*'
-		  print_cap  red $prev
-		  power_print ' ? ' $bg red --bold
+		  power_print " ? " $bg red
+		  print_cap  red
     end
 
-    set_color normal
+	echo -n ' '
+
 end
