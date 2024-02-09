@@ -7,7 +7,7 @@ set TEMP_DIR (mktemp -d)
 
 cd $TEMP_DIR
 git clone git@github.com:textext/textext.git
-python textext/setup.py --skip-requirements-check
+python textext/setup.py
 
 git clone git@github.com:fsmMLK/inkscapeMadeEasy.git
 mkdir $EXT_DIR/inkscapeMadeEasy
@@ -36,6 +36,10 @@ cp inkscapeCartesianAxes2D/latest/* $EXT_DIR/cartesianAxes2D
 git clone git@github.com:fsmMLK/inkscapeCartesianPlotFunction2D.git
 mkdir $EXT_DIR/cartesianPlotFunction2D
 cp inkscapeCartesianPlotFunction2D/latest/* $EXT_DIR/cartesianPlotFunction2D
+
+git clone git@github.com:fsmMLK/inkscapeSlopeField.git
+mkdir $EXT_DIR/slopeField
+cp inkscapeSlopeField/latest/* $EXT_DIR/slopeField
 
 cd -
 rm -rf $TEMP_DIR
