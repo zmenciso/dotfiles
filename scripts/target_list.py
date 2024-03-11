@@ -116,7 +116,6 @@ CATEGORIES = {
         '.config/rofi/config.rasi'
     },
     'ALACRITTY': {
-        '.config/alacritty/alacritty.yml',
         '.config/alacritty/alacritty.toml'
     },
     'DUNST': {
