@@ -1,7 +1,7 @@
 from tools import error
 
 CATEGORIES = {
-    'MISC': {'bg.jpg', 'lck.jpg', 'face.png', '.config/user-dirs.dirs'},
+    'MISC': {'.config/user-dirs.dirs'},
     'BASH': {'.bashrc'},
     'VIM': {'.vimrc'},
     'NVIM': {
@@ -128,18 +128,18 @@ CATEGORIES = {
         '.config/swaync/config.json',
         '.config/swaync/style.css'
     },
-    'MAKO': {
-        '.config/mako/config'
-    },
+    # 'MAKO': {
+    #     '.config/mako/config'
+    # },
     'I3STATUS': {
         '.config/i3status/config',
         '.config/i3status/config-small'
     },
-    'BUMBLEBEE': {
-        '.config/bumblebee-status/themes/moonfly-powerline.json',
-        '.config/bumblebee-status/themes/moonfly-powerline-small.json',
-        '.config/bumblebee-status/themes/icons/powerline.json'
-    },
+    # 'BUMBLEBEE': {
+    #     '.config/bumblebee-status/themes/moonfly-powerline.json',
+    #     '.config/bumblebee-status/themes/moonfly-powerline-small.json',
+    #     '.config/bumblebee-status/themes/icons/powerline.json'
+    # },
     'ANYRUN': {
         '.config/anyrun/config.ron',
         '.config/anyrun/style.css',
