@@ -18,18 +18,21 @@
 @define-color cyanbr     #85dc85;
 @define-color whitebr    #e4e4e4;
 
-box, menubar, button {
-	border-radius: 12px;
+* {
+	font-family: Cantarell, BlexMono Nerd Font;
 }
 
-.popup {
-	padding: 8px 8px;
-	border-radius: 4px;
+box, menubar, button {
+	border-radius: 12px;
 }
 
 .background {
 	background: rgba(8, 8, 8, .75);
 }
+
+/* .widget { */
+/* 	padding: 2px 8px; */
+/* } */
 
 #bar {
 	padding: 4px 0px;
@@ -42,10 +45,6 @@ box, menubar, button {
 #bar #end {
 	margin-right: 12px;
 }
-
-/* .workspaces { */
-/* 	padding: 2px 0px; */
-/* } */
 
 .workspaces .item {
 	border-radius: 12px;
@@ -60,5 +59,19 @@ box, menubar, button {
 
 .tray {
 	box-shadow: none;
+	padding: 0px 6px;
+	background-color: transparent;
 }
 
+.sysinfo {
+	padding: 0px 4px;
+}
+
+.clock {
+	padding: 0px 12px;
+}
+
+.popup {
+	padding: 8px 8px;
+	border-radius: 12px;
+}
