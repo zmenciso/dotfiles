@@ -34,9 +34,8 @@ i3lock_options="--insidever-color=$DARK \
 --bshl-color=$RED \
 \
 --keylayout 0 \
--i /home/zenciso/lck.png \
---indicator \
--C \
+-i /home/zmenciso/bg.png \
+-F \
 -f Cantarell \
 --radius 100 \
 \

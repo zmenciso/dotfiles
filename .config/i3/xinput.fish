@@ -5,4 +5,4 @@
 #   - `xinput list-props` 
 #   - `xinput set-prop`
 
-xinput set-prop 11 321 -0.8
+xinput set-prop 10 298 -1

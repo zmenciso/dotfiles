@@ -1,9 +1,10 @@
 {
-    "border-rgba": "0x80a0ffff",
-    "border-radius": 14,
+    "border-rgba": "#80A0FFFF",
+    "border-radius": 18,
     "border-width": 2,
     "border-mode": "outside",
     "disable-version-warning": false,
+    "smart-hide-border": true,
 
     "positive-x-offset": 0,
     "positive-y-offset": 0,

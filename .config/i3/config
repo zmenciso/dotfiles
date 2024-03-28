@@ -10,8 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Displays and programs
-set $primary "DP-4"
-set $secondary "DP-1"
+set $primary "DP-1"
+set $secondary "DP-5"
 set $browser "/usr/bin/firefox"
 set $terminal "alacritty"
 set $editor "alacritty -t Neovim -e /usr/bin/nvim"
@@ -108,8 +108,8 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -248,19 +248,54 @@ bindsym $mod+0 workspace number $ws10
 
 # move focused container to prev/next workspace
 bindsym $mod+Shift+bracketleft move container to workspace prev
+bindsym --release $mod+Shift+bracketleft workspace prev
 bindsym $mod+Shift+bracketright  move container to workspace next
+bindsym --release $mod+Shift+bracketright workspace next
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym --release $mod+Shift+1 workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym --release $mod+Shift+2 workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym --release $mod+Shift+3 workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym --release $mod+Shift+4 workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym --release $mod+Shift+5 workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym --release $mod+Shift+6 workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym --release $mod+Shift+7 workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym --release $mod+Shift+8 workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym --release $mod+Shift+9 workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym --release $mod+Shift+0 workspace number $ws10
+
+bindsym $mod+Ctrl+Shift+1 move container to workspace number $ws1
+bindsym $mod+Ctrl+Shift+2 move container to workspace number $ws2
+bindsym $mod+Ctrl+Shift+3 move container to workspace number $ws3
+bindsym $mod+Ctrl+Shift+4 move container to workspace number $ws4
+bindsym $mod+Ctrl+Shift+5 move container to workspace number $ws5
+bindsym $mod+Ctrl+Shift+6 move container to workspace number $ws6
+bindsym $mod+Ctrl+Shift+7 move container to workspace number $ws7
+bindsym $mod+Ctrl+Shift+8 move container to workspace number $ws8
+bindsym $mod+Ctrl+Shift+9 move container to workspace number $ws9
+bindsym $mod+Ctrl+Shift+0 move container to workspace number $ws10
+
+# move workspace to monitor
+bindsym $mod+Shift+Mod1+h move workspace to output left
+bindsym $mod+Shift+Mod1+l move workspace to output right
+bindsym $mod+Shift+Mod1+j move workspace to output down
+bindsym $mod+Shift+Mod1+k move workspace to output up
+
+# focus monitor
+bindsym $mod+Mod1+h output left
+bindsym $mod+Mod1+l output right
+bindsym $mod+Mod1+j output down
+bindsym $mod+Mod1+k output up
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -277,16 +312,16 @@ mode "Resize" {
     # Pressing right will grow the window’s width.
     # Pressing up will shrink the window’s height.
     # Pressing down will grow the window’s height.
-    bindsym h resize shrink width 10 px or 10 ppt
-    bindsym j resize grow height 10 px or 10 ppt
-    bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 px or 10 ppt
+    bindsym h resize shrink width 10 px or 5 ppt
+    bindsym j resize grow height 10 px or 5 ppt
+    bindsym k resize shrink height 10 px or 5 ppt
+    bindsym l resize grow width 10 px or 5 ppt
 
     # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 5 ppt
+    bindsym Down resize grow height 10 px or 5 ppt
+    bindsym Up resize shrink height 10 px or 5 ppt
+    bindsym Right resize grow width 10 px or 5 ppt
 
     # back to normal: Enter or Escape or $mod+r
     bindsym Return mode "default"
@@ -379,7 +414,7 @@ bar {
     strip_workspace_name no
 
     separator_symbol "  "
-    font pango:BlexMono Nerd Font 11
+    font pango:BlexMono Nerd Font 10
 
     colors {
 	# <colorclass> <border> <background> <text>
@@ -420,5 +455,6 @@ exec --no-startup-id ibus-daemon -rxR
 exec --no-startup-id fish ~/.config/i3/xinput.fish
 exec --no-startup-id dunst
 exec --no-startup-id spotifyd
-exec --no-startup-id python3 ~/.config/i3/xborders -c ~/.config/i3/xborders_config.json &
+exec --no-startup-id python3 ~/.config/i3/xborders -c ~/.config/i3/xborders_config.json
+exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 # exec --no-startup-id polybar main
