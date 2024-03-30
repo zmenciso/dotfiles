@@ -26,7 +26,9 @@ CATEGORIES = {
     'HYPRLAND': {
         '.config/hypr/hyprland.conf',
         '.config/hypr/hyprpaper.conf',
-        '.config/hypr/lock.bash',
+        '.config/hypr/hypridle.conf',
+        '.config/hypr/hyprlock.conf',
+        # '.config/hypr/lock.bash',
         '.xsettingsd',
         '.config/hypr/gsettings.fish',
         '.config/mimeapps.list'
