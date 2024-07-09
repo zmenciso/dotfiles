@@ -1,1 +1,1 @@
-figlet -f slant kingfisher | lolcat -tf
+figlet -f slant (hostname) | lolcat -tf

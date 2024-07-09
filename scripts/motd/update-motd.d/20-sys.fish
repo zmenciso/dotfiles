@@ -17,7 +17,7 @@ set p_root (echo $processes | grep root | awk '{ print $2 }')
 set p_total (math (string join '+' (echo $processes | cut -d ' ' -f 2)))
 set p_user (math $p_total - $p_root)
 
-# set cpu (string trim (lscpu | grep '^Model name' | cut -f 2 -d ':'))
+set cpu (string trim (lscpu | grep '^Model name' | cut -f 2 -d ':'))
 set mem (free -htm | grep "Mem" | awk '{ print $3,$7,$2 }')
 set mem (string split ' ' $mem)
 set mem_raw (free -tm | grep "Mem" | awk '{ print $2,$3 }')
