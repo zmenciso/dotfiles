@@ -22,34 +22,44 @@ function fish_prompt -d 'Write out the prompt'
 
     set bg 080808
     set blk 303030
+    set color
+    set tag
 
-    # Host
+    # Host and CWD
     switch $fish_bind_mode
 	    case default
-		  power_print " $hostname " $bg blue --bold
-		  print_cap  blue $blk
+	        set color blue
+	        set tag N
 	    case insert
-		  power_print " $hostname " $bg white --bold
-		  print_cap  white $blk
+	        set color brgreen
+	        set tag I
 	    case replace_one
-		  power_print " $hostname " $bg brred --bold
-		  print_cap  brred $blk
+	        set color blue
+	        set tag N
+        case replace
+            set color brred
+            set tag R
 	    case visual
-		  power_print " $hostname " $bg brmagenta --bold
-		  print_cap  brmagenta $blk
+	        set color brmagenta
+	        set tag V
 	    case '*'
-		  power_print " $hostname " $bg red --bold
-		  print_cap  red $blk
+	        set color yellow
+	        set tag C
     end
 
-    # PWD
-    power_print ' '(prompt_pwd)' ' $fish_color_cwd $blk --italics
+    # Hostname
+    power_print " $hostname " $bg $color --bold
+    print_cap  $color $blk
+
+    # CWD
+    power_print ' '(prompt_pwd)' ' white $blk --italics
+
     set prev $blk
 
     # Git 
     if [ -n "$git_branch" ]
 		print_cap  brblack $prev
-		power_print " $git_branch " $fish_color_git $blk
+		power_print " $git_branch " $color $blk
     end
 
     # Status
@@ -61,27 +71,10 @@ function fish_prompt -d 'Write out the prompt'
 
 	print_cap  $prev
 
-    # Second line
-	echo
-
     # VIM Mode
-    switch $fish_bind_mode
-	    case default
-		  power_print " N " $bg blue
-		  print_cap  blue
-	    case insert
-		  power_print " I " $bg white
-		  print_cap  white
-	    case replace_one
-		  power_print " R " $bg brred
-		  print_cap  brred
-	    case visual
-		  power_print " V " $bg brmagenta
-		  print_cap  brmagenta
-	    case '*'
-		  power_print " ? " $bg red
-		  print_cap  red
-    end
+	echo
+    power_print " $tag " $bg $color
+    print_cap  $color
 
 	echo -n ' '
 
