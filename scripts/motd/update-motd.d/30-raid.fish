@@ -29,4 +29,6 @@ for i in (seq (count $desc))
     else
         echo -e "$green$stat[$i]$white"
     end
+
+    echo
 end

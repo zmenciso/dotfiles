@@ -44,3 +44,5 @@ for disk in $DISKS
     echo -e "  $disk $message
   $bar"
 end
+
+echo
