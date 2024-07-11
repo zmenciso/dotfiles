@@ -1,5 +1,6 @@
 #!/usr/bin/env fish
 
+set DISKS / /home
 set THRESHOLD 80
 
 set -g white "\e[0;39m"
@@ -11,6 +12,7 @@ set undim "\e[0m"
 function progress --description 'progress [AMOUNT] [COLOR]'
     set counter 0
     echo -n '['
+
     while test $counter -lt 100
         if test $argv[1] -ge $counter
             echo -ne "$argv[2]="
@@ -25,24 +27,20 @@ function progress --description 'progress [AMOUNT] [COLOR]'
 end
 
 set df (df -h | string collect)
-set data (string split ' ' (echo $df | grep -e '/$' | awk '{ print $2,$5 }'))
-set tank (string split ' ' (echo $df | grep -e '/mnt$' | awk '{ print $2,$5 }'))
 
-if test (string trim -c '%' $data[2]) -le $THRESHOLD
-	set d_bar (progress (string trim -c '%' $data[2]) $green)
-else
-	set d_bar (progress (string trim -c '%' $data[2]) $red)
+echo -e 'Disk Usage:'
+
+for disk in $DISKS
+    set usage (string split ' ' (echo $df | grep -e "$disk\$" | awk '{ print $2,$5 }'))
+
+    set percent (string trim -c '%' $usage[2])
+    if test $percent -le $THRESHOLD
+        set bar (progress $percent $green)
+    else
+        set bar (progress $percent $red)
+    end
+   
+    set message (string pad -w (math 50 - (string length $disk)) "$usage[2] used out of $usage[1]")
+    echo -e "  $disk $message
+  $bar"
 end
-
-if test (string trim -c '%' $tank[2]) -le $THRESHOLD
-	set t_bar (progress (string trim -c '%' $tank[2]) $green)
-else
-	set t_bar (progress (string trim -c '%' $tank[2]) $red)
-end
-
-echo -e "Disk Usage:
-  data $(string pad -w 46 "$data[2] used out of $data[1]")
-  $d_bar
-  tank $(string pad -w 46 "$tank[2] used out of $tank[1]")
-  $t_bar
-  "
