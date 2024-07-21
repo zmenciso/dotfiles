@@ -28,20 +28,24 @@ scripts/settings.py [options] [import/export] CATEGORY
 ##  Hyprland
 
 Requires:
-  - `hyprland`
+  - Full `hyprland` ecosystem, including:
+    - `hyprcursor`
+    - `hypridle`
+    - `hyprlock`
+    - `hyprlang`
+    - `hyprpaper`
+    - `hyprpicker`
+    - `hyprutils`
+    - `xdg-desktop-portal-hyprland`
   - `ironbar`
   - `anyrun`
-  - `swaylock`
-  - `swayidle`
   - `swaync`
-  - `hyprpaper`
   - `alacritty`
   - `xsettingsd`
   - `papirus-icon-theme`
   - `polkit-gnome`
   - `wl-clipboard`
   - `xplr`
-  - `spotify-tui` and `spotifyd`
 
 Export the relevant groups.  No need to load dconf settings.
 
