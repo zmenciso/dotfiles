@@ -30,6 +30,9 @@ map('n', 'bp', '<cmd>bp<cr>', { noremap = true })
 
 map('n', '<leader>c', '<cmd>cd ..<cr>', { noremap = true })
 
+-- Open treesitter
+map('n', '<leader>t', '<cmd>Telescope treesitter<cr>', { noremap = true })
+
 -- Open xplr
 map('n', '<leader>x', '<cmd>Xplr<cr>', { noremap = true })
 

@@ -1,11 +1,16 @@
--------------------------------------------------------------------------------
--- Plugin Configuration
--------------------------------------------------------------------------------
+vim.notify = require("notify").setup({
+	background_color = "#000000"
+})
 
+-------------------------------------------------------------------------------
+-- LSP
+-------------------------------------------------------------------------------
 local lspconfig = require('lspconfig')
+local cap = require('cmp_nvim_lsp').default_capabilities()
 
 local border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'}
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	opts = opts or {}
 	opts.border = opts.border or border
@@ -13,13 +18,24 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 -- :help lspconfig-all
-require('lspconfig').pylsp.setup{}			-- pip install "python-lsp-server[all]"
-require('lspconfig').clangd.setup{}
-require('lspconfig').cmake.setup{}
-require('lspconfig').svlangserver.setup{}	-- npm install -g @imc-trading/svlangserver
--- require('lspconfig').marksman.setup{}
--- require('lspconfig').rust_analyzer.setup{}
-require('lspconfig').texlab.setup{}
+require('lspconfig').pylsp.setup{
+	capabilities = cap
+}
+require('lspconfig').clangd.setup{
+	capabilities = cap
+}
+require('lspconfig').cmake.setup{
+	capabilities = cap
+}
+require('lspconfig').svlangserver.setup{
+	capabilities = cap
+}
+require('lspconfig').rust_analyzer.setup{
+	capabilities = cap
+}
+require('lspconfig').texlab.setup{
+	capabilities = cap
+}
 
 -- lsp_signature
 -- https://github.com/ray-x/lsp_signature.nvim#full-configuration-with-default-values
@@ -27,16 +43,14 @@ local on_attach_lsp_signature = function(client, bufnr)
 require('lsp_signature').on_attach({
 	bind = true,
 	floating_window = true,
-	zindex = 99,     -- <100 so that it does not hide completion popup.
-	fix_pos = false, -- Let signature window change its position when needed, see GH-53
-	toggle_key = '<M-x>',  -- Press <Alt-x> to toggle signature on and off.
+	zindex = 99,			-- <100 so that it does not hide completion popup.
+	fix_pos = false,		-- Let signature window change its position when needed, see GH-53
+	toggle_key = '<M-x>',	-- Press <Alt-x> to toggle signature on and off.
 })
 end
 
 -- Customize LSP behavior
--- [[ A callback executed when LSP engine attaches to a buffer. ]]
 local on_attach = function(client, bufnr)
--- Always use signcolumn for the current buffer
 vim.wo.signcolumn = 'yes:1'
 
 -- Activate LSP signature on attach.
@@ -173,6 +187,10 @@ local has_words_before = function()
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line-1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
+local winhighlight = {
+  winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+}
+
 local kind_icons = {
 	Text = "",
 	Method = "",
@@ -201,16 +219,12 @@ local kind_icons = {
 	TypeParameter = ""
 }
 
-local winhighlight = {
-  winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
-}
-
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 cmp.setup {
 	snippet = {
 		expand = function(args)
-		vim.fn["UltiSnips#Anon"](args.body)
+			vim.fn["UltiSnips#Anon"](args.body)
 		end,
 	  },
 
@@ -239,23 +253,26 @@ cmp.setup {
 	},
 
 	formatting = {
-		format = lspkind.cmp_format({
-			mode = "symbol_text",
-			menu = ({
-				buffer        = "[Buffer]",
-				nvim_lsp      = "[LSP]",
-				luasnip       = "[LuaSnip]",
-				ultisnips     = "[UltiSnips]",
-				nvim_lua      = "[Lua]",
-				latex_symbols = "[Latex]",
-			})
-		}),
+		format = function(entry, vim_item)
+			vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+			-- vim_item.menu = ({
+			-- 	buffer = "[Buffer]",
+			-- 	nvim_lsp = "[LSP]",
+			-- 	ultisnips = "[UltiSnips]",
+			-- 	nvim_lua = "[Lua]",
+			-- 	latex_symbols = "[LaTeX]",
+			-- })[entry.source.name]
+			return vim_item
+		end
 	},
 
 	sources = {
 		{ name = 'nvim_lsp', priority = 100 },
 		{ name = 'ultisnips', keyword_length = 2, priority = 50 },
-		{ name = 'path', priority = 30, },
+		{ name = 'path', priority = 30 },
+		{ name = 'cmdline', priority = 20 },
+		{ name = 'pandoc_refernces' },
+		{ name = 'emoji' },
 		{ name = 'buffer', priority = 10 },
 	},
 
@@ -264,6 +281,7 @@ cmp.setup {
 			cmp.config.compare.offset,
 			cmp.config.compare.exact,
 			cmp.config.compare.score,
+			require "cmp-under-comparator".under,
 			cmp.config.compare.kind,
 			cmp.config.compare.sort_text,
 			cmp.config.compare.length,
@@ -271,6 +289,23 @@ cmp.setup {
 		},
 	},
 }
+
+cmp.setup.cmdline({ '/', '?' }, {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = 'buffer' }
+	}
+})
+
+cmp.setup.cmdline(':', {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = cmp.config.sources({
+		{ name = 'path' }
+	}, {
+		{ name = 'cmdline' }
+	}),
+	matching = { disallow_symbol_nonprefix_matching = false }
+})
 
 -- Highlights for nvim-cmp's custom popup menu (GH-224)
 vim.cmd [[
@@ -396,6 +431,20 @@ require('lualine').setup{
 }
 
 -------------------------------------------------------------------------------
+-- Treesitter
+-------------------------------------------------------------------------------
+require('nvim-treesitter.configs').setup {
+	ensure_installed = {"c", "bash", "cmake", "cpp", "css", "csv", "fish", "html", "hyprlang", "json", "latex", "lua", "make", "markdown", "markdown_inline", "matlab", "python", "verilog"},
+
+	sync_install = false,
+	auto_install = true,
+
+	highlight = {
+		enable = true
+	}
+}
+
+-------------------------------------------------------------------------------
 -- File manager support
 -------------------------------------------------------------------------------
 require('fm-nvim').setup{
@@ -448,3 +497,8 @@ require('fm-nvim').setup{
 		ESC        = "<ESC>"
 		},
 }
+
+-------------------------------------------------------------------------------
+-- colorizer
+-------------------------------------------------------------------------------
+require('colorizer').setup()
