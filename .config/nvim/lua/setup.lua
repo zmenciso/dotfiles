@@ -406,7 +406,7 @@ require('lualine').setup{
 			{
 				'buffers',
 				modified_status = true,
-				mode = 2,
+				mode = 4,
 				use_mode_colors = true,
 				symbols = {
 					modified = ' ',      -- Text to show when the buffer is modified
