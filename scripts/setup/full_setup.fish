@@ -12,7 +12,7 @@ set TTF noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
     otf-ipafont ttf-hanazono
 set UTIL polkit-gnome xsettingsd lxappearance fcitx5 fcitx5-mozc \
     fcitx5-configtool fcitx5-qt fcitx5-gtk fcitx5-breeze pavucontrol \
-    pulseaudio pulseaudio-alsa openssh
+    pulseaudio pulseaudio-alsa openssh tree-sitter-cli
 set DOC pandoc libreoffice-fresh inkscape
 set TERM alacritty xplr neovim btop grim slurp
 set WEB firefox
