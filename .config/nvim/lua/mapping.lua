@@ -24,6 +24,10 @@ map('n', 'bn', '<cmd>bn<cr>', { noremap = true })
 map('n', 'bp', '<cmd>bp<cr>', { noremap = true })
 -- map('n', 'bd', '<cmd>bd<cr>', { noremap = true })
 
+-- Splits
+map('', '<c-v>', '<cmd>vsplit<cr>', {})
+map('', '<c-x>', '<cmd>split<cr>', {})
+
 -------------------------------------------------------------------------------
 -- Leader mappings
 -------------------------------------------------------------------------------
