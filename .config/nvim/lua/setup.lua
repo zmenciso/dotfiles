@@ -1,8 +1,12 @@
+-- vim.notify = require("notify").setup({
+-- 	background_color = "#000000"
+-- })
+
 -------------------------------------------------------------------------------
 -- LSP
 -------------------------------------------------------------------------------
-local lspconfig = require('lspconfig')
 local cap = require('cmp_nvim_lsp').default_capabilities()
+local lspconfig = require('lspconfig')
 
 local border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'}
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
@@ -14,91 +18,51 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 -- :help lspconfig-all
-require('lspconfig').pylsp.setup{
-	capabilities = cap
-}
-require('lspconfig').clangd.setup{
-	capabilities = cap
-}
-require('lspconfig').cmake.setup{
-	capabilities = cap
-}
-require('lspconfig').svlangserver.setup{
-	capabilities = cap
-}
-require('lspconfig').rust_analyzer.setup{
-	capabilities = cap
-}
-require('lspconfig').texlab.setup{
-	capabilities = cap
-}
-
--- lsp_signature
--- https://github.com/ray-x/lsp_signature.nvim#full-configuration-with-default-values
-local on_attach_lsp_signature = function(client, bufnr)
-require('lsp_signature').on_attach({
-	bind = true,
-	floating_window = true,
-	zindex = 99,			-- <100 so that it does not hide completion popup.
-	fix_pos = false,		-- Let signature window change its position when needed, see GH-53
-	toggle_key = '<M-x>',	-- Press <Alt-x> to toggle signature on and off.
-})
+local servers = {'pyright', 'clangd', 'cmake', 'svlangserver', 'rust_analyzer', 'texlab'}
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup {capabilities = cap}
 end
 
 -- Customize LSP behavior
 local on_attach = function(client, bufnr)
-vim.wo.signcolumn = 'yes:1'
+	vim.wo.signcolumn = 'yes:1'
 
--- Activate LSP signature on attach.
-on_attach_lsp_signature(client, bufnr)
+	-- Activate LSP status on attach (see a configuration below).
+	require('lsp-status').on_attach(client)
 
--- Activate LSP status on attach (see a configuration below).
-require('lsp-status').on_attach(client)
+	-- Keybindings
+	-- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
+	local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+	local opts = { noremap=true, silent=true }
 
--- Keybindings
--- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
-local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-local opts = { noremap=true, silent=true }
+	-- See `:help vim.lsp.*` for documentation on any of the below functions
+	buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 
--- See `:help vim.lsp.*` for documentation on any of the below functions
-buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+	if vim.fn.exists(':Telescope') then
+		buf_set_keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
+		buf_set_keymap('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', opts)
+		buf_set_keymap('n', 'gi', '<cmd>Telescope lsp_implementations<CR>', opts)
+	else
+		buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+		buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+		buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+	end
 
-if vim.fn.exists(':Telescope') then
-	buf_set_keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
-	buf_set_keymap('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', opts)
-	buf_set_keymap('n', 'gi', '<cmd>Telescope lsp_implementations<CR>', opts)
-else
-	buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-	buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-	buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+	buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+	--buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+	buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+	buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+	--buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+	--buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+	--buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+	--buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+	--buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+	--buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+	--buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+	--buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+	--buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
-
-buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
---buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
---buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
---buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
---buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
---buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
---buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
---buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
---buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
---buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
---buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-end
-
--- Add global keymappings for LSP actions
--- F3, F12: goto definition
--- map('', '<F12>', 'gd', {})
--- map('i', '<F12>', '<ESC>gd', {})
--- map('', '<F3>', '<F12>', {})
--- map('i', '<F3>', '<F12>', {})
-
--- Shift+F12: show usages/references
--- map('', '<F24>', 'gr', {})
--- map('i', '<F24>', '<ESC>gr', {})
 
 -------------------------------------------------------------------------------
 -- LSP Handlers (general)
@@ -215,6 +179,10 @@ local kind_icons = {
 	TypeParameter = ""
 }
 
+local t = function(str)
+	return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 cmp.setup {
@@ -230,23 +198,124 @@ cmp.setup {
 	},
 
 	mapping = {
-		['<C-b>'] = cmp.mapping.scroll_docs(-4),
-		['<C-f>'] = cmp.mapping.scroll_docs(4),
-		['<C-Space>'] = cmp.mapping.complete(),
-		['<C-e>'] = cmp.mapping.close(),
-		['<CR>'] = cmp.mapping.confirm({ select = false }),
-
-		['<Tab>'] = function(fallback)  -- see GH-231, GH-286
-			if cmp.visible() then cmp.select_next_item()
-			elseif has_words_before() then cmp.complete()
-			else fallback() end
-		end,
-
-		['<S-Tab>'] = function(fallback)
-			if cmp.visible() then cmp.select_prev_item()
-			else fallback() end
-		end,
+		["<Tab>"] = cmp.mapping({
+			c = function()
+				if cmp.visible() then
+					cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
+				else
+					cmp.complete()
+				end
+			end,
+			i = function(fallback)
+				if cmp.visible() then
+					cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
+				elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+					vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
+				else
+					fallback()
+				end
+			end,
+			s = function(fallback)
+				if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+					vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
+				else
+					fallback()
+				end
+			end
+		}),
+		["<S-Tab>"] = cmp.mapping({
+			c = function()
+				if cmp.visible() then
+					cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
+				else
+					cmp.complete()
+				end
+			end,
+			i = function(fallback)
+				if cmp.visible() then
+					cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
+				elseif vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
+					return vim.api.nvim_feedkeys( t("<Plug>(ultisnips_jump_backward)"), 'm', true)
+				else
+					fallback()
+				end
+			end,
+			s = function(fallback)
+				if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
+					return vim.api.nvim_feedkeys( t("<Plug>(ultisnips_jump_backward)"), 'm', true)
+				else
+					fallback()
+				end
+			end
+		}),
+		['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
+		['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
+		['<C-n>'] = cmp.mapping({
+			c = function()
+				if cmp.visible() then
+					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+				else
+					vim.api.nvim_feedkeys(t('<Down>'), 'n', true)
+				end
+			end,
+			i = function(fallback)
+				if cmp.visible() then
+					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+				else
+					fallback()
+				end
+			end
+		}),
+		['<C-p>'] = cmp.mapping({
+			c = function()
+				if cmp.visible() then
+					cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+				else
+					vim.api.nvim_feedkeys(t('<Up>'), 'n', true)
+				end
+			end,
+			i = function(fallback)
+				if cmp.visible() then
+					cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+				else
+					fallback()
+				end
+			end
+		}),
+		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
+		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), {'i', 'c'}),
+		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
+		['<C-e>'] = cmp.mapping({ i = cmp.mapping.close(), c = cmp.mapping.close() }),
+		['<CR>'] = cmp.mapping({
+			i = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
+			c = function(fallback)
+				if cmp.visible() then
+					cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+				else
+					fallback()
+				end
+			end
+		}),
 	},
+
+	-- mapping = cmp.mapping.preset.insert({
+	-- 	['<C-b>'] = cmp.mapping.scroll_docs(-4),
+	-- 	['<C-f>'] = cmp.mapping.scroll_docs(4),
+	-- 	['<C-Space>'] = cmp.mapping.complete(),
+	-- 	['<C-e>'] = cmp.mapping.abort(),
+	-- 	['<CR>'] = cmp.mapping.confirm({ select = true }),
+
+	-- 	-- ['<Tab>'] = function(fallback)  -- see GH-231, GH-286
+	-- 	-- 	if cmp.visible() then cmp.select_next_item()
+	-- 	-- 	elseif has_words_before() then cmp.complete()
+	-- 	-- 	else fallback() end
+	-- 	-- end,
+
+	-- 	-- ['<S-Tab>'] = function(fallback)
+	-- 	-- 	if cmp.visible() then cmp.select_prev_item()
+	-- 	-- 	else fallback() end
+	-- 	-- end,
+	-- }),
 
 	formatting = {
 		format = function(entry, vim_item)
@@ -287,20 +356,19 @@ cmp.setup {
 }
 
 cmp.setup.cmdline({ '/', '?' }, {
-	mapping = cmp.mapping.preset.cmdline(),
+	completion = { autocomplete = false },
 	sources = {
-		{ name = 'buffer' }
+		{ name = 'buffer' , opts = { keyword_pattern = [=[[^[:blank:]].*]=] }}
 	}
 })
 
 cmp.setup.cmdline(':', {
-	mapping = cmp.mapping.preset.cmdline(),
+	completion = { autocomplete = false },
 	sources = cmp.config.sources({
 		{ name = 'path' }
 	}, {
 		{ name = 'cmdline' }
 	}),
-	matching = { disallow_symbol_nonprefix_matching = false }
 })
 
 -- Highlights for nvim-cmp's custom popup menu (GH-224)
@@ -430,7 +498,7 @@ require('lualine').setup{
 -- Treesitter
 -------------------------------------------------------------------------------
 require('nvim-treesitter.configs').setup {
-	ensure_installed = {"c", "bash", "cmake", "cpp", "css", "csv", "fish", "html", "hyprlang", "json", "latex", "lua", "make", "markdown", "markdown_inline", "matlab", "python", "verilog"},
+	ensure_installed = {"c", "bash", "cmake", "cpp", "css", "csv", "fish", "html", "hyprlang", "json", "latex", "lua", "make", "markdown", "markdown_inline", "matlab", "python", "verilog", "rust"},
 
 	sync_install = false,
 	auto_install = true,

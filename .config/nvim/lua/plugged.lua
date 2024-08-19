@@ -7,7 +7,6 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 -- LSP shit
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp-status.nvim'
-Plug 'ray-x/lsp_signature.nvim'
 Plug 'https://github.com/onsails/lspkind-nvim'
 
 -- Status line

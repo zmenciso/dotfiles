@@ -12,21 +12,21 @@ map('n', '<c-h>', ':wincmd h<CR>', { silent = true })
 map('n', '<c-l>', ':wincmd l<CR>', { silent = true })
 
 -- Map Ctrl-Backspace to delete the previous word in insert mode.
-map('!', '<C-BS>', '<C-w>', {noremap = true})
-map('!', '<C-h>', '<C-w>', {noremap = true})
+map('!', '<C-BS>', '<C-w>', { noremap = true })
+map('!', '<C-h>', '<C-w>', { noremap = true })
 
 -- Toggle spell check
 map('', '<F5>', ':setlocal spell! spelllang=en_us<cr>', {})
 map('i', '<F5>', '<C-o>:setlocal spell! spelllang=en_us<cr>', {})
 
 -- Buffer normal shortcuts
-map('n', 'bn', '<cmd>bn<cr>', { noremap = true })
-map('n', 'bp', '<cmd>bp<cr>', { noremap = true })
+-- map('n', 'bn', '<cmd>bn<cr>', { noremap = true })
+-- map('n', 'bp', '<cmd>bp<cr>', { noremap = true })
 -- map('n', 'bd', '<cmd>bd<cr>', { noremap = true })
 
 -- Splits
-map('', '<c-v>', '<cmd>vsplit<cr>', {})
-map('', '<c-x>', '<cmd>split<cr>', {})
+map('n', '<c-v>', '<cmd>vsplit<cr>', {})
+map('n', '<c-x>', '<cmd>split<cr>', {})
 
 -------------------------------------------------------------------------------
 -- Leader mappings
