@@ -51,12 +51,13 @@ Export the relevant groups.  No need to load dconf settings.
 
 Font: **BlexMono Nerd Font** (contained in dotfiles repo) and **Cantarell**
 
-Theme: [**Orchis Dark Compact (Black
+Theme: [**Nightfox GTK (Carbon
 Tweak)**](https://github.com/cyko-themes/gtk-orchis) (contained in dotfiles
 repo)
 
 The colors are based on
-[`vim-moonfly-colors`](https://github.com/bluz71/vim-moonfly-colors).
+[`nightfox.nvim`](https://github.com/EdenEast/nightfox.nvim) (`carbonfox`
+variant)
 
 ##  i3-gaps
 
@@ -91,8 +92,13 @@ installed with:
 desktop-file-install --dir=/usr/share/applications [FILE]
 ```
 
+Theme: [**Nightfox GTK (Carbon
+Tweak)**](https://github.com/cyko-themes/gtk-orchis) (contained in dotfiles
+repo)
+
 The colors are based on
-[`vim-moonfly-colors`](https://github.com/bluz71/vim-moonfly-colors).
+[`nightfox.nvim`](https://github.com/EdenEast/nightfox.nvim) (`carbonfox`
+variant)
 
 `lxappearance` is an amazingly convenient tool for setting GTK themes and
 cursors without too much hassle.
@@ -108,6 +114,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 
 Export `nvim` files, then install plugins.
+
+##  Zed
+
+Install the "Nightfox (Neovim) Themes" extension, then export `zed` files.
 
 ##  Barrier
 
@@ -135,14 +145,6 @@ fcitx5-configtool
 fcitx5-qt
 fcitx5-gtk
 fcitx5-breeze
-```
-
-In addition, edit `/etc/environment` to include the following:
-
-```
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-XMODIFIERS=@im=fcitx
 ```
 
 ### i3-gaps/Hyprland w/ `ibus`
