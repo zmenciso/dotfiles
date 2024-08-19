@@ -6,4 +6,3 @@ require("autocmds")
 require("mapping")
 require("options")
 require("setup")
-

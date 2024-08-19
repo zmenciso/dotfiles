@@ -26,7 +26,7 @@
 }
 
 #match:selected, #match:hover, #plugin:hover {
-  background: #323437;
+  background: #282828;
   /* background: rgba(255, 255, 255, .1); */
 }
 
@@ -47,7 +47,7 @@ list > #plugin:last-child { margin-bottom: .3rem; }
 list > #plugin:hover { padding: .6rem; }
 
 box#main {
-  background: rgba(8, 8, 8, .75);
+  background: rgba(12, 12, 12, 0.75);
   border-radius: 12px;
   padding: .3rem;
 }

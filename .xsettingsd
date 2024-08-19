@@ -18,7 +18,7 @@ Gtk/KeynavUseCaret 0
 Gtk/ShellShowsAppMenu 0
 Gtk/CanChangeAccels 0
 Gtk/FontName "Cantarell 10.5"
-Net/ThemeName "Orchis-Dark-Compact"
+Net/ThemeName "Nightfox-Dark-Compact-Carbon"
 Net/DoubleClickTime 400
 Gtk/DialogsUseHeader 1
 Gdk/WindowScalingFactor 1

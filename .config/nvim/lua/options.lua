@@ -19,7 +19,7 @@ vim.opt.cursorline = true
 -- vim.opt.cursorlineopt = "number"
 vim.opt.termguicolors = true
 vim.opt.syntax = 'on'
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.wrap = true
 vim.opt.breakindent = true
 vim.opt.wrapscan = false
@@ -50,17 +50,33 @@ vim.o.expandtab = false
 
 vim.o.showmode = false
 
--- Colorscheme settings
-vim.g.moonflyCursorColor = true
-vim.g.moonflyNormalFloat = true
-vim.g.moonflyUnderlineMatchParen = false
-vim.g.moonflyTransparent = true
-vim.g.moonflyVirtualTextColor = true
-vim.g.moonflyWinSeparator = 1
+-- Colorscheme
+require('nightfox').setup({
+  options = {
+    transparent = false,
+    dim_inactive = true,
+    module_default = true,
+    styles = {               -- Style to be applied to different syntax groups
+      comments = "NONE",     -- Value is any valid attr-list value `:help attr-list`
+      conditionals = "NONE",
+      constants = "NONE",
+      functions = "NONE",
+      keywords = "NONE",
+      numbers = "NONE",
+      operators = "NONE",
+      strings = "NONE",
+      types = "NONE",
+      variables = "NONE",
+    },
+    inverse = {
+      match_paren = true,
+      visual = false,
+      search = false,
+    },
+  },
+})
 
-vim.cmd [[
-	colorscheme moonfly
-]]
+vim.cmd("colorscheme carbonfox")
 
 vim.cmd [[
 	" hi CursorLineNr guibg=None

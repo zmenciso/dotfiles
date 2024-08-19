@@ -14,7 +14,8 @@ Plug 'https://github.com/onsails/lspkind-nvim'
 Plug 'nvim-lualine/lualine.nvim'
 
 -- Colorschemes and display
-Plug 'bluz71/vim-moonfly-colors'
+-- Plug 'bluz71/vim-moonfly-colors'
+Plug 'EdenEast/nightfox.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/lsp-colors.nvim'

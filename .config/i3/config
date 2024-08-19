@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Displays and programs
-set $primary "DP-1"
+set $primary "eDP1"
 set $secondary "DP-5"
 set $browser "/usr/bin/firefox"
 set $terminal "alacritty"
@@ -20,26 +20,26 @@ set $media "alacritty -t Spotify-tui -e /usr/bin/spt"
 
 # Colors (copied from vim-moonfly-colors)
 set $transparent #00000000
-set $bg #080808
-set $bg_ts #080808bf
-set $fg #b2b2b2
-set $fgbr #eeeeee
-set $black #323437
-set $red #ff5454
-set $green #8cc85f
-set $yellow #e3c78a
-set $blue #80a0ff
-set $purple #d183e8
-set $cyan #79dac8
-set $white #c6c6c6
-set $blackbr #949494
-set $redbr #ff5189
-set $greenbr #36c692
-set $yellowbr #c2c292
-set $bluebr #74b2ff
-set $purplebr #ae81ff
-set $cyanbr #85dc85
-set $whitebr #e4e4e4
+set $bg #161616
+set $bg_ts #0c0c0cbf
+set $fg #f2f4f8
+set $fgbr #f9fbff
+set $black #282828
+set $red #ee5396
+set $green #25be6a
+set $yellow #08bdba
+set $blue #78a9ff
+set $purple #be95ff
+set $cyan #33b1ff
+set $white #dfdfe0
+set $blackbr #484848
+set $redbr #f16da6
+set $greenbr #46c880
+set $yellowbr #2dc7c4
+set $bluebr #52bdff
+set $purplebr #c8a5ff
+set $cyanbr #52bdff
+set $whitebr #e4e4e5
 
 ##############################################################################
 #                                   i3 Base                                  #
@@ -382,13 +382,13 @@ bar {
     colors {
 	# <colorclass> <border> <background> <text>
 	background $bg_tr
-	statusline $fgbr
+	statusline $fg
 	separator $black
 	focused_workspace $bg_tr $blue $bg_tr
 	active_workspace $bg_tr $yellow $bg_tr
-	inactive_workspace $bg_tr $bg_tr $fgbr
+	inactive_workspace $bg_tr $black $fg
 	urgent_workspace $bg_tr $red $bg_tr
-	binding_mode $bg_tr $bg_tr $fgbr
+	binding_mode $bg_tr $bg_tr $fg
     }
 }
 
@@ -419,13 +419,13 @@ bar {
     colors {
 	# <colorclass> <border> <background> <text>
 	background $bg_tr
-	statusline $fgbr
+	statusline $fg
 	separator $black
 	focused_workspace $bg_tr $blue $bg_tr
 	active_workspace $bg_tr $yellow $bg_tr
-	inactive_workspace $bg_tr $bg_tr $fgbr
+	inactive_workspace $bg_tr $black $fg
 	urgent_workspace $bg_tr $red $bg_tr
-	binding_mode $bg_tr $bg_tr $fgbr
+	binding_mode $bg_tr $bg_tr $fg
     }
 }
 

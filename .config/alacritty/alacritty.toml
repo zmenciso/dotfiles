@@ -1,38 +1,82 @@
-[colors]
-draw_bold_text_with_bright_colors = false
-
-[colors.bright]
-black = "#949494"
-blue = "#74b2ff"
-cyan = "#85dc85"
-green = "#36c692"
-magenta = "#ae81ff"
-red = "#ff5189"
-white = "#e4e4e4"
-yellow = "#c2c292"
-
-[colors.cursor]
-cursor = "#9e9e9e"
-text = "#080808"
-
-[colors.normal]
-black = "#323437"
-blue = "#80a0ff"
-cyan = "#79dac8"
-green = "#8cc85f"
-magenta = "#d183e8"
-red = "#ff5454"
-white = "#c6c6c6"
-yellow = "#e3c78a"
+# Nightfox Alacritty Colors
+## name: carbonfox
+## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/alacritty.toml
 
 [colors.primary]
-background = "#080808"
-bright_foreground = "#eeeeee"
-foreground = "#b2b2b2"
+background = "#161616"
+foreground = "#f2f4f8"
+dim_foreground = "#b6b8bb"
+bright_foreground = "#f9fbff"
+
+[colors.cursor]
+text = "#f2f4f8"
+cursor = "#b6b8bb"
+
+[colors.vi_mode_cursor]
+text = "#f2f4f8"
+cursor = "#33b1ff"
+
+[colors.search.matches]
+foreground = "#f2f4f8"
+background = "#525253"
+
+[colors.search.focused_match]
+foreground = "#f2f4f8"
+background = "#3ddbd9"
+
+[colors.footer_bar]
+foreground = "#f2f4f8"
+background = "#353535"
+
+[colors.hints.start]
+foreground = "#f2f4f8"
+background = "#3ddbd9"
+
+[colors.hints.end]
+foreground = "#f2f4f8"
+background = "#353535"
 
 [colors.selection]
-background = "#b2ceee"
-text = "#080808"
+text = "#f2f4f8"
+background = "#2a2a2a"
+
+[colors.normal]
+black = "#282828"
+red = "#ee5396"
+green = "#25be6a"
+yellow = "#08bdba"
+blue = "#78a9ff"
+magenta = "#be95ff"
+cyan = "#33b1ff"
+white = "#dfdfe0"
+
+[colors.bright]
+black = "#484848"
+red = "#f16da6"
+green = "#46c880"
+yellow = "#2dc7c4"
+blue = "#8cb6ff"
+magenta = "#c8a5ff"
+cyan = "#52bdff"
+white = "#e4e4e5"
+
+[colors.dim]
+black = "#222222"
+red = "#ca4780"
+green = "#1fa25a"
+yellow = "#07a19e"
+blue = "#6690d9"
+magenta = "#a27fd9"
+cyan = "#2b96d9"
+white = "#bebebe"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#3ddbd9"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#ff7eb6"
 
 [env]
 TERM = "xterm-256color"
@@ -49,7 +93,7 @@ args = ["--login"]
 program = "/usr/bin/fish"
 
 [window]
-opacity = 0.8
+opacity = 1
 
 [window.padding]
 x = 8
