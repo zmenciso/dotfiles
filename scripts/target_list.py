@@ -47,6 +47,10 @@ CATEGORIES = {
         '.config/ironbar/config.yaml',
         '.config/ironbar/style.css'
     },
+    'ZED': {
+        '.config/zed/keymap.json',
+        '.config/zed/settings.json'
+    },
     'FISH': {
         '.config/fish/config.fish',
         '.config/fish/functions/mdpdf.fish',

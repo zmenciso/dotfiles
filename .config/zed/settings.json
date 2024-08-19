@@ -1,0 +1,59 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette
+{
+  "vim_mode": true,
+  "base_keymap": "Atom",
+  "ui_font_size": 16,
+  "buffer_font_size": 14,
+  "buffer_font_family": "BlexMono Nerd Font Mono",
+  "buffer_line_height": "standard",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Carbonfox"
+  },
+  "autosave": "on_window_change",
+  "use_autoclose": false,
+
+  "features": {
+    "copilot": false
+  },
+
+  "cursor_blink": false,
+  "relative_line_numbers": true,
+  "scrollbar": {
+    "show": "never",
+    "cursors": true,
+    "git_diff": true,
+    "search_results": true,
+    "selected_symbol": true,
+    "diagnostics": true
+  },
+  "vertical_scroll_margin": 0,
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false
+  },
+
+  "terminal": {
+    "alternate_scroll": "off",
+    "blinking": "terminal_controlled",
+    "copy_on_select": "true",
+    "font_family": "BlexMono Nerd Font Mono",
+    "line_height": "standard",
+    "toolbar": {
+      "title": true
+    },
+    "working_directory": "current_project_directory"
+  }
+}
