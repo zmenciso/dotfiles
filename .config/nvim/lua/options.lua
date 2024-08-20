@@ -56,11 +56,11 @@ require('nightfox').setup({
     transparent = false,
     dim_inactive = true,
     module_default = true,
-    styles = {               -- Style to be applied to different syntax groups
-      comments = "NONE",     -- Value is any valid attr-list value `:help attr-list`
+    styles = {               -- Style to be applied to different syntax groups ':help attr-list'
+      comments = "italic",
       conditionals = "NONE",
       constants = "NONE",
-      functions = "NONE",
+      functions = "bold",
       keywords = "NONE",
       numbers = "NONE",
       operators = "NONE",
@@ -69,7 +69,7 @@ require('nightfox').setup({
       variables = "NONE",
     },
     inverse = {
-      match_paren = true,
+      match_paren = false,
       visual = false,
       search = false,
     },
