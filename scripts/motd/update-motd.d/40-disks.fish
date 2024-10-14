@@ -23,7 +23,7 @@ function progress --description 'progress [AMOUNT] [COLOR]'
         set counter (math $counter + 2)
     end
 
-    echo ']'
+    echo "]$white"
 end
 
 set df (df -h | string collect)
