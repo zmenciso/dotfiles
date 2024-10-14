@@ -79,9 +79,6 @@ require('nightfox').setup({
 vim.cmd("colorscheme carbonfox")
 
 vim.cmd [[
-	" hi CursorLineNr guibg=None
-	" hi ColorColumn ctermbg=None guibg=#303030
-	hi TelescopeBorder guifg=#b2b2b2
-	hi TelescopeTitle guifg=#b2b2b2
-	hi FloatBorder guifg=#b2b2b2
+	hi NormalFloat guifg=#f2f4f8 guibg=#161616
+	hi TelescopeNormal guibg=#0c0c0c
 ]]
