@@ -10,9 +10,10 @@
   "vim_mode": true,
   "base_keymap": "Atom",
   "ui_font_size": 16,
-  "buffer_font_size": 14,
+  "buffer_font_size": 15,
   "buffer_font_family": "BlexMono Nerd Font Mono",
   "buffer_line_height": "standard",
+  "ui_font_family": "Cantarell",
   "theme": {
     "mode": "system",
     "light": "One Light",
@@ -22,13 +23,14 @@
   "use_autoclose": false,
 
   "features": {
+    "inline_completion_provider": "none",
     "copilot": false
   },
 
   "cursor_blink": false,
   "relative_line_numbers": true,
   "scrollbar": {
-    "show": "never",
+    // "show": "never",
     "cursors": true,
     "git_diff": true,
     "search_results": true,
@@ -48,7 +50,7 @@
   "terminal": {
     "alternate_scroll": "off",
     "blinking": "terminal_controlled",
-    "copy_on_select": "true",
+    "copy_on_select": false,
     "font_family": "BlexMono Nerd Font Mono",
     "line_height": "standard",
     "toolbar": {
