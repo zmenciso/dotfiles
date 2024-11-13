@@ -27,7 +27,7 @@ require'lspconfig'.texlab.setup{
 	texlab = {
 		bibtexFormatter = 'texlab',
 		bulid = {
-			args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+			args = { "-pdf", "-synctex=1", "%f" },
 			executable = 'latexmk',
 			forwardSearchAfter = false,
 			onSave = true
