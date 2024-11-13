@@ -18,10 +18,26 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 -- :help lspconfig-all
-local servers = {'pyright', 'clangd', 'cmake', 'svlangserver', 'rust_analyzer', 'texlab'}
+local servers = {'pyright', 'clangd', 'cmake', 'svlangserver', 'rust_analyzer'}
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup {capabilities = cap}
 end
+
+require'lspconfig'.texlab.setup{
+	texlab = {
+		bibtexFormatter = 'texlab',
+		bulid = {
+			args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+			executable = 'latexmk',
+			forwardSearchAfter = false,
+			onSave = true
+		}
+	},
+	chktex = {
+		onEdit = false,
+		onOpenAndSave = true
+	},
+}
 
 -- Customize LSP behavior
 local on_attach = function(client, bufnr)
