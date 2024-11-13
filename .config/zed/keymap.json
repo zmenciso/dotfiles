@@ -57,7 +57,8 @@
   {
     "context": "Terminal",
     "bindings": {
-      "cmd-t": "workspace::NewTerminal"
+      "cmd-t": "workspace::NewTerminal",
+      "ctrl-l": ["terminal::SendKeystroke", "ctrl-l"]
     }
   },
 
