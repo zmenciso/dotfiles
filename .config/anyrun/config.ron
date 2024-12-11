@@ -1,6 +1,6 @@
 Config(
 	x: Fraction(0.500000),
-	y: Absolute(12),
+	y: Fraction(0.250000),
 
 	width: Fraction(0.300000),
 

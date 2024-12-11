@@ -4,6 +4,12 @@
 	"notification-margin-top": 12,
 
 	"layer": "top",
+	"control-center-positionX": "none",
+	"control-center-positionY": "none",
+	"control-center-margin-top": 12,
+	"control-center-margin-bottom": 12,
+	"control-center-margin-right": 12,
+
 	"cssPriority": "user",
 	"notification-icon-size": 64,
 	"notification-body-image-height": 100,

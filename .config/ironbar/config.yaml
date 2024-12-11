@@ -31,7 +31,8 @@ start:
     show_icon: false
     show_title: true
     icon_size: 22
-    truncate: "end"
+    truncate: "middle"
+    truncate.max_length: 30
 
 center:
   - type: "clock"
