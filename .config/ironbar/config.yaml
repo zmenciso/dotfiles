@@ -27,22 +27,22 @@ start:
 
   - type: "tray"
 
-  - type: "focused"
-    show_icon: false
-    show_title: true
-    icon_size: 22
-    truncate: "middle"
-    truncate.max_length: 30
+  # - type: "focused"
+  #   show_icon: false
+  #   show_title: true
+  #   icon_size: 22
+  #   truncate: "middle"
+  #   truncate.max_length: 30
 
 center:
-  - type: "clock"
-    format: "    %H:%M"
+  # - type: "clock"
+  #   format: "    %H:%M"
 
-  # - type: "focused"
-  #   show_icon: true
-  #   icon_size: 26
-  #   truncate: "end"
-  #   max_length: 30
+  - type: "focused"
+    show_icon: true
+    icon_size: 26
+    truncate: "end"
+    max_length: 30
 
 end: 
   - type: "sys_info"
@@ -63,4 +63,4 @@ end:
     format: "{percentage}%"
 
   - type: "clock"
-    format: "    %Y-%m-%d"
+    format: "    %Y-%m-%d  %H:%M"
