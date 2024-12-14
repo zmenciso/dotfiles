@@ -9,17 +9,18 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "ctrl-z": "workspace::ToggleZoom",
+      "alt-k": [
+        "projects::OpenRecent",
+        {
+          "create_new_window": false
+        }
+      ],
+      "ctrl-x": "tab_switcher::CloseSelectedItem"
     }
   },
   {
-    "context": "Editor",
-    "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
-    }
-  },
-  {
-    "context": "Dock || Terminal || Editor",
+    "context": "Dock || Terminal || Editor || ProjectPanel",
     "bindings": {
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
@@ -47,6 +48,34 @@
     }
   },
   {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "ctrl-k": "editor::ContextMenuPrev",
+      "ctrl-j": "editor::ContextMenuNext"
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "ctrl-k": "menu::SelectPrev",
+      "ctrl-j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "FileFinder",
+    "bindings": {
+      "ctrl-k": "menu::SelectPrev",
+      "ctrl-j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "CommandPalette",
+    "bindings": {
+      "ctrl-k": "menu::SelectPrev",
+      "ctrl-j": "menu::SelectNext"
+    }
+  },
+  {
     "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
     "bindings": {
       "shift-j": "editor::MoveLineDown",
@@ -61,24 +90,17 @@
       "ctrl-l": ["terminal::SendKeystroke", "ctrl-l"]
     }
   },
-
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      "space f f": "file_finder::Toggle"
+    }
+  },
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       "space o": "tab_switcher::Toggle",
       "space t": "workspace::NewCenterTerminal"
-    }
-  },
-
-  {
-    "context": "Workspace",
-    "bindings": {
-      "cmd-k": [
-        "projects::OpenRecent",
-        {
-          "create_new_window": false
-        }
-      ]
     }
   }
 ]
