@@ -35,11 +35,15 @@
   "relative_line_numbers": true,
 
   "scrollbar": {
+    "show": "always",
     "cursors": true,
     "git_diff": true,
     "search_results": true,
     "selected_symbol": true,
-    "diagnostics": "all"
+    "diagnostics": "all",
+    "axes": {
+    	"horizontal": false
+	}
   },
 
   "vertical_scroll_margin": 0,
