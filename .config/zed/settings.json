@@ -39,12 +39,12 @@
     "git_diff": true,
     "search_results": true,
     "selected_symbol": true,
-    "diagnostics": true
+    "diagnostics": "all"
   },
 
   "vertical_scroll_margin": 0,
   "tab_bar": {
-    "show": false,
+    "show": true,
     "show_nav_history_buttons": false
   },
 
@@ -69,3 +69,4 @@
     "auto_fold_dirs": false
   }
 }
+

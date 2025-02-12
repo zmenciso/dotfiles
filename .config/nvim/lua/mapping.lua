@@ -19,43 +19,43 @@ map('!', '<C-h>', '<C-w>', { noremap = true })
 map('', '<F5>', ':setlocal spell! spelllang=en_us<cr>', {})
 map('i', '<F5>', '<C-o>:setlocal spell! spelllang=en_us<cr>', {})
 
--- Buffer normal shortcuts
--- map('n', 'bn', '<cmd>bn<cr>', { noremap = true })
--- map('n', 'bp', '<cmd>bp<cr>', { noremap = true })
--- map('n', 'bd', '<cmd>bd<cr>', { noremap = true })
-
 -- Splits
 map('n', '<c-v>', '<cmd>vsplit<cr>', {})
 map('n', '<c-x>', '<cmd>split<cr>', {})
 
+-- Terminal
+map('n', '<c-t>', '<cmd>term<cr>', { noremap = true })
+
 -------------------------------------------------------------------------------
--- Leader mappings
+-- Space mappings
 -------------------------------------------------------------------------------
 
-map('n', '<leader>c', '<cmd>cd ..<cr>', { noremap = true })
+map('n', '<Space>c', '<cmd>cd ..<cr>', { noremap = true })
+
+map('n', '<Space>e', '<cmd>NvimTreeToggle<cr>', { noremap = true })
+map('n', '<Space>c', '<cmd>q<cr>', { noremap = true })
 
 -- Open treesitter
-map('n', '<leader>t', '<cmd>Telescope treesitter<cr>', { noremap = true })
+map('n', '<Space>t', '<cmd>Telescope treesitter<cr>', { noremap = true })
 
 -- Open xplr
-map('n', '<leader>x', '<cmd>Xplr<cr>', { noremap = true })
+map('n', '<Space>x', '<cmd>Xplr<cr>', { noremap = true })
 
 -- Find files using Telescope
-map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { noremap = true })
-map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { noremap = true })
-map('n', '<leader>fm', '<cmd>Telescope man_pages<cr>', { noremap = true })
+map('n', '<Space>ff', '<cmd>Telescope find_files<cr>', { noremap = true })
+map('n', '<Space>/', '<cmd>Telescope live_grep<cr>', { noremap = true })
+map('n', '<Space>fm', '<cmd>Telescope man_pages<cr>', { noremap = true })
 
 -- Find vim stuff using Telescope
-map('n', '<leader>vf', '<cmd>Telescope current_buffer_fuzzy_find<cr>', { noremap = true })
-map('n', '<leader>vb', '<cmd>Telescope buffers<cr>', { noremap = true })
-map('n', '<leader>vh', '<cmd>Telescope help_tags<cr>', { noremap = true })
-map('n', '<leader>vc', '<cmd>Telescope commands<cr>', { noremap = true })
-map('n', '<leader>vo', '<cmd>Telescope vim_options<cr>', { noremap = true })
-map('n', '<leader>vs', '<cmd>Telescope spell_suggest<cr>', { noremap = true })
+map('n', '/', '<cmd>Telescope current_buffer_fuzzy_find<cr>', { noremap = true })
+map('n', '<Space>o', '<cmd>Telescope buffers<cr>', { noremap = true })
+map('n', '<Space>vh', '<cmd>Telescope help_tags<cr>', { noremap = true })
+map('n', '<Space>vc', '<cmd>Telescope commands<cr>', { noremap = true })
+map('n', '<Space>vo', '<cmd>Telescope vim_options<cr>', { noremap = true })
+map('n', '<Space>vs', '<cmd>Telescope spell_suggest<cr>', { noremap = true })
 
 -- Find LSP stuff using Telescope command-line sugar.
-map('n', '<leader>lx', '<cmd>Telescope diagnostics<cr>', { noremap = true })
-map('n', '<leader>li', '<cmd>Telescope lsp_implementations<cr>', { noremap = true })
-map('n', '<leader>lr', '<cmd>Telescope lsp_references<cr>', { noremap = true })
-map('n', '<leader>ld', '<cmd>Telescope lsp_definitions<cr>', { noremap = true })
-
+map('n', '<Space>d', '<cmd>Telescope diagnostics<cr>', { noremap = true })
+map('n', '<Space>li', '<cmd>Telescope lsp_implementations<cr>', { noremap = true })
+map('n', '<Space>lr', '<cmd>Telescope lsp_references<cr>', { noremap = true })
+map('n', '<Space>ld', '<cmd>Telescope lsp_definitions<cr>', { noremap = true })

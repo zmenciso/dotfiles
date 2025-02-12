@@ -31,20 +31,25 @@
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
-      "space b": "editor::ToggleGitBlame",
       "shift-k": "editor::Hover",
+      "space b": "editor::ToggleGitBlame",
       "space l f": "editor::Format",
       "space d": "diagnostics::Deploy",
       "space f f": "file_finder::Toggle",
       "space o": "tab_switcher::Toggle",
       "space e": "workspace::ToggleLeftDock",
       "space /": "workspace::NewSearch",
+      "space c": "pane::CloseActiveItem",
+      "space t": "project_symbols::Toggle",
+
+      "ctrl-t": "workspace::NewCenterTerminal",
+      "ctrl-o": "workspace::OpenFiles",
+
       "n": "search::SelectNextMatch",
       "shift-n": "search::SelectPrevMatch",
-      "space t": "workspace::NewCenterTerminal",
+
       "g b": "editor::ToggleComments",
-      "+ +": "workspace::Save",
-      "space c": "pane::CloseActiveItem"
+      "+ +": "workspace::Save"
     }
   },
   {
@@ -100,7 +105,7 @@
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       "space o": "tab_switcher::Toggle",
-      "space t": "workspace::NewCenterTerminal"
+      "ctrl-t": "workspace::NewCenterTerminal"
     }
   }
 ]

@@ -80,5 +80,6 @@ vim.cmd("colorscheme carbonfox")
 
 vim.cmd [[
 	hi NormalFloat guifg=#f2f4f8 guibg=#161616
-	hi TelescopeNormal guibg=#0c0c0c
+	hi TelescopeNormal guibg=#161616
+	hi TelescopeBorder guibg=#161616
 ]]

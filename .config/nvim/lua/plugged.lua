@@ -14,6 +14,7 @@ Plug 'nvim-lualine/lualine.nvim'
 
 -- Colorschemes and display
 -- Plug 'bluz71/vim-moonfly-colors'
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'kyazdani42/nvim-web-devicons'

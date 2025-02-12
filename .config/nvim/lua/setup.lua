@@ -27,8 +27,9 @@ require'lspconfig'.texlab.setup{
 	texlab = {
 		bibtexFormatter = 'texlab',
 		bulid = {
-			args = { "-pdf", "-synctex=1", "%f" },
-			executable = 'latexmk',
+			executable = 'make',
+			-- args = { "-pdf", "-synctex=1", "%f" },
+			-- executable = 'latexmk',
 			forwardSearchAfter = false,
 			onSave = true
 		}
@@ -525,6 +526,11 @@ require('nvim-treesitter.configs').setup {
 }
 
 -------------------------------------------------------------------------------
+-- Tree
+-------------------------------------------------------------------------------
+require("nvim-tree").setup()
+
+-------------------------------------------------------------------------------
 -- File manager support
 -------------------------------------------------------------------------------
 require('fm-nvim').setup{
@@ -577,7 +583,6 @@ require('fm-nvim').setup{
 		ESC        = "<ESC>"
 		},
 }
-
 
 
 -------------------------------------------------------------------------------
