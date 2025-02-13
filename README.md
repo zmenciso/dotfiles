@@ -25,6 +25,34 @@ scripts/settings.py [options] [import/export] CATEGORY
     This script only works when placed in the `scripts` directory in the dotfiles repo!
 ```
 
+##  Sway
+
+Requires:
+  - `swaybg`
+  - `swayidle`
+  - `swaylock`
+  - `ironbar`
+  - `anyrun`
+  - `swaync`
+  - `alacritty`
+  - `xsettingsd`
+  - `papirus-icon-theme`
+  - `polkit-gnome`
+  - `wl-clipboard`
+  - `xplr`
+
+Export the relevant groups.  No need to load dconf settings.
+
+Font: **BlexMono Nerd Font** (contained in dotfiles repo) and **Cantarell**
+
+Theme: [**Nightfox GTK (Carbon
+Tweak)**](https://github.com/cyko-themes/gtk-orchis) (contained in dotfiles
+repo)
+
+The colors are based on
+[`nightfox.nvim`](https://github.com/EdenEast/nightfox.nvim) (`carbonfox`
+variant)
+
 ##  Hyprland
 
 Requires:

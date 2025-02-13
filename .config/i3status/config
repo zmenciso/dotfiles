@@ -4,8 +4,8 @@
 general {
 	colors = true
 	color_degraded = '#e3c78a'
-	color_bad = '#ff5454'
-	color_good = '#8cc85f'
+	color_bad = '#ee5396'
+	color_good = '#25be6a'
 	interval = 1
 }
 
@@ -19,13 +19,13 @@ order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = " %bitrate"
-        format_down = "" 
+	format_up = " %bitrate"
+	format_down = "" 
 }
 
 ethernet _first_ {
-        format_up = " %speed"
-        format_down = " "
+	format_up = " %speed"
+	format_down = " "
 }
 
 battery all {
@@ -43,12 +43,12 @@ battery all {
 
 load {
     format = " %1min"
-    max_threshold = "0.1"
+    max_threshold = 0.8
 }
 
 cpu_usage {
     format = " %usage"
-    degraded_threshold = 75
+	degraded_threshold = 75
     max_threshold = 90
 }
 
@@ -73,11 +73,11 @@ volume master {
 }
 
 memory {
-        format = " %used"
-        threshold_degraded = "20%"
-        threshold_critical = "8%"
+	format = " %used"
+	threshold_degraded = "20%"
+	threshold_critical = "8%"
 }
 
 tztime local {
-        format = " %Y-%m-%d %H:%M "
+	format = " %Y-%m-%d %H:%M "
 }
