@@ -1,4 +1,4 @@
 // <Anyrun config dir>/shell.ron
 Config(
-  prefix: ":",
+  prefix: "$",
 )

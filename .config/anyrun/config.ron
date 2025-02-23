@@ -2,7 +2,7 @@ Config(
 	x: Fraction(0.500000),
 	y: Fraction(0.250000),
 
-	width: Fraction(0.300000),
+	width: Fraction(0.500000),
 
 	height: Absolute(0),
 
@@ -12,7 +12,7 @@ Config(
 
 	layer: Overlay,
 
-	hide_plugin_info: true,
+	hide_plugin_info: false,
 
 	close_on_click: true,
 
@@ -24,6 +24,7 @@ Config(
 		"libapplications.so",
 		"libshell.so",
 		"libtranslate.so",
-		"libwebsearch.so"
+		"libwebsearch.so",
+		"libsymbols.so"
 	],
 )

@@ -152,6 +152,7 @@ CATEGORIES = {
         '.config/anyrun/style.css',
         '.config/anyrun/translate.ron',
         '.config/anyrun/shell.ron',
+        '.config/anyrun/symbols.ron',
         '.config/anyrun/websearch.ron'
     }
 }
