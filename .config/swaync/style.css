@@ -1,3 +1,7 @@
+* {
+	font-family: BlexSans Nerd Font;
+}
+
 /* Window behind control center and on all other monitors */
 .blank-window {
 	background: transparent;

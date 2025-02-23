@@ -22,36 +22,22 @@ start:
       "9": "九"
       "10": "十"
 
-  # - type: "launcher"
-  #   icon_size: 26
-
   - type: "tray"
 
-  # - type: "focused"
-  #   show_icon: false
-  #   show_title: true
-  #   icon_size: 22
-  #   truncate: "middle"
-  #   truncate.max_length: 30
-
-center:
-  # - type: "clock"
-  #   format: "    %H:%M"
-
   - type: "focused"
-    show_icon: true
+    show_icon: false
     icon_size: 26
-    truncate: "end"
     max_length: 30
+    truncate: "end"
 
 end: 
   - type: "sys_info"
     format: 
-      - '龍    {cpu_percent}%'
-      - '   {temp_c:coretemp-Package-id-0}°C'
-      - '    {memory_used} GB ({memory_percent}%)'
-      - '   {disk_used:/} GB ({disk_percent:/}%)'
-      - '     {net_down:wlp1s0} / {net_up:wlp1s0} Mbps   '
+      - '  {cpu_percent}%'
+      - ' {temp_c:coretemp-Package-id-0}°C '
+      - '  {memory_used} GB ({memory_percent}%) '
+      - '󰋊  {disk_used:/} GB ({disk_percent:/}%)'
+      - '󰓢 {net_down:wlp1s0} / {net_up:wlp1s0} Mbps'
     interval: 
       cpu: 5
       disks: 900
@@ -59,8 +45,27 @@ end:
       networks: 5
       temps: 15
 
+  - type: "volume"
+    format: "{icon}  {percentage}%"
+    max_volume: 140
+    icons:
+      volume_high: "󰕾 "
+      volume_medium: "󰖀 "
+      volume_low: "󰕿"
+      muted: "󰝟 "
+
+  - type: "notifications"
+    show_count: true
+    icons:
+      closed_none: 󰍥
+      closed_some: 󱥂
+      closed_dnd: 󱅯
+      open_none: 󰍡
+      open_some: 󱥁
+      open_dnd: 󱅮
+
   - type: "upower"
     format: "{percentage}%"
 
   - type: "clock"
-    format: "    %Y-%m-%d  %H:%M"
+    format: "   %Y-%m-%d  %H:%M"

@@ -19,7 +19,7 @@
 @define-color whitebr    #e3e4e5;
 
 * {
-	font-family: Cantarell, BlexMono Nerd Font;
+	font-family: BlexSans Nerd Font;
 }
 
 box, menubar, button {
@@ -44,7 +44,7 @@ box, menubar, button {
 
 .workspaces .item {
 	border-radius: 12px;
-	padding: 0px 2px;
+	padding: 4px 0px;
 }
 
 .workspaces .item.focused {
@@ -59,15 +59,36 @@ box, menubar, button {
 	background-color: transparent;
 }
 
-.sysinfo {
-	padding: 0px 4px;
+.widget {
+	padding: 0px 0px;
 }
 
+/* .notifications { */
+/* 	padding: 0px 0px; */
+/* } */
+
+.notifications .count {
+	font-size: 0.7rem;
+	padding: 0px 0px;
+	background-color: @red;
+	color: @bg;
+	border-radius: 12px;
+	margin-right: 8px;
+	margin-top: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.upower,
+.sysinfo,
+.volume,
 .clock {
 	padding: 0px 12px;
+	font-weight: normal;
 }
 
 .popup {
-	padding: 8px 8px;
+	background: rgba(12, 12, 12, .75);
+	padding: 12px 12px;
 	border-radius: 12px;
 }
