@@ -13,10 +13,10 @@
 set $primary "DP-1"
 set $secondary "DP-5"
 set $browser "/usr/bin/firefox"
-set $terminal "alacritty"
-set $editor "zeditor"
+set $terminal "gnome-terminal"
+set $editor "alacritty -t Neovim -e /usr/bin/nvim"
 set $files "alacritty -t xplr -e /usr/local/bin/xplr"
-set $media "psst"
+set $media "alacritty -t Spotify-tui -e /usr/bin/spt"
 
 # Colors (copied from vim-moonfly-colors)
 set $transparent #00000000
@@ -67,7 +67,7 @@ bindsym $mod+Escape mode "$mode_system"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:BlexMono Nerd Font 10
+font pango:BlexSans Nerd Font 11
 
 # <colorclass> <border> <background> <text> <indicator> <child_border>
 client.focused $bg $bg $blue $purplebr $blue
@@ -377,7 +377,7 @@ bar {
     strip_workspace_name no
 
     separator_symbol "  "
-    font pango:BlexMono Nerd Font 11
+    font pango:BlexSans Nerd Font 11
 
     colors {
 	# <colorclass> <border> <background> <text>
@@ -414,7 +414,7 @@ bar {
     strip_workspace_name no
 
     separator_symbol "  "
-    font pango:BlexMono Nerd Font 10
+    font pango:BlexSans Nerd Font 11
 
     colors {
 	# <colorclass> <border> <background> <text>
@@ -455,6 +455,6 @@ exec --no-startup-id ibus-daemon -rxR
 exec --no-startup-id fish $HOME/.config/i3/xinput.fish
 exec --no-startup-id dunst
 exec --no-startup-id spotifyd
-exec --no-startup-id python $HOME/.config/i3/xborders -c $HOME/.config/i3/xborders_config.json
+exec --no-startup-id python3 $HOME/.config/i3/xborders -c $HOME/.config/i3/xborders_config.json
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 # exec --no-startup-id polybar main
