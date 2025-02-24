@@ -20,6 +20,10 @@ CATEGORIES = {
     },
     'FCITX': {
         '.config/fcitx5/config',
+        '.config/fcitx5/conf/classicui.conf',
+        '.config/fcitx5/conf/mozc.conf',
+        '.config/fcitx5/conf/notifications.conf',
+        '.config/fcitx5/conf/unicode.conf',
         '.config/fcitx5/profile'
     },
     'MOZC': {'.config/mozc/ibus_config.textproto'},
