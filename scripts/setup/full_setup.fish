@@ -1,7 +1,9 @@
 #!/usr/bin/env fish
 
-set CATEGORIES HYPRLAND RICE TTF UTIL DOC TERM WEB MISC
+set CATEGORIES SYS BUILD HYPRLAND RICE TTF UTIL DOC TERM WEB MISC
 
+set SYS tlp fingerprint-gui amd-ucode intel-ucode fsck upower powertop
+set BUILD downgrade python rust 
 set HYPRLAND hyprcursor hypridle hyprland hyprlock hyprlang hyprpaper \
     hyprpicker hyprutils xdg-desktop-portal-hyprland
 set RICE ironbar anyrun swaync papirus-icon-theme wl-clipboard \
@@ -16,7 +18,7 @@ set UTIL polkit-gnome xsettingsd lxappearance fcitx5 fcitx5-mozc \
 set DOC pandoc libreoffice-fresh inkscape
 set TERM alacritty xplr neovim btop grim slurp
 set WEB firefox
-set MISC spotify-tui spotifyd fastfetch
+set MISC psst spotifyd fastfetch
 
 echo "This script must be run from the directory it resides in"
 read -P "Proceed wtih full system configuration? (Y/n) " allow
@@ -57,15 +59,14 @@ for category in $CATEGORIES
     yay -S $category
 end
 
-# Orchis theme
-cd $tempdir
-git clone https://github.com/vinceliuice/Orchis-theme
-cd Orchis-theme
-./install.sh --shell 42 --round 8 --tweaks black
+# GTK theme
+cd $scriptdir
+./nightfox_setup.fish
 
 # Blex Nerd Font
 cd $scriptdir
-sudo cp -r ../ttf/Blex /usr/share/fonts
+sudo cp -r ../ttf/BlexMono /usr/share/fonts
+sudo cp -r ../ttf/BlexSans /usr/share/fonts
 fc-cache
 # sudo cp ./environment /etc
 
