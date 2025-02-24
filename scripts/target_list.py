@@ -77,6 +77,10 @@ CATEGORIES = {
         # '.config/fish/functions/marp-all.fish',
         '.config/fish/functions/marp-setup.fish',
         '.config/fish/functions/temp.fish',
+        '.config/fish/functions/pacclean.fish',
+        '.config/fish/functions/pacview.fish',
+        '.config/fish/functions/pacview-installed.fish',
+        '.config/fish/functions/t-a.fish',
         # '.config/fish/functions/hypr-install.fish',
         '.config/fish/fish_variables'
     },

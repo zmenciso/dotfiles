@@ -1,6 +1,6 @@
 function marp-setup
     if not set -q MARP_TEMPLATE
-        set MARP_TEMPLATE ~/vault/doc/COAIHWL/Marp/COAIHWL_Marp_1
+        set -gx MARP_TEMPLATE ~/doc/COAIHWL/Marp/COAIHWL_Marp_1
     end
 
     if test (count $argv) = 0
