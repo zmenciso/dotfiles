@@ -3,6 +3,7 @@
 ![](./img/01.png)
 ![](./img/02.png)
 ![](./img/03.png)
+![](./img/04.png)
 
 These are my personal configuration files, all contained in a single repository
 for ease of copying and backup.
@@ -24,34 +25,6 @@ scripts/settings.py [options] [import/export] CATEGORY
 
     This script only works when placed in the `scripts` directory in the dotfiles repo!
 ```
-
-##  Sway
-
-Requires:
-  - `swaybg`
-  - `swayidle`
-  - `swaylock`
-  - `ironbar`
-  - `anyrun`
-  - `swaync`
-  - `alacritty`
-  - `xsettingsd`
-  - `papirus-icon-theme`
-  - `polkit-gnome`
-  - `wl-clipboard`
-  - `xplr`
-
-Export the relevant groups.  No need to load dconf settings.
-
-Font: **BlexMono Nerd Font** (contained in dotfiles repo) and **Cantarell**
-
-Theme: [**Nightfox GTK (Carbon
-Tweak)**](https://github.com/cyko-themes/gtk-orchis) (contained in dotfiles
-repo)
-
-The colors are based on
-[`nightfox.nvim`](https://github.com/EdenEast/nightfox.nvim) (`carbonfox`
-variant)
 
 ##  Hyprland
 
@@ -77,7 +50,8 @@ Requires:
 
 Export the relevant groups.  No need to load dconf settings.
 
-Font: **BlexMono Nerd Font** (contained in dotfiles repo) and **Cantarell**
+Fonts: **BlexMono Nerd Font** (contained in dotfiles repo) and **BlexSans Nerd
+Font** (also contained in dotfiles repo)
 
 Theme: [**Nightfox GTK (Carbon
 Tweak)**](https://github.com/cyko-themes/gtk-orchis) (contained in dotfiles
@@ -155,7 +129,7 @@ Install `barrier`, then perform the following to set up server-side encryption:
 mkdir -p ~/.local/share/barrier/SSL/Fingerprints ;
 openssl req -x509 -nodes -days 365 -subj /CN=Barrier -newkey rsa:4096 -keyout \
 ~/.local/share/barrier/SSL/Barrier.pem -out ~/.local/share/barrier/SSL/Barrier.pem ;
-set fingerprint (openssl x509 -fingerprint -sha256 -noout -in \ 
+set fingerprint (openssl x509 -fingerprint -sha256 -noout -in \
 ~/.local/share/barrier/SSL/Barrier.pem | cut -d"=" -f2)
 echo "v2:sha256:$fingerprint" > ~/.local/share/barrier/SSL/Fingerprints/Local.txt ;
 ```
@@ -339,5 +313,3 @@ be necessary for use with SDDM.
     - `.config/device_automounter_kcmrc`
     - `.config/kded5rc`
     - `.config/kded_device_automounterrc`
-
-
