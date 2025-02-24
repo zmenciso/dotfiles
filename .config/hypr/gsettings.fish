@@ -3,7 +3,7 @@
 set gtk_theme 'Nightfox-Dark-Compact-Carbon'
 set icon_theme 'Papirus'
 set cursor_theme 'Breeze'
-set font-name "BlexSans Nerd Font, 11"
+set font_name 'BlexSans Nerd Font, 11'
 
 set gnome_schema org.gnome.desktop.interface
 
