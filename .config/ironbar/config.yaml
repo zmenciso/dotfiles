@@ -10,6 +10,7 @@ icon_theme: "Papirus"
 start: 
   - type: "workspaces"
     icon_size: 26
+    sort: 'name'
     name_map:
       "1": "一"
       "2": "二"
@@ -23,6 +24,7 @@ start:
       "10": "十"
 
   - type: "tray"
+    icon_size: 16
 
   - type: "focused"
     show_icon: false
