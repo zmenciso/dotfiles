@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set gtk_theme 'Nightfox-Dark-Compact-Carbon'
+set gtk_theme 'Nightfox-Blue-Dark-Compact-Carbon'
 set icon_theme 'Papirus'
 set cursor_theme 'Breeze'
 set font_name 'BlexSans Nerd Font, 11'
