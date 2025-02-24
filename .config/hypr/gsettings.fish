@@ -1,9 +1,9 @@
 #!/usr/bin/env fish
 
-set gtk_theme 'Orchis-Dark-Compact'
+set gtk_theme 'Nightfox-Dark-Compact-Carbon'
 set icon_theme 'Papirus'
 set cursor_theme 'Breeze'
-set font_name 'Cantarell 10.5'
+set font-name "BlexSans Nerd Font, 11"
 
 set gnome_schema org.gnome.desktop.interface
 
