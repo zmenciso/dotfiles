@@ -70,6 +70,7 @@ CATEGORIES = {
         '.config/fish/functions/xcd.fish',
         '.config/fish/functions/xplr.fish',
         '.config/fish/functions/hpnrsync.fish',
+        '.config/fish/functions/hpnsshfs.fish',
         '.config/fish/functions/yldme.fish',
         '.config/fish/functions/yldme-link.fish',
         '.config/fish/functions/marp-setup.fish',
