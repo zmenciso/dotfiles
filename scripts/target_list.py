@@ -14,10 +14,7 @@ CATEGORIES = {
     },
     'XPLR': {'.config/xplr/init.lua'},
     'BTOP': {'.config/btop/btop.conf'},
-    'TMUX': {
-        '.tmux.conf',
-        '.config/tmux-powerline/themes/default.sh'
-    },
+    'TMUX': {'.tmux.conf'},
     'FCITX': {
         '.config/fcitx5/config',
         '.config/fcitx5/conf/classicui.conf',
@@ -32,7 +29,6 @@ CATEGORIES = {
         '.config/hypr/hyprpaper.conf',
         '.config/hypr/hypridle.conf',
         '.config/hypr/hyprlock.conf',
-        # '.config/hypr/lock.bash',
         '.xsettingsd',
         '.config/hypr/gsettings.fish',
         '.config/mimeapps.list'
@@ -60,8 +56,6 @@ CATEGORIES = {
         '.config/fish/functions/mdpdf.fish',
         '.config/fish/functions/fish_mode_prompt.fish',
         '.config/fish/functions/fish_prompt.fish',
-        # '.config/fish/functions/fish_prompt_inline.fish',
-        # '.config/fish/functions/fish_prompt_multiline.fish',
         '.config/fish/functions/cp.fish',
         '.config/fish/functions/df.fish',
         '.config/fish/functions/diff.fish',
@@ -78,43 +72,15 @@ CATEGORIES = {
         '.config/fish/functions/hpnrsync.fish',
         '.config/fish/functions/yldme.fish',
         '.config/fish/functions/yldme-link.fish',
-        # '.config/fish/functions/marp-all.fish',
         '.config/fish/functions/marp-setup.fish',
         '.config/fish/functions/temp.fish',
         '.config/fish/functions/pacclean.fish',
         '.config/fish/functions/pacview.fish',
         '.config/fish/functions/pacview-installed.fish',
         '.config/fish/functions/t-a.fish',
-        # '.config/fish/functions/hypr-install.fish',
         '.config/fish/fish_variables'
     },
-    # 'SSH': {'.ssh/config'},
-    # 'PANEL': {'.config/plasma-org.kde.plasma.desktop-appletsrc'},
-    # 'APPEARANCE': {
-    #     '.config/kdeglobals', '.config/kscreenlockerrc', '.config/kwinrc',
-    #     '.config/gtkrc', '.config/gtkrc-2.0', '.config/gtk-4.0/settings.ini',
-    #     '.config/gtk-3.0/settings.ini', '.config/gtk-3.0/gtk.css',
-    #     '.config/gtk-3.0/window_decorations.css', '.config/gtk-3.0/colors.css',
-    #     '.config/ksplashrc', '.config/plasmarc', '.config/Trolltech.conf',
-    #     '.config/breezerc', '.config/kcmfonts', '.config/kcminputrc',
-    #     '.config/kfontinstuirc', '.config/ksplashrc'
-    # },
-    # 'WORKSPACE': {
-    #     '.config/plasmarc', '.config/kwinrc', '.config/kglobalshortcutsrc',
-    #     '.config/kwinrulesrc', '.config/khotkeys', '.config/kded5rc',
-    #     '.config/ksmserverrc', '.config/krunnerrc', '.config/baloofilerc'
-    # },
-    # 'PERSONALIZATION': {
-    #     '.config/plasmanotifyrc', '.config/plasma-localerc',
-    #     '.config/ktimeonedrc', '.config/kaccessrc', '.config/kdeglobals'
-    #     '.config/PlasmaUserFeedback'
-    # },
-    # 'HARDWARE': {
-    #     '.config/kcminputrc', '.config/kxkbrc', '.config/kgammarc',
-    #     '.config/powermanagementprofilesrc', '.config/bluedevilglobalrc',
-    #     '.config/kdeconnect', '.config/device_automounter_kcmrc',
-    #     '.config/kded5rc', '.config/kded_device_automounterrc'
-    # },
+    'SSH': {'.ssh/config'},
     'I3': {
         '.config/i3/config',
         '.config/i3/lock.bash',
@@ -143,18 +109,10 @@ CATEGORIES = {
         '.config/swaync/config.json',
         '.config/swaync/style.css'
     },
-    # 'MAKO': {
-    #     '.config/mako/config'
-    # },
     'I3STATUS': {
         '.config/i3status/config',
         '.config/i3status/config-small'
     },
-    # 'BUMBLEBEE': {
-    #     '.config/bumblebee-status/themes/moonfly-powerline.json',
-    #     '.config/bumblebee-status/themes/moonfly-powerline-small.json',
-    #     '.config/bumblebee-status/themes/icons/powerline.json'
-    # },
     'ANYRUN': {
         '.config/anyrun/config.ron',
         '.config/anyrun/style.css',
@@ -163,6 +121,32 @@ CATEGORIES = {
         '.config/anyrun/symbols.ron',
         '.config/anyrun/websearch.ron'
     }
+    # 'PANEL': {'.config/plasma-org.kde.plasma.desktop-appletsrc'},
+    # 'APPEARANCE': {
+    #     '.config/kdeglobals', '.config/kscreenlockerrc', '.config/kwinrc',
+    #     '.config/gtkrc', '.config/gtkrc-2.0', '.config/gtk-4.0/settings.ini',
+    #     '.config/gtk-3.0/settings.ini', '.config/gtk-3.0/gtk.css',
+    #     '.config/gtk-3.0/window_decorations.css', '.config/gtk-3.0/colors.css',
+    #     '.config/ksplashrc', '.config/plasmarc', '.config/Trolltech.conf',
+    #     '.config/breezerc', '.config/kcmfonts', '.config/kcminputrc',
+    #     '.config/kfontinstuirc', '.config/ksplashrc'
+    # },
+    # 'WORKSPACE': {
+    #     '.config/plasmarc', '.config/kwinrc', '.config/kglobalshortcutsrc',
+    #     '.config/kwinrulesrc', '.config/khotkeys', '.config/kded5rc',
+    #     '.config/ksmserverrc', '.config/krunnerrc', '.config/baloofilerc'
+    # },
+    # 'PERSONALIZATION': {
+    #     '.config/plasmanotifyrc', '.config/plasma-localerc',
+    #     '.config/ktimeonedrc', '.config/kaccessrc', '.config/kdeglobals'
+    #     '.config/PlasmaUserFeedback'
+    # },
+    # 'HARDWARE': {
+    #     '.config/kcminputrc', '.config/kxkbrc', '.config/kgammarc',
+    #     '.config/powermanagementprofilesrc', '.config/bluedevilglobalrc',
+    #     '.config/kdeconnect', '.config/device_automounter_kcmrc',
+    #     '.config/kded5rc', '.config/kded_device_automounterrc'
+    # },
 }
 
 
