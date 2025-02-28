@@ -1,25 +1,52 @@
+@define-color blue #78a9ff;
+@define-color red #ee5396;
+@define-color green #25be6a;
+@define-color magenta #be95ff;
+@define-color bg #161616;
+@define-color fg #f2f4f8;
+@define-color fgbr #f9fbff;
+@define-color fgdim #b6b8bb;
+@define-color footer #353535;
+@define-color black #282828;
+@define-color blackbr #484848;
+@define-color blackdim #222222;
+@define-color selbg #2a2a2a;
+@define-color selfg #f2f4f8;
+
+@define-color cc-bg rgba(22, 22, 22, 0.75);
+
+@define-color text-color #f2f4f8;
+@define-color bg-selected #78a9ff;
+@define-color noti-bg #282828;
+@define-color noti-bg-opaque #282828;
+@define-color noti-bg-hover #353535;
+@define-color noti-bg-hover-opaque #353535;
+@define-color noti-bg-focus #282828;
+@define-color text-color-disabled #b6b8bb;
+@define-color bg-selected #33b1ff;
+
 * {
 	font-family: BlexSans Nerd Font;
 }
 
-/* Window behind control center and on all other monitors */
-.blank-window {
-	background: transparent;
+.notification-row .notification-background .notification {
+	/* The actual notification */
+	border: 1px solid @blue;
 }
 
-.floating-notifications {
-	background: transparent;
+.notification-row .notification-background .notification.critical {
+	border: 1px solid @red;
 }
 
-.notification {
-	outline: none;
-	box-shadow: none;
-	transition: all 200ms ease;
-	margin: 12px 12px;
+.notification-row .notification-background .notification .notification-default-action .notification-content {
+	/* Notification summary/title */
+	padding: 4px 8px;
+}
+
+.widget-dnd > switch:checked {
+	background: @blue;
 }
 
 .control-center {
-	background: rgba(12, 12, 12, 0.75);
-	border-radius: 12px;
-	padding: 8px;
+	border: 1px solid @black;
 }
