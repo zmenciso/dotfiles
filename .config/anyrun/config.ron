@@ -16,7 +16,7 @@ Config(
 
 	close_on_click: true,
 
-	show_results_immediately: false,
+	show_results_immediately: true,
 
 	max_entries: None,
 

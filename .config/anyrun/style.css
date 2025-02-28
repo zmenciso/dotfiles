@@ -1,53 +1,123 @@
 * {
-  all: unset;
-  font-family: BlexSans Nerd Font;
-  font-size: 1rem;
+	font-family: BlexSans Nerd Font;
 }
 
+@define-color blue #78a9ff;
+@define-color red #ee5396;
+@define-color green #25be6a;
+@define-color magenta #be95ff;
+@define-color bg #161616;
+@define-color fg #f2f4f8;
+@define-color fgbr #f9fbff;
+@define-color fgdim #b6b8bb;
+@define-color footer #353535;
+@define-color black #282828;
+@define-color blackbr #484848;
+@define-color blackdim #222222;
+@define-color selbg #2a2a2a;
+@define-color selfg #f2f4f8;
+
+/* entry: The entry box */
+/* 	GtkEntry */
+/* window: The window */
+/* 	GtkWindow */
+/* main: "Main" parts of the layout */
+/* 	GtkListBox: The main list containing the plugins */
+/* 	GtkBox: The box combining the main list and the entry box */
+/* plugin: Anything for the entire plugin */
+/* 	GtkLabel: The name of the plugin */
+/* 	GtkBox: The different boxes in the plugin view */
+/* 	GtkImage: The icon of the plugin */
+/* match: Widgets of a specific match */
+/* 	GtkBox: The main box of the match and the box containing the title and the description if present */
+/* 	GtkImage: The icon of the match (if present) */
+/* match-title: Specific for the title of the match */
+/* 	GtkLabel */
+/* match-desc: Specific for the description of the match */
+/* 	GtkLabel */
+
+#main,
 #window,
 #match,
 #entry,
-#plugin,
-#main { background: transparent; }
-
-#match.activatable {
-  border-radius: 16px;
-  padding: .3rem .9rem;
-  margin-top: .01rem;
-}
-#match.activatable:first-child { margin-top: .7rem; }
-#match.activatable:last-child { margin-bottom: .6rem; }
-
-#plugin:hover #match.activatable {
-  border-radius: 10px;
-  padding: .3rem;
-  margin-top: .01rem;
-  margin-bottom: 0;
+#plugin { 
+	background: transparent; 
 }
 
-#match:selected, #match:hover, #plugin:hover {
-  background: #282828;
-  /* background: rgba(255, 255, 255, .1); */
+box#main {
+	border: 1px solid @black;
+	background: rgba(22, 22, 22, 0.75);
+	border-radius: 12px;
+	padding: 0.5rem;
+}
+
+#main {
+	padding: 8px 8px;
+	border-radius: 12px;
 }
 
 #entry {
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 16px;
-  margin: .3rem;
-  padding: .3rem 1rem;
+	all: unset;
 }
 
-list > #plugin {
-  border-radius: 16px;
-  margin: 0 .3rem;
+#entry {
+	background: @black;
+	border: 1px solid @blackbr;
+	border-radius: 12px;
+	padding: 4px 8px;
 }
-list > #plugin:first-child { margin-top: .3rem; }
-list > #plugin:last-child { margin-bottom: .3rem; }
-list > #plugin:hover { padding: .6rem; }
 
-box#main {
-  background: rgba(12, 12, 12, 0.75);
-  border-radius: 12px;
-  padding: .3rem;
+#plugin {
+	border-radius: 12px;
 }
+
+#plugin {
+	border-radius: 12px;
+	padding: 1px;
+}
+
+#match {
+	border-radius: 12px;
+	padding: 2px;
+}
+
+#match:selected {
+	background: @black;
+	border: 1px solid @blackbr;
+}
+
+/* #match.activatable { */
+/*   border-radius: 16px; */
+/*   padding: .3rem .9rem; */
+/*   margin-top: .01rem; */
+/* } */
+/* #match.activatable:first-child { margin-top: .7rem; } */
+/* #match.activatable:last-child { margin-bottom: .6rem; } */
+
+/* #plugin:hover #match.activatable { */
+/*   border-radius: 10px; */
+/*   padding: .3rem; */
+/*   margin-top: .01rem; */
+/*   margin-bottom: 0; */
+/* } */
+
+/* #match:selected, #match:hover, #plugin:hover { */
+/*   background: #282828; */
+/*   /1* background: rgba(255, 255, 255, .1); *1/ */
+/* } */
+
+/* #entry { */
+/*   background: rgba(255,255,255,.05); */
+/*   border: 1px solid rgba(255,255,255,.1); */
+/*   border-radius: 16px; */
+/*   margin: .3rem; */
+/*   padding: .3rem 1rem; */
+/* } */
+
+/* list > #plugin { */
+/*   border-radius: 16px; */
+/*   margin: 0 .3rem; */
+/* } */
+/* list > #plugin:first-child { margin-top: .3rem; } */
+/* list > #plugin:last-child { margin-bottom: .3rem; } */
+/* list > #plugin:hover { padding: .6rem; } */
