@@ -31,7 +31,8 @@
 
 .notification-row .notification-background .notification {
 	/* The actual notification */
-	border: 1px solid @blue;
+	border: 1px solid @blackbr;
+	box-shadow: none;
 }
 
 .notification-row .notification-background .notification.critical {
@@ -40,7 +41,7 @@
 
 .notification-row .notification-background .notification .notification-default-action .notification-content {
 	/* Notification summary/title */
-	padding: 4px 8px;
+	padding: 6px 12px;
 }
 
 .widget-dnd > switch:checked {
@@ -49,4 +50,9 @@
 
 .control-center {
 	border: 1px solid @black;
+}
+
+.widget-mpris-player {
+	border: 1px solid @blackbr;
+	box-shadow: none;
 }
