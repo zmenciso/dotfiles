@@ -65,7 +65,7 @@ function fish_prompt -d 'Write out the prompt'
     # Status
     if [ $last_status -ne 0 ]
 		print_cap  $prev red
-		power_print "  $last_status " $bg red --bold
+		power_print "  $last_status " $bg red --bold
 		set prev red
     end
 
