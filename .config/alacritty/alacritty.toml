@@ -94,9 +94,5 @@ program = "/usr/bin/fish"
 
 [window]
 opacity = 1
-
-[window.padding]
-x = 8
-y = 8
-
-[terminal]
+padding = {x = 8, y = 8}
+dynamic_padding = true
