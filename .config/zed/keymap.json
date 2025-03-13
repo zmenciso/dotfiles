@@ -6,106 +6,98 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
-  {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-z": "workspace::ToggleZoom",
-      "alt-k": [
-        "projects::OpenRecent",
-        {
-          "create_new_window": false
-        }
-      ],
-      "ctrl-x": "tab_switcher::CloseSelectedItem"
-    }
-  },
-  {
-    "context": "Dock || Terminal || Editor || ProjectPanel",
-    "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
-    }
-  },
-  {
-    "context": "Editor && VimControl && !VimWaiting && !menu",
-    "bindings": {
-      "shift-k": "editor::Hover",
-      "space b": "editor::ToggleGitBlame",
-      "space l f": "editor::Format",
-      "space d": "diagnostics::Deploy",
-      "space f f": "file_finder::Toggle",
-      "space o": "tab_switcher::Toggle",
-      "space e": "workspace::ToggleLeftDock",
-      "space /": "workspace::NewSearch",
-      "space c": "pane::CloseActiveItem",
-      "space t": "project_symbols::Toggle",
+	{
+		"context": "Dock || Terminal || Editor || ProjectPanel",
+		"bindings": {
+			"ctrl-h": "workspace::ActivatePaneLeft",
+			"ctrl-l": "workspace::ActivatePaneRight",
+			"ctrl-k": "workspace::ActivatePaneUp",
+			"ctrl-j": "workspace::ActivatePaneDown"
+		}
+	},
+	{
+		"context": "Editor && VimControl && !VimWaiting && !menu",
+		"bindings": {
+			"shift-k": "editor::Hover",
+			"space b": "editor::ToggleGitBlame",
+			"space l f": "editor::Format",
+			"space d": "diagnostics::Deploy",
+			"space f f": "file_finder::Toggle",
+			"space o": "tab_switcher::Toggle",
+			"space e": "workspace::ToggleLeftDock",
+			"space /": "workspace::NewSearch",
+			"space c": "pane::CloseActiveItem",
+			"space t": "project_symbols::Toggle",
 
-      "ctrl-t": "workspace::NewCenterTerminal",
-      "ctrl-o": "workspace::OpenFiles",
+			"ctrl-t": "workspace::NewCenterTerminal",
+			"ctrl-o": "workspace::OpenFiles",
 
-      "n": "search::SelectNextMatch",
-      "shift-n": "search::SelectPrevMatch",
+			"n": "search::SelectNextMatch",
+			"shift-n": "search::SelectPrevMatch",
 
-      "g b": "editor::ToggleComments",
-      "+ +": "workspace::Save"
-    }
-  },
-  {
-    "context": "vim_mode == insert",
-    "bindings": {
-      "ctrl-k": "editor::ContextMenuPrev",
-      "ctrl-j": "editor::ContextMenuNext"
-    }
-  },
-  {
-    "context": "TabSwitcher",
-    "bindings": {
-      "ctrl-k": "menu::SelectPrev",
-      "ctrl-j": "menu::SelectNext"
-    }
-  },
-  {
-    "context": "FileFinder",
-    "bindings": {
-      "ctrl-k": "menu::SelectPrev",
-      "ctrl-j": "menu::SelectNext"
-    }
-  },
-  {
-    "context": "CommandPalette",
-    "bindings": {
-      "ctrl-k": "menu::SelectPrev",
-      "ctrl-j": "menu::SelectNext"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
-    "bindings": {
-      "shift-j": "editor::MoveLineDown",
-      "shift-k": "editor::MoveLineUp"
-    }
-  },
-
-  {
-    "context": "Terminal",
-    "bindings": {
-      "cmd-t": "workspace::NewTerminal",
-      "ctrl-l": ["terminal::SendKeystroke", "ctrl-l"]
-    }
-  },
-  {
-    "context": "EmptyPane || SharedScreen",
-    "bindings": {
-      "space f f": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "Editor && VimControl && !VimWaiting && !menu",
-    "bindings": {
-      "space o": "tab_switcher::Toggle",
-      "ctrl-t": "workspace::NewCenterTerminal"
-    }
-  }
+			"g b": "editor::ToggleComments",
+			"+ +": "workspace::Save"
+		}
+	},
+	{
+		"context": "vim_mode == insert",
+		"bindings": {
+			"ctrl-k": "editor::ContextMenuPrev",
+			"ctrl-j": "editor::ContextMenuNext"
+		}
+	},
+	{
+		"context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
+		"bindings": {
+			"shift-j": "editor::MoveLineDown",
+			"shift-k": "editor::MoveLineUp"
+		}
+	},
+	{
+		"context": "TabSwitcher",
+		"bindings": {
+			"ctrl-k": "menu::SelectPrev",
+			"ctrl-j": "menu::SelectNext"
+		}
+	},
+	{
+		"context": "FileFinder",
+		"bindings": {
+			"ctrl-k": "menu::SelectPrev",
+			"ctrl-j": "menu::SelectNext"
+		}
+	},
+	{
+		"context": "CommandPalette",
+		"bindings": {
+			"ctrl-k": "menu::SelectPrev",
+			"ctrl-j": "menu::SelectNext"
+		}
+	},
+	{
+		"context": "Workspace",
+		"bindings": {
+			"ctrl-z": "workspace::ToggleZoom",
+			"alt-k": [
+				"projects::OpenRecent",
+				{
+					"create_new_window": false
+				}
+			],
+			"ctrl-x": "tab_switcher::CloseSelectedItem"
+		}
+	},
+	{
+		"context": "Terminal",
+		"bindings": {
+			"cmd-t": "workspace::NewTerminal",
+			"ctrl-l": ["terminal::SendKeystroke", "ctrl-l"]
+		}
+	},
+	{
+		"context": "EmptyPane || SharedScreen",
+		"bindings": {
+			"space f f": "file_finder::Toggle"
+		}
+	}
 ]
