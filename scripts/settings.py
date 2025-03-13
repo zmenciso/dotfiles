@@ -1,49 +1,78 @@
 #!/usr/bin/env python
 
 # Zephan M. Enciso
-# Yes, this is a super dumb script with terrible coding practices.  It works,
-# and time isn't really a factor here
 
 import os
 import shutil
 import sys
+import argparse
 
 from tools import query, error, cprint
 import target_list as tl
 
-# Globals
+# Global Variables
+
 VERBOSE = True
 INTERACT = False
 DIRECTION = 'import'
-CATEGORY = 'all'
+CATEGORY = 'ALL'
 HOME = None
 SCRIPTS = None
 
-DIRECTIONS = {'import', 'export'}
 CATEGORIES = set(tl.CATEGORIES.keys())
 
+def create_custom_help():
+    # Create the categories list
+    categories_help = '\n'.join(' ' * 8 + cat.lower() for cat in CATEGORIES)
 
-# Functions
-def usage(exitcode):
-    ''' Display usage message'''
-    print(f'''{sys.argv[0]} [options] [import/export] CATEGORY
+    # Create the complete help message
+    return f'''%(prog)s [options] [import/export] CATEGORY
+
+options:
     -q --quiet      Suppress verbose output
     -i --interact   Interactive (Manually approve each copy)
     -h --help       Print this message
 
-    Categories (or "all"):''')
+Categories (or "all"):
+{categories_help}
 
-    for cat in CATEGORIES:
-        print(' ' * 8 + cat.lower())
-
-    print('''
     Import/i: Copy files from the system to the dotfiles repo
     Export/e: Copy files from the dotfiles repo to the system
 
     This script only works when placed in the `scripts` directory in the dotfiles repo!'''
-          )
 
-    sys.exit(exitcode)
+
+def copy(src, dst):
+    allow = True
+    copied = False
+
+    if INTERACT:
+        allow = query(f'{src} --> {dst}?', 'no')
+
+    if allow:
+        dirname = os.path.dirname(dst)
+
+        try:
+            if not os.path.isdir(dirname):
+                os.mkdir(dirname)
+
+        except Exception as e:
+            if VERBOSE:
+                error(f'Could not create {dirname} ({e})')
+                return False
+
+        try:
+            shutil.copy2(src, dst)
+            copied = True
+            if VERBOSE and not INTERACT:
+                print(f'{src} --> {dst}')
+
+        except Exception as e:
+            if VERBOSE:
+                error(f'Could not copy {src} to {dst} ({e})')
+                return False
+
+    return copied
 
 
 def copy_settings(category, homedir, scriptdir, direction):
@@ -53,8 +82,8 @@ def copy_settings(category, homedir, scriptdir, direction):
     source = None
     destination = None
     count = 0
+
     for file in tl.decode_category(category):
-        allow = True
         if 'i' in direction.lower():
             source = os.path.join(homedir, file)
             destination = os.path.join(scriptdir, '..', file)
@@ -64,53 +93,46 @@ def copy_settings(category, homedir, scriptdir, direction):
         else:
             error(f"Invalid direction '{direction}'", 0)
 
-        if INTERACT:
-            allow = query(f'{source} --> {destination}?', 'no')
-
-        if allow:
-            dirname = os.path.dirname(destination)
-
-            try:
-                if not os.path.isdir(dirname):
-                    os.mkdir(dirname)
-            except Exception as e:
-                if VERBOSE:
-                    error(f'Could not create {dirname} ({e})')
-
-            try:
-                shutil.copy2(source, destination)
-                count += 1
-                if VERBOSE and not INTERACT:
-                    print(f'{source} --> {destination}')
-            except Exception as e:
-                if VERBOSE:
-                    error(f'Could not copy {source} to {destination} ({e})')
+        if copy(source, destination):
+            count += 1
 
     return count
 
 
 # Main Execution
 if __name__ == '__main__':
-    args = sys.argv[1:]
+    parser = argparse.ArgumentParser(
+        description='Copy dotfiles to or from dotfiles repo',
+        usage=create_custom_help(),
+        add_help=False
+    )
+
+    # Add arguments
+    parser.add_argument('direction',
+                       help=argparse.SUPPRESS,
+                       choices=['import', 'export', 'i', 'e'])
+    parser.add_argument('category',
+                       help=argparse.SUPPRESS,
+                       nargs='+')
+    parser.add_argument('-q', '--quiet',
+                       action='store_true',
+                       help=argparse.SUPPRESS)
+    parser.add_argument('-i', '--interact',
+                       action='store_true',
+                       help=argparse.SUPPRESS)
+    parser.add_argument('-h', '--help',
+                       action='help',
+                       help=argparse.SUPPRESS)
+
+    # Parse arguments
+    args = parser.parse_args()
+
+    # Set variables based on parsed arguments
+    VERBOSE = not args.quiet
+    INTERACT = args.interact
+    DIRECTION = args.direction.strip().lower()
+    CATEGORY = [arg.strip().upper() for arg in args.category]
     EXIT_CODE = 0
-
-    while len(args) and args[0].startswith('-'):
-        if args[0] == '-h' or args[0] == '--help':
-            usage(0)
-        elif args[0] == '-q' or args[0] == '--quiet':
-            VERBOSE = False
-        elif args[0] == '-i' or args[0] == '--interact':
-            INTERACT = True
-        else:
-            usage(1)
-
-        args.pop(0)
-
-    if len(args) < 2:
-        usage(1)
-    else:
-        DIRECTION = args.pop(0).strip().lower()
-        CATEGORY = args
 
     try:
         HOME = os.path.realpath(os.getenv('HOME'))
@@ -123,13 +145,12 @@ if __name__ == '__main__':
         error(f'Could not translate scripts directory ({e})', 7)
 
     count = 0
-    if 'all' in CATEGORY:
+    if 'ALL' in CATEGORY:
         for item in CATEGORIES:
             count += copy_settings(item, HOME, SCRIPTS, DIRECTION)
     else:
         for item in CATEGORY:
-            count += copy_settings(item.strip().upper(), HOME, SCRIPTS,
-                                   DIRECTION)
+            count += copy_settings(item, HOME, SCRIPTS, DIRECTION)
 
     cprint('OKGREEN', f'Successfully {DIRECTION}ed {count} file(s).')
 

@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# Collection of functions I like to use
+
 import sys
 import os
 
