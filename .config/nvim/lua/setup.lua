@@ -93,7 +93,7 @@ local lsp_handlers_hover = vim.lsp.with(vim.lsp.handlers.hover, {
 vim.lsp.handlers["textDocument/hover"] = function(err, result, ctx, config)
 	local bufnr, winnr = lsp_handlers_hover(err, result, ctx, config)
 	if winnr ~= nil then
-vim.api.nvim_win_set_option(winnr, "winblend", 20)  -- opacity for hover
+		vim.api.nvim_win_set_option(winnr, "winblend", 20)  -- opacity for hover
 	end
 	return bufnr, winnr
 end
@@ -135,17 +135,18 @@ end
 
 vim.cmd [[
 augroup LSPDiagnosticsOnHover
-	autocmd!
-	autocmd CursorHold *   lua _G.LspDiagnosticsPopupHandler()
+autocmd!
+autocmd CursorHold *   lua _G.LspDiagnosticsPopupHandler()
 augroup END
 ]]
 
 -- Redefine signs (:help diagnostic-signs)
 -- neovim >= 0.6.0
-vim.fn.sign_define("DiagnosticSignError",  {text = " ", texthl = "DiagnosticSignError"})
-vim.fn.sign_define("DiagnosticSignWarn",   {text = " ", texthl = "DiagnosticSignWarn"})
-vim.fn.sign_define("DiagnosticSignInfo",   {text = " ", texthl = "DiagnosticSignInfo"})
-vim.fn.sign_define("DiagnosticSignHint",   {text = " ", texthl = "DiagnosticSignHint"})
+local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
 -------------------------------------------------------------------------------
 -- nvim-cmp: completion support
@@ -165,35 +166,35 @@ local has_words_before = function()
 end
 
 local winhighlight = {
-  winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+	winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
 }
 
 local kind_icons = {
 	Text = "",
-	Method = "",
-	Function = "",
+	Method = "󰆧",
+	Function = "󰊕",
 	Constructor = "",
-	Field = "",
-	Variable = "",
-	Class = "ﴯ",
+	Field = "󰇽",
+	Variable = "󰂡",
+	Class = "󰠱",
 	Interface = "",
 	Module = "",
-	Property = "ﰠ",
+	Property = "󰜢",
 	Unit = "",
-	Value = "",
+	Value = "󰎠",
 	Enum = "",
-	Keyword = "",
+	Keyword = "󰌋",
 	Snippet = "",
-	Color = "",
-	File = "",
+	Color = "󰏘",
+	File = "󰈙",
 	Reference = "",
-	Folder = "",
+	Folder = "󰉋",
 	EnumMember = "",
-	Constant = "",
+	Constant = "󰏿",
 	Struct = "",
 	Event = "",
-	Operator = "",
-	TypeParameter = ""
+	Operator = "󰆕",
+	TypeParameter = "󰅲",
 }
 
 local t = function(str)
@@ -202,12 +203,13 @@ end
 
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+
 cmp.setup {
 	snippet = {
 		expand = function(args)
 			vim.fn["UltiSnips#Anon"](args.body)
 		end,
-	  },
+	},
 
 	window = {
 		completion = cmp.config.window.bordered(winhighlight),
@@ -322,55 +324,55 @@ cmp.setup {
 	-- 	['<C-e>'] = cmp.mapping.abort(),
 	-- 	['<CR>'] = cmp.mapping.confirm({ select = true }),
 
-	-- 	-- ['<Tab>'] = function(fallback)  -- see GH-231, GH-286
-	-- 	-- 	if cmp.visible() then cmp.select_next_item()
-	-- 	-- 	elseif has_words_before() then cmp.complete()
-	-- 	-- 	else fallback() end
-	-- 	-- end,
+	-- 	['<Tab>'] = function(fallback)  -- see GH-231, GH-286
+	-- 		if cmp.visible() then cmp.select_next_item()
+	-- 		elseif has_words_before() then cmp.complete()
+	-- 		else fallback() end
+	-- 	end,
 
-	-- 	-- ['<S-Tab>'] = function(fallback)
-	-- 	-- 	if cmp.visible() then cmp.select_prev_item()
-	-- 	-- 	else fallback() end
-	-- 	-- end,
-	-- }),
+	-- 	['<S-Tab>'] = function(fallback)
+	-- 		if cmp.visible() then cmp.select_prev_item()
+	-- 		else fallback() end
+	-- 	end,
+	-- 	}),
 
 	formatting = {
 		format = function(entry, vim_item)
 			vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
 			-- vim_item.menu = ({
-			-- 	buffer = "[Buffer]",
-			-- 	nvim_lsp = "[LSP]",
-			-- 	ultisnips = "[UltiSnips]",
-			-- 	nvim_lua = "[Lua]",
-			-- 	latex_symbols = "[LaTeX]",
-			-- })[entry.source.name]
-			return vim_item
-		end
-	},
-
-	sources = {
-		{ name = 'nvim_lsp', priority = 100 },
-		{ name = 'ultisnips', keyword_length = 2, priority = 50 },
-		{ name = 'path', priority = 30 },
-		{ name = 'cmdline', priority = 20 },
-		{ name = 'pandoc_refernces' },
-		{ name = 'emoji' },
-		{ name = 'buffer', priority = 10 },
-	},
-
-	sorting = {
-		comparators = {
-			cmp.config.compare.offset,
-			cmp.config.compare.exact,
-			cmp.config.compare.score,
-			require "cmp-under-comparator".under,
-			cmp.config.compare.kind,
-			cmp.config.compare.sort_text,
-			cmp.config.compare.length,
-			cmp.config.compare.order,
+				-- 	buffer = "[Buffer]",
+				-- 	nvim_lsp = "[LSP]",
+				-- 	ultisnips = "[UltiSnips]",
+				-- 	nvim_lua = "[Lua]",
+				-- 	latex_symbols = "[LaTeX]",
+				-- })[entry.source.name]
+				return vim_item
+			end
 		},
-	},
-}
+
+		sources = {
+			{ name = 'nvim_lsp', priority = 100 },
+			{ name = 'ultisnips', keyword_length = 2, priority = 50 },
+			{ name = 'path', priority = 30 },
+			{ name = 'cmdline', priority = 20 },
+			{ name = 'pandoc_refernces' },
+			{ name = 'emoji' },
+			{ name = 'buffer', priority = 10 },
+		},
+
+		sorting = {
+			comparators = {
+				cmp.config.compare.offset,
+				cmp.config.compare.exact,
+				cmp.config.compare.score,
+				require "cmp-under-comparator".under,
+				cmp.config.compare.kind,
+				cmp.config.compare.sort_text,
+				cmp.config.compare.length,
+				cmp.config.compare.order,
+			},
+		},
+	}
 
 cmp.setup.cmdline({ '/', '?' }, {
 	completion = { autocomplete = false },
@@ -390,14 +392,14 @@ cmp.setup.cmdline(':', {
 
 -- Highlights for nvim-cmp's custom popup menu (GH-224)
 vim.cmd [[
-  " To be compatible with Pmenu (#fff3bf)
-  " hi CmpItemAbbr           guifg=#111111
-  " hi CmpItemAbbrMatch      guifg=#f03e3e gui=bold
-  " hi CmpItemAbbrMatchFuzzy guifg=#fd7e14 gui=bold
-  " hi CmpItemAbbrDeprecated guifg=#adb5bd
-  " hi CmpItemKindDefault    guifg=#cc5de8
-  " hi! def link CmpItemKind CmpItemKindDefault
-  " hi CmpItemMenu           guifg=#cfa050
+" To be compatible with Pmenu (#fff3bf)
+" hi CmpItemAbbr           guifg=#111111
+" hi CmpItemAbbrMatch      guifg=#f03e3e gui=bold
+" hi CmpItemAbbrMatchFuzzy guifg=#fd7e14 gui=bold
+" hi CmpItemAbbrDeprecated guifg=#adb5bd
+" hi CmpItemKindDefault    guifg=#cc5de8
+" hi! def link CmpItemKind CmpItemKindDefault
+" hi CmpItemMenu           guifg=#cfa050
 ]]
 
 -------------------------------------------------------------------------------
@@ -427,12 +429,12 @@ end
 
 -- :LspStatus (command): display lsp status
 vim.cmd [[
-	command! -nargs=0 LspStatus   echom v:lua.LspStatus()
+command! -nargs=0 LspStatus   echom v:lua.LspStatus()
 ]]
 
 -- Other LSP commands
 vim.cmd [[
-	command! -nargs=0 LspDebug  :tab drop $HOME/.cache/nvim/lsp.log
+command! -nargs=0 LspDebug  :tab drop $HOME/.cache/nvim/lsp.log
 ]]
 
 -------------------------------------------------------------------------------
@@ -490,9 +492,9 @@ require('lualine').setup{
 				mode = 4,
 				use_mode_colors = true,
 				symbols = {
-					modified = ' ',      -- Text to show when the buffer is modified
+					modified = '  ',      -- Text to show when the buffer is modified
 					alternate_file = '  ', -- Text to show to identify the alternate file
-					directory =  '',     -- Text to show when the buffer is a directory
+					directory =  '  ',     -- Text to show when the buffer is a directory
 				},
 			}
 		},
@@ -581,7 +583,7 @@ require('fm-nvim').setup{
 		tabedit    = "<C-t>",
 		edit       = "<C-e>",
 		ESC        = "<ESC>"
-		},
+	},
 }
 
 
