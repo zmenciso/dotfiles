@@ -7,9 +7,15 @@ package.path = home
   .. "/.config/xplr/plugins/?.lua;"
   .. package.path
 
-xplr.config.node_types.directory.meta.icon = ""
-xplr.config.node_types.file.meta.icon = ""
-xplr.config.node_types.symlink.meta.icon = ""
+xplr.config.node_types.directory.meta.icon = ""
+xplr.config.node_types.file.meta.icon = ""
+xplr.config.node_types.symlink.meta.icon = ""
+
+xplr.config.node_types.extension.rs = { meta = { icon = "" } }
+xplr.config.node_types.extension.py = { meta = { icon = "" } }
+xplr.config.node_types.extension.png = { meta = { icon = "" } }
+xplr.config.node_types.extension.jpg = { meta = { icon = "" } }
+xplr.config.node_types.extension.svg = { meta = { icon = "" } }
 
 local function stat(node)
   return node.mime_essence
