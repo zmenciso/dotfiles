@@ -46,7 +46,7 @@ vim.opt.listchars = {
 vim.o.tabstop = 4
 vim.o.shiftwidth = vim.o.tabstop
 vim.o.softtabstop = vim.o.tabstop
-vim.o.expandtab = false
+vim.o.expandtab = true
 
 vim.o.showmode = false
 

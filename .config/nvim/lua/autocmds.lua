@@ -4,6 +4,7 @@ vim.cmd [[
 		autocmd!
 		autocmd FileType text setlocal textwidth=80 spell spelllang=en_us
 		autocmd FileType tex setlocal textwidth=80 spell spelllang=en_us
+		autocmd FileType markdown setlocal textwidth=80 spell spelllang=en_us
 	augroup END
 ]]
 
@@ -15,16 +16,9 @@ vim.cmd [[
 	augroup END
 
 	" Python code should always expand tab
-	augroup Python
+	augroup Makefile
 		autocmd!
-		autocmd FileType python setlocal expandtab
-	augroup END
-
-	" Markdown
-	augroup Markdown
-		autocmd!
-		autocmd BufRead,BufNewFile *.md setlocal filetype=markdown
-		autocmd FileType markdown setlocal expandtab textwidth=80 spell spelllang=en_us
+		autocmd FileType makefile setlocal noexpandtab
 	augroup END
 ]]
 
