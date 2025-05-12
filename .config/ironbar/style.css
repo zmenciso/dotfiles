@@ -44,7 +44,7 @@ box, menubar, button {
 
 .workspaces .item {
 	border-radius: 12px;
-	padding: 4px 0px;
+	padding: 4px 8px;
 }
 
 .workspaces .item.focused {

@@ -36,10 +36,10 @@ end:
   - type: "sys_info"
     format: 
       - '  {cpu_percent}%'
-      - ' {temp_c:coretemp-Package-id-0}°C '
-      - '  {memory_used} GB ({memory_percent}%) '
+      - ' {temp_c:coretemp-Package-id-0}°C  '
+      - '  {memory_used:} GB ({memory_percent}%) '
       - '󰋊  {disk_used:/} GB ({disk_percent:/}%)'
-      - '󰓢 {net_down:wlp1s0} / {net_up:wlp1s0} Mbps'
+      - '󰓢 {net_up:wlp1s0} / {net_down:wlp1s0} MiB/s'
     interval: 
       cpu: 5
       disks: 900
