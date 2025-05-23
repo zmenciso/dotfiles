@@ -1,11 +1,8 @@
--- Zephan M. Enciso
--- github.com/zmenciso/dotfiles
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
-require("plugged")
-require("autocmds")
-require("mapping")
-require("options")
-require("setup")
+vim.cmd([[
+        hi NormalFloat guifg=#f2f4f8 guibg=#161616
+        hi TelescopeNormal guibg=#161616
+        hi TelescopeBorder guibg=#161616
+]])
