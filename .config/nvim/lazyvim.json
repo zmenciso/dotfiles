@@ -1,7 +1,6 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.luasnip",
-    "lazyvim.plugins.extras.coding.nvim-cmp",
     "lazyvim.plugins.extras.lang.git",
     "lazyvim.plugins.extras.lang.haskell",
     "lazyvim.plugins.extras.lang.json",
