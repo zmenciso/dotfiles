@@ -5,7 +5,7 @@
 vim.opt.smoothscroll = true
 vim.g.snacks_animate = false
 
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 vim.opt.shiftwidth = vim.o.tabstop
 vim.o.softtabstop = vim.o.tabstop
 
@@ -14,10 +14,14 @@ vim.opt.copyindent = true
 
 vim.opt.backspace = "indent,eol,start"
 
-vim.opt.wrap = true
-vim.opt.breakindent = true
-vim.opt.wrapscan = false
-
 vim.opt.mouse = ""
 
+vim.opt.conceallevel = 0
+
 -- vim.opt.colorcolumn = { 81 }
+-- vim.opt.textwidth = 80
+-- vim.opt_local.wrap = true
+-- vim.opt_local.spell = true
+-- vim.opt.breakindent = true
+-- vim.opt.wrapscan = false
+-- vim.opt.linebreak = true
