@@ -15,8 +15,8 @@ function mdpdf -d "Convert markdown to PDF via pandoc and xelatex"
 
 	argparse --min-args=1 'h/help' 'n/number-sections' 'f/font=?' 'o/output=?' -- $argv
 
-	if test -n "$_flag_h"
-		echo 'mdpdf [OPTIONS] INPUT OUTPUT'
+	if test -ql _flag_h
+		echo 'mdpdf [OPTIONS] INPUT'
 		echo '  -h  --help		Show this message'
 		echo '  -n  --number	Number sections and produce a ToC'
 		echo '  -f  --font		Change main font'
