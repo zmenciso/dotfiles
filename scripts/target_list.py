@@ -57,6 +57,7 @@ CATEGORIES = {
     "FISH": {
         ".config/fish/config.fish",
         ".config/fish/functions/mdpdf.fish",
+        ".config/fish/functions/texpdf.fish",
         ".config/fish/functions/fish_mode_prompt.fish",
         ".config/fish/functions/fish_prompt.fish",
         ".config/fish/functions/cp.fish",
