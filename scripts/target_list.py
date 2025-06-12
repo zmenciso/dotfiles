@@ -78,6 +78,7 @@ CATEGORIES = {
         ".config/fish/functions/yldme.fish",
         ".config/fish/functions/yldlink.fish",
         ".config/fish/functions/dump.fish",
+        ".config/fish/functions/link.fish",
         ".config/fish/functions/marp-setup.fish",
         ".config/fish/functions/temp.fish",
         ".config/fish/functions/pacclean.fish",
