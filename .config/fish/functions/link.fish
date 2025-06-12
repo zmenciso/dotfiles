@@ -1,34 +1,43 @@
 function link
+    set -l REMOTE kingfisher
     set -l LINKDIR /tank/www/link/redirects/
     set -l URL https://link.duck-pond.org
 
     set -l HASH 4 # Number of characters to keep from hash
 
-    argparse --min-args=1 h/help -- $argv
+    argparse --min-args=1 h/help r/rename -- $argv
     or return
 
     if set -ql _flag_h
         echo 'dump [OPTIONS] URLs'
         echo '  -h  --help        Show this message'
+        echo '  -r  --rename      Manually specify the link name'
         return
     end
 
     set urls
 
     for url in $argv
-        set -l start 1
+        if set -ql _flag_r
+            read -p "echo -n 'Rename '; set_color green; echo -n $url; set_color normal; echo -n ' > '" link
+        else
+            set -l start 1
 
-        set -l hash (echo $url | md5sum | cut -f 1 -d ' ')
-        set -l link (string sub -l $HASH -s $start $hash)
-
-        # Get new link name
-        while test -f $LINKDIR/$link
-            set start (math $start + 1)
+            set -l hash (echo $url | md5sum | cut -f 1 -d ' ')
             set link (string sub -l $HASH -s $start $hash)
         end
 
-        # Create file
-        echo $url >$LINKDIR/$link
+        if test (cat /etc/hostname) = $REMOTE
+            # Already on $REMOTE, so just make the file
+            echo $url >$LINKDIR/$link
+        else
+            # Create temporary file to transfer
+            set -l temp (mktemp)
+            echo $url >$temp
+
+            # Send the file with hpnscp (requires ssh config)
+            hpnscp $temp $REMOTE:$LINKDIR/$link
+        end
 
         set urls $urls $URL/$link
 
