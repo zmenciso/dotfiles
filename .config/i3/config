@@ -12,8 +12,8 @@
 # Displays and programs
 set $primary "DP-1"
 set $secondary "DP-5"
-set $browser "/usr/bin/firefox"
-set $terminal "gnome-terminal"
+set $browser "/home/zenciso/src/zen/zen"
+set $terminal "/home/zenciso/.cargo/bin/alacritty"
 set $editor "alacritty -t Neovim -e /usr/bin/nvim"
 set $files "alacritty -t xplr -e /usr/local/bin/xplr"
 set $media "alacritty -t Spotify-tui -e /usr/bin/spt"
@@ -453,8 +453,9 @@ exec --no-startup-id xsettingsd
 exec --no-startup-id picom
 exec --no-startup-id ibus-daemon -rxR
 exec --no-startup-id fish $HOME/.config/i3/xinput.fish
+exec --no-startup-id fish $HOME/.config/i3/gsettings.fish
 exec --no-startup-id dunst
-exec --no-startup-id spotifyd
-exec --no-startup-id python3 $HOME/.config/i3/xborders -c $HOME/.config/i3/xborders_config.json
+# exec --no-startup-id spotifyd
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
+exec --no-startup-id sleep 10 && python3 $HOME/.config/i3/xborders -c $HOME/.config/i3/xborders_config.json
 # exec --no-startup-id polybar main
