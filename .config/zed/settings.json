@@ -22,8 +22,10 @@
         "dark": "Carbonfox"
     },
 
-    "autosave": "on_window_change",
-    "use_autoclose": false,
+    "autosave": "on_focus_change",
+
+    "use_autoclose": true,
+    "format_on_save": "on",
 
     "features": {
         "copilot": false
@@ -35,13 +37,16 @@
         }
     },
 
-    "assistant": {
+    "agent": {
+        "inline_assistant_model": {
+            "provider": "anthropic",
+            "model": "claude-sonnet-4-latest"
+        },
         "default_model": {
             "provider": "anthropic",
-            "model": "claude-3-5-sonnet-latest"
+            "model": "claude-sonnet-4-latest"
         },
         "version": "2",
-        "provider": "anthropic",
         "button": false
     },
 
@@ -54,6 +59,7 @@
         "cursors": true,
         "git_diff": true,
         "search_results": true,
+        "selected_text": true,
         "selected_symbol": true,
         "diagnostics": "all",
         "axes": {
@@ -61,11 +67,22 @@
         }
     },
 
+    "minimap": {
+        "show": "never",
+        "current_line_highlight": "all"
+    },
+
     "vertical_scroll_margin": 0,
 
     "tab_bar": {
         "show": true,
-        "show_nav_history_buttons": false
+        "show_nav_history_buttons": false,
+        "show_tab_bar_buttons": false,
+        "tabs": {
+            "file_icons": true,
+            "git_status": true,
+            "show_diagnostics": "errors"
+        }
     },
 
     "vim": {
@@ -80,7 +97,6 @@
 
     "preferred_line_length": 80,
     "soft_wrap": "preferred_line_length",
-    "use_autoclose": false,
 
     "terminal": {
         "alternate_scroll": "off",

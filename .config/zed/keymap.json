@@ -19,7 +19,7 @@
         "context": "Editor && VimControl && !VimWaiting && !menu",
         "bindings": {
             "shift-k": "editor::Hover",
-            "space b": "editor::ToggleGitBlame",
+            "space b": "git::Blame",
             "space l f": "editor::Format",
             "space d": "diagnostics::Deploy",
             "space f f": "file_finder::Toggle",
@@ -33,7 +33,7 @@
             "ctrl-o": "workspace::OpenFiles",
 
             "n": "search::SelectNextMatch",
-            "shift-n": "search::SelectPrevMatch",
+            "shift-n": "search::SelectPreviousMatch",
 
             "g b": "editor::ToggleComments",
             "+ +": "workspace::Save"
@@ -42,7 +42,7 @@
     {
         "context": "vim_mode == insert",
         "bindings": {
-            "ctrl-k": "editor::ContextMenuPrev",
+            "ctrl-k": "editor::ContextMenuPrevious",
             "ctrl-j": "editor::ContextMenuNext"
         }
     },
@@ -56,21 +56,21 @@
     {
         "context": "TabSwitcher",
         "bindings": {
-            "ctrl-k": "menu::SelectPrev",
+            "ctrl-k": "menu::SelectPrevious",
             "ctrl-j": "menu::SelectNext"
         }
     },
     {
         "context": "FileFinder",
         "bindings": {
-            "ctrl-k": "menu::SelectPrev",
+            "ctrl-k": "menu::SelectPrevious",
             "ctrl-j": "menu::SelectNext"
         }
     },
     {
         "context": "CommandPalette",
         "bindings": {
-            "ctrl-k": "menu::SelectPrev",
+            "ctrl-k": "menu::SelectPrevious",
             "ctrl-j": "menu::SelectNext"
         }
     },
