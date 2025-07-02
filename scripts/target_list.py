@@ -85,6 +85,7 @@ CATEGORIES = {
         ".config/fish/functions/pacview.fish",
         ".config/fish/functions/pacview-installed.fish",
         ".config/fish/functions/t-a.fish",
+        ".config/fish/functions/zed.fish",
         ".config/fish/fish_variables",
     },
     "SSH": {".ssh/config"},

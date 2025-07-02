@@ -11,7 +11,7 @@
     "base_keymap": "Atom",
 
     "ui_font_family": "BlexSans Nerd Font",
-    "ui_font_size": 16,
+    "ui_font_size": 17,
     "buffer_font_size": 15,
     "buffer_font_family": "BlexMono Nerd Font Mono",
     "buffer_line_height": "standard",
@@ -23,6 +23,7 @@
     },
 
     "autosave": "on_focus_change",
+    "restore_on_startup": "none",
 
     "use_autoclose": true,
     "format_on_save": "on",
@@ -75,7 +76,7 @@
     "vertical_scroll_margin": 0,
 
     "tab_bar": {
-        "show": true,
+        "show": false,
         "show_nav_history_buttons": false,
         "show_tab_bar_buttons": false,
         "tabs": {
