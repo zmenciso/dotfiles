@@ -10,7 +10,7 @@ function texpdf
         echo '  -b  --bib		Change bibliography compiler (default: bibtex)'
         echo 'The default paper is main.pdf'
 
-        exit 0
+        return 0
     end
 
     if test -n "$argv[1]"
@@ -20,13 +20,13 @@ function texpdf
     end
 
     if set -ql _flag_p
-        /bin/rm $PAPER.pdf
-        /bin/rm $PAPER.aux $PAPER.bbl $PAPER.blg $PAPER.brf $PAPER.btx $PAPER.log $PAPER.out
+        /bin/rm $PAPER.pdf 2>/dev/null
+        /bin/rm $PAPER.aux $PAPER.bbl $PAPER.blg $PAPER.brf $PAPER.btx $PAPER.log $PAPER.out 2>/dev/null
         return
     end
 
     if set -ql _flag_t
-        /bin/rm $PAPER.aux $PAPER.bbl $PAPER.blg $PAPER.brf $PAPER.btx $PAPER.log $PAPER.out
+        /bin/rm $PAPER.aux $PAPER.bbl $PAPER.blg $PAPER.brf $PAPER.btx $PAPER.log $PAPER.out 2>/dev/null
         return
     end
 

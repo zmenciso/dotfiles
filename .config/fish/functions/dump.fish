@@ -45,9 +45,11 @@ function dump
         if test (cat /etc/hostname) = $REMOTE
             # Already on $REMOTE, so just copy the file
             cp $file $DUMPDIR/$dest
+            chmod a+r $DUMPDIR/$dest
         else
             # Send the file with hpnscp (requires ssh config)
             hpnscp $file $REMOTE:$DUMPDIR/$dest
+            ssh $REMOTE "chmod a+r $DUMPDIR/$dest"
         end
 
         # Add new URL to list

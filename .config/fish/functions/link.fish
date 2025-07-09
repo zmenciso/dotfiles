@@ -30,6 +30,7 @@ function link
         if test (cat /etc/hostname) = $REMOTE
             # Already on $REMOTE, so just make the file
             echo $url >$LINKDIR/$link
+            chmod a+r $LINKDIR/$link
         else
             # Create temporary file to transfer
             set -l temp (mktemp)
@@ -37,6 +38,7 @@ function link
 
             # Send the file with hpnscp (requires ssh config)
             hpnscp $temp $REMOTE:$LINKDIR/$link
+            ssh $REMOTE "chmod a+r $LINKDIR/$link"
         end
 
         set urls $urls $URL/$link

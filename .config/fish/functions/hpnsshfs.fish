@@ -1,19 +1,23 @@
 function hpnsshfs
-    argparse --min-args=1 h/help 'r/remotedir=?' 'm/mountpoint=?' -- $argv
-    or return
+
+    argparse --min-args=1 h/help r/remote=? m/mountpoint=? -- $argv
 
     if set -ql _flag_h
-        echo 'hpnsshfs [-h | --help] [-r | --remotedir=NAME] [-m | --mountpoint=NAME]'
+        echo 'hpnsshfs [-h | --help] [-r | --remote=NAME] [-m | --mountpoint=NAME]'
         return 0
     end
 
-    set REMOTEDIR '~'
-    set -ql _flag_r
-    and set REMOTEDIR $_flag_r
+    if test -n "$_flag_r"
+        set REMOTE $_flag_r
+    else
+        set REMOTE '~'
+    end
 
-    set MOUNTPOINT "$HOME/tank"
-    set -ql _flag_m
-    and set MOUNTPOINT $_flag_m
+    if test -n "$_flag_m"
+        set MOUTNPOINT $_flag_m
+    else
+        set MOUNTPOINT '~/tank'
+    end
 
-    sshfs -o follow_symlinks -o reconnect -o ssh_command='hpnssh' $argv[1]:$REMOTEDIR $MOUNTPOINT
+    sshfs -o follow_symlinks -o reconnect -o ssh_command='hpnssh' $argv[1]:$REMOTE $MOUNTPOINT
 end
