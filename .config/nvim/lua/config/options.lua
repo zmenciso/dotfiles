@@ -5,7 +5,7 @@
 vim.opt.smoothscroll = true
 vim.g.snacks_animate = false
 
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
 vim.opt.shiftwidth = vim.o.tabstop
 vim.o.softtabstop = vim.o.tabstop
 
