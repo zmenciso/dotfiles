@@ -33,9 +33,7 @@
     },
 
     "language_models": {
-        "anthropic": {
-            "version": "1"
-        }
+        "anthropic": {}
     },
 
     "agent": {
@@ -47,7 +45,6 @@
             "provider": "anthropic",
             "model": "claude-sonnet-4-latest"
         },
-        "version": "2",
         "button": false
     },
 
@@ -97,7 +94,7 @@
     },
 
     "preferred_line_length": 80,
-    "soft_wrap": "preferred_line_length",
+    "soft_wrap": "editor_width",
 
     "terminal": {
         "alternate_scroll": "off",
