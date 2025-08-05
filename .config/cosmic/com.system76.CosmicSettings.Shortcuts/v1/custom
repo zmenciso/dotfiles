@@ -1,0 +1,254 @@
+{
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "slash",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "r",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "bracketleft",
+    ): MoveToPreviousWorkspace,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "End",
+    ): LastWorkspace,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "Right",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "Up",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "l",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Return",
+    ): System(Terminal),
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "k",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "Down",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "b",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "d",
+    ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "j",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "Down",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "End",
+    ): MoveToLastWorkspace,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "0",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "j",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "m",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "Up",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "bracketright",
+    ): NextWorkspace,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "bracketright",
+    ): MoveToNextWorkspace,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "r",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "f",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "bracketleft",
+    ): PreviousWorkspace,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "w",
+    ): System(WebBrowser),
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "l",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "0",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "a",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "e",
+    ): System(HomeFolder),
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "Right",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "k",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "t",
+    ): Disable,
+}
