@@ -8,7 +8,7 @@
       "Komorebi": {
         "workspaces": {
           "enable": true,
-          "hide_empty_workspaces": false
+          "hide_empty_workspaces": true
         },
         "layout": {
           "enable": true
