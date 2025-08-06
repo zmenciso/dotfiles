@@ -10,7 +10,7 @@
     "duration": 120,
     "fps": 165
   },
-  "mouse_follows_focus": false,
+  "mouse_follows_focus": true,
   "border": true,
   "border_width": 3,
   "border_offset": -1,

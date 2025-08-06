@@ -22,18 +22,14 @@
   ],
   "right_widgets": [
     {
-      "Update": {
-        "enable": true
-      }
-    },
-    {
       "Media": {
         "enable": true
       }
     },
     {
-      "Storage": {
-        "enable": true
+      "Cpu": {
+	"enable": true,
+	"data_refresh_interval": 5
       }
     },
     {
@@ -44,7 +40,8 @@
     {
       "Network": {
         "enable": true,
-        "show_total_data_transmitted": true,
+        "show_default_interface": false,
+        "show_total_data_transmitted": false,
         "show_network_activity": true
       }
     },
