@@ -2,56 +2,10 @@
     (
         modifiers: [
             Super,
-        ],
-        key: "slash",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
+            Ctrl,
             Shift,
         ],
-        key: "r",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "bracketleft",
-    ): MoveToPreviousWorkspace,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "End",
-    ): LastWorkspace,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "Right",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "Up",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "h",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "l",
+        key: "j",
     ): Disable,
     (
         modifiers: [
@@ -62,11 +16,14 @@
     (
         modifiers: [
             Super,
-            Ctrl,
-            Shift,
         ],
-        key: "k",
     ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "bracketright",
+    ): NextWorkspace,
     (
         modifiers: [
             Super,
@@ -79,7 +36,76 @@
         modifiers: [
             Super,
         ],
-        key: "b",
+        key: "a",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "Up",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "l",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "j",
+    ): Resizing(Inwards),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "bracketleft",
+    ): MoveToPreviousWorkspace,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "bracketright",
+    ): MoveToNextWorkspace,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "f",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "0",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "m",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "0",
     ): Disable,
     (
         modifiers: [
@@ -92,14 +118,26 @@
             Super,
             Ctrl,
         ],
-        key: "j",
+        key: "l",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "b",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "r",
     ): Disable,
     (
         modifiers: [
             Super,
             Ctrl,
         ],
-        key: "Down",
+        key: "Right",
     ): Disable,
     (
         modifiers: [
@@ -111,55 +149,16 @@
     (
         modifiers: [
             Super,
+            Shift,
         ],
-        key: "0",
-    ): Disable,
+        key: "w",
+    ): System(WebBrowser),
     (
         modifiers: [
             Super,
             Ctrl,
-            Shift,
         ],
-        key: "j",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "m",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-            Shift,
-        ],
-        key: "Up",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "bracketright",
-    ): NextWorkspace,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "bracketright",
-    ): MoveToNextWorkspace,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "r",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "f",
+        key: "h",
     ): Disable,
     (
         modifiers: [
@@ -170,31 +169,45 @@
     (
         modifiers: [
             Super,
-            Shift,
+            Ctrl,
         ],
-        key: "w",
-    ): System(WebBrowser),
+        key: "Down",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "k",
+    ): Resizing(Outwards),
     (
         modifiers: [
             Super,
             Ctrl,
             Shift,
         ],
-        key: "l",
+        key: "h",
     ): Disable,
     (
         modifiers: [
             Super,
+        ],
+        key: "slash",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
             Shift,
         ],
-        key: "0",
+        key: "k",
     ): Disable,
     (
         modifiers: [
             Super,
         ],
-        key: "a",
-    ): Disable,
+        key: "End",
+    ): LastWorkspace,
     (
         modifiers: [
             Super,
@@ -205,9 +218,8 @@
     (
         modifiers: [
             Super,
-            Ctrl,
         ],
-        key: "Left",
+        key: "t",
     ): Disable,
     (
         modifiers: [
@@ -221,7 +233,6 @@
         modifiers: [
             Super,
             Ctrl,
-            Shift,
         ],
         key: "Left",
     ): Disable,
@@ -231,24 +242,13 @@
             Ctrl,
             Shift,
         ],
-        key: "h",
+        key: "Up",
     ): Disable,
     (
         modifiers: [
             Super,
+            Shift,
         ],
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "k",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "t",
+        key: "r",
     ): Disable,
 }
