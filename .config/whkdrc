@@ -7,6 +7,10 @@ win + shift + o         : komorebic reload-configuration
 
 win + i                 : komorebic toggle-shortcuts
 
+# Hide and show the taskbar
+win + t 		: .\nircmd.exe win hide class Shell_TrayWnd
+win + shift + t 	: .\nircmd.exe win show class Shell_TrayWnd
+
 # App shortcuts - these require shell to be pwsh / powershell
 # The apps will be focused if open, or launched if not open
 # win + f                 : if ($wshell.AppActivate('Firefox') -eq $False) { start firefox }
