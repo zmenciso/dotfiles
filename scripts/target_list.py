@@ -4,6 +4,7 @@ CATEGORIES = {
     "MISC": {".config/user-dirs.dirs"},
     "BASH": {".bashrc"},
     "VIM": {".vimrc"},
+    "KOMOREBI": {".config\\whkdrc", "komorebi.json", "komorebi.bar.json"},
     "LAZY": {
         ".config/nvim/init.lua",
         ".config/nvim/lazyvim.json",

@@ -1,4 +1,4 @@
-#   Dotfiles
+# Dotfiles
 
 ![](./img/01.png)
 ![](./img/02.png)
@@ -26,27 +26,44 @@ scripts/settings.py [options] [import/export] CATEGORY
     This script only works when placed in the `scripts` directory in the dotfiles repo!
 ```
 
-##  Hyprland
+## Cosmic
+
+Manually copy the entire contents of `$dotfiles/.config/cosmic` to
+`$XDG_CONFIG_HOME/cosmic`.
+
+## Windows w/ Komorebi
+
+Install `komorebi`, `whkd`, and `masir`, then export `komorebi` files.  Then,
+add a new DWORD called `DisableLockWorkstation` to
+`\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System`,
+and set it to 1.  Finally, autostart the following:
+
+```bash
+komorebic start --whkd --bar --masir
+```
+
+## Hyprland
 
 Requires:
-  - Full `hyprland` ecosystem, including:
-    - `hyprcursor`
-    - `hypridle`
-    - `hyprlock`
-    - `hyprlang`
-    - `hyprpaper`
-    - `hyprpicker`
-    - `hyprutils`
-    - `xdg-desktop-portal-hyprland`
-  - `ironbar`
-  - `anyrun`
-  - `swaync`
-  - `alacritty`
-  - `xsettingsd`
-  - `papirus-icon-theme`
-  - `polkit-gnome`
-  - `wl-clipboard`
-  - `xplr`
+
+- Full `hyprland` ecosystem, including:
+  - `hyprcursor`
+  - `hypridle`
+  - `hyprlock`
+  - `hyprlang`
+  - `hyprpaper`
+  - `hyprpicker`
+  - `hyprutils`
+- `xdg-desktop-portal-hyprland`
+- `ironbar`
+- `anyrun`
+- `swaync`
+- `alacritty`
+- `xsettingsd`
+- `papirus-icon-theme`
+- `polkit-gnome`
+- `wl-clipboard`
+- `xplr`
 
 Export the relevant groups.  No need to load dconf settings.
 
@@ -61,31 +78,33 @@ The colors are based on
 [`nightfox.nvim`](https://github.com/EdenEast/nightfox.nvim) (`carbonfox`
 variant)
 
-##  i3-gaps
+## i3-gaps
 
 I recommended installing i3-gaps after installing another DE like GNOME, since
 these configs use some GTK system utilities, applications, and themes.
 
 Requires:
-  - `i3-gaps` or `i3-gaps-rounded`
-  - `i3lock-color` or `i3lock-fancy` or `i3lock`
-  - `xss-lock`
-  - `i3status` or `bumblebee-status`
-  - `alacritty`
-  - `autorandr`
-  - `xsettingsd`
-  - `dunst`
-  - `rofi`
-  - `picom`
-  - `papirus-icon-theme`
-  - `polkit-gnome`
-  - `feh`
-  - `material-design-icons`
+
+- `i3-gaps` or `i3-gaps-rounded`
+- `i3lock-color` or `i3lock-fancy` or `i3lock`
+- `xss-lock`
+- `i3status` or `bumblebee-status`
+- `alacritty`
+- `autorandr`
+- `xsettingsd`
+- `dunst`
+- `rofi`
+- `picom`
+- `papirus-icon-theme`
+- `polkit-gnome`
+- `feh`
+- `material-design-icons`
 
 Some additional software is nice to have, like:
-  - `xplr`, a CLI file explorer
-  - `zathura`, a simple PDF viewer
-  - `spotify-tui`, a CLI Spotify client written in Rust (requries `spotifyd`)
+
+- `xplr`, a CLI file explorer
+- `zathura`, a simple PDF viewer
+- `spotify-tui`, a CLI Spotify client written in Rust (requries `spotifyd`)
 
 Desktop entries for these programs are included in `.desktop`.  They can be
 installed with:
@@ -105,7 +124,7 @@ variant)
 `lxappearance` is an amazingly convenient tool for setting GTK themes and
 cursors without too much hassle.
 
-##  NeoVim
+## NeoVim
 
 NeoVim plugin customization is handled with the [`vim-plug` plugin
 manager](https://github.com/junegunn/vim-plug), which can be installed with:
@@ -117,11 +136,13 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 Export `nvim` files, then install plugins.
 
-##  Zed
+Alternatively, install Lazyvim, then export `lazy` files.
+
+## Zed
 
 Install the "Nightfox (Neovim) Themes" extension, then export `zed` files.
 
-##  Barrier
+## Barrier
 
 Install `barrier`, then perform the following to set up server-side encryption:
 
@@ -134,7 +155,7 @@ set fingerprint (openssl x509 -fingerprint -sha256 -noout -in \
 echo "v2:sha256:$fingerprint" > ~/.local/share/barrier/SSL/Fingerprints/Local.txt ;
 ```
 
-##  Language Support
+## Language Support
 
 ### Hyprland w/ `fcitx`
 
@@ -179,30 +200,20 @@ below.
 
 Install `fcitx-mozc`, and export `fcitx` files. For QT-based configuration,
 install `kcm-fcitx`.
-  - NEologd significantly improves conversion prediction (search the AUR for
+
+- NEologd significantly improves conversion prediction (search the AUR for
     `fcitx-mozc-neologd-ut`, or the binary version).
 
-##  Budgie
+## GNOME
 
-In addition to exporting `budgie`, use `dconf` to dump and load
-`/com/solus-project/`, `/org/gnome/`, and `/net/launchpad/plank/docks/`.
+Install Tiling Shell, then use `dconf` to load `/org/gnome/`.
 
-```
-dconf load /com/solus-project/ < ~/dotfiles/budgie-dconf-dump
-dconf load /net/launchpad/plank/docs/ < ~/dotfiles/plank-dconf-dump
-dconf load /org/gnome/ < ~/dotfiles/gnome-dconf-dump
-```
+## Power Management
 
-##  GNOME
+If running on a laptop, install `power-profiles-daemon` instead of `powertop` or
+`tlp`. Details are abundant on the Arch Wiki.
 
-Install `pop-shell`, then use `dconf` to load `/org/gnome/`.
-
-##  Power Management
-
-If running on a laptop, consider installing `powertop` or `TLP`.  Details are
-abundant on the Arch Wiki.
-
-##  Microsoft Office (via Wine)
+## Microsoft Office (via Wine)
 
 First install `wine` and `winetricks`, then boot the wine instance with
 `wineboot -i` and allow it to install anything it needs to.  Then install some
@@ -219,7 +230,7 @@ install Office:
 wine /path/to/OfficeSetup.exe
 ```
 
-##  Plasma
+## Plasma
 
 **Note: As of 2022-04-21, Plasma-related settings have been deprecated and
 removed from the target list.**
@@ -227,89 +238,100 @@ removed from the target list.**
 Export `panel`, `appearance`, `workspace`, `personalization`, and `hardware`.
 
 ### Appearance
-  - Plasma colors and themes are [Aritim Dark](https://github.com/Mrcuve0/Aritim-Dark)
-  - Window decorations are [Lightly](https://github.com/Luwx/Lightly)
 
-### Layout, Widgets, etc.
+- Plasma colors and themes are [Aritim Dark](https://github.com/Mrcuve0/Aritim-Dark)
+- Window decorations are [Lightly](https://github.com/Luwx/Lightly)
+
+### Layout, Widgets, etc
+
 ... should all be imported from the relevant dotfiles
 
 ### SDDM
+
 Install `sddm-kcm` for the KDE config module.  In it, SDDM theme and other settings
 can be synchronized to Plasma settings.
 
 ### Unlock KDE Wallet Automatically
+
 Install `kwallet-pam` for the PAM compatible module.  The chosen KWallet password
 must be the same as the current user password.  No further configuration should
 be necessary for use with SDDM.
 
-##  KDE Config File Paths
+## KDE Config File Paths
+
 ### Panel
+
 `.config/plasma-org.kde.plasma.desktop-appletsrc`
 
 ### Appearance
-  - Global Theme
-    - `.config/kdeglobals`
-    - `.config/kscreenlockerrc`
-    - `.config/kwinrc`
-    - `.config/gtkrc`
-    - `.config/gtkrc-2.0`
-    - `.config/gtk-4.0/*`
-    - `.config/gtk-3.0/*`
-    - `.config/ksplashrc`
-  - Application Style: `.config/kdeglobals`
-  - Plasma Style: `.config/plasmarc`
-  - Colors
-    - `.config/kdeglobals`
-    - `.config/Trolltech.conf`
-  - Window decorations
-    - `.config/breezerc`
-    - `.config/kwinrc`
-  - Fonts
-    - `.config/kdeglobals`
-    - `.config/kcmfonts`
-  - Icons: `.config/kdeglobals`
-  - Cursors: `.config/kcminputrc`
-  - Font Management: `.config/kfontinstuirc`
-  - Splash screen: `.config/ksplashrc`
+
+- Global Theme
+  - `.config/kdeglobals`
+  - `.config/kscreenlockerrc`
+  - `.config/kwinrc`
+  - `.config/gtkrc`
+  - `.config/gtkrc-2.0`
+  - `.config/gtk-4.0/*`
+  - `.config/gtk-3.0/*`
+  - `.config/ksplashrc`
+- Application Style: `.config/kdeglobals`
+- Plasma Style: `.config/plasmarc`
+- Colors
+  - `.config/kdeglobals`
+  - `.config/Trolltech.conf`
+- Window decorations
+  - `.config/breezerc`
+  - `.config/kwinrc`
+- Fonts
+  - `.config/kdeglobals`
+  - `.config/kcmfonts`
+- Icons: `.config/kdeglobals`
+- Cursors: `.config/kcminputrc`
+- Font Management: `.config/kfontinstuirc`
+- Splash screen: `.config/ksplashrc`
 
 ### Workspace
-  - Desktop Behavior
-    - `.config/plasmarc`
-    - `.config/kwinrc`
-    - `.config/kglobalshortcutsrc`
-  - Window Management
-    - `.config/kwinrc`
-    - `.config/kwinrulesrc`
-  - Shortcuts
-    - `.config/khotkeys`
-    - `.config/kglobalshortcutsrc`
-  - Startup and Shutdown
-    - `.config/kded5rc`
-    - `.config/ksmserverrc`
-  - Search
-    - `.config/krunnerrc`
-    - `.config/baloofilerc`
+
+- Desktop Behavior
+  - `.config/plasmarc`
+  - `.config/kwinrc`
+  - `.config/kglobalshortcutsrc`
+- Window Management
+  - `.config/kwinrc`
+  - `.config/kwinrulesrc`
+- Shortcuts
+  - `.config/khotkeys`
+  - `.config/kglobalshortcutsrc`
+- Startup and Shutdown
+  - `.config/kded5rc`
+  - `.config/ksmserverrc`
+- Search
+  - `.config/krunnerrc`
+  - `.config/baloofilerc`
 
 ### Personalization
-  - Notifications: `.config/plasmanotifyrc`
-  - Regional Settings
-    - `.config/plasma-localerc`
-    - `.config/ktimezonedrc`
-  - Accessibility: `.config/kaccessrc`
-  - User Feedback: `.config/PlasmaUserFeedback`
+
+- Notifications: `.config/plasmanotifyrc`
+- Regional Settings
+  - `.config/plasma-localerc`
+  - `.config/ktimezonedrc`
+- Accessibility: `.config/kaccessrc`
+- User Feedback: `.config/PlasmaUserFeedback`
 
 ### Network
-  - Connections: `/etc/NetworkManager/system-connections`
+
+- Connections: `/etc/NetworkManager/system-connections`
 
 ### Hardware
-  - Keyboard
-    - `.config/kcminputrc`
-    - `.config/kxkbrc`
-  - Gamma: `.config/kgammarc`
-  - Power Management: `.config/powermanagementprofilesrc`
-  - Bluetooth: `.config/bluedevilglobalrc`
-  - KDE Connect: `.config/kdeconnect`
-  - Removable Storage:
-    - `.config/device_automounter_kcmrc`
-    - `.config/kded5rc`
-    - `.config/kded_device_automounterrc`
+
+- Keyboard
+  - `.config/kcminputrc`
+  - `.config/kxkbrc`
+- Gamma: `.config/kgammarc`
+- Power Management: `.config/powermanagementprofilesrc`
+- Bluetooth: `.config/bluedevilglobalrc`
+- KDE Connect: `.config/kdeconnect`
+- Removable Storage:
+  - `.config/device_automounter_kcmrc`
+  - `.config/kded5rc`
+  - `.config/kded_device_automounterrc`
