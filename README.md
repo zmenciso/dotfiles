@@ -42,14 +42,8 @@ and set it to 1.  Finally, autostart the following:
 komorebic start --whkd --bar --masir
 ```
 
-In addition, downloading [NirCmd](https://www.nirsoft.net/utils/nircmd.html)
-provides an easy way to disable the taskbar:
-
-```bash
-nircmd.exe win hide class Shell_TrayWnd
-```
-
-(To undo, replace `hide` with `show`)
+In addition, download [NirCmd](https://www.nirsoft.net/utils/nircmd.html)
+and copy `nircmd.exe` to the home directory.
 
 ## Hyprland
 
