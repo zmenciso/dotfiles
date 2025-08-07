@@ -3,7 +3,7 @@ function dump
     set -l DUMPDIR /tank/www/dump
     set -l URL https://dump.duck-pond.org
 
-    set -l HASH 4 # Number of characters to keep from hash
+    set -l LEN 5 # Number of characters to use for filename
 
     argparse --min-args=1 k/keep h/help r/rename -- $argv
     or return
@@ -36,10 +36,10 @@ function dump
             # Manually rename file
             read -p "echo -n 'Rename '; set_color green; echo -n $file; set_color normal; echo -n ' > '" dest
         else
-            # Replace the filename with a truncated hash
-            set -l hash (md5sum $file | cut -f 1 -d ' ')
+            # Replace the filename with random characters
             set -l ext (path extension $file)
-            set dest (string sub -l $HASH $hash)$ext
+            set dest (head /dev/urandom | tr -dc 'A-Za-z0-9' | head -c $LEN)$ext
+            echo $dest
         end
 
         if test (cat /etc/hostname) = $REMOTE

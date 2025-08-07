@@ -3,7 +3,7 @@ function link
     set -l LINKDIR /tank/www/link/redirects/
     set -l URL https://link.duck-pond.org
 
-    set -l HASH 4 # Number of characters to keep from hash
+    set -l LEN 5 # Number of characters to use for link
 
     argparse --min-args=1 h/help r/rename -- $argv
     or return
@@ -21,10 +21,7 @@ function link
         if set -ql _flag_r
             read -p "echo -n 'Rename '; set_color green; echo -n $url; set_color normal; echo -n ' > '" link
         else
-            set -l start 1
-
-            set -l hash (echo $url | md5sum | cut -f 1 -d ' ')
-            set link (string sub -l $HASH -s $start $hash)
+            set link (head /dev/urandom | tr -dc 'A-Za-z0-9' | head -c $LEN)
         end
 
         if test (cat /etc/hostname) = $REMOTE
