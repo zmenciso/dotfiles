@@ -25,6 +25,10 @@ CATEGORIES = {
     "XPLR": {".config/xplr/init.lua"},
     "BTOP": {".config/btop/btop.conf"},
     "TMUX": {".tmux.conf"},
+    "HELIX": {
+        ".config/helix/config.toml",
+        ".config/helix/themes/carbonfox.toml"
+    },
     "FCITX": {
         ".config/fcitx5/config",
         ".config/fcitx5/conf/classicui.conf",
@@ -61,6 +65,9 @@ CATEGORIES = {
         ".config/fish/functions/texpdf.fish",
         ".config/fish/functions/fish_mode_prompt.fish",
         ".config/fish/functions/fish_prompt.fish",
+        ".config/fish/functions/fish_helix_command.fish",
+        ".config/fish/functions/fish_helix_key_bindings.fish",
+        ".config/fish/functions/fish_bind_count.fish",
         ".config/fish/functions/cp.fish",
         ".config/fish/functions/df.fish",
         ".config/fish/functions/diff.fish",
