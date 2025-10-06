@@ -3,7 +3,7 @@ function link
     set -l LINKDIR /tank/www/link/redirects/
     set -l URL https://link.duck-pond.org
 
-    set -l LEN 5 # Number of characters to use for link
+    set -l LEN 4 # Number of characters to use for link
 
     argparse --min-args=1 h/help r/rename -- $argv
     or return

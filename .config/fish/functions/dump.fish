@@ -3,7 +3,7 @@ function dump
     set -l DUMPDIR /tank/www/dump
     set -l URL https://dump.duck-pond.org
 
-    set -l LEN 5 # Number of characters to use for filename
+    set -l LEN 4 # Number of characters to use for filename
 
     argparse --min-args=1 k/keep h/help r/rename -- $argv
     or return
