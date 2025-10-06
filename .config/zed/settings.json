@@ -7,7 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-  "vim_mode": true,
+  "helix_mode": true,
   "base_keymap": "VSCode",
 
   "ui_font_family": "IBM Plex Sans",
@@ -135,7 +135,7 @@
   },
 
   "vim": {
-    "use_system_clipboard": "always",
+    "use_system_clipboard": "never",
     "use_smartcase_find": true
   },
 

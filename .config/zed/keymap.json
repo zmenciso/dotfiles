@@ -7,7 +7,7 @@
 // from the command palette.
 [
   {
-    "context": "Dock || Terminal || Editor || ProjectPanel",
+    "context": "VimControl || !Editor && !Terminal",
     "bindings": {
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
@@ -16,14 +16,11 @@
     }
   },
   {
-    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
     "bindings": {
-      "space b": "git::Blame",
-      "shift-k": "editor::Hover",
-      "space l f": "editor::Format",
+      "space s": "project_symbols::Toggle",
       "space d": "diagnostics::Deploy",
-      "space f f": "file_finder::Toggle",
-      "space o": "tab_switcher::Toggle",
+      "space b": "tab_switcher::Toggle",
       "space e": "workspace::ToggleLeftDock",
       "space /": "workspace::NewSearch",
       "space c": "pane::CloseActiveItem",
@@ -34,11 +31,7 @@
       "ctrl-o": "workspace::OpenFiles",
 
       "n": "search::SelectNextMatch",
-      "shift-n": "search::SelectPreviousMatch",
-
-      "g b": "editor::ToggleComments",
-      "+ +": "workspace::Save"
-    }
+      "shift-n": "search::SelectPreviousMatch"
   },
   {
     "context": "vim_mode == insert",
