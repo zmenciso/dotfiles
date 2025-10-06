@@ -1,7 +1,7 @@
 # Greeting
 set -U fish_greeting
 set -Ux LC_ALL 'en_US.UTF-8'
-set -Ux EDITOR 'nvim'
+set -Ux EDITOR helix
 
 # Cursor options
 set fish_vi_force_cursor
@@ -19,6 +19,7 @@ set -x GCC_COLORS 'error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 # Vim key bindings
 fish_vi_key_bindings
+fish_helix_key_bindings
 
 # Import colorscheme from `wal`
 # cat ~/.cache/wal/sequences
