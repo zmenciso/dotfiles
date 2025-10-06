@@ -1,8 +1,16 @@
 #!/usr/bin/env fish
 
+# Device name, per `xinput`
 set -l DEVICES 'Mizar Mouse' 'Mizar Mouse'
+
+# Device type, per `xinput` (check in brackets)
 set -l TYPES pointer pointer
+
+# Property name, per `xinput list-props $device`
+# First matching property used
 set -l PROPS 'Accel Speed' 'Scroll Method Enabled'
+
+# Value to set property to
 set -l VALUES -1 '0 0 0'
 
 for i in (seq (count $DEVICES))
