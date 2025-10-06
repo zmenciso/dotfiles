@@ -1,0 +1,75 @@
+theme = "carbonfox"
+
+[editor]
+line-number = "relative"
+mouse = false
+shell = ["fish", "-c"]
+cursorline = true
+
+gutters = [
+  "diagnostics",
+  "spacer",
+  "line-numbers",
+  "spacer",
+  "diff",
+]
+
+true-color = true
+
+auto-completion = true
+path-completion = true
+completion-replace = false
+
+color-modes = true
+
+auto-format = true
+
+bufferline = "multiple"
+
+trim-trailing-whitespace = true
+trim-final-newlines = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = "↪"
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.auto-save]
+focus-lost = true
+
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+other-lines = "warning"
+max-diagnostics = 4
+
+[keys.normal]
+H = ":buffer-previous"
+L = ":buffer-next"
+
+C-h = "jump_view_left"
+C-l = "jump_view_right"
+C-k = "jump_view_up"
+C-j = "jump_view_down"
