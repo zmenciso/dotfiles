@@ -32,6 +32,7 @@
 
       "n": "search::SelectNextMatch",
       "shift-n": "search::SelectPreviousMatch"
+    }
   },
   {
     "context": "vim_mode == insert",
@@ -98,7 +99,7 @@
   {
     "context": "EmptyPane || SharedScreen",
     "bindings": {
-      "space f f": "file_finder::Toggle"
+      "space f": "file_finder::Toggle"
     }
   }
 ]
