@@ -29,7 +29,7 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     set clean 'x'(hostname)'x' 'xx'(prompt_pwd)'xx' (fish_git_prompt "[  %s ]xx")
-    set length (math (string length (string join $clean)) + (string length $status_disp))
+    set length (math (string length (string join '' $clean)) + (string length $status_disp))
     set cols (tput cols)
 
     echo -n -s $host_color ' '(hostname)' ' $normal $cwd_color '  '(prompt_pwd)'  ' $normal $vcs_color (fish_git_prompt "[  %s ]  ") $normal (set_color -b $bg)
