@@ -25,7 +25,7 @@ function fish_prompt --description 'Write out the prompt'
     set -l suffix '❯'
     if test $last_status -ne 0
         set status_color (set_color --bold $fish_color_error)
-        set status_disp "[$last_status]"
+        set status_disp "  $last_status "
     end
 
     set clean 'x'(hostname)'x' 'xx'(prompt_pwd)'xx' (fish_git_prompt "[  %s ]xx")
@@ -34,7 +34,7 @@ function fish_prompt --description 'Write out the prompt'
 
     echo -n -s $host_color ' '(hostname)' ' $normal $cwd_color '  '(prompt_pwd)'  ' $normal $vcs_color (fish_git_prompt "[  %s ]  ") $normal (set_color -b $bg)
 
-    echo -s (string repeat -n (math $cols - $length) ' ') $normal $status_color (set_color -b $bg) $status_disp $normal
+    echo -s (string repeat -n (math $cols - $length) ' ') $normal (set_color --bold $bg) (set_color -b $fish_color_error) $status_disp $normal
 
     echo -n -s $status_color $suffix ' ' $normal
 
