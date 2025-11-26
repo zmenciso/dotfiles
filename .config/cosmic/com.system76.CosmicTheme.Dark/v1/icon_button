@@ -54,10 +54,10 @@
         alpha: 0.0,
     ),
     on_disabled: (
-        red: 0.37160295,
-        green: 0.37160295,
-        blue: 0.3716028,
-        alpha: 0.5,
+        red: 0.7432059,
+        green: 0.7432059,
+        blue: 0.7432056,
+        alpha: 0.65,
     ),
     border: (
         red: 0.7432059,
