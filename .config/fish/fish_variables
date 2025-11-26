@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export EDITOR:nvim
+SETUVAR --export EDITOR:helix
 SETUVAR --export LC_ALL:en_US\x2eUTF\x2d8
 SETUVAR --export SXHKD_SHELL:sh
 SETUVAR --export TERM:xterm\x2d256color
@@ -9,10 +9,14 @@ SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:brred
 SETUVAR fish_color_command:magenta
 SETUVAR fish_color_comment:brblack
+SETUVAR fish_color_cwd:white
+SETUVAR fish_color_cwd_root:red
 SETUVAR fish_color_end:brmagenta
 SETUVAR fish_color_error:brred
 SETUVAR fish_color_escape:red
 SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
 SETUVAR fish_color_normal:b2b2b2
 SETUVAR fish_color_operator:brblue
 SETUVAR fish_color_option:cyan
@@ -21,9 +25,11 @@ SETUVAR fish_color_quote:yellow
 SETUVAR fish_color_redirection:cyan\x1e\x2d\x2dbold
 SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dblack
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x1e\x2d\x2ditalics
 SETUVAR fish_greeting:\x1d
-SETUVAR fish_key_bindings:fish_vi_key_bindings
+SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline

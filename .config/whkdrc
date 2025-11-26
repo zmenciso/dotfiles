@@ -1,0 +1,92 @@
+.shell pwsh
+
+# Reload whkd configuration
+# win + o                 : taskkill /f /im whkd.exe && start /b whkd # if shell is cmd
+win + o                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden # if shell is pwsh / powershell
+win + shift + o         : komorebic reload-configuration
+
+win + i                 : komorebic toggle-shortcuts
+
+# Hide and show the taskbar
+win + t                 : .\nircmd.exe win hide class Shell_TrayWnd
+win + shift + t         : .\nircmd.exe win show class Shell_TrayWnd
+
+# App shortcuts - these require shell to be pwsh / powershell
+# The apps will be focused if open, or launched if not open
+# win + f                 : if ($wshell.AppActivate('Firefox') -eq $False) { start firefox }
+# win + b                 : if ($wshell.AppActivate('Chrome') -eq $False) { start chrome }
+
+win + shift + w         : start zen
+win + shift + n         : start "C:\Users\zmenciso\Documents\zed\target\release\zed.exe"
+win + return            : start "C:\Program Files\Alacritty\alacritty.exe"
+
+win + q                 : komorebic close
+win + m                 : komorebic minimize
+
+# Focus windows
+win + h                 : komorebic focus left
+win + j                 : komorebic focus down
+win + k                 : komorebic focus up
+win + l                 : komorebic focus right
+
+# Move windows
+win + shift + h         : komorebic move left
+win + shift + j         : komorebic move down
+win + shift + k         : komorebic move up
+win + shift + l         : komorebic move right
+win + shift + return    : komorebic promote
+
+# Stack windows
+win + left              : komorebic stack left
+win + down              : komorebic stack down
+win + up                : komorebic stack up
+win + right             : komorebic stack right
+win + oem_1             : komorebic unstack # oem_1 is ;
+
+# Resize
+win + ctrl + l         : komorebic resize-axis horizontal increase
+win + ctrl + h         : komorebic resize-axis horizontal decrease
+win + ctrl + k         : komorebic resize-axis vertical increase
+win + ctrl + j         : komorebic resize-axis vertical decrease
+
+# Manipulate windows
+win + g                 : komorebic toggle-float
+win + f                 : komorebic toggle-monocle
+
+# Window manager options
+win + shift + r         : komorebic retile
+win + p                 : komorebic toggle-pause
+
+# Layouts
+win + x                 : komorebic flip-layout horizontal
+win + v                 : komorebic flip-layout vertical
+
+# Workspaces
+win + 1                 : komorebic focus-workspace 0
+win + 2                 : komorebic focus-workspace 1
+win + 3                 : komorebic focus-workspace 2
+win + 4                 : komorebic focus-workspace 3
+win + 5                 : komorebic focus-workspace 4
+win + 6                 : komorebic focus-workspace 5
+win + 7                 : komorebic focus-workspace 6
+win + 8                 : komorebic focus-workspace 7
+win + 9                 : komorebic focus-workspace 8
+win + 0                 : komorebic focus-workspace 9
+
+win + oem_4             : komorebic cycle-workspace previous # oem_4 is [
+win + oem_6             : komorebic cycle-workspace next # oem_6 is ]
+
+# Move windows across workspaces
+win + shift + 1         : komorebic move-to-workspace 0
+win + shift + 2         : komorebic move-to-workspace 1
+win + shift + 3         : komorebic move-to-workspace 2
+win + shift + 4         : komorebic move-to-workspace 3
+win + shift + 5         : komorebic move-to-workspace 4
+win + shift + 6         : komorebic move-to-workspace 5
+win + shift + 7         : komorebic move-to-workspace 6
+win + shift + 8         : komorebic move-to-workspace 7
+win + shift + 9         : komorebic move-to-workspace 8
+win + shift + 0         : komorebic move-to-workspace 9
+
+win + shift + oem_4     : komorebic cycle-move-to-workspace previous # oem_4 is [
+win + shift + oem_6     : komorebic cycle-move-to-workspace next # oem_6 is ]

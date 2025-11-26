@@ -6,98 +6,114 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
-    {
-        "context": "Dock || Terminal || Editor || ProjectPanel",
-        "bindings": {
-            "ctrl-h": "workspace::ActivatePaneLeft",
-            "ctrl-l": "workspace::ActivatePaneRight",
-            "ctrl-k": "workspace::ActivatePaneUp",
-            "ctrl-j": "workspace::ActivatePaneDown"
-        }
-    },
-    {
-        "context": "Editor && VimControl && !VimWaiting && !menu",
-        "bindings": {
-            "shift-k": "editor::Hover",
-            "space b": "editor::ToggleGitBlame",
-            "space l f": "editor::Format",
-            "space d": "diagnostics::Deploy",
-            "space f f": "file_finder::Toggle",
-            "space o": "tab_switcher::Toggle",
-            "space e": "workspace::ToggleLeftDock",
-            "space /": "workspace::NewSearch",
-            "space c": "pane::CloseActiveItem",
-            "space t": "project_symbols::Toggle",
-
-            "ctrl-t": "workspace::NewCenterTerminal",
-            "ctrl-o": "workspace::OpenFiles",
-
-            "n": "search::SelectNextMatch",
-            "shift-n": "search::SelectPrevMatch",
-
-            "g b": "editor::ToggleComments",
-            "+ +": "workspace::Save"
-        }
-    },
-    {
-        "context": "vim_mode == insert",
-        "bindings": {
-            "ctrl-k": "editor::ContextMenuPrev",
-            "ctrl-j": "editor::ContextMenuNext"
-        }
-    },
-    {
-        "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
-        "bindings": {
-            "shift-j": "editor::MoveLineDown",
-            "shift-k": "editor::MoveLineUp"
-        }
-    },
-    {
-        "context": "TabSwitcher",
-        "bindings": {
-            "ctrl-k": "menu::SelectPrev",
-            "ctrl-j": "menu::SelectNext"
-        }
-    },
-    {
-        "context": "FileFinder",
-        "bindings": {
-            "ctrl-k": "menu::SelectPrev",
-            "ctrl-j": "menu::SelectNext"
-        }
-    },
-    {
-        "context": "CommandPalette",
-        "bindings": {
-            "ctrl-k": "menu::SelectPrev",
-            "ctrl-j": "menu::SelectNext"
-        }
-    },
-    {
-        "context": "Workspace",
-        "bindings": {
-            "ctrl-z": "workspace::ToggleZoom",
-            "alt-k": [
-                "projects::OpenRecent",
-                {
-                    "create_new_window": false
-                }
-            ],
-            "ctrl-x": "tab_switcher::CloseSelectedItem"
-        }
-    },
-    {
-        "context": "Terminal",
-        "bindings": {
-            "cmd-t": "workspace::NewTerminal",
-            "ctrl-l": ["terminal::SendKeystroke", "ctrl-l"]
-        }
-    },
-    {
-        "context": "EmptyPane || SharedScreen",
-        "bindings": {
-            "space f f": "file_finder::Toggle"
-        }
+  {
+    "context": "VimControl || !Editor && !Terminal",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
     }
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "bindings": {
+      "space s": "project_symbols::Toggle",
+      "space d": "diagnostics::Deploy",
+      "space b": "tab_switcher::Toggle",
+      "space e": "workspace::ToggleLeftDock",
+      "space /": "workspace::NewSearch",
+      "space c": "pane::CloseActiveItem",
+      "space t": "workspace::NewCenterTerminal",
+      "ctrl-t": "workspace::NewTerminal",
+
+      // "space t": "workspace::NewCenterTerminal",
+      "ctrl-o": "workspace::OpenFiles",
+
+      "n": "search::SelectNextMatch",
+      "shift-n": "search::SelectPreviousMatch"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "j": ["vim::Down", { "display_lines": true }],
+      "k": ["vim::Up", { "display_lines": true }]
+    }
+  },
+  {
+    "context": "VimControl && !menu && VimCount",
+    "bindings": {
+      "j": "vim::Down",
+      "k": "vim::Up"
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "ctrl-k": "editor::ContextMenuPrevious",
+      "ctrl-j": "editor::ContextMenuNext"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
+    "bindings": {
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "ctrl-k": "menu::SelectPrevious",
+      "ctrl-j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "FileFinder",
+    "bindings": {
+      "ctrl-k": "menu::SelectPrevious",
+      "ctrl-j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "CommandPalette",
+    "bindings": {
+      "ctrl-k": "menu::SelectPrevious",
+      "ctrl-j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-z": "workspace::ToggleZoom",
+      "alt-k": [
+        "projects::OpenRecent",
+        {
+          "create_new_window": false
+        }
+      ],
+      "ctrl-x": "tab_switcher::CloseSelectedItem",
+      "ctrl-l": "tab_switcher::Toggle",
+      "ctrl-h": [
+        "tab_switcher::Toggle",
+        {
+          "select_last": true
+        }
+      ]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "alt-t": "workspace::NewTerminal",
+      "ctrl-l": ["terminal::SendKeystroke", "ctrl-l"]
+    }
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      "space f": "file_finder::Toggle"
+    }
+  }
 ]

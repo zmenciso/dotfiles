@@ -7,97 +7,178 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-    "vim_mode": true,
-    "base_keymap": "Atom",
+  "helix_mode": true,
+  "base_keymap": "VSCode",
 
-    "ui_font_family": "BlexSans Nerd Font",
-    "ui_font_size": 16,
-    "buffer_font_size": 15,
-    "buffer_font_family": "BlexMono Nerd Font Mono",
-    "buffer_line_height": "standard",
+  "ui_font_family": "IBM Plex Sans",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "buffer_font_family": "BlexMono Nerd Font Mono",
+  "buffer_line_height": "standard",
 
-    "theme": {
-        "mode": "system",
-        "light": "Carbonfox",
-        "dark": "Carbonfox"
+  "theme": {
+    "mode": "system",
+    "light": "Carbonfox - opaque",
+    "dark": "Carbonfox - opaque"
+  },
+
+  "edit_predictions": {
+    "mode": "subtle",
+    "enabled_in_text_threads": false
+  },
+
+  "autosave": "on_focus_change",
+  "restore_on_startup": "none",
+
+  "use_autoclose": true,
+  "format_on_save": "on",
+
+  "language_models": {
+    "anthropic": {}
+  },
+
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
     },
-
-    "autosave": "on_window_change",
-    "use_autoclose": false,
-
-    "features": {
-        "copilot": false
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
     },
+    "button": true
+  },
 
-    "language_models": {
-        "anthropic": {
-            "version": "1"
-        }
+  "cursor_blink": false,
+
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+
+  "inlay_hints": {
+    "enabled": true,
+    "show_background": true
+  },
+
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+
+  "relative_line_numbers": true,
+
+  "scrollbar": {
+    "show": "always",
+    "cursors": true,
+    "git_diff": true,
+    "search_results": true,
+    "selected_text": true,
+    "selected_symbol": true,
+    "diagnostics": "all",
+    "axes": {
+      "horizontal": false
+    }
+  },
+
+  "git": {
+    "git_gutter": null,
+    "gutter_debounce": null,
+    "inline_blame": {
+      "enabled": false,
+      "delay_ms": 500
     },
+    "hunk_style": null
+  },
 
-    "assistant": {
-        "default_model": {
-            "provider": "anthropic",
-            "model": "claude-3-5-sonnet-latest"
-        },
-        "version": "2",
-        "provider": "anthropic",
-        "button": false
+  "diagnostics": {
+    "button": true,
+    "include_warnings": true,
+    "lsp_pull_diagnostics": {
+      "enabled": true,
+      "debounce_ms": 50
     },
+    "inline": {
+      "enabled": true,
+      "update_debounce_ms": 500,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": null
+    }
+  },
 
-    "cursor_blink": false,
+  "minimap": {
+    "show": "never",
+    "current_line_highlight": "all"
+  },
 
-    "relative_line_numbers": true,
+  "vertical_scroll_margin": 3,
+  "scroll_beyond_last_line": "vertical_scroll_margin",
 
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false
+  },
+
+  "show_edit_predictions": false,
+
+  "file_finder": {
+    "modal_max_width": "medium"
+  },
+
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+    "show_diagnostics": "all"
+  },
+
+  "vim": {
+    "use_system_clipboard": "never",
+    "use_smartcase_find": true
+  },
+
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+
+  "preferred_line_length": 80,
+  "soft_wrap": "editor_width",
+  "wrap_guides": [80],
+
+  "terminal": {
+    "alternate_scroll": "off",
+    "blinking": "terminal_controlled",
+    "copy_on_select": false,
+    "font_family": "BlexMono Nerd Font Mono",
+    "line_height": "standard",
+    "working_directory": "current_project_directory"
+  },
+
+  "project_panel": {
+    "button": true,
+    "auto_fold_dirs": false,
+    "hide_gitignore": false,
+    "entry_spacing": "standard",
     "scrollbar": {
-        "show": "auto",
-        "cursors": true,
-        "git_diff": true,
-        "search_results": true,
-        "selected_symbol": true,
-        "diagnostics": "all",
-        "axes": {
-            "horizontal": false
-        }
-    },
+      "show": "never"
+    }
+  },
 
-    "vertical_scroll_margin": 0,
+  "title_bar": {
+    "show_branch_icon": true,
+    "show_branch_name": true,
+    "show_onboarding_banner": false
+  },
 
-    "tab_bar": {
-        "show": true,
-        "show_nav_history_buttons": false
-    },
+  "tab_size": 2,
 
-    "vim": {
-        "use_system_clipboard": "always",
-        "use_multiline_find": true
-    },
-
-    "toolbar": {
-        "breadcrumbs": true,
-        "quick_actions": false
-    },
-
-    "preferred_line_length": 80,
-    "soft_wrap": "preferred_line_length",
-    "use_autoclose": false,
-
-    "terminal": {
-        "alternate_scroll": "off",
-        "blinking": "terminal_controlled",
-        "copy_on_select": false,
-        "font_family": "BlexMono Nerd Font Mono",
-        "line_height": "standard",
-        "toolbar": {
-            "title": true
-        },
-        "working_directory": "current_project_directory"
-    },
-
-    "project_panel": {
-        "button": false,
-        "auto_fold_dirs": false
-    },
-
-    "tab_size": 4
+  "languages": {
+    "LaTeX": {
+      "inlay_hints": {
+        "enabled": false
+      }
+    }
+  }
 }

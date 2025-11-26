@@ -1,38 +1,50 @@
-[boxes]
+[Connections]
 first-run=false
-view='list-view'
+
+[Console]
+last-window-maximised=false
+last-window-size=(652, 480)
+
+[Extensions]
+window-height=1049
+window-maximized=false
+window-width=1920
+
+[bijiben]
+window-maximized=false
+window-position=(102, 102)
+window-size=(800, 600)
+
+[calculator]
+accuracy=9
+angle-units='degrees'
+base=10
+button-mode='basic'
+number-format='automatic'
+show-thousands=false
+show-zeroes=false
+source-currency=''
+source-units='degree'
+target-currency=''
+target-units='radian'
 window-maximized=true
-
-[calendar]
-active-view='month'
-window-maximized=true
-window-size=(768, 600)
-
-[cheese]
-burst-delay=1000
-camera='HP TrueVision FHD RGB-IR  HP Tr'
-photo-x-resolution=1920
-photo-y-resolution=1080
-video-x-resolution=1920
-video-y-resolution=1080
-
-[clocks]
-timers=@aa{sv} []
-
-[clocks/state/window]
-panel-id='timer'
-size=(742, 513)
-state=87168
+window-size=(360, -1)
+word-size=64
 
 [control-center]
 last-panel='keyboard'
-window-state=(980, 640, false)
+window-state=(1920, 786, false)
 
 [desktop/app-folders]
-folder-children=['Utilities', 'YaST']
+folder-children=['Utilities', 'YaST', 'Pardus']
+
+[desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
 
 [desktop/app-folders/folders/Utilities]
-apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+apps=['org.freedesktop.GnomeAbrt.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Loupe.desktop', 'org.freedesktop.MalcontentControl.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop']
 categories=['X-GNOME-Utilities']
 name='X-GNOME-Utilities.directory'
 translate=true
@@ -42,97 +54,62 @@ categories=['X-SuSE-YaST']
 name='suse-yast.directory'
 translate=true
 
-[desktop/background]
-color-shading-type='solid'
-picture-options='zoom'
-picture-uri='file:///home/zmenciso/.local/share/backgrounds/2022-09-09-19-52-38-bg.jpg'
-picture-uri-dark='file:///home/zmenciso/.local/share/backgrounds/2022-09-09-19-52-38-bg.jpg'
-primary-color='#000000000000'
-secondary-color='#000000000000'
-
 [desktop/input-sources]
-current=uint32 0
-mru-sources=[('xkb', 'us'), ('ibus', 'mozc-jp')]
-per-window=false
-sources=[('xkb', 'us'), ('ibus', 'mozc-jp')]
-xkb-options=['lv3:ralt_switch']
+mru-sources=[('xkb', 'us')]
+sources=[('xkb', 'us')]
 
 [desktop/interface]
-clock-show-weekday=false
 color-scheme='prefer-dark'
+cursor-size=24
 cursor-theme='Breeze'
-document-font-name='Cantarell 11'
-enable-animations=true
-enable-hot-corners=false
-font-antialiasing='rgba'
+document-font-name='IBM Plex Sans weight=450 11'
 font-hinting='slight'
-font-name='Cantarell 10.5'
-gtk-theme='Orchis-Dark-Compact'
+font-name='BlexSans Nerd Font'
+gtk-enable-primary-paste=false
+gtk-theme='Nightfox-Blue-Dark-Compact-Carbon'
 icon-theme='Papirus'
-monospace-font-name='Hack Nerd Font 11'
-show-battery-percentage=true
+monospace-font-name='BlexMono Nerd Font Mono 11'
 
 [desktop/notifications]
-application-children=['balena-etcher-electron', 'org-gnome-nautilus', 'gnome-power-panel', 'chromium']
+application-children=['gnome-power-panel', 'org-gnome-console', 'firefox', 'zen']
 
-[desktop/notifications/application/balena-etcher-electron]
-application-id='balena-etcher-electron.desktop'
-
-[desktop/notifications/application/chromium]
-application-id='chromium.desktop'
+[desktop/notifications/application/firefox]
+application-id='firefox.desktop'
 
 [desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
 
-[desktop/notifications/application/org-gnome-nautilus]
-application-id='org.gnome.Nautilus.desktop'
+[desktop/notifications/application/org-gnome-console]
+application-id='org.gnome.Console.desktop'
 
-[desktop/peripherals/mouse]
-speed=-0.54285714285714293
+[desktop/notifications/application/zen]
+application-id='zen.desktop'
 
 [desktop/peripherals/touchpad]
-natural-scroll=true
 two-finger-scrolling-enabled=true
 
-[desktop/screensaver]
-color-shading-type='solid'
-lock-delay=uint32 0
-picture-options='zoom'
-picture-uri='file:///home/zmenciso/.local/share/backgrounds/2022-09-09-19-52-38-bg.jpg'
-primary-color='#000000000000'
-secondary-color='#000000000000'
-
-[desktop/search-providers]
-sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
-
-[desktop/session]
-idle-delay=uint32 300
-
-[desktop/sound]
-allow-volume-above-100-percent=true
-
 [desktop/wm/keybindings]
-activate-window-menu=['<Alt>space']
-begin-move=@as []
 close=['<Super>q']
-maximize=@as []
-maximize-horizontally=@as []
+maximize=['<Super>Up']
 minimize=@as []
-move-to-monitor-down=@as []
-move-to-monitor-left=['<Alt><Super>Left', '<Alt><Super>h']
-move-to-monitor-right=['<Alt><Super>Right', '<Alt><Super>l']
-move-to-monitor-up=@as []
-move-to-workspace-1=['<Shift><Super>exclam']
-move-to-workspace-2=['<Shift><Super>at']
-move-to-workspace-3=['<Shift><Super>numbersign']
-move-to-workspace-4=['<Shift><Super>dollar']
-move-to-workspace-down=@as []
-move-to-workspace-last=['<Primary><Super>End']
+move-to-monitor-down=['<Shift><Alt><Super>j']
+move-to-monitor-left=['<Shift><Alt><Super>h']
+move-to-monitor-right=['<Shift><Alt><Super>l']
+move-to-monitor-up=['<Shift><Alt><Super>k']
+move-to-workspace-1=['<Shift><Super>1']
+move-to-workspace-10=['<Super><Shift>0']
+move-to-workspace-2=['<Shift><Super>2']
+move-to-workspace-3=['<Shift><Super>3']
+move-to-workspace-4=['<Shift><Super>4']
+move-to-workspace-5=['<Super><Shift>5']
+move-to-workspace-6=['<Super><Shift>6']
+move-to-workspace-7=['<Super><Shift>7']
+move-to-workspace-8=['<Super><Shift>8']
+move-to-workspace-9=['<Super><Shift>9']
 move-to-workspace-left=['<Shift><Super>bracketleft']
 move-to-workspace-right=['<Shift><Super>bracketright']
-move-to-workspace-up=@as []
-switch-input-source=['<Control>space']
-switch-input-source-backward=['<Shift><Control>space']
+switch-input-source=@as []
+switch-input-source-backward=@as []
 switch-to-workspace-1=['<Super>1']
 switch-to-workspace-10=['<Super>0']
 switch-to-workspace-2=['<Super>2']
@@ -143,270 +120,214 @@ switch-to-workspace-6=['<Super>6']
 switch-to-workspace-7=['<Super>7']
 switch-to-workspace-8=['<Super>8']
 switch-to-workspace-9=['<Super>9']
-switch-to-workspace-down=['<Primary><Super>Down', '<Primary><Super>j']
 switch-to-workspace-left=['<Super>bracketleft']
 switch-to-workspace-right=['<Super>bracketright']
-switch-to-workspace-up=['<Primary><Super>Up', '<Primary><Super>k']
-switch-windows=@as []
-switch-windows-backward=@as []
-toggle-fullscreen=@as []
-toggle-maximized=['<Super>f']
-toggle-on-all-workspaces=['<Super>o']
-unmaximize=@as []
+unmaximize=['<Super>Down', '<Alt>F5']
 
 [desktop/wm/preferences]
-button-layout='appmenu:minimize,maximize,close'
-num-workspaces=8
+button-layout=':minimize,maximize,close'
+focus-mode='mouse'
+num-workspaces=10
 resize-with-right-button=true
-titlebar-font='Cantarell 12'
 
 [eog/ui]
 sidebar=false
 
-[eog/view]
-background-color='rgb(0,0,0)'
-use-background-color=true
+[epiphany]
+ask-for-default=false
 
 [epiphany/state]
-is-maximized=false
-window-position=(-1, -1)
-window-size=(617, 1025)
+is-maximized=true
+window-size=(1920, 1049)
+
+[evince]
+document-directory=@ms 'file:///home/zmenciso/doc/TECHCON'
 
 [evince/default]
-window-ratio=(0.9760416666666667, 1.8981481481481481)
+continuous=true
+dual-page=false
+dual-page-odd-left=true
+enable-spellchecking=true
+fullscreen=false
+inverted-colors=false
+show-sidebar=false
+sidebar-page='thumbnails'
+sidebar-size=132
+sizing-mode='free'
+zoom=0.49880347677597159
 
 [evolution-data-server]
 migrated=true
-network-monitor-gio-name=''
-
-[file-roller/listing]
-list-mode='as-folder'
-name-column-width=250
-show-path=false
-sort-method='name'
-sort-type='ascending'
-
-[file-roller/ui]
-sidebar-width=200
-window-height=468
-window-width=941
-
-[gedit/plugins]
-active-plugins=['sort', 'modelines', 'openlinks', 'spell', 'docinfo', 'filebrowser']
-
-[gedit/preferences/ui]
-show-tabs-mode='auto'
-
-[gedit/state/window]
-bottom-panel-size=140
-side-panel-active-page='GeditWindowDocumentsPanel'
-side-panel-size=200
-size=(900, 700)
-state=87168
-
-[gnome-screenshot]
-border-effect='none'
-delay=0
-include-border=true
-include-pointer=false
-last-save-directory='file:///tmp'
-
-[libgnomekbd/preview]
-height=614
-width=1464
-x=240
-y=135
 
 [mutter]
-center-new-windows=false
-dynamic-workspaces=true
-edge-tiling=false
+dynamic-workspaces=false
+edge-tiling=true
 workspaces-only-on-primary=false
 
 [mutter/keybindings]
-toggle-tiled-left=@as []
-toggle-tiled-right=@as []
+toggle-tiled-left=['<Super>Left']
+toggle-tiled-right=['<Super>Right']
 
 [mutter/wayland/keybindings]
 restore-shortcuts=@as []
 
-[nautilus/list-view]
-use-tree-view=true
-
 [nautilus/preferences]
 click-policy='single'
 default-folder-viewer='icon-view'
+migrated-gtk-settings=true
 search-filter-time-type='last_modified'
-search-view='list-view'
 
 [nautilus/window-state]
-initial-size=(1920, 1042)
+initial-size=(1920, 1049)
 maximized=false
 
-[nm-applet/eap/01389d95-6b6d-4d9d-be7b-cf32928e04c8]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[nm-applet/eap/04319e96-12ea-49d5-bc64-95b790e94a68]
+[nm-applet/eap/53866e26-6709-47f2-bc72-58561ee712fb]
 ignore-ca-cert=true
 ignore-phase2-ca-cert=false
 
-[nm-applet/eap/54689173-2a42-4c9e-87aa-26bcab06fde1]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[nm-applet/eap/693d8226-a018-4d74-b35a-adef692684f4]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[nm-applet/eap/83dcfca9-3b25-45d0-b135-083c2087eed2]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[nm-applet/eap/a943274f-95b3-41e8-8076-41fffa924e60]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[nm-applet/eap/d5b9280b-1670-4011-9066-b131822a573b]
-ignore-ca-cert=true
-ignore-phase2-ca-cert=false
-
-[nm-applet/eap/dca24007-3ef1-49e8-ad45-8ffe526b3979]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
+[recipes]
+user='zmenciso'
 
 [settings-daemon/plugins/color]
-night-light-enabled=true
-night-light-temperature=uint32 3700
+night-light-schedule-automatic=false
 
 [settings-daemon/plugins/media-keys]
-area-screenshot=['<Primary><Shift>Print']
-area-screenshot-clip=['<Shift>Print']
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
-home=['<Shift><Super>e']
-rotate-video-lock-static=@as []
-screensaver=['<Super>Escape']
-screenshot=['<Primary>Print']
-screenshot-clip=['Print']
-terminal=['<Super>Return']
-window-screenshot=['<Primary><Alt>Print']
-window-screenshot-clip=['<Alt>Print']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+logout=@as []
+screensaver=['<Control><Alt>Delete']
+search=['<Super>d']
 www=['<Shift><Super>w']
 
 [settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>Return'
-command='gnome-terminal'
-name='Terminal'
+command='alacritty'
+name='Launch terminal'
 
-[settings-daemon/plugins/power]
-idle-dim=true
-power-button-action='suspend'
-sleep-inactive-ac-timeout=1200
-sleep-inactive-battery-timeout=1200
-
-[settings-daemon/plugins/xsettings]
-overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
+[settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Shift><Super>e'
+command='nautilus'
+name='Launch files'
 
 [shell]
-command-history=['chromium', 'lxappearance']
-disable-user-extensions=false
-disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
-favorite-apps=['org.gnome.Terminal.desktop', 'chromium.desktop', 'discord.desktop', 'org.gnome.Nautilus.desktop', 'bitwarden.desktop']
-welcome-dialog-last-shown-version='42.4'
+command-history=['r']
+disabled-extensions=['tilingshell@ferrarodomenico.com']
+enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'forge@jmmaranan.com']
+favorite-apps=['org.gnome.Nautilus.desktop']
+welcome-dialog-last-shown-version='47.4'
 
-[shell/app-switcher]
-current-workspace-only=true
+[shell/extensions/forge]
+auto-split-enabled=true
+css-last-update=uint32 37
+css-updated='1754426586276'
+dnd-center-layout='swap'
+float-always-on-top-enabled=false
+focus-border-toggle=true
+focus-on-hover-enabled=false
+preview-hint-enabled=true
+quick-settings-enabled=true
+split-border-toggle=true
+stacked-tiling-mode-enabled=true
+tabbed-tiling-mode-enabled=true
+window-gap-hidden-on-single=true
+window-gap-size=uint32 8
+workspace-skip-tile=''
 
-[shell/extensions/pop-shell]
-activate-launcher=['<Super>slash', '<Super>d']
-active-hint=true
-active-hint-border-radius=uint32 5
-hint-color-rgba='rgb(128,160,255)'
-search=['<Super>d']
-show-title=false
-smart-gaps=true
-tile-accept=['Return']
-tile-by-default=true
-tile-enter=['<Super>r']
-tile-move-down=['<Shift>Down', '<Shift>j']
-tile-move-left=['<Shift>Left', '<Shift>h']
-tile-move-right=['<Shift>Right', '<Shift>l']
-tile-move-up=['<Shift>Up', '<Shift>k']
-tile-reject=['Escape']
-tile-resize-down=['Down', 'j']
-tile-resize-left=['Left', 'h']
-tile-resize-right=['Right', 'l']
-tile-resize-up=['Up', 'k']
-tile-swap-down=['<Primary>Down', '<Primary>j']
-tile-swap-left=['<Primary>Left', '<Primary>h']
-tile-swap-right=['<Primary>Right', '<Primary>l']
-tile-swap-up=['<Primary>Up', '<Primary>k']
-toggle-floating=['<Shift><Super>space']
+[shell/extensions/forge/keybindings]
+con-split-horizontal=['<Super>x']
+con-split-layout-toggle=['<Super>g']
+con-split-vertical=['<Super>v']
+con-stacked-layout-toggle=['<Super>s']
+con-tabbed-layout-toggle=['<Super>t']
+con-tabbed-showtab-decoration-toggle=@as []
+focus-border-toggle=@as []
+mod-mask-mouse-tile='Super'
+prefs-tiling-toggle=@as []
+window-focus-down=['<Super>j']
+window-focus-left=['<Super>h']
+window-focus-right=['<Super>l']
+window-focus-up=['<Super>k']
+window-gap-size-decrease=@as []
+window-gap-size-increase=@as []
+window-move-down=['<Shift><Super>j']
+window-move-left=['<Shift><Super>h']
+window-move-right=['<Shift><Super>l']
+window-move-up=['<Shift><Super>k']
+window-resize-bottom-decrease=@as []
+window-resize-bottom-increase=@as []
+window-resize-left-decrease=@as []
+window-resize-left-increase=@as []
+window-resize-right-decrease=['<Control><Super>h']
+window-resize-right-increase=['<Control><Super>l']
+window-resize-top-decrease=['<Control><Super>j']
+window-resize-top-increase=['<Control><Super>k']
+window-snap-center=@as []
+window-snap-one-third-left=@as []
+window-snap-one-third-right=@as []
+window-snap-two-third-left=@as []
+window-snap-two-third-right=@as []
+window-swap-down=@as []
+window-swap-last-active=@as []
+window-swap-left=@as []
+window-swap-right=@as []
+window-swap-up=@as []
+window-toggle-always-float=@as []
+window-toggle-float=['<Shift><Super>space']
+workspace-active-tile-toggle=@as []
+
+[shell/extensions/tilingshell]
+active-screen-edges=false
+enable-autotiling=true
+enable-smart-window-border-radius=true
+enable-tiling-system=true
+enable-window-border=true
+focus-window-down=['<Super>j']
+focus-window-left=['<Super>h']
+focus-window-right=['<Super>l']
+focus-window-up=['<Super>k']
+inner-gaps=uint32 12
+last-version-name-installed='16.4'
+layouts-json='[{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.67,"height":1,"groups":[1]},{"x":0.67,"y":0,"width":0.33,"height":1,"groups":[1]}]},{"id":"2041356","tiles":[{"x":0,"y":0,"width":0.5,"height":0.5004766444232602,"groups":[1,2]},{"x":0.5,"y":0,"width":0.49999999999999994,"height":0.5004766444232602,"groups":[3,1]},{"x":0,"y":0.5004766444232602,"width":0.5,"height":0.49952335557673977,"groups":[2,1]},{"x":0.5,"y":0.5004766444232602,"width":0.49999999999999994,"height":0.49952335557673977,"groups":[3,1]}]}]'
+move-window-down=['<Shift><Super>j']
+move-window-left=['<Shift><Super>h']
+move-window-right=['<Shift><Super>l']
+move-window-up=['<Shift><Super>k']
+outer-gaps=uint32 12
+overridden-settings='{}'
+quarter-tiling-threshold=uint32 42
+selected-layouts=[['2041356'], ['Layout 4'], ['2041356'], ['Layout 3'], ['Layout 3'], ['Layout 3'], ['Layout 3'], ['Layout 3'], ['Layout 3'], ['Layout 3']]
+snap-assistant-animation-time=uint32 0
+span-multiple-tiles-activation-key=['0']
+span-window-down=['<Control><Super>j']
+span-window-left=['<Control><Super>h']
+span-window-right=['<Control><Super>l']
+span-window-up=['<Control><Super>k']
+tile-preview-animation-time=uint32 0
+tiling-system-activation-key=['2']
+tiling-system-deactivation-key=['-1']
+untile-window=['<Shift><Super>space']
+window-border-color='rgb(120,169,255)'
+window-border-width=uint32 2
 
 [shell/extensions/user-theme]
-name='Orchis-Dark-Compact'
+name='Nightfox-Blue-Dark-Compact-Carbon'
 
 [shell/keybindings]
-open-application-menu=@as []
 switch-to-application-1=@as []
-switch-to-application-10=@as []
 switch-to-application-2=@as []
 switch-to-application-3=@as []
 switch-to-application-4=@as []
-switch-to-application-5=@as []
-switch-to-application-6=@as []
-switch-to-application-7=@as []
-switch-to-application-8=@as []
-switch-to-application-9=@as []
-switch-to-workspace-1=['<Super>1']
-switch-to-workspace-10=['<Super>0']
-switch-to-workspace-2=['<Super>2']
-switch-to-workspace-3=['<Super>3']
-switch-to-workspace-4=['<Super>4']
-switch-to-workspace-5=['<Super>5']
-switch-to-workspace-6=['<Super>6']
-switch-to-workspace-7=['<Super>7']
-switch-to-workspace-8=['<Super>8']
-switch-to-workspace-9=['<Super>9']
-toggle-message-tray=['<Super>v']
-toggle-overview=@as []
 
 [shell/world-clocks]
 locations=@av []
 
 [software]
-check-timestamp=int64 1662829798
+check-timestamp=int64 1754422751
 first-run=false
 
-[terminal/legacy]
-menu-accelerator-enabled=false
-
 [terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
-audible-bell=false
-background-color='rgb(8,8,8)'
-background-transparency-percent=12
-bold-color='rgb(238,238,238)'
-bold-color-same-as-fg=false
-cursor-background-color='rgb(158,158,158)'
-cursor-blink-mode='off'
-cursor-colors-set=true
-cursor-foreground-color='rgb(158,158,158)'
-cursor-shape='ibeam'
-default-size-columns=100
-default-size-rows=36
-font='BlexMono Nerd Font Mono Medium 11'
-foreground-color='rgb(178,178,178)'
-highlight-background-color='rgb(178,206,238)'
-highlight-colors-set=true
-highlight-foreground-color='rgb(8,8,8)'
-login-shell=true
-palette=['rgb(50,52,55)', 'rgb(255,84,84)', 'rgb(140,200,95)', 'rgb(227,199,138)', 'rgb(128,160,255)', 'rgb(209,131,232)', 'rgb(121,218,200)', 'rgb(198,198,198)', 'rgb(148,148,148)', 'rgb(255,81,137)', 'rgb(54,198,146)', 'rgb(194,194,146)', 'rgb(116,178,255)', 'rgb(174,129,255)', 'rgb(133,220,133)', 'rgb(228,228,228)']
-use-custom-command=false
-use-system-font=false
-use-theme-colors=false
-use-transparent-background=true
-visible-name='Default'
+background-color='rgb(23,20,33)'
+foreground-color='rgb(208,207,204)'
+use-theme-colors=true
 
 [tweaks]
 show-extensions-notice=false

@@ -1,0 +1,51 @@
+{
+  "7d577b21-4685-4db2-bb17-d39d08eec199": {
+    "id": "7d577b21-4685-4db2-bb17-d39d08eec199",
+    "name": "Bleeding Corners Fix",
+    "description": "Fixes the white outlines (or artifacts) on the rounded corners that can appear on some pages.",
+    "homepage": "https://github.com/rsiebertdev/zen-themes",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/7d577b21-4685-4db2-bb17-d39d08eec199/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/7d577b21-4685-4db2-bb17-d39d08eec199/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/7d577b21-4685-4db2-bb17-d39d08eec199/image.png",
+    "author": "rsiebertdev",
+    "version": "1.0.3",
+    "tags": [],
+    "createdAt": "2025-02-17",
+    "updatedAt": "2025-05-16",
+    "enabled": true
+  },
+  "22c9ec3b-7c62-46ae-991f-c8fff5046829": {
+    "id": "22c9ec3b-7c62-46ae-991f-c8fff5046829",
+    "name": "Tab Numbers",
+    "description": "Shows the Number corresponding to each Tab.",
+    "homepage": "https://github.com/philmard/tab-numbers",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/22c9ec3b-7c62-46ae-991f-c8fff5046829/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/22c9ec3b-7c62-46ae-991f-c8fff5046829/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/22c9ec3b-7c62-46ae-991f-c8fff5046829/image.png",
+    "author": "philmard",
+    "version": "1.0.7",
+    "preferences": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/22c9ec3b-7c62-46ae-991f-c8fff5046829/preferences.json",
+    "tags": [
+      "tabs"
+    ],
+    "createdAt": "2024-11-09",
+    "updatedAt": "2025-05-28",
+    "enabled": true
+  },
+  "bfcc400a-4ecb-4752-bfd2-a68f116a2722": {
+    "id": "bfcc400a-4ecb-4752-bfd2-a68f116a2722",
+    "name": "No Gaps",
+    "description": "Removes the gaps in single-tab view.",
+    "homepage": "https://github.com/zen-browser/theme-store/tree/main/themes/bfcc400a-4ecb-4752-bfd2-a68f116a2722",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/bfcc400a-4ecb-4752-bfd2-a68f116a2722/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/bfcc400a-4ecb-4752-bfd2-a68f116a2722/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/bfcc400a-4ecb-4752-bfd2-a68f116a2722/image.png",
+    "author": "Peleret",
+    "version": "1.2.2",
+    "tags": [],
+    "createdAt": "2024-10-21",
+    "updatedAt": "2025-02-09",
+    "preferences": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/bfcc400a-4ecb-4752-bfd2-a68f116a2722/preferences.json",
+    "enabled": false
+  }
+}

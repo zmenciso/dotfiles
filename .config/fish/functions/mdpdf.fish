@@ -1,47 +1,92 @@
 function mdpdf -d "Convert markdown to PDF via pandoc and xelatex"
-	set texhead '%Change background color for inline code and quote style
-\definecolor{bgcolor}{HTML}{FCE8E8}
-\let\oldtexttt\texttt
+    # Uses the excellent template from 
+    # https://github.com/Wandmalfarbe/pandoc-latex-template
 
-\renewcommand{\texttt}[1]{
-  \colorbox{bgcolor}{\oldtexttt{#1}}
-  }'
+    # ---
+    # title: "The Document Title"
+    # author: [Example Author, Another Author]
+    # date: "2017-02-20"
+    # keywords: [Markdown, Example]
+    # ...
 
-	set pandoc_args "--pdf-engine=xelatex" \
-	"--highlight-style=tango" \
-	# "-V geometry:\"top=2.54cm, bottom=2.54cm, left=2.54cm, right=2.54cm\"" \
-	"-V colorlinks -V urlcolor=NavyBlue" \
-	"-H /tmp/head.tex"
+    # See the pandoc variables here: https://pandoc.org/MANUAL.html#variables-for-latex
 
-	argparse --min-args=1 'h/help' 'n/number-sections' 'f/font=?' 'o/output=?' -- $argv
+    # Custom Variables:
+    #   titlepage (defaults to false)
+    #   titlepage-color
+    #   titlepage-text-color (defaults to 5F5F5F)
+    #   titlepage-rule-color (defaults to 435488)
+    #   titlepage-rule-height (defaults to 4)
+    #   titlepage-logo
+    #   titlepage-background
+    #   page-background
+    #   page-background-opacity (defaults to 0.2)
+    #   caption-justification (defaults to raggedright)
+    #   toc-own-page (defaults to false)
+    #   listings-disable-line-numbers (defaults to false)
+    #   listings-no-page-break (defaults to false)
+    #   disable-header-and-footer (default to false)
+    #   header-left (defaults to the title)
+    #   header-center
+    #   header-right (defaults to the date)
+    #   footer-left (defaults to the author)
+    #   footer-center
+    #   footer-right (defaults to the page number)
+    #   footnotes-pretty (defaults to false)
+    #   footnotes-disable-backlinks (defaults to false)
+    #   book (defaults to false)
+    #   logo-width (defaults to 35mm), see https://github.com/tweh/tex-units
+    #   first-chapter (defaults to 1)
+    #   float-placement-figure (defaults to H)
+    #   table-use-row-colors (defaults to false)
+    #   code-block-font-size (defaults to \small)
+    #   watermark (defaults to none)
 
-	if test -n "$_flag_h"
-		echo 'mdpdf [OPTIONS] INPUT OUTPUT'
-		echo '  -h  --help		Show this message'
-		echo '  -n  --number	Number sections and produce a ToC'
-		echo '  -f  --font		Change main font'
-		echo '  -o  --ouptut	Specify output filename'
+    set -l USERDIR (pandoc --version | grep 'User data directory')
+    set -l USERDIR (string split ': ' $USERDIR)[2]
 
-		exit 0
-	end
+    if not test -f $USERDIR/templates/eisvogel.latex
+        set TEMPDIR (mktemp -d)
+        git clone https://github.com/Wandmalfarbe/pandoc-latex-template.git $TEMPDIR/eisvogel
+        git clone https://github.com/jgm/pandoc-templates.git $TEMPDIR/base
 
-	if not test -f /tmp/head.tex
-		echo -n $texhead > /tmp/head.tex
-	end
+        if not test -d $USERDIR/templates
+            mkdir -p $USERDIR/templates
+        end
 
-	set mainfont $_flag_f
-	if test -n "$mainfont"
-		set pandoc_args --mainfont=$mainfont $pandoc_args
-	end
+        /bin/cp $TEMPDIR/base/* $USERDIR/templates
+        /bin/cp $TEMPDIR/eisvogel/template-multi-file/* $USERDIR/templates
+    end
 
-	if test -n "$_flag_n"
-		set pandoc_args --toc -N $pandoc_args
-	end
+    set pandoc_args --listings \
+        "--template=eisvogel" \
+        "--pdf-engine=pdflatex"
+    # "--highlight-style=tango" \
 
-	set output $_flag_o
-	if test -z "$output"
-		set output (string split '.' $argv[1])[1].pdf
-	end
+    argparse --min-args=1 h/help n/number 'o/output=?' -- $argv
 
-	eval pandoc $pandoc_args $argv[1] -o $output
+    if set -ql _flag_h
+        echo 'mdpdf [OPTIONS] INPUT'
+        echo '  -h  --help          Show this message'
+        echo '  -o  --ouptut        Specify output filename'
+        echo '  -n  --number        Number sections'
+        echo '  -t  --toc           Create table of content'
+
+        exit 0
+    end
+
+    set -ql $_flag_n
+    and set pandoc_args --number-sections $pandoc_args
+
+    set -ql $_flag_t
+    and set pandoc_args --toc $pandoc_args
+
+    if set -ql _flag_o
+        set output $_flag_o
+    else
+        set output (string split '.' $argv[1])[1].pdf
+    end
+
+    echo pandoc $pandoc_args $argv[1] -o $output
+    pandoc $pandoc_args $argv[1] -o $output
 end

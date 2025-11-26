@@ -20,7 +20,7 @@ i3lock_options="--insidever-color=$DARK \
 --insidewrong-color=$DARK \
 --ringwrong-color=$RED \
 \
---inside-color=$DARK \
+--inside-color=$BLANK \
 --ring-color=$BLACK \
 --line-color=$BLACK \
 --separator-color=$DARK \
@@ -34,8 +34,7 @@ i3lock_options="--insidever-color=$DARK \
 --bshl-color=$RED \
 \
 --keylayout 0 \
--i /home/zmenciso/bg.png \
--F \
+--color 161616ff \
 -f Cantarell \
 --radius 100 \
 \
