@@ -1,4 +1,6 @@
 function hpnsshfs
+    set REMOTE /home/zmenciso
+    set MOUNTPOINT /home/zmenciso/tank
 
     argparse --min-args=1 h/help r/remote=? m/mountpoint=? -- $argv
 
@@ -7,17 +9,11 @@ function hpnsshfs
         return 0
     end
 
-    if test -n "$_flag_r"
-        set REMOTE $_flag_r
-    else
-        set REMOTE '~'
-    end
+    set -q _flag_r
+    or set REMOTE $_flag_r
 
-    if test -n "$_flag_m"
-        set MOUTNPOINT $_flag_m
-    else
-        set MOUNTPOINT '~/tank'
-    end
+    set -q _flag_m
+    or set MOUNTPOINT $_flag_m
 
     sshfs -o follow_symlinks -o reconnect -o ssh_command='hpnssh' $argv[1]:$REMOTE $MOUNTPOINT
 end
