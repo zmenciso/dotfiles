@@ -15,22 +15,19 @@ function usage
     -i   --interact   Interactive (Approve overwrites)
     -h   --help       Print this message'
     echo
-    echo 'Categories (or \"all\")'
+    echo 'Categories (or "all")'
 
     for cat in $CATEGORIES
-        string lower $cat
+        echo '    '(string lower $cat)
     end
 
     echo '
-    Import/i: Copy files from the system to the dotfiles repo
-    Export/e: Copy files from the dotfiles repo to the system
-    '
+Import/i: Copy files from the system to the dotfiles repo
+Export/e: Copy files from the dotfiles repo to the system'
 
     echo '
-This script only works when placed in the `scripts` directory of the dotfiles repo!
-    '
+This script only works when placed in the `scripts` directory of the dotfiles repo!'
 
-    return $argv[1]
 end
 
 function copy
@@ -48,10 +45,10 @@ function copy
 end
 
 argparse -N 1 q/quiet i/interact e/export h/help -- $argv
-or usage 1
+or usage && return 1
 
 set -q _flag_h
-and usage 0
+and return 0
 
 set -q _flag_i
 and set CPFLAGS $CPFLAGS -i
