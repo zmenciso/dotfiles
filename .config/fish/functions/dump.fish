@@ -47,8 +47,12 @@ function dump
             cp $file $DUMPDIR/$dest
             chmod a+r $DUMPDIR/$dest
         else
-            # Send the file with hpnscp (requires ssh config)
-            hpnscp $file $REMOTE:$DUMPDIR/$dest
+            # Send the file with hpnscp, fallback to scp (requires ssh config)
+            if type -q hpnscp
+                hpnscp $file $REMOTE:$DUMPDIR/$dest
+            else
+                scp $file $REMOTE:$DUMPDIR$dest
+            end
             ssh $REMOTE "chmod a+r $DUMPDIR/$dest"
         end
 

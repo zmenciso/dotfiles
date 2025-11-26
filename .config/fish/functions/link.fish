@@ -33,8 +33,12 @@ function link
             set -l temp (mktemp)
             echo $url >$temp
 
-            # Send the file with hpnscp (requires ssh config)
-            hpnscp $temp $REMOTE:$LINKDIR/$link
+            # Send the file with hpnscp, fallback to scp (requires ssh config)
+            if type -q hpnscp
+                hpnscp $temp $REMOTE:$LINKDIR/$link
+            else
+                scp $temp $REMOTE:$LINKDIR/$link
+            end
             ssh $REMOTE "chmod a+r $LINKDIR/$link"
         end
 
