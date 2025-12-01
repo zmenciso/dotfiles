@@ -3,18 +3,19 @@ function dump
     set -l DUMPDIR /tank/www/dump
     set -l URL https://dump.duck-pond.org
 
+    set -l USAGE 'dump [OPTIONS] files
+    -h  --help        Show this message
+    -k  --keep        Keep the original filename
+    -e  --ext         Change the file extension
+    -r  --rename      Manually specify the filename'
+
     set -l LEN 4 # Number of characters to use for filename
 
-    argparse --min-args=1 k/keep h/help r/rename -- $argv
-    or return
+    argparse --min-args=1 k/keep h/help r/rename e/ext -- $argv
+    or echo $USAGE && return
 
-    if set -ql _flag_h
-        echo 'dump [OPTIONS] FILES'
-        echo '  -h  --help        Show this message'
-        echo '  -k  --keep        Keep the original filename'
-        echo '  -r  --rename      Manually specify the filename'
-        return
-    end
+    set -ql _flag_h
+    and echo $USAGE && return
 
     set urls
 
@@ -34,10 +35,15 @@ function dump
             set dest (basename $file)
         else if set -ql _flag_r
             # Manually rename file
-            read -p "echo -n 'Rename '; set_color green; echo -n $file; set_color normal; echo -n ' > '" dest
+            read -p "echo -n 'Rename (include extension)'; set_color green; echo -n $file; set_color normal; echo -n ' > '" dest
         else
+            if set -ql _flag_e
+                read -p "echo -n 'Choose extension '; set_color green; echo -n $file; set_color normal; echo -n ' > '" ext
+            else
+                set ext (path extension $file)
+            end
+
             # Replace the filename with random characters
-            set -l ext (path extension $file)
             set dest (head /dev/urandom | tr -dc 'A-Za-z0-9' | head -c $LEN)$ext
             echo $dest
         end
@@ -47,12 +53,8 @@ function dump
             cp $file $DUMPDIR/$dest
             chmod a+r $DUMPDIR/$dest
         else
-            # Send the file with hpnscp, fallback to scp (requires ssh config)
-            if type -q hpnscp
-                hpnscp $file $REMOTE:$DUMPDIR/$dest
-            else
-                scp $file $REMOTE:$DUMPDIR$dest
-            end
+            # Send the file with hpnscp (requires ssh config)
+            hpnscp $file $REMOTE:$DUMPDIR/$dest
             ssh $REMOTE "chmod a+r $DUMPDIR/$dest"
         end
 
