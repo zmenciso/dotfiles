@@ -3,17 +3,17 @@ function link
     set -l LINKDIR /tank/www/link/redirects/
     set -l URL https://link.duck-pond.org
 
+    set -l USAGE 'link [OPTIONS] URLs
+    -h  --help        Show this message
+    -r  --rename      Manually specify the link name'
+
     set -l LEN 4 # Number of characters to use for link
 
     argparse --min-args=1 h/help r/rename -- $argv
-    or return
+    or echo $USAGE && return
 
-    if set -ql _flag_h
-        echo 'dump [OPTIONS] URLs'
-        echo '  -h  --help        Show this message'
-        echo '  -r  --rename      Manually specify the link name'
-        return
-    end
+    set -ql _flag_h
+    and echo $USAGE && return
 
     set urls
 
@@ -33,12 +33,8 @@ function link
             set -l temp (mktemp)
             echo $url >$temp
 
-            # Send the file with hpnscp, fallback to scp (requires ssh config)
-            if type -q hpnscp
-                hpnscp $temp $REMOTE:$LINKDIR/$link
-            else
-                scp $temp $REMOTE:$LINKDIR/$link
-            end
+            # Send the file with hpnscp (requires ssh config)
+            hpnscp $temp $REMOTE:$LINKDIR/$link
             ssh $REMOTE "chmod a+r $LINKDIR/$link"
         end
 
