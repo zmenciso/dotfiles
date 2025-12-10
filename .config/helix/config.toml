@@ -23,6 +23,7 @@ completion-replace = false
 color-modes = true
 
 auto-format = true
+text-width = 80
 
 bufferline = "multiple"
 
@@ -64,6 +65,7 @@ newline = "none"
 cursor-line = "warning"
 other-lines = "warning"
 max-diagnostics = 4
+max-wrap = 40
 
 [keys.normal]
 H = ":buffer-previous"

@@ -1,0 +1,72 @@
+###############################################################################
+# Additional Language Servers
+###############################################################################
+[language-server.ltex-ls-plus.config]
+ltex.diagnosticSeverity = "hint"
+ltex.ltex-ls.logLevel = "hint"
+ltex.disabledRules = { "en-US" = ["PROFANITY"] }
+ltex.dictionary = { "en-US" = ["builtin", "Zephan", "Enciso", "Ningyuan", "Cao", "Niemier", "FET", "FeFET", "FETs", "FeFETs", "MemEA", ""] }
+
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
+
+[language-server.harper-ls.config.harper-ls]
+diagnosticSeverity = "hint"
+isolateEnglish = false
+dialect = "American"
+
+[language-server.harper-ls.config.harper-ls.linters]
+SpellCheck = true
+SpelledNumbers = false
+AnA = true
+SentenceCapitalization = true
+UnclosedQuotes = false
+WrongQuotes = false
+LongSentences = false
+RepeatedWords = true
+Spaces = false
+Matcher = true
+CorrectNumberSuffix = true
+
+###############################################################################
+# Language-specific configuration
+###############################################################################
+
+[[language]]
+name = "markdown"
+language-servers = [ "marksman", "ltex-ls-plus" ]
+# language-servers = [ "marksman", "harper-ls" ]
+
+[[language]]
+name = "rust"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "latex"
+scope = "source.tex"
+injection-regex = "tex"
+file-types = ["tex", "sty", "cls", "Rd", "bbx", "cbx"]
+comment-token = "%"
+language-servers = [ { name = "texlab", except-features = [ "inlay-hints" ] }, "ltex-ls-plus" ]
+# language-servers = [ { name = "texlab", except-features = [ "inlay-hints" ] }, "harper-ls" ]
+indent = { tab-width = 4, unit = "\t" }
+
+###############################################################################
+# Prettier formatting
+###############################################################################
+
+[[language]]
+name = "markdown"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "markdown"] }
+
+[[language]]
+name = "yaml"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "json"] }
