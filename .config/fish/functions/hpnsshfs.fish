@@ -10,10 +10,10 @@ function hpnsshfs
     end
 
     set -q _flag_r
-    or set REMOTE $_flag_r
+    and set REMOTE $_flag_r
 
     set -q _flag_m
-    or set MOUNTPOINT $_flag_m
+    and set MOUNTPOINT $_flag_m
 
     sshfs -o follow_symlinks -o reconnect -o ssh_command='hpnssh' $argv[1]:$REMOTE $MOUNTPOINT
 end
