@@ -8,10 +8,11 @@ set SCRIPTDIR (status dirname)
 source $SCRIPTDIR/target_list.fish
 
 function usage
-    echo 'settings.fish [options] IMPORT/EXPORT CATEGORY'
+    echo 'settings.fish [options] CATEGORY'
     echo
     echo 'options:
-    -q   --quiet      Suppres verbose output
+    -e   --export     Copy files from the dotfiles repo to the system
+    -q   --quiet      Suppress verbose output
     -i   --interact   Interactive (Approve overwrites)
     -h   --help       Print this message'
     echo
@@ -22,17 +23,13 @@ function usage
     end
 
     echo '
-Import/i: Copy files from the system to the dotfiles repo
-Export/e: Copy files from the dotfiles repo to the system'
-
-    echo '
 This script only works when placed in the `scripts` directory of the dotfiles repo!'
 
 end
 
 function copy
     for loc in $targets
-        if set -q _flag_e
+        if test -n "$argv[1]"
             # Export (copy from dotfiles repo to system)
             /bin/cp $CPFLAGS $SCRIPTDIR/../$loc (dirname $HOME/$loc)
             and set count (math $count + 1)
@@ -68,12 +65,12 @@ for list in $cat
     set targets $targets $$list
 end
 
-copy
-
 set_color green
 if set -q _flag_e
+    copy export
     echo "Successfully copied $count file(s) from the dotfiles repo to the system."
 else
+    copy
     echo "Successfully copied $count file(s) from the system to the dotfiles repo."
 end
 set_color normal
