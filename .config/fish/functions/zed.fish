@@ -4,16 +4,16 @@ function zed
 
     set PROTOCOL 'ssh://'
 
-    argparse 'a/alive=?' 'p/path=?' h/help -- $argv
-    or return
+    set -l USAGE 'zed [OPTIONS]
+    -h  --help        Show this message
+    -a  --alive       Keep the terminal open
+    -p  --path        Use the specified path (not interactive)'
 
-    if set -ql _flag_h
-        echo 'dump [OPTIONS] FILES'
-        echo '  -h  --help        Show this message'
-        echo '  -a  --alive       Keep the terminal open'
-        echo '  -p  --path        Use the specified path (not interactive)'
-        return
-    end
+    argparse 'a/alive=?' 'p/path=?' h/help -- $argv
+    or echo $USAGE && return
+
+    set -ql _flag_h
+    and echo $USAGE && return
 
     if test (count $argv) -gt 0
         set dir (dirname $argv[1])
