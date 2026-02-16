@@ -1,34 +1,28 @@
 #!/usr/bin/env fish
 
-set white "\e[0;39m"
-set green "\e[1;32m"
-set red "\e[1;31m"
-set dim "\e[2m"
-set undim "\e[0m"
+source 00-shared.fish
 
 set desc (cat /proc/mdstat | grep -E 'md[0-9]+' | awk '{ print $1,$3,$4 }')
 set stat (cat /proc/mdstat | sed -nr 's/\s+[0-9]+\sblocks.*(\[[U_]+\]$)/\1/p')
 
-echo -e 'RAID Status:'
+echo 'RAID Status:'
 
 for i in (seq (count $desc))
     set array (string split ' ' $desc[$i])
-    set spacer (string pad -c '.' -w (math 15 - (string length $array[1])) :)
-    echo -e -n "  $array[1]$spacer "
-   
-    if string match -r -q -- 'active' $array[2]
-        echo -e -n "$green$array[2]$white"
+
+    if string match -r -q -- active $array[2]
+        set array[2] $GOOD$array[2]$NORMAL
     else
-        echo -e -n "$red$array[2]$white"
+        set array[2] $BAD$array[2]$NORMAL
     end
 
-    echo -e -n " ($array[3]) "
-
-    if string match -r -q -- '_' $stat[$i]
-        echo -e "$red$stat[$i]$white"
+    if string match -r -q -- _ $stat[$i]
+        set stat[1] $BAD$stat[$i]$NORMAL
     else
-        echo -e "$green$stat[$i]$white"
+        set stat[1] $GOOD$stat[$i]$NORMAL
     end
 
-    echo
+    header $array[1] "$array[2] ($array[3]) $stat[$i]"
 end
+
+echo
