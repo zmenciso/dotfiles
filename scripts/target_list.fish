@@ -14,7 +14,7 @@ set HYPRLAND .xsettingsd .config/hypr/* .config/mimeapps.list
 # set WAYBAR .config/waybar/*
 set IRONBAR .config/ironbar/*
 set ZED .config/zed/*
-set FISH .config/fish/* .config/fish/functions/*
+set FISH .config/fish/* .config/fish/functions/* .config/fish/conf.d/*
 set SSH .ssh/config
 set I3 .config/i3/* .config/picom/* .config/mimeapps.list .Xresources .xsettingsd
 set ROFI .config/rofi/*
