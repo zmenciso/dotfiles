@@ -28,14 +28,33 @@ This script only works when placed in the `scripts` directory of the dotfiles re
 end
 
 function copy
+    set src $argv[1]
+    set target $argv[2]
+
+    # Only copy files
+    test -f $src
+    or return 1
+
+    # Create dir if it does not exist
+    mkdir -p (dirname $target)
+
+    # Copy
+    /bin/cp $CPFLAGS $src $target
+    and return
+
+    # Could not copy
+    return 2
+end
+
+function copy_all
     for loc in $targets
         if test -n "$argv[1]"
             # Export (copy from dotfiles repo to system)
-            /bin/cp $CPFLAGS $SCRIPTDIR/../$loc (dirname $HOME/$loc)
+            copy $SCRIPTDIR/../$loc $HOME/$loc
             and set count (math $count + 1)
         else
             # Import (copy from the system to the dotfiles repo)
-            /bin/cp $CPFLAGS $HOME/$loc (dirname $SCRIPTDIR/../$loc)
+            copy $HOME/$loc $SCRIPTDIR/../$loc
             and set count (math $count + 1)
         end
     end
@@ -59,18 +78,21 @@ set -q HOME
 or echo 'Cannot get home directory' && return 4
 
 set count 0
+
 contains ALL $cat
 and set cat $CATEGORIES
+
 for list in $cat
     set targets $targets $$list
 end
 
-set_color green
 if set -q _flag_e
-    copy export
+    copy_all export
+    set_color green
     echo "Successfully copied $count file(s) from the dotfiles repo to the system."
 else
-    copy
+    copy_all
+    set_color green
     echo "Successfully copied $count file(s) from the system to the dotfiles repo."
 end
 set_color normal
