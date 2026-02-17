@@ -24,7 +24,7 @@ set -x GCC_COLORS 'error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 #                                Interactive                                  #
 ###############################################################################
 status -i # Returns 0 if fish is interactive
-and return
+or return
 
 # If not Vim, then set cursor to line for insert
 __fish_cursor_xterm line
