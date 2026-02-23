@@ -28,7 +28,7 @@ function zed
         set tmpfile (ssh $REMOTE 'mktemp')
         ssh -t $REMOTE "xplr --print-pwd-as-result > $tmpfile"
         set dir (ssh $REMOTE "cat $tmpfile")
-        ssh kingfisher "/bin/rm $tmpfile"
+        ssh $REMOTE "/bin/rm $tmpfile"
     end
 
     zeditor $PROTOCOL$REMOTE$dir &
