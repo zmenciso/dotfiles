@@ -1,6 +1,6 @@
 function fetch
     set REMOTE kingfisher
-    set HERE (realpath pwd)
+    set HERE (realpath (pwd))
     set BASEDIR '~'
     set ARGS -rauhL --info=progress2
     set PROTOCOL hpnssh
@@ -22,13 +22,13 @@ function fetch
     and set ARGS $ARGS --dry-run
 
     set -ql _flag_e
-    and set PROTOCOL $_flag_p
+    and set PROTOCOL $_flag_e
 
     set -ql _flag_t
     and set HERE (realpath "$_flag_t")
 
     set -ql _flag_p
-    and set target /$BASEDIR/$_flag_p
+    and set target $_flag_p
 
     # Get target
     if not set -ql target
