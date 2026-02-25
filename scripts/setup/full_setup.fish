@@ -49,9 +49,9 @@ cd yay
 makepkg
 sudo pacman -U yay*.pkg.tar.zst
 
-# Install GNOME and GNOME software
-sudo pacman -S gnome gnome-extra ly cosmic
-sudo systemctl enable ly
+# Install GNOME, GNOME software, and COSMIC
+sudo pacman -S gnome gnome-extra lemurs cosmic
+sudo systemctl enable lemurs
 
 # Install packages
 for category in $CATEGORIES

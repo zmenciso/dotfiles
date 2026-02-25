@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ $(id -u) -eq 1 ]
-then 
+then
 	echo "ERROR: Script cannot be run as root"
 	exit 1
 fi
