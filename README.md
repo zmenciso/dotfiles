@@ -66,7 +66,7 @@ Requires:
 - `wl-clipboard`
 - `xplr`
 
-Export the relevant groups.  No need to load dconf settings.
+Export the relevant groups. No need to load dconf settings.
 
 Fonts: **BlexMono Nerd Font** (contained in dotfiles repo) and **BlexSans Nerd Font** (also contained in dotfiles repo)
 
@@ -101,7 +101,7 @@ Some additional software is nice to have, like:
 - `zathura`, a simple PDF viewer
 - `spotify-tui`, a CLI Spotify client written in Rust (requries `spotifyd`)
 
-Desktop entries for these programs are included in `.desktop`.  They can be installed with:
+Desktop entries for these programs are included in `.desktop`. They can be installed with:
 
 ```
 desktop-file-install --dir=/usr/share/applications [FILE]
@@ -121,7 +121,9 @@ I recently moved from a custom NeoVim configuration to LazyVim, so just export `
 
 <!-- ```sh -->
 <!-- sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ -->
+
        <!-- https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' -->
+
 <!-- ``` -->
 
 <!-- Export `nvim` files, then install plugins. -->
@@ -165,11 +167,12 @@ XMODIFIERS=@im=ibus
 
 ### Budgie/GNOME
 
-Since `ibus` is tightly integrated with GTK, install `ibus-mozc` and export `mozc` files.  Restart or log out before before loading the dconf settings below.
+Since `ibus` is tightly integrated with GTK, install `ibus-mozc` and export `mozc` files. Restart or log out before before loading the dconf settings below.
 
 ### Plasma
 
 Install `fcitx-mozc`, and export `fcitx` files. For QT-based configuration, install `kcm-fcitx`.
+
 - NEologd significantly improves conversion prediction (search the AUR for `fcitx-mozc-neologd-ut`, or the binary version).
 
 ## GNOME
@@ -182,7 +185,7 @@ If running on a laptop, install `power-profiles-daemon` instead of `powertop` or
 
 ## Microsoft Office (via Wine)
 
-First install `wine` and `winetricks`, then boot the wine instance with `wineboot -i` and allow it to install anything it needs to.  Then install some additional tools with winetricks:
+First install `wine` and `winetricks`, then boot the wine instance with `wineboot -i` and allow it to install anything it needs to. Then install some additional tools with winetricks:
 
 ```
 winetricks cmd corefonts gdiplus riched20
@@ -211,11 +214,11 @@ Export `panel`, `appearance`, `workspace`, `personalization`, and `hardware`.
 
 ### SDDM
 
-Install `sddm-kcm` for the KDE config module.  In it, SDDM theme and other settings can be synchronized to Plasma settings.
+Install `sddm-kcm` for the KDE config module. In it, SDDM theme and other settings can be synchronized to Plasma settings.
 
 ### Unlock KDE Wallet Automatically
 
-Install `kwallet-pam` for the PAM compatible module.  The chosen KWallet password must be the same as the current user password.  No further configuration should be necessary for use with SDDM.
+Install `kwallet-pam` for the PAM compatible module. The chosen KWallet password must be the same as the current user password. No further configuration should be necessary for use with SDDM.
 
 ## KDE Config File Paths
 
