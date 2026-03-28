@@ -1,17 +1,15 @@
 #!/usr/bin/env fish
 
 # set LAPTOP
-set UCODE amd
+set UCODE intel
 
 set CATEGORIES SYS BUILD HYPRLAND RICE TTF UTIL DOC TERM WEB MISC
 
 set SYS power-profiles-daemon fingerprint-gui $UCODE-ucode
 set BUILD downgrade python rust nodejs python-pynvim python-yaml python-seaborn python-numpy python-pandas pylsp clang cmake rust-analyzer marksman texlab bibtex-tidy clangd fish-lsp prettier ltex-ls-bin
-# set HYPRLAND hyprcursor hypridle hyprland hyprlock hyprlang hyprpaper \
-#     hyprpicker hyprutils xdg-desktop-portal-hyprland
-# set RICE ironbar anyrun-git swaync papirus-icon-theme wl-clipboard \
-#     xcursor-breeze xsettingsd
-set RICE wl-clipboard papirus-icon-theme xsettingsd xcursor-breeze
+# set HYPRLAND hyprcursor hypridle hyprland hyprlock hyprlang hyprpaper hyprpicker hyprutils xdg-desktop-portal-hyprland
+# set RICE ironbar anyrun-git swaync papirus-icon-theme wl-clipboard xcursor-breeze xsettingsd
+set RICE wl-clipboard papirus-icon-theme xsettingsd xcursor-breeze lolcat figlet
 set TTF noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-caladea ttf-carlito ttf-dejavu ttf-liberation ttf-opensans adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts otf-ipafont ttf-hanazono
 set UTIL polkit-gnome xsettingsd lxappearance fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk fcitx5-breeze pavucontrol pulseaudio-alsa openssh tree-sitter-cli ripgrep ripgrep-all tree-sitter openssh-hpn proton-pass-bin yubico-pam ccid opensc rsync sshfs tldr
 set DOC pandoc libreoffice-fresh inkscape texlive
