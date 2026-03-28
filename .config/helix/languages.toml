@@ -5,7 +5,7 @@
 ltex.diagnosticSeverity = "hint"
 ltex.ltex-ls.logLevel = "hint"
 ltex.disabledRules = { "en-US" = ["PROFANITY"] }
-ltex.dictionary = { "en-US" = ["builtin", "Zephan", "Enciso", "Ningyuan", "Cao", "Niemier", "FET", "FeFET", "FETs", "FeFETs", "MemEA", ""] }
+ltex.dictionary = { "en-US" = ["builtin", "Zephan", "Enciso", "Ningyuan", "Cao", "Niemier", "FET", "FeFET", "FETs", "FeFETs", "MemEA", "OOD", "softmax", "SWaP-C", "bitcells", "bitcell", "bitline", "wordline", "GSa", "CLT-GRNG", "MobileNet", ] }
 
 [language-server.harper-ls]
 command = "harper-ls"
