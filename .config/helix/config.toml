@@ -41,7 +41,7 @@ character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
 
 [editor.soft-wrap]
 enable = true
-wrap-indicator = "↪"
+wrap-indicator = ""
 
 [editor.statusline]
 mode.normal = "NORMAL"
@@ -61,11 +61,11 @@ nbsp = "none"
 nnbsp = "none"
 newline = "none"
 
-[editor.inline-diagnostics]
-cursor-line = "warning"
-other-lines = "warning"
-max-diagnostics = 4
-max-wrap = 40
+# [editor.inline-diagnostics]
+# cursor-line = "warning"
+# other-lines = "warning"
+# max-diagnostics = 4
+# max-wrap = 40
 
 [keys.normal]
 H = ":buffer-previous"
