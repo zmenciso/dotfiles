@@ -2,25 +2,42 @@
     (
         modifiers: [
             Super,
+            Ctrl,
+            Shift,
         ],
-        key: "Return",
-        description: Some("Alacritty"),
-    ): Spawn("/sbin/alacritty"),
+        key: "Down",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "r",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "b",
+    ): Disable,
     (
         modifiers: [
             Super,
             Ctrl,
             Shift,
         ],
-        key: "k",
+        key: "j",
     ): Disable,
     (
         modifiers: [
             Super,
-            Ctrl,
         ],
-        key: "k",
-    ): Resizing(Outwards),
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "minus",
+    ): LastWorkspace,
     (
         modifiers: [
             Super,
@@ -31,36 +48,8 @@
         modifiers: [
             Super,
             Ctrl,
-            Shift,
         ],
-        key: "Left",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-            Shift,
-        ],
-        key: "l",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-            Shift,
-        ],
-        key: "h",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "bracketright",
-    ): NextWorkspace,
-    (
-        modifiers: [
-            Super,
-        ],
+        key: "Down",
     ): Disable,
     (
         modifiers: [
@@ -72,146 +61,36 @@
     (
         modifiers: [
             Super,
-            Shift,
-        ],
-        key: "r",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "j",
-    ): Resizing(Inwards),
-    (
-        modifiers: [
-            Super,
-            Shift,
         ],
         key: "0",
     ): Disable,
     (
         modifiers: [
             Super,
-            Ctrl,
-            Shift,
         ],
-        key: "Up",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "l",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "bracketleft",
-    ): PreviousWorkspace,
+        key: "bracketright",
+    ): NextWorkspace,
     (
         modifiers: [
             Super,
             Ctrl,
         ],
         key: "h",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "w",
-    ): System(WebBrowser),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "0",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "m",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-            Shift,
-        ],
-        key: "Right",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "a",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "Left",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-            Shift,
-        ],
-        key: "j",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "Down",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "End",
-    ): LastWorkspace,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "f",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "Right",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Return",
-        description: Some("Kingfisher"),
-    ): Spawn("alacritty -e ssh kingfisher"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "slash",
-    ): Disable,
+    ): Resizing(Inwards),
     (
         modifiers: [
             Super,
             Ctrl,
         ],
         key: "Up",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "k",
     ): Disable,
     (
         modifiers: [
@@ -222,30 +101,23 @@
     (
         modifiers: [
             Super,
-            Shift,
+            Ctrl,
         ],
-        key: "End",
-    ): MoveToLastWorkspace,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "e",
-    ): System(HomeFolder),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "r",
-    ): Disable,
+        key: "l",
+    ): Resizing(Outwards),
     (
         modifiers: [
             Super,
             Ctrl,
             Shift,
         ],
-        key: "Down",
+        key: "l",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "m",
     ): Disable,
     (
         modifiers: [
@@ -257,7 +129,155 @@
     (
         modifiers: [
             Super,
+            Shift,
         ],
-        key: "b",
+        key: "e",
+    ): System(HomeFolder),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "bracketleft",
+    ): PreviousWorkspace,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "Return",
+        description: Some("Kingfisher"),
+    ): Spawn("alacritty -e ssh kingfisher"),
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "Left",
     ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "a",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "Right",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "f",
+    ): Maximize,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "minus",
+    ): MoveToLastWorkspace,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "w",
+    ): System(WebBrowser),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "0",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "End",
+    ): MoveToLastWorkspace,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "slash",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "k",
+    ): Resizing(Outwards),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "f",
+    ): Fullscreen,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "Up",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "j",
+    ): Resizing(Inwards),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "p",
+    ): System(DisplayToggle),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "r",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "Right",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Return",
+        description: Some("Alacritty"),
+    ): Spawn("/sbin/alacritty"),
 }
