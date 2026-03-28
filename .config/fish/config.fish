@@ -1,5 +1,5 @@
 # Function variables
-# set REMOTE kingfisher
+set -gx REMOTE kingfisher
 
 # Greeting
 set -x fish_greeting

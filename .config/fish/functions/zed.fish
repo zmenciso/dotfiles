@@ -1,5 +1,4 @@
 function zed
-    set REMOTE kingfisher
     set BASEDIR '~'
 
     set PROTOCOL 'ssh://'

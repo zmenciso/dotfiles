@@ -1,6 +1,5 @@
 function yt
     set TARGET ~/vid
-    set REMOTE kingfisher
 
     set -l USAGE 'yt [OPTIONS]
     -r  --remote        Use default remote server, or specify one

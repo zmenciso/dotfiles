@@ -1,5 +1,4 @@
 function link
-    set -l REMOTE kingfisher
     set -l LINKDIR /tank/www/link/redirects/
     set -l URL https://link.duck-pond.org
 

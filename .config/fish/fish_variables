@@ -6,4 +6,3 @@ SETUVAR --export SXHKD_SHELL:sh
 SETUVAR --export TERM:xterm\x2d256color
 SETUVAR __fish_initialized:4300
 SETUVAR --export fish_greeting:\x1d
-SETUVAR fish_key_bindings:fish_default_key_bindings

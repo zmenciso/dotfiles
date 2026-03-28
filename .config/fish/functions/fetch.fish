@@ -1,5 +1,4 @@
 function fetch
-    set REMOTE kingfisher
     set HERE (realpath (pwd))
     set BASEDIR '~'
     set ARGS -rauhL --info=progress2

@@ -1,5 +1,4 @@
 function dump
-    set -l REMOTE kingfisher
     set -l DUMPDIR /tank/www/dump
     set -l URL https://dump.duck-pond.org
 
