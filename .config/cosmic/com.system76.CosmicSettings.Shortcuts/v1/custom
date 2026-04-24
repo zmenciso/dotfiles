@@ -3,84 +3,19 @@
         modifiers: [
             Super,
             Ctrl,
-            Shift,
-        ],
-        key: "Down",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "r",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "b",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-            Shift,
         ],
         key: "j",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "minus",
-    ): LastWorkspace,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "t",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "Down",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "bracketleft",
-    ): MoveToPreviousWorkspace,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "0",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "bracketright",
-    ): NextWorkspace,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "h",
     ): Resizing(Inwards),
     (
         modifiers: [
             Super,
+        ],
+    ): Disable,
+    (
+        modifiers: [
+            Super,
             Ctrl,
+            Shift,
         ],
         key: "Up",
     ): Disable,
@@ -96,14 +31,48 @@
         modifiers: [
             Super,
         ],
-        key: "d",
-    ): System(Launcher),
+        key: "minus",
+    ): LastWorkspace,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "l",
+    ): Disable,
     (
         modifiers: [
             Super,
             Ctrl,
         ],
-        key: "l",
+        key: "h",
+    ): Resizing(Inwards),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "minus",
+    ): MoveToLastWorkspace,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "r",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "0",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "k",
     ): Resizing(Outwards),
     (
         modifiers: [
@@ -111,34 +80,8 @@
             Ctrl,
             Shift,
         ],
-        key: "l",
+        key: "Right",
     ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "m",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "bracketright",
-    ): MoveToNextWorkspace,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "e",
-    ): System(HomeFolder),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "bracketleft",
-    ): PreviousWorkspace,
     (
         modifiers: [
             Super,
@@ -150,9 +93,150 @@
     (
         modifiers: [
             Super,
+            Shift,
+        ],
+        key: "0",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "bracketright",
+    ): NextWorkspace,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "d",
+    ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "m",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "bracketleft",
+    ): PreviousWorkspace,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "f",
+    ): Fullscreen,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "e",
+    ): Spawn("alacritty -e xplr"),
+    (
+        modifiers: [
+            Super,
             Ctrl,
         ],
         key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "Up",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "f",
+    ): Maximize,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "Right",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "End",
+    ): MoveToLastWorkspace,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "Down",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "w",
+    ): System(WebBrowser),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "p",
+    ): System(DisplayToggle),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "slash",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "t",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "l",
+    ): Resizing(Outwards),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "bracketleft",
+    ): MoveToPreviousWorkspace,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "j",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "Left",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "b",
     ): Disable,
     (
         modifiers: [
@@ -166,99 +250,28 @@
             Ctrl,
             Shift,
         ],
-        key: "Right",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "f",
-    ): Maximize,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "minus",
-    ): MoveToLastWorkspace,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "w",
-    ): System(WebBrowser),
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "0",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-            Shift,
-        ],
-        key: "Left",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "End",
-    ): MoveToLastWorkspace,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "slash",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-            Shift,
-        ],
         key: "h",
     ): Disable,
     (
         modifiers: [
             Super,
-            Ctrl,
         ],
-        key: "k",
-    ): Resizing(Outwards),
+        key: "e",
+    ): System(HomeFolder),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Return",
+        description: Some("Alacritty"),
+    ): Spawn("/sbin/alacritty"),
     (
         modifiers: [
             Super,
             Shift,
         ],
-        key: "f",
-    ): Fullscreen,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-            Shift,
-        ],
-        key: "Up",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "j",
-    ): Resizing(Inwards),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "p",
-    ): System(DisplayToggle),
+        key: "bracketright",
+    ): MoveToNextWorkspace,
     (
         modifiers: [
             Super,
@@ -271,13 +284,6 @@
             Super,
             Ctrl,
         ],
-        key: "Right",
+        key: "Down",
     ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "Return",
-        description: Some("Alacritty"),
-    ): Spawn("/sbin/alacritty"),
 }

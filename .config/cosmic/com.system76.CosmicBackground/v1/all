@@ -1,6 +1,6 @@
 (
     output: "all",
-    source: Path("/home/zmenciso/bg.jpg"),
+    source: Path("/home/zmenciso/pic/Cheekwood_DSC5622.jpg"),
     filter_by_theme: true,
     rotation_frequency: 3600,
     filter_method: Lanczos,
