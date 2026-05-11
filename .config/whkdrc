@@ -1,24 +1,21 @@
 .shell pwsh
 
 # Reload whkd configuration
-# win + o                 : taskkill /f /im whkd.exe && start /b whkd # if shell is cmd
-win + o                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden # if shell is pwsh / powershell
+win + o                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden
 win + shift + o         : komorebic reload-configuration
 
 win + i                 : komorebic toggle-shortcuts
 
 # Hide and show the taskbar
-win + t                 : .\nircmd.exe win hide class Shell_TrayWnd
-win + shift + t         : .\nircmd.exe win show class Shell_TrayWnd
+win + t                 : C:\Users\zmenciso\nircmd.exe win hide class Shell_TrayWnd
+win + shift + t         : C:\Users\zmenciso\nircmd.exe win show class Shell_TrayWnd
 
 # App shortcuts - these require shell to be pwsh / powershell
-# The apps will be focused if open, or launched if not open
-# win + f                 : if ($wshell.AppActivate('Firefox') -eq $False) { start firefox }
-# win + b                 : if ($wshell.AppActivate('Chrome') -eq $False) { start chrome }
-
+win + shift + e         : start explorer.exe
 win + shift + w         : start zen
 win + shift + n         : start "C:\Users\zmenciso\Documents\zed\target\release\zed.exe"
 win + return            : start "C:\Program Files\Alacritty\alacritty.exe"
+win + shift + return    : start "C:\Program Files\Alacritty\alacritty.exe" -ArgumentList "--command ssh kingfisher"
 
 win + q                 : komorebic close
 win + m                 : komorebic minimize
@@ -29,12 +26,18 @@ win + j                 : komorebic focus down
 win + k                 : komorebic focus up
 win + l                 : komorebic focus right
 
+win + alt + 1           : komorebic focus-monitor 1
+win + alt + 2           : komorebic focus-monitor 2
+
 # Move windows
 win + shift + h         : komorebic move left
 win + shift + j         : komorebic move down
 win + shift + k         : komorebic move up
 win + shift + l         : komorebic move right
 win + shift + return    : komorebic promote
+
+win + shift + alt + 1   : komorebic send-to-monitor 1
+win + shift + alt + 2   : komorebic send-to-monitor 2
 
 # Stack windows
 win + left              : komorebic stack left
@@ -44,10 +47,10 @@ win + right             : komorebic stack right
 win + oem_1             : komorebic unstack # oem_1 is ;
 
 # Resize
-win + ctrl + l         : komorebic resize-axis horizontal increase
-win + ctrl + h         : komorebic resize-axis horizontal decrease
-win + ctrl + k         : komorebic resize-axis vertical increase
-win + ctrl + j         : komorebic resize-axis vertical decrease
+win + ctrl + l          : komorebic resize-axis horizontal increase
+win + ctrl + h          : komorebic resize-axis horizontal decrease
+win + ctrl + k          : komorebic resize-axis vertical increase
+win + ctrl + j          : komorebic resize-axis vertical decrease
 
 # Manipulate windows
 win + g                 : komorebic toggle-float
@@ -76,6 +79,10 @@ win + 0                 : komorebic focus-workspace 9
 win + oem_4             : komorebic cycle-workspace previous # oem_4 is [
 win + oem_6             : komorebic cycle-workspace next # oem_6 is ]
 
+# Monitors
+win + alt + h           : komorebic cycle-monitor next
+win + alt + l           : komorebic cycle-monitor previous
+
 # Move windows across workspaces
 win + shift + 1         : komorebic move-to-workspace 0
 win + shift + 2         : komorebic move-to-workspace 1
@@ -90,3 +97,24 @@ win + shift + 0         : komorebic move-to-workspace 9
 
 win + shift + oem_4     : komorebic cycle-move-to-workspace previous # oem_4 is [
 win + shift + oem_6     : komorebic cycle-move-to-workspace next # oem_6 is ]
+
+win + ctrl + shift + 1  : komorebic send-to-workspace 0
+win + ctrl + shift + 2  : komorebic send-to-workspace 1
+win + ctrl + shift + 3  : komorebic send-to-workspace 2
+win + ctrl + shift + 4  : komorebic send-to-workspace 3
+win + ctrl + shift + 5  : komorebic send-to-workspace 4
+win + ctrl + shift + 6  : komorebic send-to-workspace 5
+win + ctrl + shift + 7  : komorebic send-to-workspace 6
+win + ctrl + shift + 8  : komorebic send-to-workspace 7
+win + ctrl + shift + 9  : komorebic send-to-workspace 8
+win + ctrl + shift + 0  : komorebic send-to-workspace 9
+
+win + ctrl + shift + oem_4 : komorebic cycle-send-to-workspace previous # oem_4 is [
+win + ctrl + shift + oem_6 : komorebic cycle-send-to-workspace next # oem_6 is ]
+
+# Move windows to different monitors
+win + alt + shift + h   : komorebic cycle-move-to-monitor previous
+win + alt + shift + l   : komorebic cycle-move-to-monitor next
+
+win + ctrl + alt + shift + h : komorebic cycle-move-to-workspace previous
+win + ctrl + alt + shift + l : komorebic cycle-move-to-workspace next
